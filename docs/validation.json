@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "publicEntries": 4,
+  "internalInterfaces": 13,
+  "referencesChecked": 91,
+  "englishInstructionAndDefaultAssetScan": "passed",
+  "lockedAssets": "passed",
+  "javascriptSyntax": "passed",
+  "semanticTranslationReview": "see docs/translation-review.md",
+  "realPaperTeaching": "not tested",
+  "browserVisualQA": "not performed",
+  "unitTests": {
+    "passed": 34,
+    "failed": 0
+  },
+  "formalSkillValidation": {
+    "passed": 17,
+    "failed": 0
+  },
+  "javascriptRuntime": "passed using a minimal DOM substitute",
+  "translationReview": "completed against the preceding Chinese draft; see translation-review.md"
+}

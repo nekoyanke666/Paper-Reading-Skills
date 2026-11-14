@@ -1,0 +1,1900 @@
+{
+  "audit": [],
+  "claims": [],
+  "corrections": [],
+  "coverage": [],
+  "glossary": [],
+  "graph": {
+    "layoutVersion": "stable-local-1",
+    "linkRedirects": {},
+    "links": [
+      {
+        "displayLabel": "promotes",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "m",
+        "id": "m-r",
+        "label": "promotes",
+        "meaning": "Fictional mechanism illustrating promotes.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "promotes",
+        "semanticKey": "[\"m\",\"r\",\"promotes\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "r"
+      },
+      {
+        "displayLabel": "requires",
+        "displayStatusSuffix": "",
+        "from": "q",
+        "id": "q-m",
+        "label": "requires",
+        "meaning": "Fictional mechanism illustrating requires_concept.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "requires_concept",
+        "semanticKey": "[\"q\",\"m\",\"requires_concept\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "design",
+        "to": "m"
+      },
+      {
+        "displayLabel": "promotes",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "r",
+        "id": "r-response",
+        "label": "promotes",
+        "meaning": "Fictional mechanism illustrating promotes.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "promotes",
+        "semanticKey": "[\"r\",\"response\",\"promotes\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "response"
+      },
+      {
+        "displayLabel": "inhibits",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "response",
+        "id": "response-r",
+        "label": "inhibits",
+        "meaning": "Fictional mechanism illustrating inhibits.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "inhibits",
+        "semanticKey": "[\"response\",\"r\",\"inhibits\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "r"
+      }
+    ],
+    "locale": {
+      "families": {
+        "association": "Association",
+        "boundary": "Inference boundary",
+        "causal": "Causal effect",
+        "context": "Research context",
+        "evidence": "Evidence",
+        "interaction": "Interaction",
+        "logic": "Logical relation",
+        "method": "Research methods",
+        "sequence": "Sequence",
+        "structure": "Structure"
+      },
+      "languageTag": "en",
+      "nodeTypes": {
+        "algorithm": "Algorithm",
+        "argument": "Argument",
+        "assumption": "Assumption",
+        "claim": "Claim",
+        "concept": "Concept",
+        "counterexample": "Counterexample",
+        "dataset": "Dataset",
+        "definition": "Definition",
+        "experiment": "Experiment",
+        "finding": "Finding",
+        "hypothesis": "Hypothesis",
+        "interpretation": "Interpretation",
+        "limit": "Limitation",
+        "method": "Method",
+        "metric": "Metric",
+        "model": "Model",
+        "observation": "Observation",
+        "proof": "Proof",
+        "question": "Research question",
+        "source": "Material",
+        "theorem": "Theorem"
+      },
+      "relationDefinitions": {
+        "activates": "The source causes activation of the target state or activity, distinct from increased abundance alone.",
+        "alternative_to": "The endpoints are alternative explanations of the same question, without necessarily being logically inconsistent.",
+        "associated_with": "The endpoints are associated under stated conditions, without implying causal direction.",
+        "binds": "The endpoints physically bind under the stated conditions; binding alone does not establish downstream effects.",
+        "causes": "Within the stated scope, the source causally produces the target; requires a justified causal basis.",
+        "constrained_by": "The scope or validity of the source claim is constrained by the target condition or limitation.",
+        "contradicts": "The source evidence contradicts the target claim under the stated conditions; uncertainty alone is not contradiction.",
+        "depends_on": "The source claim, method, or derivation depends on the target condition without by itself proving necessity or sufficiency.",
+        "entails": "Under stated premises and valid inference, the source proposition implies the target proposition.",
+        "inhibits": "Within the stated scope, the source negatively affects the specified target aspect; negative effect is distinct from uncertainty.",
+        "is_a": "The source is a kind of the target category, not a component relationship.",
+        "leaves_open": "The source result or argument leaves the target question unresolved rather than supporting a particular answer.",
+        "measures": "The source method measures the target quantity or indicator; measuring does not mean causing.",
+        "motivates": "The source question, result, or gap motivates the target question or hypothesis without establishing it.",
+        "necessary_for": "Within stated scope, the target requires the source condition; direction is condition to outcome, separate from sufficiency.",
+        "note": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "observes": "The source operation or measurement yields the target observation, separate from mechanism interpretation.",
+        "part_of": "The source is a component of the target whole, distinct from belonging to a category.",
+        "precedes": "The source occurs earlier in time or an explicit process order than the target; sequence alone is not causality.",
+        "promotes": "Within the stated scope, the source has a positive causal effect on the specified target aspect.",
+        "proves": "The source proof or valid argument establishes the target proposition; empirical support is not automatically proof.",
+        "requires_concept": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+        "sufficient_for": "Under stated premises, the source condition suffices for the target; necessity evidence alone does not establish sufficiency.",
+        "supports": "The source evidence supports the target claim; strength, conditions, and limitations are recorded separately.",
+        "tests": "The source experiment, analysis, or test is designed to assess the target question or claim."
+      },
+      "relationLabels": {
+        "activates": "activates",
+        "alternative_to": "alternative",
+        "associated_with": "associated",
+        "binds": "binds",
+        "causes": "causes",
+        "constrained_by": "limited by",
+        "contradicts": "contradicts",
+        "depends_on": "depends on",
+        "entails": "entails",
+        "inhibits": "inhibits",
+        "is_a": "is a",
+        "leaves_open": "leaves open",
+        "measures": "measures",
+        "motivates": "motivates",
+        "necessary_for": "necessary for",
+        "note": "note",
+        "observes": "observes",
+        "part_of": "part of",
+        "precedes": "precedes",
+        "promotes": "promotes",
+        "proves": "proves",
+        "requires_concept": "requires",
+        "sufficient_for": "sufficient for",
+        "supports": "supports",
+        "tests": "tests"
+      },
+      "statuses": {
+        "design": "Research design or reading context",
+        "disputed": "Disputed evidence",
+        "hypothesis": "Hypothesis",
+        "inferred": "Evidence-based inference",
+        "supported": "Supported by evidence",
+        "unresolved": "Unresolved",
+        "user": "User note, not yet checked"
+      },
+      "ui": {
+        "allRelations": "All relations",
+        "basis": "Sources and basis",
+        "cancel": "Cancel",
+        "caution": "Avoid misinterpretation",
+        "close": "Close details",
+        "conditions": "Conditions",
+        "connect": "Connect",
+        "connectedNodes": "Connected nodes",
+        "create": "Create",
+        "definitions": "Definitions and use",
+        "detail": "Explanation",
+        "detailLabel": "Node and relationship details",
+        "directed": "This edge points from source to target.",
+        "disputedSuffix": " (disputed)",
+        "draftDetail": "User-added concept; provenance and explanation are not yet supplied.",
+        "draftLimits": "User note, not checked against paper evidence.",
+        "draftSaved": "Loaded the new canonical snapshot; local notes remain a separate draft awaiting review.",
+        "draftUnavailable": "Local note storage is unavailable in this environment.",
+        "edgeError": "Missing relationship semantics, endpoints, or status",
+        "edgeLabel": "Node relationships",
+        "endpointError": "Visible edges must connect nodes in this tree",
+        "extend": "Extend concept",
+        "extendedContext": "Extended context of {name}",
+        "hypothesisSuffix": " (hypothesis)",
+        "limits": "Interpretive limits",
+        "mainTree": "Main tree",
+        "mapLabel": "Concept graph with arbitrary node extensions",
+        "newNodeName": "New node name",
+        "newTree": "Create tree",
+        "newTreeName": "New tree name",
+        "noEvidence": "Concept definition or note; not presented as new evidence.",
+        "noResults": "No matching nodes",
+        "nodeAdded": "Extended the selected node with a new concept.",
+        "nodeError": "Missing node identity, name, or content",
+        "paperTitle": "Paper title",
+        "positionError": "Invalid node position",
+        "relation": "Relationship",
+        "relationCaveat": "Relationship meaning and evidence state are separate. Dashes mean hypothetical/unresolved, not inhibition. Support, sequence, and association do not automatically imply causality.",
+        "relationDefinition": "Relationship definition",
+        "relationshipAria": "Relationship: {name}",
+        "schemaError": "Incomplete session format",
+        "search": "Search nodes",
+        "searchResults": "Node search results",
+        "selectTree": "Select tree",
+        "sharedCount": "{name} appears in {count} trees",
+        "sharedHeading": "Same node in other trees",
+        "sourceNode": "Source",
+        "sources": "Sources and evidence",
+        "targetNode": "Target",
+        "templateMismatch": "Template versions differ; reopen the page.",
+        "treeCreated": "Created a tree using the same node as its root.",
+        "treeError": "Incomplete tree scope",
+        "undirected": "This relationship has no direction.",
+        "userSuffix": " (note)"
+      }
+    },
+    "nodeTypes": {},
+    "nodes": [
+      {
+        "aliases": [],
+        "detail": "Fictional mechanism component: Signal M.",
+        "id": "m",
+        "identity": {
+          "kind": "concept",
+          "referent": "m",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "Signal M",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "Signal M",
+        "type": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional mechanism component: How does M act?.",
+        "id": "q",
+        "identity": {
+          "kind": "question",
+          "referent": "q",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "How does M act?",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "How does M act?",
+        "type": "question"
+      },
+      {
+        "aliases": [
+          "receptor R"
+        ],
+        "detail": "Fictional mechanism component: Receptor R.",
+        "id": "r",
+        "identity": {
+          "kind": "concept",
+          "referent": "r",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "Receptor R",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "Receptor R",
+        "type": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional mechanism component: Cell response.",
+        "id": "response",
+        "identity": {
+          "kind": "concept",
+          "referent": "response",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "Cell response",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "Cell response",
+        "type": "concept"
+      }
+    ],
+    "redirects": {},
+    "registryVersion": "2.0.0",
+    "relationTypes": {
+      "inhibits": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Within the stated scope, the source negatively affects the specified target aspect; negative effect is distinct from uncertainty.",
+        "directed": true,
+        "family": "causal",
+        "familyLabel": "causal",
+        "id": "inhibits",
+        "label": "inhibits",
+        "marker": "inhibit"
+      },
+      "note": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "directed": true,
+        "family": "context",
+        "familyLabel": "context",
+        "id": "note",
+        "label": "note",
+        "marker": "arrow"
+      },
+      "promotes": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Within the stated scope, the source has a positive causal effect on the specified target aspect.",
+        "directed": true,
+        "family": "causal",
+        "familyLabel": "causal",
+        "id": "promotes",
+        "label": "promotes",
+        "marker": "arrow"
+      },
+      "requires_concept": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+        "directed": true,
+        "family": "context",
+        "familyLabel": "context",
+        "id": "requires_concept",
+        "label": "requires",
+        "marker": "arrow"
+      }
+    },
+    "retiredLinks": [],
+    "retiredNodes": [],
+    "templateVersion": "paper-map-ui-1.1.0",
+    "trees": [
+      {
+        "focusQuestion": "How does M act?",
+        "id": "main",
+        "linkIds": [
+          "m-r",
+          "q-m",
+          "r-response",
+          "response-r"
+        ],
+        "nodeIds": [
+          "q",
+          "m",
+          "r",
+          "response"
+        ],
+        "positions": {
+          "m": {
+            "x": 90,
+            "y": 280
+          },
+          "q": {
+            "x": 420,
+            "y": 60
+          },
+          "r": {
+            "x": 430,
+            "y": 280
+          },
+          "response": {
+            "x": 760,
+            "y": 280
+          }
+        },
+        "rootId": "q",
+        "routes": {
+          "m-r": {
+            "bounds": {
+              "maxX": 539,
+              "maxY": 304
+            },
+            "d": "M175.00 280.00 L175.00 252.00 Q175.00 240.00 187.00 240.00 L503.00 240.00 Q515.00 240.00 515.00 252.00 L515.00 280.00",
+            "endpointSignature": "5b3723e449bd3f75d29e82ea496bac14b83b6a2c012314a2e5823059b1364344",
+            "format": "stable-local-1",
+            "labelBox": [
+              218.5,
+              224.0,
+              471.5,
+              256.0
+            ],
+            "labelKey": "promotes (hypothesis)",
+            "points": [
+              [
+                175,
+                280
+              ],
+              [
+                175,
+                240
+              ],
+              [
+                515,
+                240
+              ],
+              [
+                515,
+                280
+              ]
+            ],
+            "x": 345.0,
+            "y": 240.0
+          },
+          "q-m": {
+            "bounds": {
+              "maxX": 444.0,
+              "maxY": 335.0
+            },
+            "d": "M420.00 91.00 C340.00 91.00 340.00 311.00 260.00 311.00",
+            "endpointSignature": "900f9736fc6955bbf28afe2f560418d4728cb00640e88f8fb351634914ee4095",
+            "format": "stable-local-1",
+            "labelBox": [
+              285.0,
+              185.0,
+              395.0,
+              217.0
+            ],
+            "labelKey": "requires",
+            "points": [
+              [
+                420.0,
+                91.0
+              ],
+              [
+                416.07,
+                91.18
+              ],
+              [
+                412.26,
+                91.72
+              ],
+              [
+                408.58,
+                92.59
+              ],
+              [
+                405.02,
+                93.8
+              ],
+              [
+                401.57,
+                95.33
+              ],
+              [
+                398.24,
+                97.16
+              ],
+              [
+                395.01,
+                99.28
+              ],
+              [
+                391.89,
+                101.69
+              ],
+              [
+                388.86,
+                104.36
+              ],
+              [
+                385.93,
+                107.3
+              ],
+              [
+                383.08,
+                110.47
+              ],
+              [
+                380.32,
+                113.88
+              ],
+              [
+                377.64,
+                117.51
+              ],
+              [
+                375.03,
+                121.34
+              ],
+              [
+                372.5,
+                125.38
+              ],
+              [
+                370.03,
+                129.59
+              ],
+              [
+                367.63,
+                133.98
+              ],
+              [
+                365.28,
+                138.52
+              ],
+              [
+                362.99,
+                143.21
+              ],
+              [
+                360.74,
+                148.04
+              ],
+              [
+                358.54,
+                152.98
+              ],
+              [
+                356.38,
+                158.04
+              ],
+              [
+                354.25,
+                163.2
+              ],
+              [
+                352.16,
+                168.44
+              ],
+              [
+                350.09,
+                173.75
+              ],
+              [
+                348.05,
+                179.13
+              ],
+              [
+                346.02,
+                184.56
+              ],
+              [
+                344.01,
+                190.02
+              ],
+              [
+                342.0,
+                195.5
+              ],
+              [
+                340.0,
+                201.0
+              ],
+              [
+                338.0,
+                206.5
+              ],
+              [
+                335.99,
+                211.98
+              ],
+              [
+                333.98,
+                217.44
+              ],
+              [
+                331.95,
+                222.87
+              ],
+              [
+                329.91,
+                228.25
+              ],
+              [
+                327.84,
+                233.56
+              ],
+              [
+                325.75,
+                238.8
+              ],
+              [
+                323.62,
+                243.96
+              ],
+              [
+                321.46,
+                249.01
+              ],
+              [
+                319.26,
+                253.96
+              ],
+              [
+                317.01,
+                258.79
+              ],
+              [
+                314.72,
+                263.48
+              ],
+              [
+                312.37,
+                268.02
+              ],
+              [
+                309.97,
+                272.41
+              ],
+              [
+                307.5,
+                276.62
+              ],
+              [
+                304.97,
+                280.66
+              ],
+              [
+                302.36,
+                284.49
+              ],
+              [
+                299.68,
+                288.12
+              ],
+              [
+                296.92,
+                291.53
+              ],
+              [
+                294.07,
+                294.7
+              ],
+              [
+                291.14,
+                297.63
+              ],
+              [
+                288.11,
+                300.31
+              ],
+              [
+                284.99,
+                302.72
+              ],
+              [
+                281.76,
+                304.84
+              ],
+              [
+                278.43,
+                306.67
+              ],
+              [
+                274.98,
+                308.2
+              ],
+              [
+                271.42,
+                309.41
+              ],
+              [
+                267.74,
+                310.28
+              ],
+              [
+                263.93,
+                310.82
+              ],
+              [
+                260.0,
+                311.0
+              ]
+            ],
+            "x": 340.0,
+            "y": 201.0
+          },
+          "r-response": {
+            "bounds": {
+              "maxX": 869.0,
+              "maxY": 304.0
+            },
+            "d": "M515.00 280.00 C515.00 185.00 845.00 185.00 845.00 280.00",
+            "endpointSignature": "4e9702d7cc5d50aa2c054e7456624d42ff73cd28cddb176153023449f9a59e9d",
+            "format": "stable-local-1",
+            "labelBox": [
+              553.5,
+              192.75,
+              806.5,
+              224.75
+            ],
+            "labelKey": "promotes (hypothesis)",
+            "points": [
+              [
+                515.0,
+                280.0
+              ],
+              [
+                515.27,
+                275.33
+              ],
+              [
+                516.08,
+                270.82
+              ],
+              [
+                517.39,
+                266.46
+              ],
+              [
+                519.2,
+                262.27
+              ],
+              [
+                521.49,
+                258.23
+              ],
+              [
+                524.24,
+                254.35
+              ],
+              [
+                527.43,
+                250.63
+              ],
+              [
+                531.04,
+                247.07
+              ],
+              [
+                535.05,
+                243.66
+              ],
+              [
+                539.44,
+                240.42
+              ],
+              [
+                544.21,
+                237.33
+              ],
+              [
+                549.32,
+                234.4
+              ],
+              [
+                554.76,
+                231.63
+              ],
+              [
+                560.52,
+                229.02
+              ],
+              [
+                566.56,
+                226.56
+              ],
+              [
+                572.88,
+                224.27
+              ],
+              [
+                579.46,
+                222.13
+              ],
+              [
+                586.28,
+                220.15
+              ],
+              [
+                593.32,
+                218.33
+              ],
+              [
+                600.56,
+                216.67
+              ],
+              [
+                607.98,
+                215.16
+              ],
+              [
+                615.56,
+                213.82
+              ],
+              [
+                623.3,
+                212.63
+              ],
+              [
+                631.16,
+                211.6
+              ],
+              [
+                639.13,
+                210.73
+              ],
+              [
+                647.2,
+                210.02
+              ],
+              [
+                655.33,
+                209.46
+              ],
+              [
+                663.52,
+                209.07
+              ],
+              [
+                671.75,
+                208.83
+              ],
+              [
+                680.0,
+                208.75
+              ],
+              [
+                688.25,
+                208.83
+              ],
+              [
+                696.48,
+                209.07
+              ],
+              [
+                704.67,
+                209.46
+              ],
+              [
+                712.8,
+                210.02
+              ],
+              [
+                720.87,
+                210.73
+              ],
+              [
+                728.84,
+                211.6
+              ],
+              [
+                736.7,
+                212.63
+              ],
+              [
+                744.44,
+                213.82
+              ],
+              [
+                752.02,
+                215.16
+              ],
+              [
+                759.44,
+                216.67
+              ],
+              [
+                766.68,
+                218.33
+              ],
+              [
+                773.72,
+                220.15
+              ],
+              [
+                780.54,
+                222.13
+              ],
+              [
+                787.12,
+                224.27
+              ],
+              [
+                793.44,
+                226.56
+              ],
+              [
+                799.48,
+                229.02
+              ],
+              [
+                805.24,
+                231.63
+              ],
+              [
+                810.68,
+                234.4
+              ],
+              [
+                815.79,
+                237.33
+              ],
+              [
+                820.56,
+                240.42
+              ],
+              [
+                824.95,
+                243.66
+              ],
+              [
+                828.96,
+                247.07
+              ],
+              [
+                832.57,
+                250.63
+              ],
+              [
+                835.76,
+                254.35
+              ],
+              [
+                838.51,
+                258.23
+              ],
+              [
+                840.8,
+                262.27
+              ],
+              [
+                842.61,
+                266.46
+              ],
+              [
+                843.92,
+                270.82
+              ],
+              [
+                844.73,
+                275.33
+              ],
+              [
+                845.0,
+                280.0
+              ]
+            ],
+            "x": 680.0,
+            "y": 208.75
+          },
+          "response-r": {
+            "bounds": {
+              "maxX": 869.0,
+              "maxY": 453.25
+            },
+            "d": "M845.00 342.00 C845.00 437.00 515.00 437.00 515.00 342.00",
+            "endpointSignature": "c56f911bf33ee543dec2e7f2e97216b569b135a9af18d5d0fcc25cfb5a6bed8a",
+            "format": "stable-local-1",
+            "labelBox": [
+              553.5,
+              397.25,
+              806.5,
+              429.25
+            ],
+            "labelKey": "inhibits (hypothesis)",
+            "points": [
+              [
+                845.0,
+                342.0
+              ],
+              [
+                844.73,
+                346.67
+              ],
+              [
+                843.92,
+                351.18
+              ],
+              [
+                842.61,
+                355.54
+              ],
+              [
+                840.8,
+                359.73
+              ],
+              [
+                838.51,
+                363.77
+              ],
+              [
+                835.76,
+                367.65
+              ],
+              [
+                832.57,
+                371.37
+              ],
+              [
+                828.96,
+                374.93
+              ],
+              [
+                824.95,
+                378.34
+              ],
+              [
+                820.56,
+                381.58
+              ],
+              [
+                815.79,
+                384.67
+              ],
+              [
+                810.68,
+                387.6
+              ],
+              [
+                805.24,
+                390.37
+              ],
+              [
+                799.48,
+                392.98
+              ],
+              [
+                793.44,
+                395.44
+              ],
+              [
+                787.12,
+                397.73
+              ],
+              [
+                780.54,
+                399.87
+              ],
+              [
+                773.72,
+                401.85
+              ],
+              [
+                766.68,
+                403.67
+              ],
+              [
+                759.44,
+                405.33
+              ],
+              [
+                752.02,
+                406.84
+              ],
+              [
+                744.44,
+                408.18
+              ],
+              [
+                736.7,
+                409.37
+              ],
+              [
+                728.84,
+                410.4
+              ],
+              [
+                720.87,
+                411.27
+              ],
+              [
+                712.8,
+                411.98
+              ],
+              [
+                704.67,
+                412.54
+              ],
+              [
+                696.48,
+                412.93
+              ],
+              [
+                688.25,
+                413.17
+              ],
+              [
+                680.0,
+                413.25
+              ],
+              [
+                671.75,
+                413.17
+              ],
+              [
+                663.52,
+                412.93
+              ],
+              [
+                655.33,
+                412.54
+              ],
+              [
+                647.2,
+                411.98
+              ],
+              [
+                639.13,
+                411.27
+              ],
+              [
+                631.16,
+                410.4
+              ],
+              [
+                623.3,
+                409.37
+              ],
+              [
+                615.56,
+                408.18
+              ],
+              [
+                607.98,
+                406.84
+              ],
+              [
+                600.56,
+                405.33
+              ],
+              [
+                593.32,
+                403.67
+              ],
+              [
+                586.28,
+                401.85
+              ],
+              [
+                579.46,
+                399.87
+              ],
+              [
+                572.88,
+                397.73
+              ],
+              [
+                566.56,
+                395.44
+              ],
+              [
+                560.52,
+                392.98
+              ],
+              [
+                554.76,
+                390.37
+              ],
+              [
+                549.32,
+                387.6
+              ],
+              [
+                544.21,
+                384.67
+              ],
+              [
+                539.44,
+                381.58
+              ],
+              [
+                535.05,
+                378.34
+              ],
+              [
+                531.04,
+                374.93
+              ],
+              [
+                527.43,
+                371.37
+              ],
+              [
+                524.24,
+                367.65
+              ],
+              [
+                521.49,
+                363.77
+              ],
+              [
+                519.2,
+                359.73
+              ],
+              [
+                517.39,
+                355.54
+              ],
+              [
+                516.08,
+                351.18
+              ],
+              [
+                515.27,
+                346.67
+              ],
+              [
+                515.0,
+                342.0
+              ]
+            ],
+            "x": 680.0,
+            "y": 413.25
+          }
+        },
+        "title": "Fictional example: signals and feedback"
+      },
+      {
+        "focusQuestion": "How does R form negative feedback?",
+        "id": "feedback",
+        "linkIds": [
+          "r-response",
+          "response-r"
+        ],
+        "nodeIds": [
+          "r",
+          "response"
+        ],
+        "positions": {
+          "r": {
+            "x": 170,
+            "y": 260
+          },
+          "response": {
+            "x": 650,
+            "y": 260
+          }
+        },
+        "rootId": "r",
+        "routes": {
+          "r-response": {
+            "bounds": {
+              "maxX": 759.0,
+              "maxY": 284.0
+            },
+            "d": "M255.00 260.00 C255.00 165.00 735.00 165.00 735.00 260.00",
+            "endpointSignature": "35a9e06a4fd03b80e170d2c749d4658296c6fa4d8efd3dae421dfcbbd5068a9a",
+            "format": "stable-local-1",
+            "labelBox": [
+              368.5,
+              172.75,
+              621.5,
+              204.75
+            ],
+            "labelKey": "promotes (hypothesis)",
+            "points": [
+              [
+                255.0,
+                260.0
+              ],
+              [
+                255.4,
+                255.33
+              ],
+              [
+                256.56,
+                250.82
+              ],
+              [
+                258.48,
+                246.46
+              ],
+              [
+                261.12,
+                242.27
+              ],
+              [
+                264.44,
+                238.23
+              ],
+              [
+                268.44,
+                234.35
+              ],
+              [
+                273.08,
+                230.63
+              ],
+              [
+                278.32,
+                227.07
+              ],
+              [
+                284.16,
+                223.66
+              ],
+              [
+                290.56,
+                220.42
+              ],
+              [
+                297.48,
+                217.33
+              ],
+              [
+                304.92,
+                214.4
+              ],
+              [
+                312.84,
+                211.63
+              ],
+              [
+                321.2,
+                209.02
+              ],
+              [
+                330.0,
+                206.56
+              ],
+              [
+                339.2,
+                204.27
+              ],
+              [
+                348.76,
+                202.13
+              ],
+              [
+                358.68,
+                200.15
+              ],
+              [
+                368.92,
+                198.33
+              ],
+              [
+                379.44,
+                196.67
+              ],
+              [
+                390.24,
+                195.16
+              ],
+              [
+                401.28,
+                193.82
+              ],
+              [
+                412.52,
+                192.63
+              ],
+              [
+                423.96,
+                191.6
+              ],
+              [
+                435.56,
+                190.73
+              ],
+              [
+                447.28,
+                190.02
+              ],
+              [
+                459.12,
+                189.46
+              ],
+              [
+                471.04,
+                189.07
+              ],
+              [
+                483.0,
+                188.83
+              ],
+              [
+                495.0,
+                188.75
+              ],
+              [
+                507.0,
+                188.83
+              ],
+              [
+                518.96,
+                189.07
+              ],
+              [
+                530.88,
+                189.46
+              ],
+              [
+                542.72,
+                190.02
+              ],
+              [
+                554.44,
+                190.73
+              ],
+              [
+                566.04,
+                191.6
+              ],
+              [
+                577.48,
+                192.63
+              ],
+              [
+                588.72,
+                193.82
+              ],
+              [
+                599.76,
+                195.16
+              ],
+              [
+                610.56,
+                196.67
+              ],
+              [
+                621.08,
+                198.33
+              ],
+              [
+                631.32,
+                200.15
+              ],
+              [
+                641.24,
+                202.13
+              ],
+              [
+                650.8,
+                204.27
+              ],
+              [
+                660.0,
+                206.56
+              ],
+              [
+                668.8,
+                209.02
+              ],
+              [
+                677.16,
+                211.63
+              ],
+              [
+                685.08,
+                214.4
+              ],
+              [
+                692.52,
+                217.33
+              ],
+              [
+                699.44,
+                220.42
+              ],
+              [
+                705.84,
+                223.66
+              ],
+              [
+                711.68,
+                227.07
+              ],
+              [
+                716.92,
+                230.63
+              ],
+              [
+                721.56,
+                234.35
+              ],
+              [
+                725.56,
+                238.23
+              ],
+              [
+                728.88,
+                242.27
+              ],
+              [
+                731.52,
+                246.46
+              ],
+              [
+                733.44,
+                250.82
+              ],
+              [
+                734.6,
+                255.33
+              ],
+              [
+                735.0,
+                260.0
+              ]
+            ],
+            "x": 495.0,
+            "y": 188.75
+          },
+          "response-r": {
+            "bounds": {
+              "maxX": 759.0,
+              "maxY": 433.25
+            },
+            "d": "M735.00 322.00 C735.00 417.00 255.00 417.00 255.00 322.00",
+            "endpointSignature": "7108e204c41e1fa901b2708600feea33141ab18e330dc43610b509c4f08487d4",
+            "format": "stable-local-1",
+            "labelBox": [
+              368.5,
+              377.25,
+              621.5,
+              409.25
+            ],
+            "labelKey": "inhibits (hypothesis)",
+            "points": [
+              [
+                735.0,
+                322.0
+              ],
+              [
+                734.6,
+                326.67
+              ],
+              [
+                733.44,
+                331.18
+              ],
+              [
+                731.52,
+                335.54
+              ],
+              [
+                728.88,
+                339.73
+              ],
+              [
+                725.56,
+                343.77
+              ],
+              [
+                721.56,
+                347.65
+              ],
+              [
+                716.92,
+                351.37
+              ],
+              [
+                711.68,
+                354.93
+              ],
+              [
+                705.84,
+                358.34
+              ],
+              [
+                699.44,
+                361.58
+              ],
+              [
+                692.52,
+                364.67
+              ],
+              [
+                685.08,
+                367.6
+              ],
+              [
+                677.16,
+                370.37
+              ],
+              [
+                668.8,
+                372.98
+              ],
+              [
+                660.0,
+                375.44
+              ],
+              [
+                650.8,
+                377.73
+              ],
+              [
+                641.24,
+                379.87
+              ],
+              [
+                631.32,
+                381.85
+              ],
+              [
+                621.08,
+                383.67
+              ],
+              [
+                610.56,
+                385.33
+              ],
+              [
+                599.76,
+                386.84
+              ],
+              [
+                588.72,
+                388.18
+              ],
+              [
+                577.48,
+                389.37
+              ],
+              [
+                566.04,
+                390.4
+              ],
+              [
+                554.44,
+                391.27
+              ],
+              [
+                542.72,
+                391.98
+              ],
+              [
+                530.88,
+                392.54
+              ],
+              [
+                518.96,
+                392.93
+              ],
+              [
+                507.0,
+                393.17
+              ],
+              [
+                495.0,
+                393.25
+              ],
+              [
+                483.0,
+                393.17
+              ],
+              [
+                471.04,
+                392.93
+              ],
+              [
+                459.12,
+                392.54
+              ],
+              [
+                447.28,
+                391.98
+              ],
+              [
+                435.56,
+                391.27
+              ],
+              [
+                423.96,
+                390.4
+              ],
+              [
+                412.52,
+                389.37
+              ],
+              [
+                401.28,
+                388.18
+              ],
+              [
+                390.24,
+                386.84
+              ],
+              [
+                379.44,
+                385.33
+              ],
+              [
+                368.92,
+                383.67
+              ],
+              [
+                358.68,
+                381.85
+              ],
+              [
+                348.76,
+                379.87
+              ],
+              [
+                339.2,
+                377.73
+              ],
+              [
+                330.0,
+                375.44
+              ],
+              [
+                321.2,
+                372.98
+              ],
+              [
+                312.84,
+                370.37
+              ],
+              [
+                304.92,
+                367.6
+              ],
+              [
+                297.48,
+                364.67
+              ],
+              [
+                290.56,
+                361.58
+              ],
+              [
+                284.16,
+                358.34
+              ],
+              [
+                278.32,
+                354.93
+              ],
+              [
+                273.08,
+                351.37
+              ],
+              [
+                268.44,
+                347.65
+              ],
+              [
+                264.44,
+                343.77
+              ],
+              [
+                261.12,
+                339.73
+              ],
+              [
+                258.48,
+                335.54
+              ],
+              [
+                256.56,
+                331.18
+              ],
+              [
+                255.4,
+                326.67
+              ],
+              [
+                255.0,
+                322.0
+              ]
+            ],
+            "x": 495.0,
+            "y": 393.25
+          }
+        },
+        "title": "How does R form negative feedback?"
+      }
+    ]
+  },
+  "paper": {
+    "id": "fictional-causal-map-example",
+    "isFictional": true,
+    "title": "Fictional example: signals and feedback"
+  },
+  "progress": {
+    "activeEntry": "paper-prepare",
+    "detail": {},
+    "figures": {},
+    "lastQuestion": null,
+    "returnTo": null,
+    "translation": {}
+  },
+  "questions": [],
+  "readingModel": {
+    "inventoryComplete": false,
+    "outline": [],
+    "requiredCoverageIds": [],
+    "researchQuestions": [],
+    "status": "partial",
+    "synthesis": "",
+    "uncertainties": [
+      "No real paper was supplied; this demonstrates data structure and interface behavior only."
+    ]
+  },
+  "revision": 1,
+  "roleProfile": {
+    "announcement": "I will use a formal-verification and algorithm-analysis perspective; this is a fictional demonstration.",
+    "boundaries": [
+      "Experimental evidence is distinct from formal proof."
+    ],
+    "changeReason": null,
+    "leadRole": "Researcher perspective in signaling mechanisms and causal inference",
+    "methodsCompetence": [
+      "Interventions and measurements",
+      "Controls and alternatives",
+      "Causation versus association"
+    ],
+    "paperType": "Theoretical research",
+    "primaryField": "Mechanism research, fictional demonstration",
+    "selectionRationale": "Fictional mechanism interface only, not a classified paper.",
+    "status": "provisional",
+    "subfields": [
+      "Formal verification"
+    ],
+    "supportingPerspectives": [
+      "Discrete mathematics"
+    ],
+    "teachingApproach": "Use small examples, then return to the original derivation.",
+    "version": 1
+  },
+  "schemaVersion": 2,
+  "settings": {
+    "changeReason": null,
+    "confirmedAt": "2026-11-15T00:00:00Z",
+    "fullTranslation": true,
+    "fullTranslationSource": "default",
+    "interactionLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "pendingFields": [],
+    "presentation": "segmented",
+    "sourceLanguages": [],
+    "status": "confirmed",
+    "translationLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "version": 1
+  },
+  "sources": [
+    {
+      "fullTextAvailable": false,
+      "id": "demo",
+      "label": "Fictional mechanism, not a paper finding",
+      "note": "All mechanism relationships are hypothetical.",
+      "role": "primary"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "relations": [
+    {
+      "aliases": [
+        "needs understanding",
+        "prerequisite_for_understanding"
+      ],
+      "allowSelf": false,
+      "definition": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+      "family": "context",
+      "id": "requires_concept",
+      "inverseAliases": [],
+      "label": "requires",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "motivates a question",
+        "prompts research"
+      ],
+      "allowSelf": false,
+      "definition": "The source question, result, or gap motivates the target question or hypothesis without establishing it.",
+      "family": "context",
+      "id": "motivates",
+      "inverseAliases": [],
+      "label": "motivates",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "test",
+        "examines"
+      ],
+      "allowSelf": false,
+      "definition": "The source experiment, analysis, or test is designed to assess the target question or claim.",
+      "family": "method",
+      "id": "tests",
+      "inverseAliases": [
+        "tested_by"
+      ],
+      "label": "tests",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "yields_observation",
+        "observed"
+      ],
+      "allowSelf": false,
+      "definition": "The source operation or measurement yields the target observation, separate from mechanism interpretation.",
+      "family": "method",
+      "id": "observes",
+      "inverseAliases": [],
+      "label": "observes",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "measures_quantity"
+      ],
+      "allowSelf": false,
+      "definition": "The source method measures the target quantity or indicator; measuring does not mean causing.",
+      "family": "method",
+      "id": "measures",
+      "inverseAliases": [],
+      "label": "measures",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "provides support",
+        "provides evidence for",
+        "evidence for",
+        "support",
+        "supported"
+      ],
+      "allowSelf": false,
+      "definition": "The source evidence supports the target claim; strength, conditions, and limitations are recorded separately.",
+      "family": "evidence",
+      "id": "supports",
+      "inverseAliases": [
+        "supported_by"
+      ],
+      "label": "supports",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "refutes",
+        "counterevidence"
+      ],
+      "allowSelf": false,
+      "definition": "The source evidence contradicts the target claim under the stated conditions; uncertainty alone is not contradiction.",
+      "family": "evidence",
+      "id": "contradicts",
+      "inverseAliases": [],
+      "label": "contradicts",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "does not resolve"
+      ],
+      "allowSelf": false,
+      "definition": "The source result or argument leaves the target question unresolved rather than supporting a particular answer.",
+      "family": "boundary",
+      "id": "leaves_open",
+      "inverseAliases": [],
+      "label": "leaves open",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "constrained by",
+        "subject to"
+      ],
+      "allowSelf": false,
+      "definition": "The scope or validity of the source claim is constrained by the target condition or limitation.",
+      "family": "boundary",
+      "id": "constrained_by",
+      "inverseAliases": [],
+      "label": "limited by",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "causal effect on"
+      ],
+      "allowSelf": true,
+      "definition": "Within the stated scope, the source causally produces the target; requires a justified causal basis.",
+      "family": "causal",
+      "id": "causes",
+      "inverseAliases": [],
+      "label": "causes",
+      "requiredSupportedField": "causalBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "enhances",
+        "positive regulation"
+      ],
+      "allowSelf": true,
+      "definition": "Within the stated scope, the source has a positive causal effect on the specified target aspect.",
+      "family": "causal",
+      "id": "promotes",
+      "inverseAliases": [],
+      "label": "promotes",
+      "requiredSupportedField": "causalBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "suppresses",
+        "negative regulation"
+      ],
+      "allowSelf": true,
+      "definition": "Within the stated scope, the source negatively affects the specified target aspect; negative effect is distinct from uncertainty.",
+      "family": "causal",
+      "id": "inhibits",
+      "inverseAliases": [],
+      "label": "inhibits",
+      "marker": "inhibit",
+      "requiredSupportedField": "causalBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "activation of"
+      ],
+      "allowSelf": false,
+      "definition": "The source causes activation of the target state or activity, distinct from increased abundance alone.",
+      "family": "causal",
+      "id": "activates",
+      "inverseAliases": [],
+      "label": "activates",
+      "requiredSupportedField": "causalBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "correlated with",
+        "association"
+      ],
+      "allowSelf": false,
+      "definition": "The endpoints are associated under stated conditions, without implying causal direction.",
+      "family": "association",
+      "id": "associated_with",
+      "inverseAliases": [],
+      "label": "associated",
+      "symmetric": true
+    },
+    {
+      "aliases": [
+        "binding interaction"
+      ],
+      "allowSelf": false,
+      "definition": "The endpoints physically bind under the stated conditions; binding alone does not establish downstream effects.",
+      "family": "interaction",
+      "id": "binds",
+      "inverseAliases": [],
+      "label": "binds",
+      "symmetric": true
+    },
+    {
+      "aliases": [
+        "component of"
+      ],
+      "allowSelf": false,
+      "definition": "The source is a component of the target whole, distinct from belonging to a category.",
+      "family": "structure",
+      "id": "part_of",
+      "inverseAliases": [
+        "contains",
+        "has_part"
+      ],
+      "label": "part of",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "is_type_of",
+        "kind of"
+      ],
+      "allowSelf": false,
+      "definition": "The source is a kind of the target category, not a component relationship.",
+      "family": "structure",
+      "id": "is_a",
+      "inverseAliases": [
+        "has_subtype"
+      ],
+      "label": "is a",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "requires_assumption"
+      ],
+      "allowSelf": false,
+      "definition": "The source claim, method, or derivation depends on the target condition without by itself proving necessity or sufficiency.",
+      "family": "logic",
+      "id": "depends_on",
+      "inverseAliases": [
+        "is_used_by",
+        "used to derive"
+      ],
+      "label": "depends on",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "implies",
+        "derives"
+      ],
+      "allowSelf": false,
+      "definition": "Under stated premises and valid inference, the source proposition implies the target proposition.",
+      "family": "logic",
+      "id": "entails",
+      "inverseAliases": [],
+      "label": "entails",
+      "requiredSupportedField": "proofBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "establishes by proof"
+      ],
+      "allowSelf": false,
+      "definition": "The source proof or valid argument establishes the target proposition; empirical support is not automatically proof.",
+      "family": "logic",
+      "id": "proves",
+      "inverseAliases": [],
+      "label": "proves",
+      "requiredSupportedField": "proofBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "necessary_condition_for"
+      ],
+      "allowSelf": false,
+      "definition": "Within stated scope, the target requires the source condition; direction is condition to outcome, separate from sufficiency.",
+      "family": "logic",
+      "id": "necessary_for",
+      "inverseAliases": [],
+      "label": "necessary for",
+      "requiredSupportedField": "inferenceBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "sufficient_condition_for"
+      ],
+      "allowSelf": false,
+      "definition": "Under stated premises, the source condition suffices for the target; necessity evidence alone does not establish sufficiency.",
+      "family": "logic",
+      "id": "sufficient_for",
+      "inverseAliases": [],
+      "label": "sufficient for",
+      "requiredSupportedField": "inferenceBasis",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "before"
+      ],
+      "allowSelf": false,
+      "definition": "The source occurs earlier in time or an explicit process order than the target; sequence alone is not causality.",
+      "family": "sequence",
+      "id": "precedes",
+      "inverseAliases": [
+        "after"
+      ],
+      "label": "precedes",
+      "symmetric": false
+    },
+    {
+      "aliases": [
+        "alternative_explanation"
+      ],
+      "allowSelf": false,
+      "definition": "The endpoints are alternative explanations of the same question, without necessarily being logically inconsistent.",
+      "family": "logic",
+      "id": "alternative_to",
+      "inverseAliases": [],
+      "label": "alternative",
+      "symmetric": true
+    },
+    {
+      "aliases": [
+        "user_note",
+        "concept extension"
+      ],
+      "allowSelf": false,
+      "definition": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+      "family": "context",
+      "id": "note",
+      "inverseAliases": [],
+      "label": "note",
+      "symmetric": false
+    }
+  ],
+  "version": "2.0.0"
+}

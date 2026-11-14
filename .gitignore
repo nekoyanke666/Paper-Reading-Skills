@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+work/
+render-pending.json
+examples/*-map/revisions/

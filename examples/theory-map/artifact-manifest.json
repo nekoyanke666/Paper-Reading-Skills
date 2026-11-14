@@ -1,0 +1,15 @@
+{
+  "browserVisualQA": "not performed by the renderer",
+  "files": {
+    "index.html": "8586984e4f4d1c592ee04f64024771ff6b74883a476ec25ebe2a8c7811993bb1",
+    "paper-state.json": "722c1109114491c6b655eb29107b9a9515125c6cb3d9ba2efdefd46d2897de5a"
+  },
+  "layoutVersion": "stable-local-1",
+  "localeSha256": "a972e5a411850d1f84fb28ac5d3e2d617c625599f85f265be5ea60dbc7850442",
+  "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
+  "registryVersion": "2.0.0",
+  "revision": 1,
+  "snapshotSha256": "5e2fb383b1af975934791998e074bbf087673f437c0d68695be7891494f70897",
+  "templateSha256": "5d72c6333d0a40488864c01b284de6d4f6e6bf0a71a40865910c73d7320eb91f",
+  "templateVersion": "paper-map-ui-1.1.0"
+}

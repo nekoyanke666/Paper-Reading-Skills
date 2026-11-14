@@ -1,0 +1,1893 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paper title</title><style>
+:root{--bg:#f7f8f4;--ink:#233930;--muted:#77847b;--border:#dce4dc;--accent:#23765c;--soft:#edf5ed;--blue:#5c7d92}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,"Segoe UI","Microsoft JhengHei",sans-serif}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #7bb497;outline-offset:3px}.app{height:100vh;display:grid;grid-template-columns:minmax(0,1fr) 0;transition:grid-template-columns .18s}.app.open{grid-template-columns:minmax(0,1fr) 350px}.main{min-width:0;padding:25px 25px 20px;display:flex;flex-direction:column;gap:19px}.topbar{display:flex;align-items:center;gap:13px;min-height:43px}.topbar h1{font-size:24px;font-weight:600;margin:0;line-height:1.5;flex:1;min-width:0;letter-spacing:.025em}.tree-select{max-width:230px;padding:10px 11px;border:1px solid var(--border);border-radius:6px;background:#fff;font-size:12px}.search-wrap{position:relative;width:210px}.search{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:6px;background:#fff;font-size:12px}.search-results{position:absolute;right:0;top:44px;width:350px;max-height:420px;overflow:auto;border:1px solid #cddcce;border-radius:7px;background:#fff;z-index:50;box-shadow:0 9px 30px #163d2217}.search-result{display:block;text-align:left;width:100%;padding:13px 15px;border:0;border-bottom:1px solid #eef2eb;background:#fff;font-size:13px}.search-result:hover{background:#f1f7ed}.search-result span{display:block;font-size:11px;line-height:1.8;color:#7d8c7d;margin-top:4px}.empty-result{font-size:12px;line-height:1.8;padding:15px;color:var(--muted)}.toggle{padding:10px 13px;white-space:nowrap;background:#fff;border:1px solid var(--border);border-radius:6px;font-size:12px}.toggle[aria-pressed=true]{background:var(--soft);border-color:#83af94;color:var(--accent)}.map{position:relative;flex:1;min-height:0;border:1px solid var(--border);border-radius:10px;overflow:auto;background:#fcfdfa;background-image:radial-gradient(#d2ddcf .75px,transparent .75px);background-size:20px 20px;scrollbar-width:thin;scrollbar-color:#bdcdbd transparent;overscroll-behavior:contain}.map.dragging{cursor:grabbing;user-select:none}.extent{position:relative;margin:auto;min-height:100%}.board{position:relative;transform-origin:0 0}.edges{position:absolute;inset:0;overflow:visible;pointer-events:none}.edge{fill:none;stroke:#aabeb0;stroke-width:1.7}.edge.support{stroke:var(--accent);stroke-width:2}.edge.causal{stroke:var(--blue);stroke-width:2}.edge.limitation{stroke:#a58c65}.edge.unconfirmed{stroke-dasharray:6 4}.edge-group.dim{opacity:.15}.edge-group.selected .edge{stroke-width:3}.edge-label{pointer-events:auto;cursor:pointer}.edge-label rect{fill:#fcfdfa;stroke:#d9e3d8;stroke-width:.9;rx:5}.edge-label text{fill:#5c7162;font:11px "Segoe UI","Microsoft JhengHei",sans-serif;text-anchor:middle;dominant-baseline:middle;pointer-events:none}.edge-label:hover rect,.edge-label:focus rect,.edge-group.selected rect{fill:#eaf4e9;stroke:#7d9f84}.node{position:absolute;width:170px;height:62px;border:1px solid #cbdacf;border-radius:8px;background:#fff;box-shadow:0 3px 12px #21433204;transition:opacity .16s,border-color .16s}.node.root{background:#edf6ed;border-color:#6eaa87}.node.selected{border-color:var(--accent);box-shadow:0 0 0 2px #23765c19;background:#f4faf2}.node.dim{opacity:.2}.node-main{width:100%;height:100%;border:0;border-radius:8px;background:transparent;padding:10px 15px;font-size:16px;font-weight:600;line-height:1.45;letter-spacing:.015em;text-align:center}.node-main:hover{background:#f2f8ef}.shared{position:absolute;top:-12px;right:-10px;min-width:30px;height:25px;background:#fff;border:1px solid #b4cfbb;border-radius:13px;color:#367f50;font-size:11px;padding:2px 6px;z-index:2}.shared:hover{background:#e5f3e7}.new-node{animation:newNode 1.8s ease-out}.revised{border-style:dashed}.details{min-width:0;overflow:auto;background:#fff;padding:0;visibility:hidden}.app.open .details{border-left:1px solid var(--border);padding:24px 21px;visibility:visible}.detail-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.kind{font-size:11px;color:var(--accent);background:var(--soft);padding:5px 8px;border-radius:4px}.close{border:1px solid var(--border);border-radius:5px;background:#fff;padding:5px 9px;font-size:13px}.details h2{font-size:21px;line-height:1.65;margin:17px 0 12px}.summary{font-size:13px;line-height:1.95;color:#5f7265}.section{margin-top:23px}.section h3{font-size:12px;color:#7d8b7f;font-weight:600;margin:0 0 10px}.section p{font-size:12px;line-height:1.95;margin:0 0 9px}.source{padding:11px 12px;border:1px solid #dfe7dc;border-radius:6px;background:#f8faf5;margin-top:8px}.source b{font-size:11px;line-height:1.8;color:#5f7762;display:block}.source p{font-size:11px;color:#7b887a;line-height:1.8;margin:5px 0 0}.limit{padding:12px;background:#fbf5e9;border-left:2px solid #ba9a61;border-radius:5px;font-size:12px;line-height:1.9;color:#886e3e}.related{border:0;border-bottom:1px solid #eaf0e7;background:#fff;padding:10px 0;text-align:left;display:block;width:100%;font-size:12px;line-height:1.8;color:#4d755c}.related small{display:block;font-size:11px;color:#8c978b;margin-bottom:3px}.tree-link{border:1px solid #d9e6d8;background:#f2f8ef;border-radius:6px;padding:10px 12px;margin-top:7px;text-align:left;display:block;width:100%;font-size:12px;line-height:1.8;color:#43744f}.state{font-size:11px;padding:5px 8px;background:#f4f5ed;border-radius:4px;color:#8d774e;display:inline-block;margin-top:8px}.actions{display:flex;gap:8px;margin-top:24px}.action{border:1px solid #cdddcd;background:#f3f8ef;border-radius:6px;padding:9px 11px;font-size:12px;color:#42714c}.editor{margin-top:17px;border-top:1px solid var(--border);padding-top:17px}.editor label{display:block;font-size:12px;margin:10px 0 6px}.editor input,.editor textarea{width:100%;padding:9px;border:1px solid var(--border);border-radius:5px;background:#fff;font-size:12px}.editor textarea{min-height:80px;resize:vertical}.editor .action{margin:12px 6px 0 0}.notice{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#254633;color:#fff;padding:10px 15px;font-size:12px;border-radius:6px;z-index:70;max-width:90vw}.hidden{display:none!important}.sr-only{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}@keyframes newNode{0%{box-shadow:0 0 0 7px #7caf9040}100%{box-shadow:0 0 0 0 #7caf9000}}@media(max-width:1000px){.main{padding:20px 17px}.topbar{flex-wrap:wrap;gap:10px}.topbar h1{font-size:21px}.app.open{grid-template-columns:minmax(0,1fr) 310px}.search-wrap{width:180px}.tree-select{max-width:180px}}@media(max-width:720px){.app.open{grid-template-columns:minmax(0,1fr) 0}.main{padding:18px 12px 12px;gap:14px}.topbar h1{flex-basis:100%;font-size:22px}.tree-select{max-width:100%;flex:1}.search-wrap{width:140px;flex:1}.search-results{width:min(350px,90vw)}.toggle{font-size:11px;padding:10px}.details{display:none}.app.open .details{display:block;position:fixed;right:0;bottom:0;left:0;max-height:72vh;z-index:20;border:1px solid var(--border);border-radius:13px 13px 0 0;box-shadow:0 -8px 40px #15372212;padding:22px}.map{min-height:480px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head><body><div class="app" id="app"><main class="main"><div class="topbar"><h1 id="paper-title">Paper title</h1><label class="sr-only" for="tree">Select tree</label><select class="tree-select" id="tree"></select><div class="search-wrap"><label class="sr-only" for="search">Search nodes</label><input class="search" type="search" id="search" placeholder="Search nodes" autocomplete="off"><div class="search-results hidden" id="search-results" aria-label="Node search results"></div></div><button class="toggle" id="all" aria-pressed="false">All relations</button></div><section class="map" id="map" tabindex="0" aria-label="Concept graph with arbitrary node extensions"><div class="extent" id="extent"><div class="board" id="board"><svg class="edges" id="edges" aria-label="Node relationships"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9ab19f"></path></marker><marker id="support-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#23765c"></path></marker><marker id="causal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5c7d92"></path></marker><marker id="inhibit" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M8 0 L8 10" stroke="#5c7d92" stroke-width="2"></path></marker></defs><g id="edge-layer"></g></svg><div id="nodes"></div></div></div></section></main><aside class="details" id="details" aria-label="Node and relationship details"></aside></div><div class="notice hidden" id="notice" role="status"></div>
+<script id="bootstrap" type="application/json">{
+  "artifact": {
+    "layoutVersion": "stable-local-1",
+    "localeSha256": "a972e5a411850d1f84fb28ac5d3e2d617c625599f85f265be5ea60dbc7850442",
+    "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
+    "registryVersion": "2.0.0",
+    "snapshotSha256": "341318cc253d2fb66fc6d713ef23a037d3ddbab707b07dc64d18db6704f8b392",
+    "templateSha256": "5d72c6333d0a40488864c01b284de6d4f6e6bf0a71a40865910c73d7320eb91f",
+    "templateVersion": "paper-map-ui-1.1.0"
+  },
+  "glossary": [],
+  "graph": {
+    "linkRedirects": {},
+    "links": [
+      {
+        "displayLabel": "promotes",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "m",
+        "id": "m-r",
+        "label": "promotes",
+        "meaning": "Fictional mechanism illustrating promotes.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "promotes",
+        "semanticKey": "[\"m\",\"r\",\"promotes\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "r"
+      },
+      {
+        "displayLabel": "requires",
+        "displayStatusSuffix": "",
+        "from": "q",
+        "id": "q-m",
+        "label": "requires",
+        "meaning": "Fictional mechanism illustrating requires_concept.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "requires_concept",
+        "semanticKey": "[\"q\",\"m\",\"requires_concept\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "design",
+        "to": "m"
+      },
+      {
+        "displayLabel": "promotes",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "r",
+        "id": "r-response",
+        "label": "promotes",
+        "meaning": "Fictional mechanism illustrating promotes.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "promotes",
+        "semanticKey": "[\"r\",\"response\",\"promotes\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "response"
+      },
+      {
+        "displayLabel": "inhibits",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "response",
+        "id": "response-r",
+        "label": "inhibits",
+        "meaning": "Fictional mechanism illustrating inhibits.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-causal"
+        },
+        "relationType": "inhibits",
+        "semanticKey": "[\"response\",\"r\",\"inhibits\",{\"sample\":\"fictional-causal\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "r"
+      }
+    ],
+    "locale": {
+      "families": {
+        "association": "Association",
+        "boundary": "Inference boundary",
+        "causal": "Causal effect",
+        "context": "Research context",
+        "evidence": "Evidence",
+        "interaction": "Interaction",
+        "logic": "Logical relation",
+        "method": "Research methods",
+        "sequence": "Sequence",
+        "structure": "Structure"
+      },
+      "languageTag": "en",
+      "nodeTypes": {
+        "algorithm": "Algorithm",
+        "argument": "Argument",
+        "assumption": "Assumption",
+        "claim": "Claim",
+        "concept": "Concept",
+        "counterexample": "Counterexample",
+        "dataset": "Dataset",
+        "definition": "Definition",
+        "experiment": "Experiment",
+        "finding": "Finding",
+        "hypothesis": "Hypothesis",
+        "interpretation": "Interpretation",
+        "limit": "Limitation",
+        "method": "Method",
+        "metric": "Metric",
+        "model": "Model",
+        "observation": "Observation",
+        "proof": "Proof",
+        "question": "Research question",
+        "source": "Material",
+        "theorem": "Theorem"
+      },
+      "relationDefinitions": {
+        "activates": "The source causes activation of the target state or activity, distinct from increased abundance alone.",
+        "alternative_to": "The endpoints are alternative explanations of the same question, without necessarily being logically inconsistent.",
+        "associated_with": "The endpoints are associated under stated conditions, without implying causal direction.",
+        "binds": "The endpoints physically bind under the stated conditions; binding alone does not establish downstream effects.",
+        "causes": "Within the stated scope, the source causally produces the target; requires a justified causal basis.",
+        "constrained_by": "The scope or validity of the source claim is constrained by the target condition or limitation.",
+        "contradicts": "The source evidence contradicts the target claim under the stated conditions; uncertainty alone is not contradiction.",
+        "depends_on": "The source claim, method, or derivation depends on the target condition without by itself proving necessity or sufficiency.",
+        "entails": "Under stated premises and valid inference, the source proposition implies the target proposition.",
+        "inhibits": "Within the stated scope, the source negatively affects the specified target aspect; negative effect is distinct from uncertainty.",
+        "is_a": "The source is a kind of the target category, not a component relationship.",
+        "leaves_open": "The source result or argument leaves the target question unresolved rather than supporting a particular answer.",
+        "measures": "The source method measures the target quantity or indicator; measuring does not mean causing.",
+        "motivates": "The source question, result, or gap motivates the target question or hypothesis without establishing it.",
+        "necessary_for": "Within stated scope, the target requires the source condition; direction is condition to outcome, separate from sufficiency.",
+        "note": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "observes": "The source operation or measurement yields the target observation, separate from mechanism interpretation.",
+        "part_of": "The source is a component of the target whole, distinct from belonging to a category.",
+        "precedes": "The source occurs earlier in time or an explicit process order than the target; sequence alone is not causality.",
+        "promotes": "Within the stated scope, the source has a positive causal effect on the specified target aspect.",
+        "proves": "The source proof or valid argument establishes the target proposition; empirical support is not automatically proof.",
+        "requires_concept": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+        "sufficient_for": "Under stated premises, the source condition suffices for the target; necessity evidence alone does not establish sufficiency.",
+        "supports": "The source evidence supports the target claim; strength, conditions, and limitations are recorded separately.",
+        "tests": "The source experiment, analysis, or test is designed to assess the target question or claim."
+      },
+      "relationLabels": {
+        "activates": "activates",
+        "alternative_to": "alternative",
+        "associated_with": "associated",
+        "binds": "binds",
+        "causes": "causes",
+        "constrained_by": "limited by",
+        "contradicts": "contradicts",
+        "depends_on": "depends on",
+        "entails": "entails",
+        "inhibits": "inhibits",
+        "is_a": "is a",
+        "leaves_open": "leaves open",
+        "measures": "measures",
+        "motivates": "motivates",
+        "necessary_for": "necessary for",
+        "note": "note",
+        "observes": "observes",
+        "part_of": "part of",
+        "precedes": "precedes",
+        "promotes": "promotes",
+        "proves": "proves",
+        "requires_concept": "requires",
+        "sufficient_for": "sufficient for",
+        "supports": "supports",
+        "tests": "tests"
+      },
+      "statuses": {
+        "design": "Research design or reading context",
+        "disputed": "Disputed evidence",
+        "hypothesis": "Hypothesis",
+        "inferred": "Evidence-based inference",
+        "supported": "Supported by evidence",
+        "unresolved": "Unresolved",
+        "user": "User note, not yet checked"
+      },
+      "ui": {
+        "allRelations": "All relations",
+        "basis": "Sources and basis",
+        "cancel": "Cancel",
+        "caution": "Avoid misinterpretation",
+        "close": "Close details",
+        "conditions": "Conditions",
+        "connect": "Connect",
+        "connectedNodes": "Connected nodes",
+        "create": "Create",
+        "definitions": "Definitions and use",
+        "detail": "Explanation",
+        "detailLabel": "Node and relationship details",
+        "directed": "This edge points from source to target.",
+        "disputedSuffix": " (disputed)",
+        "draftDetail": "User-added concept; provenance and explanation are not yet supplied.",
+        "draftLimits": "User note, not checked against paper evidence.",
+        "draftSaved": "Loaded the new canonical snapshot; local notes remain a separate draft awaiting review.",
+        "draftUnavailable": "Local note storage is unavailable in this environment.",
+        "edgeError": "Missing relationship semantics, endpoints, or status",
+        "edgeLabel": "Node relationships",
+        "endpointError": "Visible edges must connect nodes in this tree",
+        "extend": "Extend concept",
+        "extendedContext": "Extended context of {name}",
+        "hypothesisSuffix": " (hypothesis)",
+        "limits": "Interpretive limits",
+        "mainTree": "Main tree",
+        "mapLabel": "Concept graph with arbitrary node extensions",
+        "newNodeName": "New node name",
+        "newTree": "Create tree",
+        "newTreeName": "New tree name",
+        "noEvidence": "Concept definition or note; not presented as new evidence.",
+        "noResults": "No matching nodes",
+        "nodeAdded": "Extended the selected node with a new concept.",
+        "nodeError": "Missing node identity, name, or content",
+        "paperTitle": "Paper title",
+        "positionError": "Invalid node position",
+        "relation": "Relationship",
+        "relationCaveat": "Relationship meaning and evidence state are separate. Dashes mean hypothetical/unresolved, not inhibition. Support, sequence, and association do not automatically imply causality.",
+        "relationDefinition": "Relationship definition",
+        "relationshipAria": "Relationship: {name}",
+        "schemaError": "Incomplete session format",
+        "search": "Search nodes",
+        "searchResults": "Node search results",
+        "selectTree": "Select tree",
+        "sharedCount": "{name} appears in {count} trees",
+        "sharedHeading": "Same node in other trees",
+        "sourceNode": "Source",
+        "sources": "Sources and evidence",
+        "targetNode": "Target",
+        "templateMismatch": "Template versions differ; reopen the page.",
+        "treeCreated": "Created a tree using the same node as its root.",
+        "treeError": "Incomplete tree scope",
+        "undirected": "This relationship has no direction.",
+        "userSuffix": " (note)"
+      }
+    },
+    "nodeTypes": {},
+    "nodes": [
+      {
+        "aliases": [],
+        "detail": "Fictional mechanism component: Signal M.",
+        "id": "m",
+        "identity": {
+          "kind": "concept",
+          "referent": "m",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "Signal M",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "Signal M",
+        "type": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional mechanism component: How does M act?.",
+        "id": "q",
+        "identity": {
+          "kind": "question",
+          "referent": "q",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "How does M act?",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "How does M act?",
+        "type": "question"
+      },
+      {
+        "aliases": [
+          "receptor R"
+        ],
+        "detail": "Fictional mechanism component: Receptor R.",
+        "id": "r",
+        "identity": {
+          "kind": "concept",
+          "referent": "r",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "Receptor R",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "Receptor R",
+        "type": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional mechanism component: Cell response.",
+        "id": "response",
+        "identity": {
+          "kind": "concept",
+          "referent": "response",
+          "scope": "fictional-causal-map-example"
+        },
+        "label": "Cell response",
+        "limits": "No real paper evidence; mechanism hypotheses only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "demo"
+          }
+        ],
+        "termIds": [],
+        "title": "Cell response",
+        "type": "concept"
+      }
+    ],
+    "redirects": {},
+    "relationTypes": {
+      "inhibits": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Within the stated scope, the source negatively affects the specified target aspect; negative effect is distinct from uncertainty.",
+        "directed": true,
+        "family": "causal",
+        "familyLabel": "causal",
+        "id": "inhibits",
+        "label": "inhibits",
+        "marker": "inhibit"
+      },
+      "note": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "directed": true,
+        "family": "context",
+        "familyLabel": "context",
+        "id": "note",
+        "label": "note",
+        "marker": "arrow"
+      },
+      "promotes": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Within the stated scope, the source has a positive causal effect on the specified target aspect.",
+        "directed": true,
+        "family": "causal",
+        "familyLabel": "causal",
+        "id": "promotes",
+        "label": "promotes",
+        "marker": "arrow"
+      },
+      "requires_concept": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+        "directed": true,
+        "family": "context",
+        "familyLabel": "context",
+        "id": "requires_concept",
+        "label": "requires",
+        "marker": "arrow"
+      }
+    },
+    "trees": [
+      {
+        "focusQuestion": "How does M act?",
+        "id": "main",
+        "linkIds": [
+          "m-r",
+          "q-m",
+          "r-response",
+          "response-r"
+        ],
+        "nodeIds": [
+          "q",
+          "m",
+          "r",
+          "response"
+        ],
+        "positions": {
+          "m": {
+            "x": 90,
+            "y": 280
+          },
+          "q": {
+            "x": 420,
+            "y": 60
+          },
+          "r": {
+            "x": 430,
+            "y": 280
+          },
+          "response": {
+            "x": 760,
+            "y": 280
+          }
+        },
+        "rootId": "q",
+        "routes": {
+          "m-r": {
+            "bounds": {
+              "maxX": 539,
+              "maxY": 304
+            },
+            "d": "M175.00 280.00 L175.00 252.00 Q175.00 240.00 187.00 240.00 L503.00 240.00 Q515.00 240.00 515.00 252.00 L515.00 280.00",
+            "endpointSignature": "5b3723e449bd3f75d29e82ea496bac14b83b6a2c012314a2e5823059b1364344",
+            "format": "stable-local-1",
+            "labelBox": [
+              218.5,
+              224.0,
+              471.5,
+              256.0
+            ],
+            "labelKey": "promotes (hypothesis)",
+            "points": [
+              [
+                175,
+                280
+              ],
+              [
+                175,
+                240
+              ],
+              [
+                515,
+                240
+              ],
+              [
+                515,
+                280
+              ]
+            ],
+            "x": 345.0,
+            "y": 240.0
+          },
+          "q-m": {
+            "bounds": {
+              "maxX": 444.0,
+              "maxY": 335.0
+            },
+            "d": "M420.00 91.00 C340.00 91.00 340.00 311.00 260.00 311.00",
+            "endpointSignature": "900f9736fc6955bbf28afe2f560418d4728cb00640e88f8fb351634914ee4095",
+            "format": "stable-local-1",
+            "labelBox": [
+              285.0,
+              185.0,
+              395.0,
+              217.0
+            ],
+            "labelKey": "requires",
+            "points": [
+              [
+                420.0,
+                91.0
+              ],
+              [
+                416.07,
+                91.18
+              ],
+              [
+                412.26,
+                91.72
+              ],
+              [
+                408.58,
+                92.59
+              ],
+              [
+                405.02,
+                93.8
+              ],
+              [
+                401.57,
+                95.33
+              ],
+              [
+                398.24,
+                97.16
+              ],
+              [
+                395.01,
+                99.28
+              ],
+              [
+                391.89,
+                101.69
+              ],
+              [
+                388.86,
+                104.36
+              ],
+              [
+                385.93,
+                107.3
+              ],
+              [
+                383.08,
+                110.47
+              ],
+              [
+                380.32,
+                113.88
+              ],
+              [
+                377.64,
+                117.51
+              ],
+              [
+                375.03,
+                121.34
+              ],
+              [
+                372.5,
+                125.38
+              ],
+              [
+                370.03,
+                129.59
+              ],
+              [
+                367.63,
+                133.98
+              ],
+              [
+                365.28,
+                138.52
+              ],
+              [
+                362.99,
+                143.21
+              ],
+              [
+                360.74,
+                148.04
+              ],
+              [
+                358.54,
+                152.98
+              ],
+              [
+                356.38,
+                158.04
+              ],
+              [
+                354.25,
+                163.2
+              ],
+              [
+                352.16,
+                168.44
+              ],
+              [
+                350.09,
+                173.75
+              ],
+              [
+                348.05,
+                179.13
+              ],
+              [
+                346.02,
+                184.56
+              ],
+              [
+                344.01,
+                190.02
+              ],
+              [
+                342.0,
+                195.5
+              ],
+              [
+                340.0,
+                201.0
+              ],
+              [
+                338.0,
+                206.5
+              ],
+              [
+                335.99,
+                211.98
+              ],
+              [
+                333.98,
+                217.44
+              ],
+              [
+                331.95,
+                222.87
+              ],
+              [
+                329.91,
+                228.25
+              ],
+              [
+                327.84,
+                233.56
+              ],
+              [
+                325.75,
+                238.8
+              ],
+              [
+                323.62,
+                243.96
+              ],
+              [
+                321.46,
+                249.01
+              ],
+              [
+                319.26,
+                253.96
+              ],
+              [
+                317.01,
+                258.79
+              ],
+              [
+                314.72,
+                263.48
+              ],
+              [
+                312.37,
+                268.02
+              ],
+              [
+                309.97,
+                272.41
+              ],
+              [
+                307.5,
+                276.62
+              ],
+              [
+                304.97,
+                280.66
+              ],
+              [
+                302.36,
+                284.49
+              ],
+              [
+                299.68,
+                288.12
+              ],
+              [
+                296.92,
+                291.53
+              ],
+              [
+                294.07,
+                294.7
+              ],
+              [
+                291.14,
+                297.63
+              ],
+              [
+                288.11,
+                300.31
+              ],
+              [
+                284.99,
+                302.72
+              ],
+              [
+                281.76,
+                304.84
+              ],
+              [
+                278.43,
+                306.67
+              ],
+              [
+                274.98,
+                308.2
+              ],
+              [
+                271.42,
+                309.41
+              ],
+              [
+                267.74,
+                310.28
+              ],
+              [
+                263.93,
+                310.82
+              ],
+              [
+                260.0,
+                311.0
+              ]
+            ],
+            "x": 340.0,
+            "y": 201.0
+          },
+          "r-response": {
+            "bounds": {
+              "maxX": 869.0,
+              "maxY": 304.0
+            },
+            "d": "M515.00 280.00 C515.00 185.00 845.00 185.00 845.00 280.00",
+            "endpointSignature": "4e9702d7cc5d50aa2c054e7456624d42ff73cd28cddb176153023449f9a59e9d",
+            "format": "stable-local-1",
+            "labelBox": [
+              553.5,
+              192.75,
+              806.5,
+              224.75
+            ],
+            "labelKey": "promotes (hypothesis)",
+            "points": [
+              [
+                515.0,
+                280.0
+              ],
+              [
+                515.27,
+                275.33
+              ],
+              [
+                516.08,
+                270.82
+              ],
+              [
+                517.39,
+                266.46
+              ],
+              [
+                519.2,
+                262.27
+              ],
+              [
+                521.49,
+                258.23
+              ],
+              [
+                524.24,
+                254.35
+              ],
+              [
+                527.43,
+                250.63
+              ],
+              [
+                531.04,
+                247.07
+              ],
+              [
+                535.05,
+                243.66
+              ],
+              [
+                539.44,
+                240.42
+              ],
+              [
+                544.21,
+                237.33
+              ],
+              [
+                549.32,
+                234.4
+              ],
+              [
+                554.76,
+                231.63
+              ],
+              [
+                560.52,
+                229.02
+              ],
+              [
+                566.56,
+                226.56
+              ],
+              [
+                572.88,
+                224.27
+              ],
+              [
+                579.46,
+                222.13
+              ],
+              [
+                586.28,
+                220.15
+              ],
+              [
+                593.32,
+                218.33
+              ],
+              [
+                600.56,
+                216.67
+              ],
+              [
+                607.98,
+                215.16
+              ],
+              [
+                615.56,
+                213.82
+              ],
+              [
+                623.3,
+                212.63
+              ],
+              [
+                631.16,
+                211.6
+              ],
+              [
+                639.13,
+                210.73
+              ],
+              [
+                647.2,
+                210.02
+              ],
+              [
+                655.33,
+                209.46
+              ],
+              [
+                663.52,
+                209.07
+              ],
+              [
+                671.75,
+                208.83
+              ],
+              [
+                680.0,
+                208.75
+              ],
+              [
+                688.25,
+                208.83
+              ],
+              [
+                696.48,
+                209.07
+              ],
+              [
+                704.67,
+                209.46
+              ],
+              [
+                712.8,
+                210.02
+              ],
+              [
+                720.87,
+                210.73
+              ],
+              [
+                728.84,
+                211.6
+              ],
+              [
+                736.7,
+                212.63
+              ],
+              [
+                744.44,
+                213.82
+              ],
+              [
+                752.02,
+                215.16
+              ],
+              [
+                759.44,
+                216.67
+              ],
+              [
+                766.68,
+                218.33
+              ],
+              [
+                773.72,
+                220.15
+              ],
+              [
+                780.54,
+                222.13
+              ],
+              [
+                787.12,
+                224.27
+              ],
+              [
+                793.44,
+                226.56
+              ],
+              [
+                799.48,
+                229.02
+              ],
+              [
+                805.24,
+                231.63
+              ],
+              [
+                810.68,
+                234.4
+              ],
+              [
+                815.79,
+                237.33
+              ],
+              [
+                820.56,
+                240.42
+              ],
+              [
+                824.95,
+                243.66
+              ],
+              [
+                828.96,
+                247.07
+              ],
+              [
+                832.57,
+                250.63
+              ],
+              [
+                835.76,
+                254.35
+              ],
+              [
+                838.51,
+                258.23
+              ],
+              [
+                840.8,
+                262.27
+              ],
+              [
+                842.61,
+                266.46
+              ],
+              [
+                843.92,
+                270.82
+              ],
+              [
+                844.73,
+                275.33
+              ],
+              [
+                845.0,
+                280.0
+              ]
+            ],
+            "x": 680.0,
+            "y": 208.75
+          },
+          "response-r": {
+            "bounds": {
+              "maxX": 869.0,
+              "maxY": 453.25
+            },
+            "d": "M845.00 342.00 C845.00 437.00 515.00 437.00 515.00 342.00",
+            "endpointSignature": "c56f911bf33ee543dec2e7f2e97216b569b135a9af18d5d0fcc25cfb5a6bed8a",
+            "format": "stable-local-1",
+            "labelBox": [
+              553.5,
+              397.25,
+              806.5,
+              429.25
+            ],
+            "labelKey": "inhibits (hypothesis)",
+            "points": [
+              [
+                845.0,
+                342.0
+              ],
+              [
+                844.73,
+                346.67
+              ],
+              [
+                843.92,
+                351.18
+              ],
+              [
+                842.61,
+                355.54
+              ],
+              [
+                840.8,
+                359.73
+              ],
+              [
+                838.51,
+                363.77
+              ],
+              [
+                835.76,
+                367.65
+              ],
+              [
+                832.57,
+                371.37
+              ],
+              [
+                828.96,
+                374.93
+              ],
+              [
+                824.95,
+                378.34
+              ],
+              [
+                820.56,
+                381.58
+              ],
+              [
+                815.79,
+                384.67
+              ],
+              [
+                810.68,
+                387.6
+              ],
+              [
+                805.24,
+                390.37
+              ],
+              [
+                799.48,
+                392.98
+              ],
+              [
+                793.44,
+                395.44
+              ],
+              [
+                787.12,
+                397.73
+              ],
+              [
+                780.54,
+                399.87
+              ],
+              [
+                773.72,
+                401.85
+              ],
+              [
+                766.68,
+                403.67
+              ],
+              [
+                759.44,
+                405.33
+              ],
+              [
+                752.02,
+                406.84
+              ],
+              [
+                744.44,
+                408.18
+              ],
+              [
+                736.7,
+                409.37
+              ],
+              [
+                728.84,
+                410.4
+              ],
+              [
+                720.87,
+                411.27
+              ],
+              [
+                712.8,
+                411.98
+              ],
+              [
+                704.67,
+                412.54
+              ],
+              [
+                696.48,
+                412.93
+              ],
+              [
+                688.25,
+                413.17
+              ],
+              [
+                680.0,
+                413.25
+              ],
+              [
+                671.75,
+                413.17
+              ],
+              [
+                663.52,
+                412.93
+              ],
+              [
+                655.33,
+                412.54
+              ],
+              [
+                647.2,
+                411.98
+              ],
+              [
+                639.13,
+                411.27
+              ],
+              [
+                631.16,
+                410.4
+              ],
+              [
+                623.3,
+                409.37
+              ],
+              [
+                615.56,
+                408.18
+              ],
+              [
+                607.98,
+                406.84
+              ],
+              [
+                600.56,
+                405.33
+              ],
+              [
+                593.32,
+                403.67
+              ],
+              [
+                586.28,
+                401.85
+              ],
+              [
+                579.46,
+                399.87
+              ],
+              [
+                572.88,
+                397.73
+              ],
+              [
+                566.56,
+                395.44
+              ],
+              [
+                560.52,
+                392.98
+              ],
+              [
+                554.76,
+                390.37
+              ],
+              [
+                549.32,
+                387.6
+              ],
+              [
+                544.21,
+                384.67
+              ],
+              [
+                539.44,
+                381.58
+              ],
+              [
+                535.05,
+                378.34
+              ],
+              [
+                531.04,
+                374.93
+              ],
+              [
+                527.43,
+                371.37
+              ],
+              [
+                524.24,
+                367.65
+              ],
+              [
+                521.49,
+                363.77
+              ],
+              [
+                519.2,
+                359.73
+              ],
+              [
+                517.39,
+                355.54
+              ],
+              [
+                516.08,
+                351.18
+              ],
+              [
+                515.27,
+                346.67
+              ],
+              [
+                515.0,
+                342.0
+              ]
+            ],
+            "x": 680.0,
+            "y": 413.25
+          }
+        },
+        "title": "Fictional example: signals and feedback"
+      },
+      {
+        "focusQuestion": "How does R form negative feedback?",
+        "id": "feedback",
+        "linkIds": [
+          "r-response",
+          "response-r"
+        ],
+        "nodeIds": [
+          "r",
+          "response"
+        ],
+        "positions": {
+          "r": {
+            "x": 170,
+            "y": 260
+          },
+          "response": {
+            "x": 650,
+            "y": 260
+          }
+        },
+        "rootId": "r",
+        "routes": {
+          "r-response": {
+            "bounds": {
+              "maxX": 759.0,
+              "maxY": 284.0
+            },
+            "d": "M255.00 260.00 C255.00 165.00 735.00 165.00 735.00 260.00",
+            "endpointSignature": "35a9e06a4fd03b80e170d2c749d4658296c6fa4d8efd3dae421dfcbbd5068a9a",
+            "format": "stable-local-1",
+            "labelBox": [
+              368.5,
+              172.75,
+              621.5,
+              204.75
+            ],
+            "labelKey": "promotes (hypothesis)",
+            "points": [
+              [
+                255.0,
+                260.0
+              ],
+              [
+                255.4,
+                255.33
+              ],
+              [
+                256.56,
+                250.82
+              ],
+              [
+                258.48,
+                246.46
+              ],
+              [
+                261.12,
+                242.27
+              ],
+              [
+                264.44,
+                238.23
+              ],
+              [
+                268.44,
+                234.35
+              ],
+              [
+                273.08,
+                230.63
+              ],
+              [
+                278.32,
+                227.07
+              ],
+              [
+                284.16,
+                223.66
+              ],
+              [
+                290.56,
+                220.42
+              ],
+              [
+                297.48,
+                217.33
+              ],
+              [
+                304.92,
+                214.4
+              ],
+              [
+                312.84,
+                211.63
+              ],
+              [
+                321.2,
+                209.02
+              ],
+              [
+                330.0,
+                206.56
+              ],
+              [
+                339.2,
+                204.27
+              ],
+              [
+                348.76,
+                202.13
+              ],
+              [
+                358.68,
+                200.15
+              ],
+              [
+                368.92,
+                198.33
+              ],
+              [
+                379.44,
+                196.67
+              ],
+              [
+                390.24,
+                195.16
+              ],
+              [
+                401.28,
+                193.82
+              ],
+              [
+                412.52,
+                192.63
+              ],
+              [
+                423.96,
+                191.6
+              ],
+              [
+                435.56,
+                190.73
+              ],
+              [
+                447.28,
+                190.02
+              ],
+              [
+                459.12,
+                189.46
+              ],
+              [
+                471.04,
+                189.07
+              ],
+              [
+                483.0,
+                188.83
+              ],
+              [
+                495.0,
+                188.75
+              ],
+              [
+                507.0,
+                188.83
+              ],
+              [
+                518.96,
+                189.07
+              ],
+              [
+                530.88,
+                189.46
+              ],
+              [
+                542.72,
+                190.02
+              ],
+              [
+                554.44,
+                190.73
+              ],
+              [
+                566.04,
+                191.6
+              ],
+              [
+                577.48,
+                192.63
+              ],
+              [
+                588.72,
+                193.82
+              ],
+              [
+                599.76,
+                195.16
+              ],
+              [
+                610.56,
+                196.67
+              ],
+              [
+                621.08,
+                198.33
+              ],
+              [
+                631.32,
+                200.15
+              ],
+              [
+                641.24,
+                202.13
+              ],
+              [
+                650.8,
+                204.27
+              ],
+              [
+                660.0,
+                206.56
+              ],
+              [
+                668.8,
+                209.02
+              ],
+              [
+                677.16,
+                211.63
+              ],
+              [
+                685.08,
+                214.4
+              ],
+              [
+                692.52,
+                217.33
+              ],
+              [
+                699.44,
+                220.42
+              ],
+              [
+                705.84,
+                223.66
+              ],
+              [
+                711.68,
+                227.07
+              ],
+              [
+                716.92,
+                230.63
+              ],
+              [
+                721.56,
+                234.35
+              ],
+              [
+                725.56,
+                238.23
+              ],
+              [
+                728.88,
+                242.27
+              ],
+              [
+                731.52,
+                246.46
+              ],
+              [
+                733.44,
+                250.82
+              ],
+              [
+                734.6,
+                255.33
+              ],
+              [
+                735.0,
+                260.0
+              ]
+            ],
+            "x": 495.0,
+            "y": 188.75
+          },
+          "response-r": {
+            "bounds": {
+              "maxX": 759.0,
+              "maxY": 433.25
+            },
+            "d": "M735.00 322.00 C735.00 417.00 255.00 417.00 255.00 322.00",
+            "endpointSignature": "7108e204c41e1fa901b2708600feea33141ab18e330dc43610b509c4f08487d4",
+            "format": "stable-local-1",
+            "labelBox": [
+              368.5,
+              377.25,
+              621.5,
+              409.25
+            ],
+            "labelKey": "inhibits (hypothesis)",
+            "points": [
+              [
+                735.0,
+                322.0
+              ],
+              [
+                734.6,
+                326.67
+              ],
+              [
+                733.44,
+                331.18
+              ],
+              [
+                731.52,
+                335.54
+              ],
+              [
+                728.88,
+                339.73
+              ],
+              [
+                725.56,
+                343.77
+              ],
+              [
+                721.56,
+                347.65
+              ],
+              [
+                716.92,
+                351.37
+              ],
+              [
+                711.68,
+                354.93
+              ],
+              [
+                705.84,
+                358.34
+              ],
+              [
+                699.44,
+                361.58
+              ],
+              [
+                692.52,
+                364.67
+              ],
+              [
+                685.08,
+                367.6
+              ],
+              [
+                677.16,
+                370.37
+              ],
+              [
+                668.8,
+                372.98
+              ],
+              [
+                660.0,
+                375.44
+              ],
+              [
+                650.8,
+                377.73
+              ],
+              [
+                641.24,
+                379.87
+              ],
+              [
+                631.32,
+                381.85
+              ],
+              [
+                621.08,
+                383.67
+              ],
+              [
+                610.56,
+                385.33
+              ],
+              [
+                599.76,
+                386.84
+              ],
+              [
+                588.72,
+                388.18
+              ],
+              [
+                577.48,
+                389.37
+              ],
+              [
+                566.04,
+                390.4
+              ],
+              [
+                554.44,
+                391.27
+              ],
+              [
+                542.72,
+                391.98
+              ],
+              [
+                530.88,
+                392.54
+              ],
+              [
+                518.96,
+                392.93
+              ],
+              [
+                507.0,
+                393.17
+              ],
+              [
+                495.0,
+                393.25
+              ],
+              [
+                483.0,
+                393.17
+              ],
+              [
+                471.04,
+                392.93
+              ],
+              [
+                459.12,
+                392.54
+              ],
+              [
+                447.28,
+                391.98
+              ],
+              [
+                435.56,
+                391.27
+              ],
+              [
+                423.96,
+                390.4
+              ],
+              [
+                412.52,
+                389.37
+              ],
+              [
+                401.28,
+                388.18
+              ],
+              [
+                390.24,
+                386.84
+              ],
+              [
+                379.44,
+                385.33
+              ],
+              [
+                368.92,
+                383.67
+              ],
+              [
+                358.68,
+                381.85
+              ],
+              [
+                348.76,
+                379.87
+              ],
+              [
+                339.2,
+                377.73
+              ],
+              [
+                330.0,
+                375.44
+              ],
+              [
+                321.2,
+                372.98
+              ],
+              [
+                312.84,
+                370.37
+              ],
+              [
+                304.92,
+                367.6
+              ],
+              [
+                297.48,
+                364.67
+              ],
+              [
+                290.56,
+                361.58
+              ],
+              [
+                284.16,
+                358.34
+              ],
+              [
+                278.32,
+                354.93
+              ],
+              [
+                273.08,
+                351.37
+              ],
+              [
+                268.44,
+                347.65
+              ],
+              [
+                264.44,
+                343.77
+              ],
+              [
+                261.12,
+                339.73
+              ],
+              [
+                258.48,
+                335.54
+              ],
+              [
+                256.56,
+                331.18
+              ],
+              [
+                255.4,
+                326.67
+              ],
+              [
+                255.0,
+                322.0
+              ]
+            ],
+            "x": 495.0,
+            "y": 393.25
+          }
+        },
+        "title": "How does R form negative feedback?"
+      }
+    ]
+  },
+  "paper": {
+    "id": "fictional-causal-map-example",
+    "isFictional": true,
+    "title": "Fictional example: signals and feedback"
+  },
+  "revision": 1,
+  "schemaVersion": 2,
+  "settings": {
+    "changeReason": null,
+    "confirmedAt": "2026-11-15T00:00:00Z",
+    "fullTranslation": true,
+    "fullTranslationSource": "default",
+    "interactionLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "pendingFields": [],
+    "presentation": "segmented",
+    "sourceLanguages": [],
+    "status": "confirmed",
+    "translationLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "version": 1
+  },
+  "sources": [
+    {
+      "id": "demo",
+      "label": "Fictional mechanism, not a paper finding",
+      "note": "All mechanism relationships are hypothetical."
+    }
+  ]
+}</script><script>
+'use strict';
+
+const $=id=>document.getElementById(id),clone=x=>JSON.parse(JSON.stringify(x)),BOOT=JSON.parse($('bootstrap').textContent),TYPES={"question": "Research question", "concept": "Concept", "hypothesis": "Hypothesis", "experiment": "Experiment", "observation": "Observation", "claim": "Claim", "limit": "Limitation", "definition": "Definition", "theorem": "Theorem", "proof": "Proof", "algorithm": "Algorithm", "assumption": "Assumption", "dataset": "Dataset", "model": "Model", "metric": "Metric", "counterexample": "Counterexample", "method": "Method", "finding": "Finding", "argument": "Argument", "source": "Material", "interpretation": "Interpretation"},STATUS={"supported": "Supported by evidence", "hypothesis": "Hypothesis", "unresolved": "Unresolved", "inferred": "Evidence-based inference", "design": "Research design or reading context", "disputed": "Disputed evidence", "user": "User note, not yet checked"};
+let state=clone(BOOT),activeTree='main',all=false,query='',selected=null,zoom=1,manualZoom=false,newIds=new Set(),changedIds=new Set(),pan=null,sourceUnavailable=false,noticeTimer;
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),storageKey='paper-map-session:'+state.paper.id;
+function validate(s){if(!s||s.schemaVersion!==2||!s.paper||!s.graph||!Array.isArray(s.graph.nodes)||!Array.isArray(s.graph.links)||!Array.isArray(s.graph.trees)||!s.graph.relationTypes||!s.graph.locale)throw Error('Incomplete localized session');const ids=new Set(),edges=new Set();for(const n of s.graph.nodes){if(!n.id||ids.has(n.id)||!(TYPES[n.type]||s.graph.nodeTypes?.[n.type])||!n.label||!n.title)throw Error('Invalid node');ids.add(n.id)}for(const e of s.graph.links){if(!e.id||edges.has(e.id)||!ids.has(e.from)||!ids.has(e.to)||!s.graph.relationTypes[e.relationType]||!e.label||!e.meaning||!STATUS[e.status])throw Error('Invalid relationship');edges.add(e.id)}for(const t of s.graph.trees){if(!t.id||!t.title||!Array.isArray(t.nodeIds)||!Array.isArray(t.linkIds)||!t.nodeIds.includes(t.rootId)||t.nodeIds.some(id=>!ids.has(id))||t.linkIds.some(id=>!edges.has(id)))throw Error('Invalid tree');for(const id of t.nodeIds){const p=t.positions?.[id];if(!p||!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<0||p.y<0)throw Error('Invalid position')}for(const id of t.linkIds){const e=s.graph.links.find(e=>e.id===id);if(!t.nodeIds.includes(e.from)||!t.nodeIds.includes(e.to))throw Error('Endpoints outside view')}}return true}
+function ui(key,args={}){let text=state.graph.locale.ui[key];if(typeof text!=='string')throw Error('Missing locale key: '+key);return text.replace(/\{(\w+)\}/g,(_,k)=>args[k]??'{'+k+'}')}
+function applyLocale(){if(document.documentElement)document.documentElement.lang=state.graph.locale.languageTag;$('search').placeholder=ui('search');$('all').textContent=ui('allRelations');$('search-results').setAttribute('aria-label',ui('searchResults'));$('map').setAttribute('aria-label',ui('mapLabel'));$('edges').setAttribute('aria-label',ui('edgeLabel'));$('details').setAttribute('aria-label',ui('detailLabel'));document.querySelectorAll('label[for="tree"]').forEach(el=>el.textContent=ui('selectTree'));document.querySelectorAll('label[for="search"]').forEach(el=>el.textContent=ui('search'))}
+
+let canonicalRevision=BOOT.revision,localDraftRevision=0;
+function persist(){try{localStorage.setItem(storageKey,JSON.stringify({baseRevision:canonicalRevision,draftRevision:localDraftRevision,draftState:state}))}catch(error){notice(ui('draftUnavailable'))}}
+function notice(message){$('notice').textContent=message;$('notice').classList.remove('hidden');clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').classList.add('hidden'),4000)}
+const node=id=>state.graph.nodes.find(n=>n.id===id),edge=id=>state.graph.links.find(e=>e.id===id),tree=()=>state.graph.trees.find(t=>t.id===activeTree)||state.graph.trees[0],memberships=id=>state.graph.trees.filter(t=>t.nodeIds.includes(id)),position=id=>tree().positions[id];
+function displayLabel(e){const base=e.displayLabel||state.graph.locale.relationLabels[e.relationType]||e.label;return base+(e.displayStatusSuffix??({hypothesis:ui('hypothesisSuffix'),user:ui('userSuffix'),disputed:ui('disputedSuffix')}[e.status]||''))}
+function matches(){const q=query.trim().toLowerCase();if(!q)return[];return state.graph.nodes.filter(n=>memberships(n.id).length&&(n.label+' '+n.title+' '+(n.aliases||[]).join(' ')+' '+(n.detail||'')).toLowerCase().includes(q))}
+function searchResults(){const q=query.trim();$('search-results').classList.toggle('hidden',!q);if(!q)return;const list=matches();$('search-results').innerHTML=list.length?list.map(n=>`<button class="search-result" data-search-node="${esc(n.id)}"><b>${esc(n.label)}</b><span>${memberships(n.id).map(t=>esc(t.id==='main'?ui('mainTree'):t.title)).join(' · ')}</span></button>`).join(''):`<div class="empty-result">${esc(ui('noResults'))}</div>`;document.querySelectorAll('[data-search-node]').forEach(el=>el.onclick=()=>locate(el.dataset.searchNode))}
+function render(){applyLocale();const t=tree(),match=query.trim()?new Set(matches().map(n=>n.id)):null;$('paper-title').textContent=t.id==='main'?state.paper.title:t.title;document.title=$('paper-title').textContent;$('tree').innerHTML=state.graph.trees.map(v=>`<option value="${esc(v.id)}" ${v.id===t.id?'selected':''}>${esc(v.id==='main'?ui('mainTree'):v.title)}</option>`).join('');$('tree').classList.toggle('hidden',state.graph.trees.length<2);$('all').setAttribute('aria-pressed',all);$('nodes').innerHTML=t.nodeIds.map(id=>{const n=node(id),p=position(id),views=memberships(id);return `<article class="node ${id===t.rootId?'root':''} ${selected?.kind==='node'&&selected.id===id?'selected':''} ${match&&!match.has(id)?'dim':''} ${newIds.has(id)?'new-node':''} ${changedIds.has(id)?'revised':''}" style="left:${p.x}px;top:${p.y}px" data-card="${esc(id)}"><button class="node-main" data-node="${esc(id)}" aria-label="${esc(n.label)}">${esc(n.label)}</button>${views.length>1?`<button class="shared" data-shared="${esc(id)}" aria-label="${esc(ui('sharedCount',{name:n.label,count:views.length}))}">↗ ${views.length}</button>`:''}</article>`}).join('');$('edge-layer').innerHTML=t.linkIds.map(edge).filter(e=>all||e.primary!==false).map(e=>{const r=state.graph.relationTypes[e.relationType],p=route(e),text=displayLabel(e),w=Math.max(42,text.length*11+14),marker=r.directed===false?'':r.marker==='inhibit'?'inhibit':r.family==='causal'?'causal-arrow':r.family==='evidence'?'support-arrow':'arrow',style=r.family==='causal'?'causal':r.family==='evidence'?'support':['limitation','boundary'].includes(r.family)?'limitation':'',status=['hypothesis','unresolved','user'].includes(e.status)?'unconfirmed':'';return `<g class="edge-group ${selected?.kind==='edge'&&selected.id===e.id?'selected':''} ${match&&(!match.has(e.from)||!match.has(e.to))?'dim':''}"><path class="edge ${style} ${status}" d="${esc(p.d)}" ${marker?`marker-end="url(#${marker})"`:''}></path><g class="edge-label" tabindex="0" role="button" data-edge="${esc(e.id)}" aria-label="${esc(ui('relationshipAria',{name:text}))}"><rect x="${p.x-w/2}" y="${p.y-12}" width="${w}" height="24"></rect><text x="${p.x}" y="${p.y+1}">${esc(text)}</text></g></g>`}).join('');document.querySelectorAll('[data-node]').forEach(el=>el.onclick=()=>select('node',el.dataset.node));document.querySelectorAll('[data-shared]').forEach(el=>el.onclick=()=>{select('node',el.dataset.shared);$('other-trees')?.scrollIntoView({block:'nearest'})});document.querySelectorAll('[data-edge]').forEach(el=>{el.onclick=()=>select('edge',el.dataset.edge);el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select('edge',el.dataset.edge)}}});if(selected)details();resize()}
+function route(e){const custom=tree().routes?.[e.id];if(custom)return custom;const a=position(e.from),b=position(e.to),ax=a.x+85,ay=a.y+31,bx=b.x+85,by=b.y+31,dx=bx-ax,dy=by-ay;const reverse=tree().linkIds.map(edge).some(x=>x.from===e.to&&x.to===e.from&&x.id!==e.id);if(e.from===e.to)return{d:`M${ax-40} ${a.y} C${ax-80} ${a.y-100} ${ax+80} ${a.y-100} ${ax+40} ${a.y}`,x:ax,y:a.y-78};if(reverse){const side=dx>=0?1:-1,sx=ax,sy=a.y+(side>0?0:62),tx=bx,ty=b.y+(side>0?0:62),offset=side>0?-95:95;return{d:`M${sx} ${sy} C${sx} ${sy+offset} ${tx} ${ty+offset} ${tx} ${ty}`,x:(sx+tx)/2,y:(sy+ty)/2+offset*.75}}if(Math.abs(dx)>Math.abs(dy)){const sx=a.x+(dx>=0?170:0),tx=b.x+(dx>=0?0:170),mx=(sx+tx)/2;return{d:`M${sx} ${ay} C${mx} ${ay} ${mx} ${by} ${tx} ${by}`,x:mx,y:(ay+by)/2}}const sy=a.y+(dy>=0?62:0),ty=b.y+(dy>=0?0:62),my=(sy+ty)/2;return{d:`M${ax} ${sy} C${ax} ${my} ${bx} ${my} ${bx} ${ty}`,x:(ax+bx)/2,y:my}}
+function sources(refs){return refs?.length?refs.map(r=>{const s=state.sources.find(s=>s.id===r.sourceId);return `<div class="source"><b>${esc(s?.label||r.sourceId)} · ${esc(r.location)}</b><p>${esc(r.excerpt||s?.note||'')}</p></div>`}).join(''):`<p>${esc(ui('noEvidence'))}</p>`}
+function details(){if(!selected)return;let html='';if(selected.kind==='node'){const n=node(selected.id);if(!n){close();return}const links=tree().linkIds.map(edge).filter(e=>e.from===n.id||e.to===n.id),views=memberships(n.id).filter(t=>t.id!==activeTree),terms=state.glossary.filter(t=>(n.termIds||[]).includes(t.id));html=`<div class="detail-top"><span class="kind">${esc(state.graph.locale.nodeTypes[n.type]||n.type)}</span><button class="close" id="close" aria-label="${esc(ui('close'))}">×</button></div><h2>${esc(n.label)}</h2><p class="summary">${esc(n.detail||n.title)}</p>${terms.length?`<div class="section"><h3>${esc(ui('definitions'))}</h3>${terms.map(t=>`<p><b>${esc(t.targetTerm||t.term||t.en||'')} · ${esc(t.sourceTerm||t.en||'')}</b><br>${esc(t.definition)}</p>`).join('')}</div>`:''}${views.length?`<div class="section" id="other-trees"><h3>${esc(ui('sharedHeading'))}</h3>${views.map(t=>`<button class="tree-link" data-tree-link="${esc(t.id)}" data-shared-id="${esc(n.id)}">${esc(t.id==='main'?state.paper.title:t.title)}</button>`).join('')}</div>`:''}<div class="section"><h3>${esc(ui('sources'))}</h3>${sources(n.sourceRefs)}</div>${n.limits?`<div class="section"><h3>${esc(ui('limits'))}</h3><div class="limit">${esc(n.limits)}</div></div>`:''}<div class="section"><h3>${esc(ui('connectedNodes'))}</h3>${links.map(e=>`<button class="related" data-related="${esc(e.id)}"><small>${esc(displayLabel(e))}</small>${esc(node(e.from===n.id?e.to:e.from)?.label)}</button>`).join('')}</div><div class="actions"><button class="action" id="extend">${esc(ui('extend'))}</button><button class="action" id="new-tree">${esc(ui('newTree'))}</button></div><div id="editor"></div>`}
+else{const e=edge(selected.id);if(!e){close();return}const r=state.graph.relationTypes[e.relationType],conditions=e.context||JSON.stringify(e.qualifiers||{});html=`<div class="detail-top"><span class="kind">${esc(state.graph.locale.families[r.family]||r.family)}</span><button class="close" id="close" aria-label="${esc(ui('close'))}">×</button></div><h2>${esc(displayLabel(e))}</h2><p class="summary">${esc(e.meaning)}</p><div class="state">${esc(state.graph.locale.statuses[e.status])}</div><div class="section"><h3>${esc(ui('relationDefinition'))}</h3><p>${esc(state.graph.locale.relationDefinitions[e.relationType])}</p><p>${esc(ui(r.directed===false?'undirected':'directed'))}</p></div>${conditions&&conditions!=='{}'?`<div class="section"><h3>${esc(ui('conditions'))}</h3><p>${esc(conditions)}</p></div>`:''}<div class="section"><h3>${esc(ui('connectedNodes'))}</h3><button class="related" data-node-link="${esc(e.from)}"><small>${esc(ui('sourceNode'))}</small>${esc(node(e.from).label)}</button><button class="related" data-node-link="${esc(e.to)}"><small>${esc(ui('targetNode'))}</small>${esc(node(e.to).label)}</button></div><div class="section"><h3>${esc(ui('basis'))}</h3>${sources(e.sourceRefs)}</div><div class="section"><h3>${esc(ui('caution'))}</h3><div class="limit">${esc(ui('relationCaveat'))}</div></div>`}
+$('details').innerHTML=html;$('close').onclick=close;document.querySelectorAll('[data-related]').forEach(el=>el.onclick=()=>select('edge',el.dataset.related));document.querySelectorAll('[data-node-link]').forEach(el=>el.onclick=()=>locate(el.dataset.nodeLink));document.querySelectorAll('[data-tree-link]').forEach(el=>el.onclick=()=>changeTree(el.dataset.treeLink,el.dataset.sharedId));if($('extend'))$('extend').onclick=()=>editor('extend');if($('new-tree'))$('new-tree').onclick=()=>editor('tree')}
+function select(kind,id){selected={kind,id};$('app').classList.add('open');render();if(!manualZoom)requestAnimationFrame(fit)}function close(){selected=null;$('app').classList.remove('open');render();if(!manualZoom)requestAnimationFrame(fit)}
+function changeTree(id,sharedId){activeTree=id;all=false;manualZoom=false;selected=sharedId?{kind:'node',id:sharedId}:null;$('app').classList.toggle('open',!!selected);render();requestAnimationFrame(()=>{fit();if(sharedId)centerNode(sharedId)})}
+function locate(id){const v=memberships(id),target=v.find(t=>t.id===activeTree)||v.find(t=>t.id==='main')||v[0];if(!target)return;activeTree=target.id;selected={kind:'node',id};$('app').classList.add('open');$('search-results').classList.add('hidden');manualZoom=false;render();requestAnimationFrame(()=>{fit();centerNode(id)})}
+function centerNode(id){const card=document.querySelector(`[data-card="${CSS.escape(id)}"]`);if(!card)return;const r=card.getBoundingClientRect(),m=$('map').getBoundingClientRect();$('map').scrollBy({left:r.left+r.width/2-m.left-m.width/2,top:r.top+r.height/2-m.top-m.height/2,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'})}
+function geometry(){const ps=tree().nodeIds.map(position),rs=tree().linkIds.map(edge).map(route);return{width:Math.max(980,...ps.map(p=>p.x+210),...rs.map(p=>p.bounds?.maxX||p.x+80)),height:Math.max(650,...ps.map(p=>p.y+120),...rs.map(p=>p.bounds?.maxY||p.y+90))}}
+function resize(){const g=geometry();$('board').style.width=g.width+'px';$('board').style.height=g.height+'px';$('board').style.transform=`scale(${zoom})`;$('edges').setAttribute('width',g.width);$('edges').setAttribute('height',g.height);$('extent').style.width=g.width*zoom+'px';$('extent').style.height=g.height*zoom+'px'}function fit(){const g=geometry();zoom=Math.max(.65,Math.min(1.3,($('map').clientWidth-24)/g.width,($('map').clientHeight-28)/g.height));resize()}
+function freeSpot(id){const base=position(id),occupied=tree().nodeIds.map(position),angles=[0,.65,-.65,1.3,-1.3,Math.PI,.65+Math.PI,-.65+Math.PI];for(let radius=310;radius<2200;radius+=150)for(const angle of angles){const p={x:Math.round(base.x+Math.cos(angle)*radius),y:Math.round(base.y+Math.sin(angle)*radius)};if(p.x<30||p.y<40)continue;if(occupied.every(q=>Math.abs(q.x-p.x)>210||Math.abs(q.y-p.y)>115))return p}return{x:base.x+220,y:Math.max(...occupied.map(p=>p.y))+160}}
+function editor(mode){const root=node(selected.id);$('editor').innerHTML=`<form class="editor" id="edit-form"><label for="new-label">${esc(ui(mode==='tree'?'newTreeName':'newNodeName'))}</label><input id="new-label" required maxlength="80" value="${mode==='tree'?esc(ui('extendedContext',{name:root.label})):''}">${mode==='extend'?`<label for="new-relation">${esc(ui('relation'))}</label><input id="new-relation" required value="${esc(state.graph.locale.relationLabels.requires_concept||state.graph.locale.relationLabels.note)}"><label for="new-detail">${esc(ui('detail'))}</label><textarea id="new-detail"></textarea>`:''}<button class="action" type="submit">${esc(ui(mode==='tree'?'create':'connect'))}</button><button class="action" type="button" id="cancel">${esc(ui('cancel'))}</button></form>`;$('new-label').focus();$('cancel').onclick=()=>$('editor').innerHTML='';$('edit-form').onsubmit=e=>{e.preventDefault();const text=$('new-label').value.trim();if(!text)return;const id=(crypto.randomUUID?.()||Date.now().toString()).replaceAll('-','');if(mode==='tree'){const v={id:'tree-'+id,title:text,focusQuestion:text,rootId:root.id,nodeIds:[root.id],linkIds:[],positions:{[root.id]:{x:400,y:220}},routes:{}};state.graph.trees.push(v);localDraftRevision++;persist();changeTree(v.id,root.id)}else{const relation=$('new-relation').value.trim(),detail=$('new-detail').value.trim();if(!relation)return;const n={id:'node-'+id,label:text,title:text,type:'concept',detail:detail||ui('draftDetail'),limits:ui('draftLimits'),sourceRefs:[],termIds:[],aliases:[],provenance:'user-note'},p=freeSpot(root.id),link={id:'link-'+id,from:root.id,to:n.id,relationType:'note',label:'note',meaning:root.label+' → '+relation+' → '+text,originalLabels:[relation],status:'user',primary:true,sourceRefs:[]};state.graph.nodes.push(n);state.graph.links.push(link);tree().nodeIds.push(n.id);tree().linkIds.push(link.id);tree().positions[n.id]=p;localDraftRevision++;newIds=new Set([n.id]);persist();query='';$('search').value='';locate(n.id)}notice(ui(mode==='tree'?'treeCreated':'nodeAdded'))}}
+$('tree').onchange=e=>changeTree(e.target.value);$('all').onclick=()=>{all=!all;render()};$('search').oninput=e=>{query=e.target.value;render();searchResults()};$('search').onfocus=searchResults;$('search').onkeydown=e=>{if(e.key==='Enter'){const found=matches()[0];if(found){e.preventDefault();locate(found.id)}}};document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))$('search-results').classList.add('hidden')});document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('search-results').classList.add('hidden');close()}});
+$('map').addEventListener('pointerdown',e=>{if(e.target.closest('button,[data-edge]')||e.button!==0)return;pan={x:e.clientX,y:e.clientY,left:$('map').scrollLeft,top:$('map').scrollTop,moved:false};$('map').classList.add('dragging')});window.addEventListener('pointermove',e=>{if(!pan)return;const dx=e.clientX-pan.x,dy=e.clientY-pan.y;if(Math.abs(dx)+Math.abs(dy)>5)pan.moved=true;$('map').scrollLeft=pan.left-dx;$('map').scrollTop=pan.top-dy});window.addEventListener('pointerup',()=>{if(!pan)return;const moved=pan.moved;pan=null;$('map').classList.remove('dragging');if(!moved&&selected)close()});$('map').addEventListener('wheel',e=>{if(!e.ctrlKey)return;e.preventDefault();manualZoom=true;const old=zoom,r=$('map').getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;zoom=Math.max(.5,Math.min(1.8,zoom*(e.deltaY<0?1.09:.92)));const ratio=zoom/old,x=($('map').scrollLeft+px)*ratio-px,y=($('map').scrollTop+py)*ratio-py;resize();$('map').scrollLeft=x;$('map').scrollTop=y},{passive:false});
+window.getPaperMapState=()=>clone(state);window.updatePaperMap=function(next){validate(next);if(next.artifact&&BOOT.artifact&&next.artifact.templateSha256!==BOOT.artifact.templateSha256){notice(ui('templateMismatch'));return false;}if(next.paper.id!==state.paper.id||next.revision<=canonicalRevision)return false;if(localDraftRevision){persist();notice(ui('draftSaved'));}const old=new Map(state.graph.nodes.map(n=>[n.id,JSON.stringify(n)]));newIds=new Set(next.graph.nodes.filter(n=>!old.has(n.id)).map(n=>n.id));changedIds=new Set(next.graph.nodes.filter(n=>old.has(n.id)&&JSON.stringify(n)!==old.get(n.id)).map(n=>n.id));if(selected){const redirects=selected.kind==='node'?next.graph.redirects:next.graph.linkRedirects;const seen=new Set();while(redirects?.[selected.id]&&!seen.has(selected.id)){seen.add(selected.id);selected.id=redirects[selected.id];}}state=clone(next);canonicalRevision=next.revision;localDraftRevision=0;if(!state.graph.trees.some(t=>t.id===activeTree))activeTree='main';render();setTimeout(()=>{newIds.clear();document.querySelectorAll('.new-node').forEach(el=>el.classList.remove('new-node'))},1900);return true};
+async function refresh(){if(!/^https?:$/.test(location.protocol)||sourceUnavailable)return;try{const response=await fetch('paper-state.json',{cache:'no-store'});if(!response.ok){sourceUnavailable=true;return}const next=await response.json();if(next.revision>state.revision)window.updatePaperMap(next)}catch(error){sourceUnavailable=true}}
+validate(state);render();requestAnimationFrame(fit);new ResizeObserver(()=>{if(!manualZoom)fit()}).observe($('map'));refresh();setInterval(refresh,2000);
+</script></body></html>

@@ -1,0 +1,12 @@
+{
+  "name": "paper-reading-skills",
+  "version": "1.0.0",
+  "instructionLanguage": "en",
+  "publicEntries": ["paper-prepare", "paper-figure-explain", "paper-detail-explain", "paper-ask"],
+  "internalInterfaceCount": 13,
+  "outputLanguage": "asked per primary paper session and persisted",
+  "fullTranslationDefault": true,
+  "startupContract": "interfaces/paper-memory/references/settings-contract.md",
+  "sharedResources": "interfaces/",
+  "installer": "scripts/install.py"
+}
