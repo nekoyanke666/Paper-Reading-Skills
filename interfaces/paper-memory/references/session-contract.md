@@ -12,7 +12,7 @@ Canonical state: `work/papers/<paper-id>/paper-session.json`. Originals live in 
 - readingModel: unbuilt/partial/verified status, inventoryComplete, requiredCoverageIds, researchQuestions, complete outline and conceptual dependencies, synthesis, and uncertainties. The outline maps to the whole source, not just the next lesson.
 - glossary: original/English and target-language terms, language tags, aliases, study-specific definition, prerequisites, sources, and revisions. Records are not a substitute for explanations or recall. Legacy en/zh fields may be imported explicitly but must not impose Chinese output.
 - claims: id, statement, kind (observation/computation/proof/interpretation etc.), status, evidence[{sourceId, locator}], conditions, and limits. Unsupported hypotheses may be recorded but not marked established.
-- progress: activeEntry, translation, figures, detail, returnTo, and lastQuestion. Keep ranges independent; skipped-by-preference is distinct from complete.
+- progress: activeEntry, translation, figures, detail, returnTo, lastQuestion, and map. Keep ranges independent; skipped-by-preference is distinct from complete. map stores stable entryPath, lastSuccessfulRenderRevision, review {entry, basedOnRevision, changed, reason}, and conversation-aware delivery records. See the [map delivery contract](../../paper-map/references/delivery.md).
 - questions/corrections: unknowns and corrected statements with reasons, sources, and dependent claims/nodes.
 - graph: global nodes/links, registered relation semantics, trees, and locale; null before a map exists.
 - audit: checkpoint revision, timestamp, and concise reason; prior snapshots in .history/.

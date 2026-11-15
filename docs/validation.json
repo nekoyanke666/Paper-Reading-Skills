@@ -2,7 +2,7 @@
   "passed": true,
   "publicEntries": 4,
   "internalInterfaces": 13,
-  "referencesChecked": 91,
+  "referencesChecked": 95,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
@@ -10,7 +10,7 @@
   "realPaperTeaching": "not tested",
   "browserVisualQA": "not performed",
   "unitTests": {
-    "passed": 34,
+    "passed": 35,
     "failed": 0
   },
   "formalSkillValidation": {

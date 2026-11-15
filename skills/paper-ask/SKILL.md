@@ -25,7 +25,9 @@ Use its routing to select the smallest sufficient set of interfaces. After speci
 
 Save the question, answer basis, necessary terms, important claims, open issues, and corrections through paper-memory. When a previous answer is challenged, apply paper-evidence to verify it and address dependent conclusions, not just the last sentence.
 
-Call [paper-map](../../interfaces/paper-map/SKILL.md) only when the expert judges that an important concept, relationship, evidence change, or correction warrants it. Repeated questions can trigger recall or improved definitions without forcing new nodes or trees.
+Every invocation evaluates whether the answer changes important concepts, relationships, evidence, scope, or corrections. Apply meaningful updates through [paper-map](../../interfaces/paper-map/SKILL.md); otherwise save a no-change decision and retain the tree. Repeated questions may improve definitions without forcing new nodes or trees.
+
+Restore the paper's stable entry. If none exists because this is a direct first entry, create a minimal one after settings are confirmed without restarting full preparation. Follow paper-map's link-delivery contract: give the first usable link in this conversation, then reuse it and briefly report meaningful changes.
 
 ### 4. Finish the answer and retain the return point
 

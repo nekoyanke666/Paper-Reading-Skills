@@ -39,6 +39,8 @@ Whole-paper guidance requires reading complete sources and essential evidence, t
 
 The [map interface](interfaces/paper-map/SKILL.md) uses a locked minimal template, stable identities, a canonical relationship registry, explicit lifecycle, and deterministic snapshots. Canonical English IDs/labels remain stable while selected-language display dictionaries are saved separately. Non-English maps require complete UI/relationship localization before rendering. Language changes preserve identities and version affected outputs.
 
+paper-prepare now prepares a stable map entry by default and supplies its first usable link promptly, including during batched preparation. Incomplete evidence can produce an honest provisional root without invented relationships. Every invocation of all four entries evaluates whether the tree needs updating; no meaningful change leaves the graph and artifact unchanged. Updates retain the same entry, with a brief change notice. A new conversation sharing the paper receives the existing link once. See the [entry/link contract](interfaces/paper-map/references/delivery.md).
+
 Open the fictional [theory map](examples/theory-map/index.html) or [feedback map](examples/feedback-map/index.html) after cloning. These demonstrate the interface, not validated paper interpretations. Localized wording still requires expert review: machines check structure/completeness, not linguistic truth or academic correctness.
 
 ## Validate

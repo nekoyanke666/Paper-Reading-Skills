@@ -29,7 +29,9 @@ Apply paper-figures' supporting-evidence rule: discuss controls, validation, or 
 
 ### 4. Save after a complete topic
 
-Save explained figures/panels, necessary reminders, source and aligned-translation locations when available, important claims, open questions, and the next step. The expert decides whether an important concept, relationship, evidence change, or correction warrants [paper-map](../../interfaces/paper-map/SKILL.md). Repetition or a clarified definition may only update an existing term/node.
+Save explained figures/panels, necessary reminders, source and aligned-translation locations when available, important claims, open questions, and the next step. On every invocation, and after each complete topic in a longer run, explicitly evaluate whether important concepts, relationships, evidence, scope, or corrections require a tree update. Use [paper-map](../../interfaces/paper-map/SKILL.md) for meaningful changes or a missing entry, and save the decision even when no change is needed. Repetition or a clarified definition may only update an existing term/node.
+
+Restore the stable entry saved during preparation. If this entry is used directly and none exists, create a minimal one after settings are confirmed. Follow paper-map's link-delivery contract: provide the first usable link in this conversation, reuse it after updates, and briefly report meaningful changes. Do not force a new node on every call.
 
 Route inserted questions through [paper-ask](../paper-ask/SKILL.md), preserving returnTo. Continue from the interruption when requested; answering a question does not automatically complete the original figure.
 

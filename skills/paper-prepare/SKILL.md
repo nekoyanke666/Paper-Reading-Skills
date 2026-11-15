@@ -1,6 +1,6 @@
 ---
 name: paper-prepare
-description: Prepare a new primary paper by collecting and checking its materials, selecting a suitable expert perspective, building whole-paper memory, and providing an aligned full translation when requested. Confirm and persist the session language and full-translation preference without restarting preparation for supporting material.
+description: Prepare a primary paper, confirm its language and translation preference, collect and check sources, build whole-paper memory, and create a stable map entry with its first link. Evaluate meaningful tree updates on every invocation without restarting preparation for supporting material.
 ---
 
 # Paper Prepare
@@ -33,14 +33,22 @@ For full preparation, read the complete text, all main figures and captions, met
 
 Partial requests may remain partial. Mark the reading model verified only when paper-memory's coverage and integration requirements are met. A completed translation or summary alone does not establish whole-paper understanding.
 
-### 4. Produce the requested translation
+### 4. Prepare the map entry and deliver its first link
+
+Call [paper-map](../../interfaces/paper-map/SKILL.md) by default once the primary paper and interaction language are confirmed. Restore its existing entry or create a minimal source-backed map; no separate map request is required. Save one stable entry path in this paper's session. If the research model is still partial, mark the initial content provisional and do not invent relationships to fill the tree.
+
+As soon as the entry is usable and required checks succeed, provide its clickable link in the current response, even if translation or later preparation continues in batches. If a current entry already exists, reuse it and provide its saved link if this conversation has not received one. Missing sources may limit the content without preventing a minimal entry; unresolved language or an actual generation failure remains an explicit pending task.
+
+### 5. Produce the requested translation
 
 Check the saved full-translation preference. If enabled, read [paper-translate](../../interfaces/paper-translate/SKILL.md) and produce an aligned source-to-target document using shared terminology and stable source/paragraph identifiers. Batch long documents while preserving cumulative completion and missing ranges. Keep teaching commentary separate from translation.
 
 If disabled, record full translation as skipped by preference rather than completed. Retain originals and indexes for later explanations and targeted translation requests. A later request to enable full translation updates the setting and resumes the appropriate scope without repeating source collection.
 
-### 5. Save and deliver preparation results
+### 6. Review the tree, save, and deliver results
 
-Save settings, sources, expert profile, coverage, research model, terms, claims, translation status, and remaining gaps through paper-memory. Call [paper-map](../../interfaces/paper-map/SKILL.md) only when the user requests an initial map or a new version/correction affects an existing map. Preparation does not require adding nodes.
+Every invocation, including continuations, updates, and translation-only requests, evaluates whether this work changes important concepts, evidence, relationships, scope, or corrections. Apply meaningful changes through paper-map; otherwise record the no-change decision and retain the tree. Evaluation is required, additions are not.
 
-Deliver the source inventory, the translation document when requested, readiness, and remaining work. Completion requires verifiable scope, explained gaps, and recoverable memory. Continue into figure reading or detailed explanation when already requested; otherwise finish with the preparation deliverables.
+Save settings, sources, expert profile, coverage, model, terms, claims, translation status, map entry/review, and gaps through paper-memory. Deliver the source inventory, requested translation, readiness, and outstanding work. Follow paper-map's link-delivery contract: reuse the same entry after updates and briefly state meaningful changes rather than repeatedly presenting a new link.
+
+Completion requires verifiable scope, explained gaps, recoverable memory, and a delivered usable map entry or a specific blocker. Continue into figure or detailed guidance when already requested; otherwise finish with the preparation deliverables.

@@ -8,6 +8,7 @@ Read these focused rules when their branch applies:
 - [Trees/layout](tree-policy.md): questions, sharing, cycles, incremental positions/routes.
 - [Quality](quality-gates.md): semantic/machine/browser checks and reproducibility.
 - [Operations](operations.md): optional helpers, patches, commits, and recovery.
+- [Entry/link delivery](delivery.md): default preparation, per-call review, stable paths, first links, and update notices.
 - [Examples](decision-examples.md): decision boundaries and expected behavior.
 
 Registry semantics and lock/template assets are authoritative. Expert interpretation still returns to original sources.

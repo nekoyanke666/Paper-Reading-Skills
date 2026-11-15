@@ -1,22 +1,26 @@
 ---
 name: paper-map
-description: Internal interface. Build and maintain a consistent, traceable interactive paper map when one of the four entries identifies a meaningful update. Use the locked appearance, stable node identities, canonical relation registry, explicit lifecycle, session-language localization, and quality gates.
+description: Internal interface. Prepare a stable map entry by default during paper-prepare, deliver its first usable link, and maintain the tree when any of the four entries identifies meaningful changes. Preserve locked appearance, canonical identities/relations, localization, lifecycle, and quality gates.
 ---
 
 # Paper Map
 
 Input: canonical session, significant conceptual/evidential changes, and map scope. Output: an understandable interactive graph and matching saved memory, with fixed appearance and explicit verification scope. Helpers support reproducibility; source interpretation remains the saved expert's responsibility.
 
-## 1. Decide whether an update is needed
+## 1. Restore the entry and evaluate changes
 
 Restore [paper-memory](../paper-memory/SKILL.md) and [paper-expert](../paper-expert/SKILL.md), including confirmed language settings, paper, integrated model, glossary, claims, graph, and revision. This interface is called by four entries, not a fifth public entry:
 
-- paper-prepare: requested initial map, or versions/corrections affecting an existing map.
+- paper-prepare: always prepare or restore the stable map entry, then assess important content, versions, and corrections.
 - paper-figure-explain: important concepts, interventions, results, or evidence relationships introduced by a figure.
 - paper-detail-explain: changes in arguments, dependencies, proofs/mechanisms, conditions, or limitations within a complete topic.
 - paper-ask: important new understanding, relationships, evidence, or corrections arising from an answer.
 
-Judge whether the change affects prerequisites, the research thread, support, scope, or significant unknowns. If not, leave the graph unchanged. A repeated definition may improve an existing node/term; not every word or question deserves a node.
+Every invocation of every public entry evaluates changes, including continuations and narrow requests. Judge whether this work affects prerequisites, the research thread, support, scope, or significant unknowns. Save the decision and its short reason in progress.map.review. If no meaningful change is needed, retain the graph without a map revision or rewrite. A repeated definition may improve an existing node/term; not every word or question deserves a node.
+
+During preparation, create or restore the entry as soon as the paper and output language are confirmed; do not wait for a separate map request, the full translation, or the first teaching session. Use a minimal source-backed root when evidence is incomplete, mark provisional scope, and leave unsupported relationships absent. If the core question is not yet known, the root may identify the paper until an evidence-based research root can replace it under lifecycle rules. Full-paper readiness is not required for this honest initial entry. A direct first use of another public entry repairs a missing entry in the same way.
+
+Persist the entry's stable workspace-relative path under progress.map.entryPath. Reuse it across this paper's views and conversations. Read [entry and link delivery](references/delivery.md) when creating/restoring the entry, finishing an update, or responding in a conversation that has not received its link.
 
 ## 2. Establish content and the tree's question
 

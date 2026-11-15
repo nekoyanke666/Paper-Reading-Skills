@@ -73,6 +73,35 @@ class SettingsTests(unittest.TestCase):
         s=copy.deepcopy(EXAMPLE);s['settings']=S.new_session('x','x')['settings']
         with self.assertRaises(E.MapError):E.prepare(s)
 
+    def test_minimal_entry_then_extension_reuses_path_and_root(self):
+        s=copy.deepcopy(EXAMPLE);g=s['graph']
+        root=next(n for n in g['nodes'] if n['id']=='q')
+        main=next(t for t in g['trees'] if t['id']=='main')
+        position=copy.deepcopy(main['positions']['q'])
+        g['nodes']=[root];g['links']=[];g['trees']=[main]
+        main.update(rootId='q',nodeIds=['q'],linkIds=[],positions={'q':position},routes={})
+        s,_=E.prepare(s)
+        with tempfile.TemporaryDirectory() as d:
+            session=Path(d)/'session.json';entry=Path(d)/'map'
+            s=S.checkpoint(session,s,-1,'prepare minimal map entry')
+            first=R.render(s,entry)
+            self.assertTrue((entry/'index.html').is_file())
+            node=dict(id='prerequisite',identity=dict(kind='concept',scope=s['paper']['id'],referent='fixture prerequisite'),
+                      label='Prerequisite',title='Fixture prerequisite',detail='Fictional prerequisite for the entry test.',type='concept',aliases=[],sourceRefs=[])
+            link={'from':'q','to':'prerequisite','relationType':'requires_concept','meaning':'Fictional reading prerequisite.','status':'design'}
+            patch=dict(expectedRevision=s['revision'],roleVersion=s['roleProfile']['version'],settingsVersion=s['settings']['version'],
+                       reason='extend the prepared entry',importance=['core_concept'],
+                       semanticReview=dict(identity='new fixture concept',relation='registered prerequisite',scope='fictional test'),
+                       operations=[dict(op='add_node',node=node,treeId='main',anchorId='q'),dict(op='add_link',link=link,treeId='main')])
+            candidate,report=E.plan(s,patch);self.assertTrue(report['changed'])
+            committed=S.checkpoint(session,candidate,s['revision'],patch['reason'])
+            second=R.render(committed,entry)
+            visible=json.loads((entry/'paper-state.json').read_text(encoding='utf-8'))
+            self.assertEqual(visible['graph']['trees'][0]['rootId'],'q')
+            self.assertEqual(visible['graph']['trees'][0]['positions']['q'],position)
+            self.assertNotEqual(first['snapshotSha256'],second['snapshotSha256'])
+            self.assertEqual({n['id'] for n in visible['graph']['nodes']},{'q','prerequisite'})
+
     def test_non_english_locale_required_not_silently_english(self):
         s=copy.deepcopy(EXAMPLE);s['settings']['interactionLanguage']={'tag':'es','name':'Spanish'}
         s['graph'].pop('locale')

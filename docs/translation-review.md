@@ -1,6 +1,6 @@
 # English Translation and Workflow Review
 
-All four entry instructions, thirteen internal interfaces, eleven reference documents, default UI text, relationship definitions/aliases, example content, and supporting messages are in English. The instructions govern behavior; English is not a fixed language for future paper sessions.
+All four entry instructions, thirteen internal interfaces, twelve reference documents, default UI text, relationship definitions/aliases, example content, and supporting messages are in English. The instructions govern behavior; English is not a fixed language for future paper sessions.
 
 ## Review basis
 
@@ -30,3 +30,7 @@ The map's canonical registry labels are now English while predicate IDs and mean
 Automated tests validate persistence, defaults/decline behavior, stale-state rejection, graph semantics/geometry, localization structure, installer boundaries, and reproduction. The synthetic non-English locale fixture verifies routing/completeness, not a real Spanish translation. The English instruction review is a semantic review of this release, not a claim of infallible wording or an independent agent evaluation.
 
 No real-paper teaching evaluation or actual browser visual QA has been performed. Minimal-DOM runtime tests are reported as runtime tests. See [validation instructions](../README.md#validate) and [machine results](validation.json).
+
+## Version 1.0.1 workflow refinement
+
+Preparation now creates or restores the map entry by default and delivers its first usable link without waiting for the full translation. All four entries explicitly review updates on every invocation; mutation remains conditional on meaningful content. The shared delivery contract specifies stable paths, provisional minimal content, same-entry updates, and first delivery in each conversation. This changes timing and delivery policy without changing the map template, relationship meanings, or number of public entries.

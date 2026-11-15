@@ -33,7 +33,9 @@ Adapt to the actual contribution: theoretical definitions, assumptions, proposit
 
 ### 4. Save segments and handle questions
 
-Save verifiable explanatory content, sources, shared terms, claims, limitations, open questions, and the next segment. Call [paper-map](../../interfaces/paper-map/SKILL.md) only for meaningful changes in concepts or evidence relationships; retain existing identities and positions.
+Save verifiable explanatory content, sources, shared terms, claims, limitations, open questions, and the next segment. On every invocation, and after each complete topic in a longer run, evaluate whether important concepts, evidence, relationships, scope, or corrections require a tree update. Apply meaningful changes through [paper-map](../../interfaces/paper-map/SKILL.md), retain identities/positions, and save a no-change decision when appropriate. Evaluation is required; adding nodes is conditional.
+
+Restore the stable entry prepared for this paper, or create a minimal one if this stage was entered directly without an entry. Follow paper-map's link-delivery contract: give the first usable link in this conversation, then reuse that entry and briefly state meaningful updates rather than repeatedly presenting new links.
 
 Route inserted questions through [paper-ask](../paper-ask/SKILL.md) with returnTo preserved. Resume at the interruption when requested. A question answer does not complete the original topic.
 
