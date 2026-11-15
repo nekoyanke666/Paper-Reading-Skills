@@ -31,7 +31,7 @@ Passing fields cannot prove reading or understanding. A translation, concept map
 
 ## 4. Preserve resumable teaching
 
-Save the whole plan before segmentation. At each segment, restore sources, evidence, and necessary context; afterward save reader-facing explanatory content, its basis, terms, conclusions, limitations, questions, and next step. Do not request hidden reasoning.
+Save the whole plan before segmentation. For full detail explanation, also save the complete reader-facing manuscript and source crosswalk required by paper-narrative, then track which chapters were actually delivered. Store the narrative run, opening/restart intent, manuscript path/version, and delivery position under progress.detail; retain prior runs when restarting. Restoring the cursor does not authorize using it as a new full explanation's starting point: resume only for requested or unambiguous continuation. At each chapter, restore sources, evidence, and necessary context; afterward save explanatory content, its basis, terms, conclusions, limitations, questions, and next step. Do not request hidden reasoning.
 
 Track translation, figures, and detail separately. Keep full translation disabled/skipped distinct from completed. Save the map's stable entry, successful rendered revision, per-invocation update decision, and conversation-aware link delivery under progress.map. A no-change review or delivery record does not force a graph revision or render. Preserve returnTo for inserted questions; answering does not complete the interrupted lesson. Record only whether something was explained, the reader reported understanding, or questions remain; do not assume comprehension.
 

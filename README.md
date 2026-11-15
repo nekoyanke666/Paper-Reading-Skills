@@ -6,7 +6,7 @@ Four public skills for understanding research papers across disciplines. English
 
 - [paper-prepare](skills/paper-prepare/SKILL.md): identify the primary paper, collect/check sources, select an expert perspective, build a whole-paper model, and produce the aligned translation when enabled.
 - [paper-figure-explain](skills/paper-figure-explain/SKILL.md): give a short overview, display actual figures, explain main figures/panels in order, and include essential supporting evidence.
-- [paper-detail-explain](skills/paper-detail-explain/SKILL.md): explain the complete research logic and substantive text, segmented or in one delivery.
+- [paper-detail-explain](skills/paper-detail-explain/SKILL.md): build a complete reader guide and teach the entire paper as a connected research narrative, including methods and calculations. Segmented delivery follows substantial chapters of that whole.
 - [paper-ask](skills/paper-ask/SKILL.md): answer questions directly with necessary context and evidence, preserving the interrupted reading position.
 
 These are the only public entries. Thirteen [internal interfaces](interfaces/) are path-loaded resources, not additional user workflows. The plugin manifest exposes only skills/. The structure uses focused processes and conditional references inspired by Matt Pocock's writing-for-agents approach.
@@ -36,6 +36,8 @@ Use `$paper-prepare` with a primary paper, then `$paper-figure-explain`, `$paper
 ## Research and map behavior
 
 Whole-paper guidance requires reading complete sources and essential evidence, then saving an integrated research model. Partial questions remain scoped honestly. Shared terms, claims, locations, role, and separate translation/figure/detail progress make segmentation recoverable; a summary or map is not a substitute for understanding.
+
+Full detail explanation starts from research context for a new whole-paper request, preserving previous sources and terminology without automatically resuming an old teaching cursor. Explicit continuation resumes the current narrative. Before delivering its chapters, the agent writes a complete reader-facing manuscript and source crosswalk; it then uses the saved segmented/single preference. Meaningful recall and worked technical reasoning support returning to the original text, equations, and methods. Manuscript readiness, chapters delivered, and reader understanding are tracked separately. See the [full-explanation contract](interfaces/paper-narrative/references/full-explanation.md) and [semantic review cases](docs/detail-narrative-cases.md).
 
 The [map interface](interfaces/paper-map/SKILL.md) uses a locked minimal template, stable identities, a canonical relationship registry, explicit lifecycle, and deterministic snapshots. Canonical English IDs/labels remain stable while selected-language display dictionaries are saved separately. Non-English maps require complete UI/relationship localization before rendering. Language changes preserve identities and version affected outputs.
 

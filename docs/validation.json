@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 4,
   "internalInterfaces": 13,
-  "referencesChecked": 105,
+  "referencesChecked": 111,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Fictional fixtures in Chrome at 1440x900, 1024x768, 390x844; scope in browser-qa.md",
+  "browserVisualQA": "Map UI unchanged; v1.1.0 fictional fixture coverage in browser-qa.md",
   "unitTests": {
     "passed": 40,
     "failed": 0
@@ -17,6 +17,7 @@
     "passed": 17,
     "failed": 0
   },
-  "javascriptRuntime": "Both runtime suites passed using a minimal DOM substitute",
-  "translationReview": "English instructions and new UI wording reviewed; confirmed output language still saved per paper"
+  "javascriptRuntime": "Map runtime unchanged; coverage retained from v1.1.0",
+  "detailNarrativeReview": "Written-workflow semantic review; not independently executed; see detail-narrative-cases.md",
+  "translationReview": "English instructions reviewed for complete narrative, intent, technical depth, recall, and memory consistency"
 }

@@ -13,7 +13,7 @@ Help a reader outside the field understand why the question arose, how methods o
 
 Use the confirmed interaction language and plain, accurate wording while retaining the details necessary to understand the research. English skill instructions do not prescribe English conversation. A requested separate interaction language overrides the shared target-language default only when recorded explicitly.
 
-Explain one complete small topic at a time. Avoid front-loading all details or dropping critical assumptions for simplicity. The caller and paper-memory manage the whole outline and segmentation; this interface organizes the current scope.
+Develop concepts in understandable steps within a connected account. Avoid front-loading all details or dropping critical assumptions for simplicity. A small conceptual step is not automatically a response boundary: full-paper narrative may connect many such steps in a substantial chapter. The caller and paper-memory manage the whole outline and delivery; this interface organizes comprehension within that scope.
 
 ## 2. Explain terms without replacing the real concept
 
@@ -25,7 +25,7 @@ Analogies are allowed when their correspondences and limits are explicit. Then r
 
 When a new topic depends on a previous concept, briefly recall the necessary part and explain the connection. Avoid mechanical repetition, and do not equate “already explained” with “understood.”
 
-Explain why another concept must come first, why the topic is changing, or why earlier material is being revisited. Recall according to the current prerequisite, not a fixed schedule of repeated glossaries.
+Explain why another concept must come first, why the topic is changing, or why earlier material is being revisited. Recall according to the current prerequisite, not a fixed schedule of repeated glossaries. Reactivate a central concept at later reasoning steps with a short reminder of its meaning and present relevance; this planned reinforcement should reduce forgotten premises without repeatedly restarting the lesson. Prior exposure never justifies silently omitting a necessary explanation.
 
 ## 4. Respond to difficulty
 

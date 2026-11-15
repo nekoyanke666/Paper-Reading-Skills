@@ -19,7 +19,7 @@ Connect the question, intervention/reasoning steps, measurement/analysis, and ob
 
 For experiments/statistics, check the source definitions of objects, experimental units, controls, replicates, n, error bars, and tests. Explain effect size, variation, and uncertainty when they matter. Do not assume n means independent individuals or replace interpretation with significance.
 
-For equations explain symbols, units, variable relationships, assumptions, and important derivations. Use small numerical examples where helpful, clearly separating teaching assumptions from the paper's settings. For proofs connect premises to the proposition and identify what remains unproved. Explain procedural purpose and location without inventing author practice.
+For equations explain symbols, units, variable relationships, assumptions, and important derivations. Trace important arithmetic, objectives, or state transitions from inputs through operations to outputs, using a small worked example when it enables reconstruction. Clearly separate teaching values/structures from actual reported data and settings, then return to the paper's use of the calculation. An algorithm name, software name, or verbal restatement of a formula does not explain how it works. For proofs connect premises to the proposition and justify important inference steps while identifying what remains unproved. Explain procedural purpose and location without inventing author practice. When a source leaves a step unspecified, identify the gap instead of filling it with an assumed implementation.
 
 ## 3. Propose follow-up research
 

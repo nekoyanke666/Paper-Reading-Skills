@@ -38,3 +38,7 @@ Preparation now creates or restores the map entry by default and delivers its fi
 ## Version 1.1.0 reusable map contract
 
 Four semantic shape roles, substantive object/concept modeling, pure cubic/straight edges, direct dragging, browser-local saved placements, view-scoped defaults, and responsive feedback are integrated into paper-map and its conditional references. The four public entry routes and saved-language workflow are unchanged. New UI labels require complete selected-language translations during migration; scientific predicate IDs and meanings remain unchanged. The viewer sources are maintained separately and compiled into the locked reusable template.
+
+## Version 1.1.1 full-paper narrative correction
+
+Full detail explanation now produces a complete connected manuscript before chapter delivery, covering the actual paper from research context and motivation through methods/calculations, all substantive results, and final interpretation. Short conceptual steps no longer imply separate response boundaries. New whole-paper requests begin at the narrative opening; explicit continuation restores the current run. Memory distinguishes manuscript coverage, chapters delivered, and reader-reported understanding while retaining earlier runs. Contextual recall and worked technical reasoning are integrated into the existing teaching/method interfaces. Four public entries, the saved-language setup, segmented preference, evidence rules, and map interface remain intact. See detail-narrative-cases.md for the scope and limitations of semantic review.
