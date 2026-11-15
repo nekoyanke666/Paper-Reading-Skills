@@ -1,8 +1,13 @@
 {
   "name": "paper-reading-skills",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "instructionLanguage": "en",
-  "publicEntries": ["paper-prepare", "paper-figure-explain", "paper-detail-explain", "paper-ask"],
+  "publicEntries": [
+    "paper-prepare",
+    "paper-figure-explain",
+    "paper-detail-explain",
+    "paper-ask"
+  ],
   "internalInterfaceCount": 13,
   "outputLanguage": "asked per primary paper session and persisted",
   "fullTranslationDefault": true,

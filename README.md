@@ -41,6 +41,8 @@ The [map interface](interfaces/paper-map/SKILL.md) uses a locked minimal templat
 
 paper-prepare now prepares a stable map entry by default and supplies its first usable link promptly, including during batched preparation. Incomplete evidence can produce an honest provisional root without invented relationships. Every invocation of all four entries evaluates whether the tree needs updating; no meaningful change leaves the graph and artifact unchanged. Updates retain the same entry, with a brief change notice. A new conversation sharing the paper receives the existing link once. See the [entry/link contract](interfaces/paper-map/references/delivery.md).
 
+Nodes use four semantic shapes for concepts, methods, named objects/terms, and propositions. Any node can lead to a necessary concept or object; comparison questions identify the actual alternatives. Drag nodes with live edge feedback, choose curves or straight lines, save positions in the current browser, or restore the current tree's default. Saved placements remain local view preferences; scientific IDs, source-backed relationships, and cross-tree sharing stay in canonical memory. The [content model](interfaces/paper-map/references/content-model.md) and [interaction contract](interfaces/paper-map/references/interaction.md) define the reusable format across disciplines.
+
 Open the fictional [theory map](examples/theory-map/index.html) or [feedback map](examples/feedback-map/index.html) after cloning. These demonstrate the interface, not validated paper interpretations. Localized wording still requires expert review: machines check structure/completeness, not linguistic truth or academic correctness.
 
 ## Validate
@@ -48,6 +50,8 @@ Open the fictional [theory map](examples/theory-map/index.html) or [feedback map
 ```sh
 python -m unittest discover -s tests -v
 python scripts/validate_package.py
+node tests/map_runtime.cjs
+node tests/map_interactions.cjs
 ```
 
 Tests cover memory/readiness, setup preferences, relationships, lifecycle, localization, transactional updates, installer ownership, and reproducibility. JavaScript runtime checks use a minimal DOM substitute rather than a browser. Real-paper teaching quality and browser visual QA remain separate checks and must not be claimed when unperformed.

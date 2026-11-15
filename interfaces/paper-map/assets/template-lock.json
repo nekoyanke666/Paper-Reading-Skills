@@ -1,11 +1,11 @@
 {
   "canonicalStateOverridesBrowserDrafts": true,
   "labelFontSize": 11,
-  "layoutVersion": "stable-local-1",
-  "localeSha256": "a972e5a411850d1f84fb28ac5d3e2d617c625599f85f265be5ea60dbc7850442",
+  "layoutVersion": "shape-curves-2",
+  "localeSha256": "ab352918009132cc1dd67ca3a1ffb6a46a65acd6d248062aead370317c41aaee",
   "maxRelationTypesPerTree": 4,
   "nodeGap": 24,
-  "nodeHeight": 62,
+  "nodeHeight": 116,
   "nodeLabelMaxUnits": 18,
   "nodeLabelPreferredUnits": 12,
   "nodeTypes": {
@@ -17,6 +17,7 @@
     "counterexample": "Counterexample",
     "dataset": "Dataset",
     "definition": "Definition",
+    "entity": "Research entity",
     "experiment": "Experiment",
     "finding": "Finding",
     "hypothesis": "Hypothesis",
@@ -29,18 +30,21 @@
     "proof": "Proof",
     "question": "Research question",
     "source": "Material",
+    "term": "Term or named object",
     "theorem": "Theorem"
   },
   "nodeWidth": 170,
   "onlyPersistentControls": [
     "tree-select-if-multiple",
     "node-search",
-    "all-relations"
+    "all-relations",
+    "compact-layout-menu"
   ],
   "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
   "registryVersion": "2.0.0",
-  "templateSha256": "5d72c6333d0a40488864c01b284de6d4f6e6bf0a71a40865910c73d7320eb91f",
-  "version": "paper-map-ui-1.1.0",
+  "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
+  "templateSha256": "4f6f79b32453678ac1562cd434eb6857074a1f18b34ba508e0a49f7f47b84bdb",
+  "version": "paper-map-ui-1.2.0",
   "viewportBaselines": [
     [
       1440,

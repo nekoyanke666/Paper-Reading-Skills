@@ -33,3 +33,7 @@ Refutation is not a deletion reason. No silent cascades, damage to shared nodes 
 Edge identity is canonical source, target, predicate ID, and structured qualifiers. More sources, synonymous labels, localization, or stronger support do not create a new edge. Same key combines sources; different conditions or directed feedback remain distinct. Conflicting statuses require expert review, not silent selection of the strongest claim.
 
 Changed endpoints, meaning, or conditions retire the old edge and add a new one. Explanation, provenance, status, basis, or primary-view flag may update in place. Retain retirement reason/revision and support justified restoration.
+
+## Semantic completeness and shape changes
+
+Before adding a node, apply the [content model](content-model.md): distinguish necessary objects/concepts from repeated phrasing. A comparison question must identify its alternatives; related definitions or objects may extend any node. Choose one of four visual roles from the referent, not a new shape per detailed type. A corrected shape classification keeps ID, aliases, sources, and positions, records its reason, and refreshes shape-dependent routes. New meaning follows the ordinary new-identity rules.

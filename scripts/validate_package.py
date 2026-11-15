@@ -20,7 +20,7 @@ def validate(root=ROOT):
         if re.search(r'^#{1,6} .*?(?:addendum|previous rules|additional work)',text,re.M|re.I):raise ValueError('historical addendum structure remains')
     for p in root.rglob('*'):
         if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts:continue
-        if p.suffix in ('.md','.json','.py','.html','.in','.cjs'):
+        if p.suffix in ('.md','.json','.py','.html','.in','.cjs','.js'):
             text=p.read_text(encoding='utf-8')
             if any(0x3400<=ord(c)<=0x9fff for c in text):raise ValueError('untranslated CJK content remains: '+str(p))
             if p.suffix=='.py':ast.parse(text)
@@ -36,8 +36,11 @@ def validate(root=ROOT):
     manifest=json.loads((root/'.codex-plugin/plugin.json').read_text(encoding='utf-8'))
     if manifest['skills']!='./skills/':raise ValueError('plugin must expose only the public skills directory')
     assets=root/'interfaces/paper-map/assets';lock=json.loads((assets/'template-lock.json').read_text(encoding='utf-8'))
-    for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256')]:
+    for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256'),('node-shapes.json','shapesSha256')]:
         if hashlib.sha256((assets/name).read_bytes()).hexdigest()!=lock[key]:raise ValueError('locked asset mismatch: '+name)
+    compiled=(assets/'viewer-shell.html.in').read_text(encoding='utf-8').replace('__RUNTIME__',(assets/'viewer-runtime.js').read_text(encoding='utf-8'))
+    if compiled!=(assets/'graph-viewer.html.in').read_text(encoding='utf-8'):raise ValueError('compiled viewer differs from maintained source')
+    subprocess.run(['node','--check',str(assets/'viewer-runtime.js')],check=True,capture_output=True)
     with tempfile.TemporaryDirectory() as tmp:
         for html in list((root/'examples').glob('*-map/index.html'))+[assets/'graph-viewer.html.in']:
             code=re.findall(r'<script(?: [^>]*)?>(.*?)</script>',html.read_text(encoding='utf-8'),re.S)[-1]
@@ -45,7 +48,7 @@ def validate(root=ROOT):
             subprocess.run(['node','--check',str(script)],check=True,capture_output=True)
     return {'passed':True,'publicEntries':4,'internalInterfaces':13,'referencesChecked':references,
             'englishInstructionAndDefaultAssetScan':'passed','lockedAssets':'passed','javascriptSyntax':'passed',
-            'semanticTranslationReview':'see docs/translation-review.md','realPaperTeaching':'not tested','browserVisualQA':'not performed'}
+            'semanticTranslationReview':'see docs/translation-review.md','realPaperTeaching':'not tested','browserVisualQA':'separate scoped record in docs/browser-qa.md'}
 
 
 if __name__=='__main__':print(json.dumps(validate(),indent=2))

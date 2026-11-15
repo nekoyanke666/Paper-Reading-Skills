@@ -20,7 +20,7 @@ Correct source extraction does not guarantee correct interpretation. Check hypot
 - Unknown relationships, ID/label/direction disagreement, missing evidence state or required basis.
 - Dangling endpoints, out-of-view endpoints, missing roots, disconnected secondary views, active objects invisible everywhere.
 - More than four normalized predicates per tree; large trees without density review.
-- Node overlap, edge labels over nodes/labels, unrelated-node crossings, stale endpoint/label geometry.
+- Node overlap, edge labels over nodes/labels, unrelated-node crossings, stale endpoint/label/shape geometry; unknown visual roles; paths other than a single M C cubic or M L segment.
 - Unjustified moves/merges/retirements, silent cascades, stale revisions/settings/roles, or cross-paper writes.
 - Incomplete confirmed-language UI/status/type/predicate translations, an unconfirmed output language, or an inconsistent canonical/display-label mapping.
 - Template/registry hash mismatch or noncanonical data bypassing checks before render.
@@ -29,7 +29,7 @@ Conservative width budgets do not replace actual font checks. Shorten an overlon
 
 ## Reproduction unit
 
-Canonical snapshot + template version/hash + registry version/hash + locale text + layout version. Preserve IDs, positions, routes, qualifiers, and localized labels rather than redrawing from prose each time.
+Canonical snapshot + template version/hash + registry version/hash + locale text/hash + node-shape profiles/hash + layout version. The compiled template must match its maintained shell/runtime exactly. Browser-local placement overlays are intentionally outside this reproducible canonical unit. Preserve IDs, positions, routes, qualifiers, and localized labels rather than redrawing from prose each time.
 
 The same input/version set produces byte-identical index.html, paper-state.json, and manifest. Use sorted keys, UTF-8/LF, and no current time, randomness, or machine paths in the render snapshot. Manifest hashes permit reconstruction. Fixed responsive rules do not guarantee pixel identity across different font environments.
 
@@ -43,4 +43,4 @@ Report machine results, semantic review scope, actual visual checks, and unverif
 
 ## Regression scenarios
 
-Aliases/reverse direction, symmetric deduplication, distinct qualifiers, missing causal basis, legal cycles, arbitrary extension, rename preserving identity, cross-tree sharing, view-only removal, merge redirects, retirement/restoration, failed-write isolation, stale revisions/roles/settings, template/registry tampering, language/preference persistence, localized labels/statuses, and byte-identical reconstruction.
+Aliases/reverse direction, symmetric deduplication, distinct qualifiers, missing causal basis, legal cycles, arbitrary extension, rename preserving identity, cross-tree sharing, view-only removal, merge redirects, retirement/restoration, failed-write isolation, stale revisions/roles/settings, template/registry tampering, language/preference persistence, localized labels/statuses, and byte-identical reconstruction. Also test semantic role derivation/reclassification, shape-boundary anchors, ordinary click without pointer capture, drag threshold/live rerouting/cancellation, collision rollback, explicit save/reload, view-scoped defaults, independent shared-node placements, source updates, storage failure, keyboard access, and reduced motion. Minimal-DOM tests do not establish actual touch or browser rendering quality.

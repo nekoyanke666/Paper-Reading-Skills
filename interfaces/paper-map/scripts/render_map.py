@@ -37,14 +37,14 @@ def atomic_write(path, text):
 
 def snapshot(state, lock):
     graph=state['graph']
-    selected={k:graph[k] for k in ('nodes','links','trees','relationTypes','nodeTypes','redirects','linkRedirects','locale') if k in graph}
+    selected={k:graph[k] for k in ('nodes','links','trees','relationTypes','nodeTypes','redirects','linkRedirects','locale','nodeShapes') if k in graph}
     result={'schemaVersion':2,'revision':state['revision'],'paper':state['paper'],'settings':state['settings'],
             'sources':[{k:s[k] for k in ('id','label','note') if k in s} for s in sorted(state.get('sources',[]),key=lambda s:s['id'])],
             'glossary':sorted(state.get('glossary',[]),key=lambda s:s['id']),'graph':selected}
-    basis={**result,'_renderPolicy':{k:lock[k] for k in ('version','templateSha256','registryVersion','registrySha256','localeSha256','layoutVersion')}}
+    basis={**result,'_renderPolicy':{k:lock[k] for k in ('version','templateSha256','registryVersion','registrySha256','localeSha256','shapesSha256','layoutVersion')}}
     encoded=json.dumps(basis,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False)
     result['artifact']={'templateVersion':lock['version'],'templateSha256':lock['templateSha256'],
-                        'registryVersion':lock['registryVersion'],'registrySha256':lock['registrySha256'],'localeSha256':lock['localeSha256'],'layoutVersion':lock['layoutVersion'],
+                        'registryVersion':lock['registryVersion'],'registrySha256':lock['registrySha256'],'localeSha256':lock['localeSha256'],'shapesSha256':lock['shapesSha256'],'layoutVersion':lock['layoutVersion'],
                         'snapshotSha256':hashlib.sha256(encoded.encode('utf-8')).hexdigest()}
     return result
 

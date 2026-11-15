@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "slot": {"width": 170, "height": 116},
+  "roles": {
+    "concept": {"shape": "rectangle", "width": 170, "height": 72, "labelWidth": 144},
+    "method": {"shape": "ellipse", "width": 170, "height": 84, "labelWidth": 130},
+    "entity": {"shape": "circle", "width": 108, "height": 108, "labelWidth": 82},
+    "proposition": {"shape": "hexagon", "width": 170, "height": 88, "labelWidth": 130}
+  },
+  "typeRoles": {
+    "question": "proposition", "hypothesis": "proposition", "claim": "proposition",
+    "theorem": "proposition", "finding": "proposition", "interpretation": "proposition",
+    "argument": "proposition", "observation": "proposition", "counterexample": "proposition",
+    "method": "method", "experiment": "method", "algorithm": "method", "proof": "method",
+    "entity": "entity", "term": "entity", "dataset": "entity", "source": "entity",
+    "concept": "concept", "definition": "concept", "model": "concept", "assumption": "concept",
+    "metric": "concept", "limit": "concept"
+  }
+}

@@ -2,21 +2,21 @@
   "passed": true,
   "publicEntries": 4,
   "internalInterfaces": 13,
-  "referencesChecked": 95,
+  "referencesChecked": 105,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "not performed",
+  "browserVisualQA": "Fictional fixtures in Chrome at 1440x900, 1024x768, 390x844; scope in browser-qa.md",
   "unitTests": {
-    "passed": 35,
+    "passed": 40,
     "failed": 0
   },
   "formalSkillValidation": {
     "passed": 17,
     "failed": 0
   },
-  "javascriptRuntime": "passed using a minimal DOM substitute",
-  "translationReview": "completed against the preceding Chinese draft; see translation-review.md"
+  "javascriptRuntime": "Both runtime suites passed using a minimal DOM substitute",
+  "translationReview": "English instructions and new UI wording reviewed; confirmed output language still saved per paper"
 }

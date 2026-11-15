@@ -5,7 +5,6 @@ import argparse
 from collections import Counter
 import copy
 import hashlib
-import heapq
 import importlib.util
 import json
 import math
@@ -14,7 +13,7 @@ import re
 import unicodedata
 
 ASSETS = Path(__file__).resolve().parents[1] / 'assets'
-WIDTH, HEIGHT = 170, 62
+WIDTH, HEIGHT = 170, 116
 STATUS = {'supported', 'hypothesis', 'unresolved', 'inferred', 'design', 'disputed', 'user'}
 
 
@@ -173,6 +172,12 @@ def locale_for(state, assets=ASSETS):
             raw['relationLabels'][d['id']]=d['label'];raw['relationDefinitions'][d['id']]=d['definition']
     if raw.get('languageTag')!=language:
         raise MapError('map locale must match the confirmed interaction language')
+    if language.split('-')[0].lower()=='en':
+        merged=copy.deepcopy(default)
+        for field,value in raw.items():
+            if isinstance(value,dict) and isinstance(merged.get(field),dict):merged[field].update(value)
+            else:merged[field]=copy.deepcopy(value)
+        raw=merged
     required_relations={'note'}|{e['relationType'] for e in g['links']}
     required={'ui':set(default['ui']),'statuses':STATUS,
               'nodeTypes':{n['type'] for n in g['nodes']},
@@ -193,6 +198,11 @@ def normalize(state, assets=ASSETS):
     if not isinstance(s.get('graph'), dict):
         raise MapError('graph is absent; create a scoped main tree first')
     g = s['graph']
+    shapes=json.loads((Path(assets)/'node-shapes.json').read_text(encoding='utf-8'))
+    lock=json.loads((Path(assets)/'template-lock.json').read_text(encoding='utf-8'))
+    if g.get('layoutVersion')!=lock['layoutVersion']:
+        for view in g['trees']:view['routes']={}
+    g['nodeShapes']=shapes
     registry = Registry(assets, g.get('relationExtensions'))
     g.setdefault('retiredNodes', [])
     g.setdefault('retiredLinks', [])
@@ -200,6 +210,7 @@ def normalize(state, assets=ASSETS):
     g.setdefault('linkRedirects', {})
     for n in g['nodes']:
         identity(n)
+        n.setdefault('visualRole',shapes['typeRoles'].get(n['type'],'concept'))
         n.setdefault('id', node_id(n))
         n['label'] = unicodedata.normalize('NFC', n['label'].strip())
         n['aliases'] = unique(n.get('aliases', []))
@@ -311,121 +322,73 @@ def bezier(a, c1, c2, b, t):
     return tuple((1-t)**3*a[i] + 3*(1-t)**2*t*c1[i] + 3*(1-t)*t*t*c2[i] + t**3*b[i] for i in (0, 1))
 
 
-def curve_route(e, tree, edges):
-    a, b = tree['positions'][e['from']], tree['positions'][e['to']]
-    ax, ay, bx, by = a['x'] + 85, a['y'] + 31, b['x'] + 85, b['y'] + 31
-    dx, dy = bx - ax, by - ay
-    reverse = any(x['from'] == e['to'] and x['to'] == e['from'] and x['id'] != e['id'] for x in edges)
-    if e['from'] == e['to']:
-        start, c1, c2, end = (ax - 40, a['y']), (ax - 80, a['y'] - 100), (ax + 80, a['y'] - 100), (ax + 40, a['y'])
-    elif reverse:
-        side = 1 if dx >= 0 else -1
-        sy, ty, offset = a['y'] + (0 if side > 0 else 62), b['y'] + (0 if side > 0 else 62), -95 if side > 0 else 95
-        start, c1, c2, end = (ax, sy), (ax, sy + offset), (bx, ty + offset), (bx, ty)
-    elif abs(dx) > abs(dy):
-        sx, tx = a['x'] + (170 if dx >= 0 else 0), b['x'] + (0 if dx >= 0 else 170)
-        mid = (sx + tx) / 2
-        start, c1, c2, end = (sx, ay), (mid, ay), (mid, by), (tx, by)
+def node_profile(n, shapes):
+    role=n.get('visualRole') or shapes['typeRoles'].get(n['type'],'concept')
+    return shapes['roles'][role]
+
+
+def shape_anchor(n, p, toward, shapes):
+    profile=node_profile(n,shapes)
+    cx,cy=p['x']+WIDTH/2,p['y']+HEIGHT/2
+    dx,dy=toward[0]-cx,toward[1]-cy
+    if not dx and not dy:dx=1
+    a,b=profile['width']/2,profile['height']/2
+    if profile['shape'] in ('ellipse','circle'):
+        t=1/math.sqrt(dx*dx/(a*a)+dy*dy/(b*b))
     else:
-        sy, ty = a['y'] + (62 if dy >= 0 else 0), b['y'] + (0 if dy >= 0 else 62)
-        mid = (sy + ty) / 2
-        start, c1, c2, end = (ax, sy), (ax, mid), (bx, mid), (bx, ty)
-    points = [bezier(start, c1, c2, end, i/60) for i in range(61)]
-    def fmt(p):
-        return f'{p[0]:.2f} {p[1]:.2f}'
-    return {'d': f'M{fmt(start)} C{fmt(c1)} {fmt(c2)} {fmt(end)}', 'points': points}
+        vertices=([(-a+20,-b),(a-20,-b),(a,0),(a-20,b),(-a+20,b),(-a,0)]
+                  if profile['shape']=='hexagon' else [(-a,-b),(a,-b),(a,b),(-a,b)])
+        t=math.inf
+        for i,v in enumerate(vertices):
+            w=vertices[(i+1)%len(vertices)];ex,ey=w[0]-v[0],w[1]-v[1]
+            den=dx*ey-dy*ex
+            if abs(den)<1e-8:continue
+            ray=(v[0]*ey-v[1]*ex)/den;u=(v[0]*dy-v[1]*dx)/den
+            if ray>=0 and 0<=u<=1:t=min(t,ray)
+        if not math.isfinite(t):t=1
+    return cx+dx*t,cy+dy*t
 
 
-def astar_route(e, tree, already, choice):
-    positions = tree['positions']
-    a, b = positions[e['from']], positions[e['to']]
-    dx, dy = b['x']-a['x'], b['y']-a['y']
-    if abs(dx) >= abs(dy):
-        preferred = ('E', 'W') if dx >= 0 else ('W', 'E')
+def shape_signature(e,nodes,shapes):
+    return digest([nodes[e['from']]['visualRole'],nodes[e['to']]['visualRole'],shapes])
+
+
+def curve_route(e, tree, edges, nodes, shapes, choice=0):
+    a,b=tree['positions'][e['from']],tree['positions'][e['to']]
+    ac=(a['x']+WIDTH/2,a['y']+HEIGHT/2);bc=(b['x']+WIDTH/2,b['y']+HEIGHT/2)
+    dx,dy=bc[0]-ac[0],bc[1]-ac[1];length=max(1,math.hypot(dx,dy));normal=(-dy/length,dx/length)
+    reverse=any(x['from']==e['to'] and x['to']==e['from'] and x['id']!=e['id'] for x in edges)
+    if e['from']==e['to']:
+        c1=(ac[0]+150+choice*25,ac[1]-110);c2=(ac[0]-150-choice*25,ac[1]-110)
+    elif choice<13:
+        offsets=([90,150,230,310,410,520,650,800,960,1120,1280,1450,1620]
+                 if reverse else [0,70,-70,140,-140,230,-230,340,-340,500,-500,720,-720])
+        offset=offsets[choice]
+        tx,ty=(dx*.45,0) if abs(dx)>=abs(dy) else (0,dy*.45)
+        c1=(ac[0]+tx+normal[0]*offset,ac[1]+ty+normal[1]*offset)
+        c2=(bc[0]-tx+normal[0]*offset,bc[1]-ty+normal[1]*offset)
     else:
-        preferred = ('S', 'N') if dy >= 0 else ('N', 'S')
-    options = [preferred, ('N', 'N'), ('S', 'S'), ('E', 'E'), ('W', 'W')]
-    source_side, target_side = options[choice % len(options)]
-    if e['from'] == e['to']:
-        source_side, target_side = ('E', 'N') if choice % 2 == 0 else ('S', 'E')
-    def port(p, side):
-        x, y = p['x'], p['y']
-        return {'E': ((x+170, y+31), (x+210, y+31)), 'W': ((x, y+31), (x-40, y+31)),
-                'S': ((x+85, y+62), (x+85, y+102)), 'N': ((x+85, y), (x+85, y-40))}[side]
-    start, stub = port(a, source_side)
-    end, end_stub = port(b, target_side)
-    if min(stub+end_stub) < 0:
-        return None
-    grid = 20
-    begin, goal = tuple(round(v/grid) for v in stub), tuple(round(v/grid) for v in end_stub)
-    boxes = [rectangle(p, 12) for p in positions.values()] + [r['labelBox'] for r in already]
-    max_x = math.ceil((max(p['x'] for p in positions.values()) + 550 + choice*70) / grid)
-    max_y = math.ceil((max(p['y'] for p in positions.values()) + 400 + choice*70) / grid)
-    blocked_cache = {}
-    def blocked(p):
-        if p not in blocked_cache:
-            blocked_cache[p] = any(inside((p[0]*grid, p[1]*grid), r) for r in boxes)
-        return blocked_cache[p]
-    if blocked(begin) or blocked(goal):
-        return None
-    road = set()
-    for r in already:
-        for p in r['points']:
-            road.add((round(p[0]/grid), round(p[1]/grid)))
-    queue, parent, cost = [(0, 0, begin)], {}, {begin: 0}
-    serial = 0
-    while queue:
-        _, _, current = heapq.heappop(queue)
-        if current == goal:
-            path = [current]
-            while current in parent:
-                current = parent[current]
-                path.append(current)
-            pts = [start, stub] + [(x*grid, y*grid) for x, y in reversed(path)] + [end_stub, end]
-            compact = []
-            for p in pts:
-                if compact and p == compact[-1]:
-                    continue
-                if len(compact) > 1 and ((compact[-2][0] == compact[-1][0] == p[0]) or
-                                         (compact[-2][1] == compact[-1][1] == p[1])):
-                    compact[-1] = p
-                else:
-                    compact.append(p)
-            return {'d': rounded_path(compact), 'points': compact}
-        if len(cost) > 35000:
-            return None
-        for off in ((1,0),(0,1),(-1,0),(0,-1)):
-            nxt = (current[0]+off[0], current[1]+off[1])
-            if not (0 <= nxt[0] <= max_x and 0 <= nxt[1] <= max_y) or blocked(nxt):
-                continue
-            score = cost[current] + 1 + (5 if nxt in road else 0)
-            if score < cost.get(nxt, math.inf):
-                parent[nxt], cost[nxt] = current, score
-                serial += 1
-                distance = abs(nxt[0]-goal[0]) + abs(nxt[1]-goal[1])
-                heapq.heappush(queue, (score+distance, serial, nxt))
-    return None
-
-
-def rounded_path(points):
-    if len(points) < 2:
-        raise MapError('empty path')
-    path = f'M{points[0][0]:.2f} {points[0][1]:.2f}'
-    for i in range(1, len(points)-1):
-        before, p, after = points[i-1], points[i], points[i+1]
-        length1, length2 = math.dist(before,p), math.dist(p,after)
-        radius = min(12, length1/3, length2/3)
-        if length1 == 0 or length2 == 0:
-            continue
-        start = tuple(p[j]+(before[j]-p[j])*radius/length1 for j in (0,1))
-        end = tuple(p[j]+(after[j]-p[j])*radius/length2 for j in (0,1))
-        path += f' L{start[0]:.2f} {start[1]:.2f} Q{p[0]:.2f} {p[1]:.2f} {end[0]:.2f} {end[1]:.2f}'
-    return path + f' L{points[-1][0]:.2f} {points[-1][1]:.2f}'
+        side=(choice-13)%4;tier=(choice-13)//4
+        positions=tree['positions'].values();margin=90+tier*110
+        if side==0:
+            y=max(p['y'] for p in positions)+HEIGHT+margin;c1=(ac[0],y);c2=(bc[0],y)
+        elif side==1:
+            x=max(p['x'] for p in positions)+WIDTH+margin;c1=(x,ac[1]);c2=(x,bc[1])
+        elif side==2:
+            y=max(6,min(p['y'] for p in positions)-margin);c1=(ac[0],y);c2=(bc[0],y)
+        else:
+            x=max(6,min(p['x'] for p in positions)-margin);c1=(x,ac[1]);c2=(x,bc[1])
+    start=shape_anchor(nodes[e['from']],a,c1,shapes);end=shape_anchor(nodes[e['to']],b,c2,shapes)
+    points=[bezier(start,c1,c2,end,i/80) for i in range(81)]
+    def fmt(p):return f'{p[0]:.2f} {p[1]:.2f}'
+    return {'d':f'M{fmt(start)} C{fmt(c1)} {fmt(c2)} {fmt(end)}','points':points}
 
 
 def finish_route(route, edge, tree, already):
     positions = tree['positions']
     points = route['points']
+    if any(x < 0 or y < 0 for x,y in points):
+        return None
     if any(path_hits_rect(points[2:-2] if len(points)>10 else points, rectangle(p, 6))
            for ident,p in positions.items() if ident not in (edge['from'],edge['to'])):
         return None
@@ -458,6 +421,7 @@ def finish_route(route, edge, tree, already):
 def layout(state, assets=ASSETS, repair=False):
     s = copy.deepcopy(state)
     edges = {e['id']: e for e in s['graph']['links']}
+    nodes={n['id']:n for n in s['graph']['nodes']};shapes=s['graph']['nodeShapes']
     for tree in s['graph']['trees']:
         for ident in sorted(tree['nodeIds'], key=lambda n:(n != tree['rootId'],n)):
             if ident not in tree['positions']:
@@ -473,20 +437,18 @@ def layout(state, assets=ASSETS, repair=False):
             old = existing.get(e['id'])
             route = None
             signature=digest([e['from'],tree['positions'][e['from']],e['to'],tree['positions'][e['to']]])
-            if old and old.get('format')=='stable-local-1' and old.get('labelKey')==display_label(e) and old.get('endpointSignature')==signature and not repair:
+            if old and old.get('format')=='stable-local-1' and old.get('labelKey')==display_label(e) and old.get('endpointSignature')==signature and old.get('shapeSignature')==shape_signature(e,nodes,shapes) and not repair:
                 if not any(intersects(tuple(old['labelBox']),rectangle(p,8)) for p in tree['positions'].values()):
                     route = copy.deepcopy(old)
             if route is None:
-                route = finish_route(curve_route(e,tree,view_edges),e,tree,used)
-            if route is None:
-                for choice in range(5):
-                    candidate = astar_route(e,tree,used,choice)
-                    if candidate:
-                        route = finish_route(candidate,e,tree,used)
+                for choice in range(45):
+                    candidate=curve_route(e,tree,view_edges,nodes,shapes,choice)
+                    route=finish_route(candidate,e,tree,used)
                     if route:
                         break
             if route is None:
                 raise MapError(f"no readable route/label for {e['id']}; split the tree or explicitly repair layout")
+            route['shapeSignature']=shape_signature(e,nodes,shapes)
             routes[e['id']] = route
             used.append(route)
         tree['routes'] = routes
@@ -504,6 +466,12 @@ def check(state, assets=ASSETS, geometry=True):
     registry_bytes=(Path(assets)/'relation-registry.json').read_bytes()
     if hashlib.sha256(registry_bytes).hexdigest()!=lock['registrySha256'] or registry.version!=lock['registryVersion']:
         raise MapError('relation registry differs from the locked version; explicit semantic migration is required')
+    shapes_path=Path(assets)/'node-shapes.json'
+    if hashlib.sha256(shapes_path.read_bytes()).hexdigest()!=lock['shapesSha256']:
+        raise MapError('node shapes differ from the locked presentation')
+    shapes=json.loads(shapes_path.read_text(encoding='utf-8'))
+    if g.get('nodeShapes')!=shapes:
+        raise MapError('normalize the shaped-map presentation before rendering')
     locale=locale_for(state,assets)
     if g.get('locale')!=locale:
         raise MapError('normalize and save the complete map locale before rendering')
@@ -526,6 +494,8 @@ def check(state, assets=ASSETS, geometry=True):
             raise MapError('unknown node type needs an explicit graph.nodeTypes display definition')
         if units(n['label']) > lock['nodeLabelMaxUnits']:
             raise MapError(f'node label too long: {ident}; put explanation in the sidebar')
+        if n.get('visualRole') not in shapes['roles']:
+            raise MapError('node visualRole must be one registered semantic presentation role')
         if units(n['label']) > lock['nodeLabelPreferredUnits']:
             warnings.append({'code':'long-label','id':ident})
         if not isinstance(n.get('aliases',[]),list):
@@ -615,6 +585,10 @@ def check(state, assets=ASSETS, geometry=True):
                 signature=digest([link['from'],t['positions'][link['from']],link['to'],t['positions'][link['to']]])
                 if route.get('endpointSignature')!=signature:
                     raise MapError('route endpoints do not match the current nodes and positions')
+                if route.get('shapeSignature')!=shape_signature(edges[i],nodes,shapes):
+                    raise MapError('route does not match the current semantic shapes')
+                if re.findall('[A-Za-z]',route.get('d','')) not in (['M','C'],['M','L']):
+                    raise MapError('connections must be smooth cubic curves or single straight lines')
                 box=tuple(route['labelBox'])
                 if any(intersects(box,rectangle(t['positions'][n],6)) for n in ids):
                     raise MapError('edge label overlaps a node')
@@ -698,6 +672,12 @@ def plan(state, patch, assets=ASSETS):
             if not op.get('newType') or not op.get('identityUnchangedEvidence') or not op.get('reason'):
                 raise MapError('classification changes need an explanation that the underlying referent is unchanged')
             data['type']=op['newType']
+            data['visualRole']=g['nodeShapes']['typeRoles'].get(op['newType'],'concept')
+        elif operation=='set_visual_role':
+            data=n(op['id'])
+            if op.get('visualRole') not in g['nodeShapes']['roles'] or not op.get('reason'):
+                raise MapError('a semantic visual-role assignment needs a registered role and reason')
+            data['visualRole']=op['visualRole']
         elif operation=='add_link':
             data=copy.deepcopy(op['link']);data['from']=resolve(data['from']);data['to']=resolve(data['to'])
             data.setdefault('createdRevision',state['revision']+1)

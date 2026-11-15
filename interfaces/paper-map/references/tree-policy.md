@@ -23,8 +23,10 @@ Feedback cycles are legal; do not distort a mechanism to force acyclicity. In a 
 1. Preserve IDs, positions, and reader context.
 2. Search deterministically around a related anchor for new space, avoiding nodes, existing routes, and labels; expand the canvas when needed.
 3. Initial arrangement follows the research context. The same canonical data and layout version yield the same positions without imposing fixed columns/levels.
-4. Prefer the approved curved style; use deterministic obstacle-avoiding rounded routes when necessary. Labels must not overlap or sit at ambiguous intersections.
-5. Reuse routes only if endpoint signatures and display-label geometry still match.
+4. Generate deterministic smooth cubic curves; search alternative cubic control points when obstacles intervene. A single straight segment is the only alternate geometry. Do not fall back to angular or rounded orthogonal polylines. Labels must not overlap or sit at ambiguous intersections; if no valid route exists, fail and repair the affected layout explicitly.
+5. Reuse routes only if endpoint, visual-shape, layout-version, and display-label signatures still match.
 6. Move existing nodes only with explicit layout-repair intent/reason, restricted to affected views rather than shuffling the whole map.
+
+Browser drag overlays are view preferences, not canonical position changes; see [interaction](interaction.md). Shared scientific identity does not force identical placements in different views.
 
 Unavoidable crossings may remain if lines do not pass through unrelated nodes and direction remains clear. Machine geometry does not replace expert checking of the reading logic. Localized labels require fresh geometry checks; source identities and prior node positions remain stable where feasible.
