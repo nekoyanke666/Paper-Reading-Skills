@@ -9,6 +9,8 @@ Input: canonical session, significant conceptual/evidential changes, and map sco
 
 ## 1. Restore the entry and evaluate changes
 
+For an existing-map open/reopen request, follow [open the entry](references/open-entry.md): resolve its saved workspace-relative location, check/restart its local service, and present the verified URL through the host's browser panel when supported. This navigation-only case preserves scientific data and reading progress; no manual launcher is required from the reader when the agent can execute locally.
+
 Restore [paper-memory](../paper-memory/SKILL.md) and [paper-expert](../paper-expert/SKILL.md), including confirmed language settings, paper, integrated model, glossary, claims, graph, and revision. This interface is called by four entries, not a fifth public entry:
 
 - paper-prepare: always prepare or restore the stable map entry, then assess important content, versions, and corrections.

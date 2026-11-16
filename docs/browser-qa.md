@@ -1,5 +1,14 @@
 # Browser QA
 
+## Version 1.4.1 opening workflow
+
+Date: 2026-11-17. This release updates skill delivery/navigation instructions; it changes no renderer, service, archive format or map data.
+
+- Independently checked the existing local sample's /api/ping and confirmed its matching local service was running. Reused its saved folder, URL and records instead of asking the reader to execute a launcher or generating another tree.
+- Submitted the verified URL to the host's open_in_codex capability with a browser target, placement=right, and no other thread target. The host returned status=queued for the calling chat. This is evidence of a queued panel request, not an observed rendered browser panel; the directly clickable URL remains available.
+- The shared opening contract now handles service recovery, host-panel availability, queued status, no-panel fallback and opening-only versus mixed content requests. Command files remain optional outside-app fallbacks. No OS autostart, hook, external publication or new public skill was introduced.
+- Current checks: package/reference validation, all 17 skill format checks, and 17 settings/installer tests. Full map/runtime/browser checks from v1.4.0 remain the last full runtime audit because the executable assets are unchanged.
+
 ## Version 1.4.0 per-paper managed saving
 
 Date: 2026-11-16. Chrome on Windows, fictional direction fixture, final viewer paper-map-ui-1.6.0 and local storage protocol v1. Earlier records below describe historical browser-selected file saving; ordinary Save now uses the map's reserved history/ directory.

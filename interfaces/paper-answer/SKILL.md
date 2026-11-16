@@ -21,6 +21,7 @@ Complete necessary source checks before presenting the answer. “Direct answer 
 
 Select from the question and source, combining interfaces only as needed. Return to the original question after specialist work rather than cycling through entries.
 
+- **Open or reopen an existing map:** use [paper-map](../paper-map/SKILL.md) and its [opening contract](../paper-map/references/open-entry.md) to recover the local service and show its web entry. Opening alone does not start a teaching session; preserve the reading cursor and map data.
 - **Concepts, terminology, mechanisms, or confusion:** locate relevant source and prior explanation; supply prerequisites, study-specific use, and necessary recall. If confusion persists, take smaller steps and use a paper-specific or bounded teaching example.
 - **Figure, panel, legend, experimental group, or control:** call [paper-figures](../paper-figures/SKILL.md) locally and display the original figure; do not start all-figure guidance.
 - **Methods, statistics, equations, proofs, or design:** call [paper-methods](../paper-methods/SKILL.md) to explain how evidence is produced and under which conditions.

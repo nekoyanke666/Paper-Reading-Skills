@@ -1,11 +1,13 @@
 ---
 name: paper-ask
-description: Answer paper questions directly, then explain with necessary recall, concepts, and evidence. Handle figures, methods, translation, code, comparison, hypotheses, understanding checks, corrections, and unlisted cases while preserving the saved language and interrupted reading position.
+description: Answer paper questions directly, then explain with necessary recall, concepts, and evidence. Handle figures, methods, translation, code, comparison, hypotheses, understanding checks, corrections, unlisted cases, and reopening saved maps while preserving the saved language and interrupted reading position.
 ---
 
 # Paper Ask
 
 Answer the current question while preserving the whole-paper context and ongoing reading task. A question does not automatically restart preparation, all figures, or full explanation.
+
+For a request only to open or reopen an existing map, restore the active paper/location through [paper-memory](../../interfaces/paper-memory/SKILL.md), then use [paper-map](../../interfaces/paper-map/SKILL.md) and its [opening contract](../../interfaces/paper-map/references/open-entry.md). Check/recover the local service and open its web URL in the host browser panel when available. Preserve the reading position, save a no-change map review, and finish without restarting setup or research teaching. For a mixed opening/content request, open the map and continue with the process below.
 
 ## Process
 

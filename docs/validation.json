@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 4,
   "internalInterfaces": 13,
-  "referencesChecked": 150,
+  "referencesChecked": 160,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Chrome actual ordinary Save created neighboring history file without chooser/download; note/tree/position persisted through reload and Prev/Next; retained local sample; see browser-qa.md",
+  "browserVisualQA": "v1.4.1 verified service health and queued host-panel request; existing v1.4.0 full browser audit retained; see browser-qa.md",
   "unitTests": {
     "passed": 60,
     "failed": 0
@@ -21,7 +21,7 @@
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Existing written-workflow review retained; not independently executed",
   "translationReview": "English instructions and new UI labels reviewed; source-backed glossary and narrative/catalog distinctions preserved",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -41,5 +41,17 @@
     "workspaceIsolation": "root-scoped browser recovery and filesystem records; copied active folder tested",
     "realFilesystemAndHttp": "passed",
     "runtimeLifecycle": "agent host uses retained serve session; portable user launcher included"
+  },
+  "lastFullRuntimeVersion": "1.4.0",
+  "currentTargetedTests": {
+    "settingsAndInstaller": 17,
+    "formalSkillValidation": 17,
+    "packageAndReferences": "passed"
+  },
+  "mapOpening": {
+    "serviceHealth": "live local sample checked",
+    "hostPanelRequest": "submitted to calling chat, status queued",
+    "observedPanelRender": false,
+    "readerEntry": "clickable web link or natural reopen request; command launcher optional"
   }
 }

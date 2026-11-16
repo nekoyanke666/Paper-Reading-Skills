@@ -25,11 +25,13 @@ The data directory is relative to the generated entry, not relative to the insta
 
 ## Start and deliver the working entry
 
+The agent performs startup and recovery. Follow [open the entry](open-entry.md) to open the verified web URL in the available host browser panel and provide a clickable link. In Codex the reader is not required to execute a .cmd file; a natural request to reopen the map is sufficient.
+
 Use the generated local helper, with Node.js available:
 
 `node <map folder>/.paper-map/map-server.cjs --root <map folder> --start`
 
-It starts a hidden background helper bound to 127.0.0.1, chooses an available port and returns JSON containing url, pid and historyDir. It reuses a matching running service for the same folder, including concurrent launches. Do not assign a fixed user-specific absolute path or port. Deliver this checked local URL as the usable Save-enabled entry. The reader can reopen it with open-map.cmd or open-map.sh after restart; the helper resolves its own folder and loads existing records. This is local execution, not external hosting or publication. For maintenance, the same helper accepts --stop.
+It starts a hidden background helper bound to 127.0.0.1, chooses an available port and returns JSON containing url, pid and historyDir. It reuses a matching running service for the same folder, including concurrent launches. Do not assign a fixed user-specific absolute path or port. Deliver this checked local URL as the usable Save-enabled entry. On an open/reopen request the agent restores the service and opens the web entry. open-map.cmd or open-map.sh are optional outside-app fallbacks; the helper resolves its own folder and loads existing records. This is local execution, not external hosting or publication. For maintenance, the same helper accepts --stop.
 
 Some agent command hosts terminate detached descendants when a short command ends. In that environment run the helper with --serve in a retained long-running process/tool session instead, record its session identifier, and wait for its ready JSON. Verify /api/ping with a separate request after startup before delivering the URL. Keep that session alive while the delivered map is in use. Do not present an exited launcher's URL as a working entry; the portable user launcher still supports reopening it outside that agent session.
 

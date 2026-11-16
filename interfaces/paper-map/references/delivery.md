@@ -18,7 +18,9 @@ If nothing important changed, preserve graph identities, positions, map revision
 
 ## Deliver the first link promptly
 
-As soon as an entry exists and required checks succeed, include a clickable link in the current response. If preparation continues in batches, give it in the next available response rather than withholding it until all preparation finishes. Deliver the helper's verified local URL for a Save-enabled entry. Keep the absolute local artifact/launcher link available as a portable reopening route; opening index.html directly is a read-only preview for ordinary saving. Never replace this with one hardcoded path or port across users, papers or workspaces. A local artifact does not require or imply external hosting/publication.
+Follow [open the entry](open-entry.md) for automatic service checks/restart and host-panel delivery. Use the available browser panel and an easy-to-click local web link as the primary entry. Do not send the reader to a .cmd launcher as the normal Codex opening step; it remains an optional outside-app fallback.
+
+As soon as an entry exists and required checks succeed, include a clickable link in the current response. If preparation continues in batches, give it in the next available response rather than withholding it until all preparation finishes. Deliver the helper's verified local URL for a Save-enabled entry. Keep the artifact and optional outside-app launcher available for recovery; opening index.html directly is a read-only preview for ordinary saving. Never replace this with one hardcoded path or port across users, papers or workspaces. A local artifact does not require or imply external hosting/publication.
 
 Save lastSuccessfulRenderRevision and a delivery record in progress.map. In a new conversation sharing this paper, provide the same saved link once when the entry is first used there; use a host conversation ID when available. A global delivered flag must not suppress delivery to another conversation. If the conversation cannot be identified, use visible context or provide the existing link once when uncertain; do not invent a chat ID.
 

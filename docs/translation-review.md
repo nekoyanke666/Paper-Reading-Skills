@@ -64,3 +64,7 @@ Version 1.3.1 also makes zoom exclusively user-controlled. Selection, navigation
 ## Version 1.4.0 workspace-scoped managed storage
 
 Ordinary Save now means writing to the generated entry's history/ directory, not choosing a browser file handle or exporting a download. Only Back up elsewhere chooses an external destination, and it does not mark unsaved managed edits as saved. A local helper supplies disk-backed restoration, conflicts and imports while static previews remain explicitly read-only for Save. New local-storage/interface messages require the saved language. Per-paper folders are allocated relative to each active workspace and reused by the same paper across chats; users, drives, workspaces and ports are never hardcoded. Copying the complete entry folder preserves the archive and relative pointer. Archive v1, four public entries, user-only zoom and all research/teaching rules remain intact.
+
+## Version 1.4.1 map opening
+
+Opening/reopening an existing map is a navigation request. The agent resolves the saved per-paper folder, checks or recovers its service, submits the live URL to the host browser panel when supported, and supplies a clickable web link. A queued panel is reported as queued. Manual .cmd execution is an optional outside-app fallback, not the default Codex workflow. Opening alone does not restart language/translation setup, expert selection, reading or map construction. The four public entries, English instructions, selected-language behavior, archive v1, storage scope, renderer and saved scientific records remain unchanged.
