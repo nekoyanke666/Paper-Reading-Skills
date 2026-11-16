@@ -25,7 +25,7 @@ The data directory is relative to the generated entry, not relative to the insta
 
 ## Start and deliver the working entry
 
-The agent performs startup and recovery. Follow [open the entry](open-entry.md) to open the verified web URL in the available host browser panel and provide a clickable link. In Codex the reader is not required to execute a .cmd file; a natural request to reopen the map is sufficient.
+The agent performs startup and recovery. Follow [open the entry](open-entry.md) to open the verified web URL in the available host browser panel and provide a clickable link. In Codex provide a directly clickable Open paper map link; neither .cmd execution nor a spoken/typed request is required. Check/recover the service before delivering that link.
 
 Use the generated local helper, with Node.js available:
 

@@ -18,7 +18,7 @@ If nothing important changed, preserve graph identities, positions, map revision
 
 ## Deliver the first link promptly
 
-Follow [open the entry](open-entry.md) for automatic service checks/restart and host-panel delivery. Use the available browser panel and an easy-to-click local web link as the primary entry. Do not send the reader to a .cmd launcher as the normal Codex opening step; it remains an optional outside-app fallback.
+Follow [open the entry](open-entry.md) for automatic service checks/restart and host-panel delivery. Use the available browser panel and a prominent, localized Open paper map HTTP link as the primary entry. The reader should be able to click it directly without typing a phrase, invoking a skill, copying a command or opening an executable file first. Do not send the reader to a .cmd launcher as the normal Codex opening step; it remains an optional outside-app fallback.
 
 As soon as an entry exists and required checks succeed, include a clickable link in the current response. If preparation continues in batches, give it in the next available response rather than withholding it until all preparation finishes. Deliver the helper's verified local URL for a Save-enabled entry. Keep the artifact and optional outside-app launcher available for recovery; opening index.html directly is a read-only preview for ordinary saving. Never replace this with one hardcoded path or port across users, papers or workspaces. A local artifact does not require or imply external hosting/publication.
 

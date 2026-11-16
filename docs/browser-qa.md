@@ -5,7 +5,7 @@
 Date: 2026-11-17. This release updates skill delivery/navigation instructions; it changes no renderer, service, archive format or map data.
 
 - Independently checked the existing local sample's /api/ping and confirmed its matching local service was running. Reused its saved folder, URL and records instead of asking the reader to execute a launcher or generating another tree.
-- Submitted the verified URL to the host's open_in_codex capability with a browser target, placement=right, and no other thread target. The host returned status=queued for the calling chat. This is evidence of a queued panel request, not an observed rendered browser panel; the directly clickable URL remains available.
+- Submitted the verified URL to the host's open_in_codex capability with a browser target, placement=right, and no other thread target. The host returned status=queued for the calling chat. The initial result was a queued request; subsequent app-provided browser context reported an open in-app tab at that same URL. No fresh visual rendering audit was performed. The directly clickable URL is the primary user action and needs no typed request.
 - The shared opening contract now handles service recovery, host-panel availability, queued status, no-panel fallback and opening-only versus mixed content requests. Command files remain optional outside-app fallbacks. No OS autostart, hook, external publication or new public skill was introduced.
 - Current checks: package/reference validation, all 17 skill format checks, and 17 settings/installer tests. Full map/runtime/browser checks from v1.4.0 remain the last full runtime audit because the executable assets are unchanged.
 

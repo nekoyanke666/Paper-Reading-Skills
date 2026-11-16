@@ -50,8 +50,8 @@
   },
   "mapOpening": {
     "serviceHealth": "live local sample checked",
-    "hostPanelRequest": "submitted to calling chat, status queued",
+    "hostPanelRequest": "submitted to calling chat; initially queued, then an open in-app tab at that URL was reported",
     "observedPanelRender": false,
-    "readerEntry": "clickable web link or natural reopen request; command launcher optional"
+    "readerEntry": "one-click direct web link; no typed request, command or launcher required"
   }
 }
