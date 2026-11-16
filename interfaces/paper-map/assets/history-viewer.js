@@ -35,7 +35,7 @@ function initializeWorkspace(){
 function historyVersion(delta){
  if(historyBusy)return false;if(workspaceDirty()){notice(ui('historySaveFirst'));return false;}
  const next=historyBook.cursor+delta;if(next<0||next>historyBook.commits.length)return false;
- const candidate=History.navigate(historyBook,next),model=History.materialize(candidate);History.validateModel(model);useModel(model);historyBook=candidate;layoutOpen=true;render();requestAnimationFrame(fit);cacheWorkspace();return true;
+ const candidate=History.navigate(historyBook,next),model=History.materialize(candidate);History.validateModel(model);useModel(model);historyBook=candidate;layoutOpen=true;render();requestAnimationFrame(centerView);cacheWorkspace();return true;
 }
 function legacySnapshot(input){
  const s=History.copy(input);if(s.schemaVersion!==2||!s.graph||!Array.isArray(s.graph.nodes)||!Array.isArray(s.graph.trees))throw Error('Unsupported legacy map snapshot');
@@ -54,7 +54,7 @@ function importHistoryText(text,handle=null){
  const writableHandle=raw.format===History.FORMAT?handle:null;
  useModel(model);historyBook=book;historyFile=writableHandle;historyHandleEpoch++;diskChecksum=raw.format===History.FORMAT?History.sha256(text):null;historyImported=true;historyExportStatus=writableHandle?'file':'imported';sourceUnavailable=true;
  if(writableHandle)handleDatabase('put',{sourceFingerprint:savedSourceFingerprint,handle:writableHandle}).catch(()=>{});
- layoutOpen=true;render();requestAnimationFrame(fit);cacheWorkspace();notice(ui('historyImported'));return true;
+ layoutOpen=true;render();requestAnimationFrame(centerView);cacheWorkspace();notice(ui('historyImported'));return true;
 }
 function selectHistoryFile(){if(historyBusy)return;if(workspaceDirty()){notice(ui('historySaveFirst'));return;}$('history-file').click();}
 function downloadHistory(text){const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=archiveFilename();document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}

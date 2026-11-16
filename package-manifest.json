@@ -1,6 +1,6 @@
 {
   "name": "paper-reading-skills",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "instructionLanguage": "en",
   "publicEntries": [
     "paper-prepare",

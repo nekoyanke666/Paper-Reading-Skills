@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def build():
     assets=ROOT/'interfaces/paper-map/assets'
     shell=(assets/'viewer-shell.html.in').read_text(encoding='utf-8')
-    runtime='\n'.join((assets/name).read_text(encoding='utf-8') for name in ('history-core.js','detail-core.js','history-viewer.js','camera-viewer.js','viewer-runtime.js'))
+    runtime='\n'.join((assets/name).read_text(encoding='utf-8') for name in ('history-core.js','detail-core.js','history-viewer.js','camera-viewer.js','focus-viewer.js','viewer-runtime.js'))
     if shell.count('__RUNTIME__')!=1 or shell.count('__BOOTSTRAP__')!=1:
         raise ValueError('invalid fixed template slots')
     (assets/'graph-viewer.html.in').write_text(shell.replace('__RUNTIME__',runtime),encoding='utf-8',newline='\n')

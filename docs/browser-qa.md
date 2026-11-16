@@ -1,5 +1,17 @@
 # Browser QA
 
+## Version 1.3.1 selected-node direction and manual zoom
+
+Date: 2026-11-16. Chrome on Windows; the fictional direction-focus fixture only. Final viewer: paper-map-ui-1.5.1. Earlier release records below describe historical auto-fit and rendering behavior that this release supersedes.
+
+- Selected Receptor R showed blue incoming edges, green outgoing edges, a purple self-loop and a slate undirected edge. Actual computed SVG stroke colors matched the contract. The unrelated edge had opacity 0.1. The reciprocal neighbor used a blue/green outline; incoming inhibition retained its T endpoint and hypotheses retained dashes.
+- The sidebar showed explicit endpoint names grouped into Incoming, Outgoing, Self and Undirected sections before sources and limits. Selecting Cell response reversed relative directions for the reciprocal pair without changing edge endpoints; its outgoing inhibition stayed a T marker. Clearing selection restored semantic marker IDs and the resting palette.
+- At 1440x900, 1024x768 and 390x844 the directional sidebar remained available without horizontal document overflow. The narrow-screen panel reserves its 44% viewport height so a visible, pannable canvas and camera controls remain above it. Initial testing caught a selector-specificity issue in the reciprocal outline and an overlaid mobile panel; both were corrected and observed again.
+- Only explicit user zoom controls change scale. Tested 100% before/after node selection, and 300% before/after search, detail selection, viewport resize and Center. The latter controls translate/reframe position only. Separate runtime tests also cover saved-version navigation/import preserving zoom. A reload initializes a new view at 100%; camera settings are temporary navigation, not archive content.
+- At 300%, actual card/glyph width was 510 CSS pixels and node font size was 45px, compared with the 170-pixel slot and 15px font at 100%. The board had translation only, the SVG edge group had native scale(3), and the board's will-change was auto. Inspected actual high-zoom text/glyph/line rendering and saved a separate 300% screenshot outside the source package. This verifies the native rendering path in this browser, not identical antialiasing on every font/display.
+- Source records, scientific coordinates, curve/straight mode, selected-language policy and the v1 archive format are unchanged. Core/minimal-DOM tests cover history and import; native writable-file and browser-upload checks were not repeated in this release. No private-paper map or academic interpretation was rebuilt.
+- Temporary viewport overrides were reset after checks.
+
 ## Version 1.3.0 files, independent detail trees and camera
 
 Date: 2026-11-16. Chrome on Windows; fictional detail-workflow and theory fixtures only. The final viewer is paper-map-ui-1.5.0. Earlier observations below describe their historical versions, not the current save/default behavior.

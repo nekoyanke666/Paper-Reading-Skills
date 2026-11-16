@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 4,
   "internalInterfaces": 13,
-  "referencesChecked": 137,
+  "referencesChecked": 143,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Chrome fictional fixtures at 1440x900, 1024x768, 390x844; actual download and saved-version navigation; upload blocked by extension permission; native writable-file API not verified; see browser-qa.md",
+  "browserVisualQA": "Chrome fictional direction fixture at 1440x900, 1024x768 and 390x844; 300% native-vector/font sizing; no automatic zoom during selection/search/navigation/resize/Center; see browser-qa.md",
   "unitTests": {
     "passed": 59,
     "failed": 0
@@ -17,18 +17,19 @@
     "passed": 17,
     "failed": 0
   },
-  "javascriptRuntime": "Seven minimal-DOM/core suites passed, including compact file history, transaction-safe imports, independent detail trees, signed node positions and responsive camera framing",
+  "javascriptRuntime": "Eight minimal-DOM/core suites passed: prior map/history/detail cases plus relative direction, reciprocal/self/undirected/inhibitory cases, user-only zoom and native rendering setup",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Existing written-workflow review retained; not independently executed",
   "translationReview": "English instructions and new UI labels reviewed; source-backed glossary and narrative/catalog distinctions preserved",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
     "modelVersion": 1,
     "frozenV1Fixture": "passed",
-    "fortySaveBytes": 36640,
-    "repeatedSnapshotBytes": 1889854
+    "fortySaveBytes": 36868,
+    "repeatedSnapshotBytes": 1899202
   },
-  "responsiveCamera": "Background pan, wheel/buttons zoom, Center, and refit after manual navigation and viewport/sidebar resize"
+  "responsiveCamera": "User-only zoom. Selection, search, tree/detail switches, viewport/sidebar resize, Center, history and import preserve scale; translation-only centering. Native SVG edges and actual-size HTML text/glyphs.",
+  "directionFocus": "Blue incoming, green outgoing, purple self, slate undirected; reciprocal paths, T endpoints, dashed uncertainty and grouped source-to-target text retained"
 }

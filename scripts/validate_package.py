@@ -39,7 +39,7 @@ def validate(root=ROOT):
     assets=root/'interfaces/paper-map/assets';lock=json.loads((assets/'template-lock.json').read_text(encoding='utf-8'))
     for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256'),('node-shapes.json','shapesSha256')]:
         if hashlib.sha256((assets/name).read_bytes()).hexdigest()!=lock[key]:raise ValueError('locked asset mismatch: '+name)
-    runtime='\n'.join((assets/name).read_text(encoding='utf-8') for name in ('history-core.js','detail-core.js','history-viewer.js','camera-viewer.js','viewer-runtime.js'))
+    runtime='\n'.join((assets/name).read_text(encoding='utf-8') for name in ('history-core.js','detail-core.js','history-viewer.js','camera-viewer.js','focus-viewer.js','viewer-runtime.js'))
     compiled=(assets/'viewer-shell.html.in').read_text(encoding='utf-8').replace('__RUNTIME__',runtime)
     if compiled!=(assets/'graph-viewer.html.in').read_text(encoding='utf-8'):raise ValueError('compiled viewer differs from maintained source')
     subprocess.run(['node','--check',str(assets/'viewer-runtime.js')],check=True,capture_output=True)

@@ -1,13 +1,13 @@
 {
   "artifact": {
     "layoutVersion": "shape-curves-2",
-    "localeSha256": "f44ac47134d150e2ca0eafe715ce26e94ea1e2e8f4038690139ee2ca645bd4e5",
+    "localeSha256": "5bce57f7cdbcaebfdc1f035ee3c554614f209e2cdd6e820cf0ec1f7abdf9fe6c",
     "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
     "registryVersion": "2.0.0",
     "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
-    "snapshotSha256": "106accb7119dcdc2c1d706523a14b5ee8bdce4cb9b05b81ac6f87cb16527647f",
-    "templateSha256": "bd5c323eb4cee8588ba6fd7f51c3fd78c04f51ae723b44a6e1814003578d2dcf",
-    "templateVersion": "paper-map-ui-1.5.0"
+    "snapshotSha256": "821a672ab3048935cdc9cee690ce3878cf2f0de59a21d6cea20d8a2737d04ba7",
+    "templateSha256": "80ada7499ae6a35f84d58a66ae4bf055f788902e9e18ae9e72f9f1cef981307a",
+    "templateVersion": "paper-map-ui-1.5.1"
   },
   "glossary": [
     {
@@ -298,6 +298,7 @@
         "conditions": "Conditions",
         "connect": "Connect",
         "connectedNodes": "Connected nodes",
+        "connectionAria": "{endpoints} · {relation} · {direction}",
         "create": "Create",
         "curveMode": "Curves",
         "defaultLayout": "Default view",
@@ -313,6 +314,10 @@
         "detailUnreviewed": "This older map has no separate detail views; its existing content is retained.",
         "detailVia": "via {nodes}",
         "directed": "This edge points from source to target.",
+        "directionIncoming": "Incoming to this node",
+        "directionOutgoing": "Outgoing from this node",
+        "directionSelf": "Self relation",
+        "directionUndirected": "Undirected connection",
         "disputedSuffix": " (disputed)",
         "draftDetail": "User-added concept; provenance and explanation are not yet supplied.",
         "draftLimits": "User note, not checked against paper evidence.",

@@ -1,0 +1,20 @@
+const assert=require('node:assert/strict'),{createHarness}=require('./viewer_harness.cjs');
+function group(h,id){const html=h.el('edge-layer').innerHTML;const start=html.indexOf(`data-edge-group="${id}"`);assert.ok(start>=0);const end=html.indexOf('<g class="edge-group',start);return html.slice(start,end<0?undefined:end);}
+const h=createHarness(),baseline=h.plain('currentModel()'),routes=h.run('JSON.stringify([...routeCache])'),checkpoint=h.run('historyBook.checksum');
+h.run('select("node","r")');
+assert.equal(h.run('directionFor(edge("m-r"),"r")'),'incoming');assert.equal(h.run('directionFor(edge("r-response"),"r")'),'outgoing');assert.equal(h.run('directionFor(edge("response-r"),"r")'),'incoming');assert.equal(h.run('directionFor(edge("q-m"),"r")'),'');
+assert.equal(h.run('focusContext().neighbors.get("response")'),'both');assert.equal(h.run('focusContext().neighbors.get("m")'),'incoming');
+assert.match(group(h,'r-response'),/data-direction="outgoing"/);assert.match(group(h,'r-response'),/marker-end="url\(#focus-outgoing-arrow\)"/);
+assert.match(group(h,'response-r'),/marker-end="url\(#focus-incoming-inhibit\)"/);assert.match(group(h,'response-r'),/unconfirmed/);
+assert.match(h.el('edge-layer').innerHTML,/<g class="edge-group[^"]*dim[^"]*" data-edge-group="q-m"/);
+assert.ok(h.el('edge-layer').innerHTML.indexOf('data-edge-group="q-m"')<h.el('edge-layer').innerHTML.indexOf('data-edge-group="r-response"'));
+assert.match(h.el('nodes').innerHTML,/class="node[^\"]*dim[^\"]*"[^>]*data-card="q"/);assert.match(h.el('nodes').innerHTML,/data-card="response" data-direction="both"/);
+assert.match(h.el('details').innerHTML,/Incoming to this node/);assert.match(h.el('details').innerHTML,/Outgoing from this node/);assert.ok(h.el('details').innerHTML.indexOf('connection-groups')<h.el('details').innerHTML.indexOf('Sources and evidence'));
+assert.ok(h.el('details').innerHTML.includes(h.run('esc(endpointText(edge("response-r")))')));assert.equal(h.run('historyBook.checksum'),checkpoint);assert.equal(h.run('JSON.stringify([...routeCache])'),routes);assert.equal(h.run('layoutDirty()'),false);assert.deepEqual(h.plain('currentModel()'),baseline);
+h.run('close()');assert.equal(h.el('map').classList.values.has('node-focus'),false);assert.match(group(h,'r-response'),/marker-end="url\(#causal-arrow\)"/);assert.equal(h.el('edge-layer').innerHTML.includes('class="edge-halo"'),false);
+const f=createHarness({fixture:'direction-map'});f.run('select("node","r")');
+assert.equal(f.run('directionFor(edge("r-self"),"r")'),'self');assert.match(group(f,'r-self'),/marker-end="url\(#focus-self-arrow\)"/);assert.match(f.el('details').innerHTML,/Self relation/);
+assert.equal(f.run('directionFor(edge("q-r-associated"),"r")'),'undirected');assert.equal(group(f,'q-r-associated').includes('marker-end'),false);assert.match(f.el('details').innerHTML,/Undirected connection/);assert.ok(f.run('endpointText(edge("q-r-associated")).includes("↔")'));
+f.run('setEdgeMode("straight")');assert.equal(f.run('route(edge("r-self")).d.match(/[A-Za-z]/g).join(",")'),'M,C');
+f.run('select("edge","response-r")');assert.match(group(f,'response-r'),/marker-end="url\(#inhibit\)"/);assert.equal(f.el('map').classList.values.has('node-focus'),false);
+console.log(JSON.stringify({testKind:'Minimal-DOM direction and presentation checks, not browser color QA',incomingOutgoingDistinct:true,reciprocalNeighborHasBothDirections:true,selfLoopSeparate:true,undirectedHasNoArrow:true,inhibitionKeepsTMarker:true,uncertaintyKeepsDashes:true,unrelatedContentDimmed:true,incidentEdgesDrawnLast:true,endpointTextInGroupedSidebar:true,focusDoesNotChangeGraphRoutesOrHistory:true,closeRestoresSemanticPalette:true}));

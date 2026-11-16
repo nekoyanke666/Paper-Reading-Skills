@@ -6,7 +6,7 @@
 
 **Structural/geometric:** machines check IDs, references, normalized aliases, deduplication, view scope, locale completeness, positions, routes, text collisions, and versions.
 
-**Visual/interactive:** actually inspect fonts/wrapping, sidebar, search/location, shared markers, all detail modes, camera controls, saved checkpoints, and import UI. If no browser test occurred, report it unperformed rather than labeling all three passed.
+**Visual/interactive:** actually inspect fonts/wrapping, sidebar, search/location, shared markers, incoming/outgoing/self/undirected focus (including reciprocal and inhibitory edges), all detail modes, camera controls, saved checkpoints, and import UI. If no browser test occurred, report it unperformed rather than labeling all three passed.
 
 ## Expert submission review
 

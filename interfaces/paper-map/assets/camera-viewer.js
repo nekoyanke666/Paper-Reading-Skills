@@ -3,7 +3,17 @@ let camera={x:0,y:0},cameraResizePending=false;
 const CAMERA_MIN=.08,CAMERA_MAX=3;
 function screenToWorld(x,y){return {x:(x-camera.x)/zoom,y:(y-camera.y)/zoom};}
 function renderCamera(){
- $('board').style.transform=`translate(${camera.x}px,${camera.y}px) scale(${zoom})`;
+ const dpr=typeof devicePixelRatio==='number'&&devicePixelRatio>0?devicePixelRatio:1,snap=n=>Math.round(n*dpr)/dpr;
+ $('board').style.transform=`translate(${snap(camera.x)}px,${snap(camera.y)}px)`;
+ $('board').style.setProperty('--map-zoom',String(zoom));
+ // SVG transforms redraw vector paths; HTML labels are laid out at their actual zoomed size.
+ $('edge-layer').setAttribute('transform',`scale(${zoom})`);
+ document.querySelectorAll('[data-card]').forEach(card=>{
+  const id=card.dataset.card,p=position(id);if(!p)return;
+  card.style.left=snap(p.x*zoom)+'px';card.style.top=snap(p.y*zoom)+'px';
+  card.dataset.worldX=String(p.x);card.dataset.worldY=String(p.y);
+  const label=card.querySelector('.node-main>span');if(label)label.style.maxWidth=profile(node(id)).labelWidth*zoom+'px';
+ });
  const grid=20*zoom*Math.pow(2,Math.max(0,Math.ceil(Math.log2(12/(20*zoom)))));
  $('map').style.backgroundSize=`${grid}px ${grid}px`;
  $('map').style.backgroundPosition=`${camera.x}px ${camera.y}px`;
@@ -15,10 +25,10 @@ function zoomAt(next,x=$('map').clientWidth/2,y=$('map').clientHeight/2){
  const anchor=screenToWorld(x,y);zoom=Math.max(CAMERA_MIN,Math.min(CAMERA_MAX,next));
  camera={x:x-anchor.x*zoom,y:y-anchor.y*zoom};manualZoom=true;renderCamera();
 }
-function centerGraph(){if(nodeDrag||pan)return;manualZoom=false;fit();}
+function centerGraph(){if(nodeDrag||pan)return;manualZoom=false;centerView();}
 function resizeCamera(){
  if(nodeDrag||pan){cameraResizePending=true;return;}
- cameraResizePending=false;manualZoom=false;fit();
+ cameraResizePending=false;manualZoom=false;centerView();
  if(selected?.kind==='node')centerNode(selected.id);
 }
 function beginPan(e){

@@ -482,6 +482,7 @@
         "conditions": "Conditions",
         "connect": "Connect",
         "connectedNodes": "Connected nodes",
+        "connectionAria": "{endpoints} · {relation} · {direction}",
         "create": "Create",
         "curveMode": "Curves",
         "defaultLayout": "Default view",
@@ -497,6 +498,10 @@
         "detailUnreviewed": "This older map has no separate detail views; its existing content is retained.",
         "detailVia": "via {nodes}",
         "directed": "This edge points from source to target.",
+        "directionIncoming": "Incoming to this node",
+        "directionOutgoing": "Outgoing from this node",
+        "directionSelf": "Self relation",
+        "directionUndirected": "Undirected connection",
         "disputedSuffix": " (disputed)",
         "draftDetail": "User-added concept; provenance and explanation are not yet supplied.",
         "draftLimits": "User note, not checked against paper evidence.",
@@ -950,7 +955,7 @@
     },
     "retiredLinks": [],
     "retiredNodes": [],
-    "templateVersion": "paper-map-ui-1.5.0",
+    "templateVersion": "paper-map-ui-1.5.1",
     "trees": [
       {
         "focusQuestion": "When does P hold?",

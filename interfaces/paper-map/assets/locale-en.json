@@ -206,6 +206,11 @@
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
     "centerMap": "Center",
-    "canvasHint": "Drag the background to pan; scroll to zoom. Keyboard: arrows, + / -, Home."
+    "canvasHint": "Drag the background to pan; scroll to zoom. Keyboard: arrows, + / -, Home.",
+    "directionIncoming": "Incoming to this node",
+    "directionOutgoing": "Outgoing from this node",
+    "directionSelf": "Self relation",
+    "directionUndirected": "Undirected connection",
+    "connectionAria": "{endpoints} · {relation} · {direction}"
   }
 }

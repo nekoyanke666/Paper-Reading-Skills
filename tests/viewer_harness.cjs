@@ -5,9 +5,9 @@ function createHarness(options={}){
  const boot=options.boot||JSON.parse(html.match(/<script id="bootstrap" type="application\/json">([\s\S]*?)<\/script>/)[1]);
  const code=[...html.matchAll(/<script(?: [^>]*)?>([\s\S]*?)<\/script>/g)].at(-1)[1];
  const elements=new Map(),listeners=new Map(),store=options.store||new Map(),file=options.file||fileStore(),downloads=[],blobs=new Map();
- function el(id){if(!elements.has(id))elements.set(id,{id,value:'',textContent:'',innerHTML:'',style:{},dataset:{},disabled:false,scrollLeft:0,scrollTop:0,clientWidth:1200,clientHeight:760,captures:0,
+ function el(id){if(!elements.has(id))elements.set(id,{id,value:'',textContent:'',innerHTML:'',style:{setProperty(k,v){this[k]=v;}},dataset:{},disabled:false,scrollLeft:0,scrollTop:0,clientWidth:1200,clientHeight:760,captures:0,
   classList:{values:new Set(),add(...a){a.forEach(v=>this.values.add(v));},remove(...a){a.forEach(v=>this.values.delete(v));},toggle(k,b){if(b===undefined)b=!this.values.has(k);if(b)this.values.add(k);else this.values.delete(k);}},
-  setAttribute(){},addEventListener(){},focus(){},scrollIntoView(){},scrollBy(){},click(){},setPointerCapture(){this.captures++;},releasePointerCapture(){},getBoundingClientRect(){return {left:0,top:0,width:1200,height:760};}});return elements.get(id);}
+  setAttribute(k,v){(this.attributes||={})[k]=String(v);},addEventListener(){},focus(){},scrollIntoView(){},scrollBy(){},click(){},setPointerCapture(){this.captures++;},releasePointerCapture(){},getBoundingClientRect(){return {left:0,top:0,width:1200,height:760};}});return elements.get(id);}
  el('bootstrap').textContent=JSON.stringify(boot);
  const handle={name:'test.paper-map-history.json',getFile:async()=>({size:Buffer.byteLength(file.content),text:async()=>file.content}),createWritable:async()=>{let pending='';return {write:async text=>{if(file.failWrite)throw Error('write denied');pending=text;},close:async()=>{if(file.failClose)throw Error('close denied');file.content=pending;},abort:async()=>{file.aborted=true;}};}};
  const sandbox={document:{getElementById:el,documentElement:{lang:'en'},querySelectorAll:()=>[],querySelector:()=>null,addEventListener(){},body:{appendChild(){}},createElement:()=>({href:'',download:'',click(){downloads.push({filename:this.download,blob:blobs.get(this.href)});},remove(){}})},

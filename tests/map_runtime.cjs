@@ -10,7 +10,7 @@ const code = scripts.at(-1)[1];
 const elements = new Map();
 function element(id) {
   if (!elements.has(id)) elements.set(id, {
-    id, value: '', textContent: '', innerHTML: '', style: {}, dataset: {}, scrollLeft: 0, scrollTop: 0,
+    id, value: '', textContent: '', innerHTML: '', style: {setProperty(k,v){this[k]=v;}}, dataset: {}, scrollLeft: 0, scrollTop: 0,
     clientWidth: 1200, clientHeight: 760,
     classList: { add() {}, remove() {}, toggle() {} },
     setAttribute() {}, addEventListener() {}, focus() {}, scrollIntoView() {}, scrollBy() {},

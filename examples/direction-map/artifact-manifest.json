@@ -1,0 +1,16 @@
+{
+  "browserVisualQA": "not performed by the renderer",
+  "files": {
+    "index.html": "320a8f645d59d4544767105cf99fa93fc1b72bc83bebdb1536845d41ea63d2c3",
+    "paper-state.json": "6b4ae92e1fcf60a81065313157f4f0105cfc85882b54b6b0b6a00b31940ffb38"
+  },
+  "layoutVersion": "shape-curves-2",
+  "localeSha256": "5bce57f7cdbcaebfdc1f035ee3c554614f209e2cdd6e820cf0ec1f7abdf9fe6c",
+  "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
+  "registryVersion": "2.0.0",
+  "revision": 1,
+  "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
+  "snapshotSha256": "a7cfaad5095221319341cfd002660d7f073e0633f5724a7ff4adab80061d4ae2",
+  "templateSha256": "80ada7499ae6a35f84d58a66ae4bf055f788902e9e18ae9e72f9f1cef981307a",
+  "templateVersion": "paper-map-ui-1.5.1"
+}

@@ -27,6 +27,6 @@ One-to-many and many-to-one branches are legal and need no artificial binary bra
 5. Reuse routes only if endpoint, visual-shape, layout-version, and display-label signatures still match.
 6. Move existing nodes only with explicit layout-repair intent/reason, restricted to affected views rather than shuffling the whole map.
 
-Browser drags are tree/mode-specific diagram edits saved in portable history, separate from canonical research-memory changes; see [interaction](interaction.md). Shared scientific identity does not force identical placements in different views. Camera translation/scale are temporary navigation, not node positions; Center fits and centers the current tree without undoing edits. Signed world coordinates allow expansion in every direction.
+Browser drags are tree/mode-specific diagram edits saved in portable history, separate from canonical research-memory changes; see [interaction](interaction.md). Shared scientific identity does not force identical placements in different views. Camera translation/scale are temporary navigation, not node positions; Center translates the current tree into the middle without changing zoom or undoing edits. Signed world coordinates allow expansion in every direction.
 
 Unavoidable crossings may remain if lines do not pass through unrelated nodes and direction remains clear. Machine geometry does not replace expert checking of the reading logic. Localized labels require fresh geometry checks; source identities and prior node positions remain stable where feasible.
