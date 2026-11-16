@@ -21,6 +21,14 @@ class MapError(ValueError):
     pass
 
 
+def detail_module():
+    spec=importlib.util.spec_from_file_location('paper_detail_views',Path(__file__).with_name('detail_views.py'))
+    result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result);return result
+
+
+DETAIL=detail_module()
+
+
 def stable_json(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)
 
@@ -177,6 +185,7 @@ def locale_for(state, assets=ASSETS):
         for field,value in raw.items():
             if isinstance(value,dict) and isinstance(merged.get(field),dict):merged[field].update(value)
             else:merged[field]=copy.deepcopy(value)
+        merged['ui'].update(default['ui'])
         raw=merged
     required_relations={'note'}|{e['relationType'] for e in g['links']}
     required={'ui':set(default['ui']),'statuses':STATUS,
@@ -383,9 +392,9 @@ def curve_route(e, tree, edges, nodes, shapes, choice=0):
         elif side==1:
             x=max(p['x'] for p in positions)+WIDTH+margin;c1=(x,ac[1]);c2=(x,bc[1])
         elif side==2:
-            y=max(6,min(p['y'] for p in positions)-margin);c1=(ac[0],y);c2=(bc[0],y)
+            y=min(p['y'] for p in positions)-margin;c1=(ac[0],y);c2=(bc[0],y)
         else:
-            x=max(6,min(p['x'] for p in positions)-margin);c1=(x,ac[1]);c2=(x,bc[1])
+            x=min(p['x'] for p in positions)-margin;c1=(x,ac[1]);c2=(x,bc[1])
     start=shape_anchor(nodes[e['from']],a,c1,shapes);end=shape_anchor(nodes[e['to']],b,c2,shapes)
     points=[bezier(start,c1,c2,end,i/80) for i in range(81)]
     def fmt(p):return f'{p[0]:.2f} {p[1]:.2f}'
@@ -395,8 +404,6 @@ def curve_route(e, tree, edges, nodes, shapes, choice=0):
 def finish_route(route, edge, tree, already):
     positions = tree['positions']
     points = route['points']
-    if any(x < 0 or y < 0 for x,y in points):
-        return None
     if any(path_hits_rect(points[2:-2] if len(points)>10 else points, rectangle(p, 6))
            for ident,p in positions.items() if ident not in (edge['from'],edge['to'])):
         return None
@@ -411,7 +418,7 @@ def finish_route(route, edge, tree, already):
     node_boxes = [rectangle(p, 8) for p in positions.values()]
     for x,y in candidates:
         box = label_box(edge,x,y,4)
-        if box[0] < 6 or box[1] < 6 or any(intersects(box,r) for r in node_boxes):
+        if any(intersects(box,r) for r in node_boxes):
             continue
         if any(intersects(box,r['labelBox']) or path_hits_rect(r['points'],box) for r in already):
             continue
@@ -437,6 +444,8 @@ def layout(state, assets=ASSETS, repair=False):
                                if ident in (e['from'],e['to']) and
                                (e['from'] if e['from']!=ident else e['to']) in tree['positions']), None)
                 tree['positions'][ident] = find_spot(tree,ident,linked)
+        if tree.get('detailViews'):
+            tree['routes']={};continue
         existing = tree.get('routes', {})
         routes, used = {}, []
         view_edges = [edges[i] for i in tree['linkIds']]
@@ -461,6 +470,34 @@ def layout(state, assets=ASSETS, repair=False):
             used.append(route)
         tree['routes'] = routes
     return s
+
+
+def check_route_geometry(t,ids,link_ids,edges,nodes,shapes):
+        for index,i in enumerate(ids):
+            for j in ids[index+1:]:
+                if intersects(rectangle(t['positions'][i],12),rectangle(t['positions'][j],12)):raise MapError('overlapping detail nodes')
+        label_boxes=[]
+        for i in link_ids:
+            route=t.get('routes',{}).get(i)
+            if not route or route.get('format')!='stable-local-1' or not route.get('points'):
+                raise MapError('each visible edge needs a validated stable route')
+            link=edges[i]
+            signature=digest([link['from'],t['positions'][link['from']],link['to'],t['positions'][link['to']]])
+            if route.get('endpointSignature')!=signature:
+                raise MapError('route endpoints do not match the current nodes and positions')
+            if route.get('shapeSignature')!=shape_signature(edges[i],nodes,shapes):
+                raise MapError('route does not match the current semantic shapes')
+            if re.findall('[A-Za-z]',route.get('d','')) not in (['M','C'],['M','L']):
+                raise MapError('connections must be smooth cubic curves or single straight lines')
+            box=tuple(route['labelBox'])
+            if any(intersects(box,rectangle(t['positions'][n],6)) for n in ids):
+                raise MapError('edge label overlaps a node')
+            if any(intersects(box,old) for old in label_boxes):
+                raise MapError('edge labels overlap')
+            if any(path_hits_rect(route['points'],rectangle(t['positions'][n],4))
+                   for n in ids if n not in (edges[i]['from'],edges[i]['to'])):
+                raise MapError('edge crosses an unrelated node')
+            label_boxes.append(box)
 
 
 def check(state, assets=ASSETS, geometry=True):
@@ -575,7 +612,7 @@ def check(state, assets=ASSETS, geometry=True):
             raise MapError('tree references inactive objects')
         if any(edges[i]['from'] not in ids or edges[i]['to'] not in ids for i in link_ids):
             raise MapError('tree links must connect visible members')
-        for primary_only in (() if kind=='catalog' else (False,True)):
+        for primary_only in (() if kind=='catalog' or t.get('detailViews') else (False,True)):
             seen={t['rootId']}
             while True:
                 before=len(seen)
@@ -587,7 +624,7 @@ def check(state, assets=ASSETS, geometry=True):
             if seen!=set(ids):
                 raise MapError('every visible node needs a readable path from the root, including the initial primary view')
         kinds={edges[i]['relationType'] for i in link_ids}
-        if len(kinds)>lock['maxRelationTypesPerTree']:
+        if not t.get('detailViews') and len(kinds)>lock['maxRelationTypesPerTree']:
             raise MapError(f"tree {t['id']} has {len(kinds)} relation types; split by a meaningful question before rendering")
         if len(ids)>lock['warnNodesPerTree']:
             if not t.get('densityReview',{}).get('reason'):
@@ -599,35 +636,21 @@ def check(state, assets=ASSETS, geometry=True):
         edge_membership.update(link_ids)
         for i in ids:
             p=t['positions'].get(i)
-            if not p or any(not isinstance(p.get(k),(int,float)) or not math.isfinite(p[k]) or p[k]<0 for k in ('x','y')):
+            if not p or any(not isinstance(p.get(k),(int,float)) or not math.isfinite(p[k]) or abs(p[k])>1e7 for k in ('x','y')):
                 raise MapError('invalid node position')
-        for index,i in enumerate(ids):
+        for index,i in enumerate([] if t.get('detailViews') else ids):
             for j in ids[index+1:]:
                 if intersects(rectangle(t['positions'][i],12),rectangle(t['positions'][j],12)):
                     raise MapError(f'overlapping nodes: {i}, {j}')
+        try:DETAIL.validate(t,g)
+        except ValueError as error:raise MapError(str(error)) from error
         if geometry:
-            label_boxes=[]
-            for i in link_ids:
-                route=t.get('routes',{}).get(i)
-                if not route or route.get('format')!='stable-local-1' or not route.get('points'):
-                    raise MapError('each visible edge needs a validated stable route')
-                link=edges[i]
-                signature=digest([link['from'],t['positions'][link['from']],link['to'],t['positions'][link['to']]])
-                if route.get('endpointSignature')!=signature:
-                    raise MapError('route endpoints do not match the current nodes and positions')
-                if route.get('shapeSignature')!=shape_signature(edges[i],nodes,shapes):
-                    raise MapError('route does not match the current semantic shapes')
-                if re.findall('[A-Za-z]',route.get('d','')) not in (['M','C'],['M','L']):
-                    raise MapError('connections must be smooth cubic curves or single straight lines')
-                box=tuple(route['labelBox'])
-                if any(intersects(box,rectangle(t['positions'][n],6)) for n in ids):
-                    raise MapError('edge label overlaps a node')
-                if any(intersects(box,old) for old in label_boxes):
-                    raise MapError('edge labels overlap')
-                if any(path_hits_rect(route['points'],rectangle(t['positions'][n],4))
-                       for n in ids if n not in (edges[i]['from'],edges[i]['to'])):
-                    raise MapError('edge crosses an unrelated node')
-                label_boxes.append(box)
+            if not t.get('detailViews'):check_route_geometry(t,ids,link_ids,edges,nodes,shapes)
+            if t.get('detailViews'):
+                for level in DETAIL.LEVELS:
+                    plan,level_edges=DETAIL.project(t,g,level)
+                    view={**t,'positions':plan['positions'],'routes':t.get('detailRoutes',{}).get(level,{})}
+                    check_route_geometry(view,plan['nodeIds'],plan['linkIds'],{e['id']:e for e in level_edges},nodes,shapes)
     if any(not membership[i] for i in nodes) or any(not edge_membership[i] for i in edges):
         raise MapError('active objects need a visible tree; keep unshown material in the evidence index instead')
     return {'passed':True,'warnings':warnings,'nodes':len(nodes),'links':len(edges),'trees':len(g['trees']),
@@ -639,6 +662,8 @@ def prepare(state, assets=ASSETS, repair=False):
     result=normalize(state,assets)
     # Structure checks before geometry are useful, but missing positions are deliberately laid out first.
     result=layout(result,assets,repair=repair)
+    try:result=DETAIL.geometry(result,layout,assets,repair=repair)
+    except ValueError as error:raise MapError(str(error)) from error
     report=check(result,assets)
     return result,report
 
@@ -737,6 +762,10 @@ def plan(state, patch, assets=ASSETS):
             allowed={'meaning','status','sourceRefs','causalBasis','proofBasis','inferenceBasis','primary'}
             if set(updates)-allowed:raise MapError('semantic relation changes require retiring the old link and adding a new one')
             data.update(updates)
+        elif operation=='set_detail_views':
+            if not op.get('reason'):raise MapError('detail plans need an explicit coverage and abstraction reason')
+            view=t(op['treeId']);levels=copy.deepcopy(op['levels'])
+            view['detailViews']=levels;view.pop('detailRoutes',None)
         elif operation=='add_tree':
             view=copy.deepcopy(op['tree']);view.setdefault('kind','narrative')
             if view['kind']=='catalog':view.setdefault('rootId',None);view.setdefault('nodeIds',[])

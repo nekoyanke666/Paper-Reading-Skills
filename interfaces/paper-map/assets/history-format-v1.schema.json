@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:paper-reading-skills:paper-map-history:1",
+  "title": "Paper Map History v1",
+  "type": "object",
+  "required": [
+    "format",
+    "formatVersion",
+    "modelVersion",
+    "base",
+    "baseHash",
+    "commits",
+    "cursor",
+    "checksum"
+  ],
+  "properties": {
+    "format": {
+      "const": "paper-map-history"
+    },
+    "formatVersion": {
+      "const": 1
+    },
+    "modelVersion": {
+      "const": 1
+    },
+    "base": {
+      "$ref": "#/$defs/model"
+    },
+    "baseHash": {
+      "$ref": "#/$defs/hash"
+    },
+    "commits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/commit"
+      }
+    },
+    "cursor": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checksum": {
+      "$ref": "#/$defs/hash"
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "paper",
+        "sources",
+        "glossary",
+        "graph",
+        "preferences"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 2
+        },
+        "paper": {
+          "type": "object",
+          "required": [
+            "id",
+            "title"
+          ]
+        },
+        "sources": {
+          "type": "object"
+        },
+        "glossary": {
+          "type": "object"
+        },
+        "graph": {
+          "type": "object",
+          "required": [
+            "nodes",
+            "links",
+            "trees",
+            "treeOrder",
+            "nodeShapes",
+            "relationTypes",
+            "locale"
+          ],
+          "properties": {
+            "nodes": {
+              "type": "object"
+            },
+            "links": {
+              "type": "object"
+            },
+            "trees": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/$defs/tree"
+              }
+            },
+            "treeOrder": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          }
+        },
+        "preferences": {
+          "type": "object",
+          "required": [
+            "edgeMode",
+            "detailMode",
+            "activeTree"
+          ],
+          "properties": {
+            "edgeMode": {
+              "enum": [
+                "curve",
+                "straight"
+              ]
+            },
+            "detailMode": {
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "activeTree": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "commit": {
+      "type": "object",
+      "required": [
+        "id",
+        "at",
+        "hash",
+        "patch"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string"
+        },
+        "hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "origin": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "type": "string"
+        },
+        "patch": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/operation"
+          }
+        }
+      }
+    },
+    "operation": {
+      "type": "object",
+      "required": [
+        "op",
+        "path"
+      ],
+      "properties": {
+        "op": {
+          "enum": [
+            "set",
+            "remove"
+          ]
+        },
+        "path": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "value": {}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "set"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value"
+            ]
+          }
+        }
+      ]
+    },
+    "position": {
+      "type": "object",
+      "required": [
+        "x",
+        "y"
+      ],
+      "properties": {
+        "x": {
+          "type": "number",
+          "minimum": -10000000,
+          "maximum": 10000000
+        },
+        "y": {
+          "type": "number",
+          "minimum": -10000000,
+          "maximum": 10000000
+        }
+      }
+    },
+    "view": {
+      "type": "object",
+      "required": [
+        "nodeIds",
+        "linkIds",
+        "positions"
+      ],
+      "properties": {
+        "nodeIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "linkIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "rootId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "positions": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/position"
+          }
+        }
+      }
+    },
+    "tree": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/view"
+        }
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "detailViews": {
+          "type": "object",
+          "required": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "properties": {
+            "low": {
+              "$ref": "#/$defs/view"
+            },
+            "medium": {
+              "$ref": "#/$defs/view"
+            },
+            "high": {
+              "$ref": "#/$defs/view"
+            }
+          }
+        }
+      }
+    }
+  }
+}

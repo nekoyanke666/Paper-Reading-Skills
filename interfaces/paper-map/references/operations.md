@@ -23,6 +23,7 @@ Common fields: expectedRevision, roleVersion, settingsVersion, reason, importanc
 - set_visual_role: supply id, one of concept/method/entity/proposition, and reason; keep the referent and ID, then regenerate affected shape signatures/routes.
 - add_link/update_link: normalize/deduplicate or update source/support state; changed meaning/endpoints/conditions require retire-and-add.
 - add_tree/update_tree: narrative views use focused-question titles/shared anchors; catalog views use kind=catalog, rootId=null, topicDescription, and actual glossary-bound members. Zero edges and disconnected catalog members are legal. Conversions or title/scope/root changes need an explicit reason.
+- set_detail_views: supply treeId, complete low/medium/high view records in levels, and a reason. Reuse global IDs; validate each view independently, including its root, endpoints, positions and source-backed relations.
 - attach_node/attach_link: reuse existing objects without copying IDs.
 - remove_from_tree/detach_link: view-only change; root removal needs replacementRootId.
 - merge_nodes: supply same-referent basis, keep target ID, reconnect and redirect.
@@ -37,7 +38,7 @@ Locale/preference changes update the session settings and locale through a revie
 
 Restore the latest canonical session and save its expected revision. Preserve paper ID, node identities, aliases, source references, tree memberships, and translation/figure/detail reading progress. Derive the four visual roles from existing referents; supply explicit roles for domain-specific detailed types. Add every new UI key in the confirmed language before normalization; non-English sessions do not fall back silently to English. Replace old route geometry with current shape-aware curves while retaining existing node positions.
 
-The taller placement slots may reveal old collisions. If checks fail, prepare the smallest explicit layout-repair operation in affected views, record its reason, and check again. Do not overwrite a working entry with a failed candidate or reinitialize the paper. Commit the migration through paper-memory's revision check/history, render the same stable entry, and record the resulting version/hash. Browser-local placements are optional preferences, reconciled by stable IDs; installing updated skills alone does not regenerate an existing paper artifact. On the next invocation, each public entry evaluates whether its existing entry needs this migration.
+The taller placement slots may reveal old collisions. If checks fail, prepare the smallest explicit layout-repair operation in affected views, record its reason, and check again. Do not overwrite a working entry with a failed candidate or reinitialize the paper. Commit the migration through paper-memory's revision check/history, render the same stable entry, and record the resulting version/hash. Protect existing exported/imported diagram workspaces and user edits during source migration; reconcile their stable IDs only through a reviewed merge. Camera centering does not reset placements; installing updated skills alone does not regenerate an existing paper artifact. On the next invocation, each public entry evaluates whether its existing entry needs this migration.
 
 ## Plan and commit
 
@@ -49,12 +50,20 @@ Reports impact, refs, quality, and changed state without writing the canonical s
 
 After checks, paper-memory commits a revision and renders the matching site. No change means no revision/rewrite. This is an internal process, not a per-node approval flow.
 
+## Portable diagram archives
+
+`node scripts/history_ctl.cjs check saved.paper-map-history.json`
+
+`node scripts/history_ctl.cjs materialize saved.paper-map-history.json restored-state.json`
+
+The helper verifies checksums and all saved versions, then optionally restores a selected zero-based version as a schemaVersion=2 display snapshot. It never overwrites the input archive. See [permanent history](history-format.md) for the frozen format and legacy import contract.
+
 ## Rebuild and recover
 
 `python scripts/map_ctl.py check --session paper-session.json`
 
 `python scripts/map_ctl.py render --session paper-session.json --output map-site`
 
-For maintainers changing viewer behavior, edit assets/viewer-shell.html.in and assets/viewer-runtime.js, then run `python scripts/build_map_template.py` from the repository root. This rebuilds the packaged template and asset hashes; it does not authorize redesign or skip browser validation. Regenerate examples from their canonical sessions after template/locale changes.
+For maintainers changing viewer behavior, edit assets/viewer-shell.html.in and the relevant maintained history/detail/camera/runtime modules, then run `python scripts/build_map_template.py` from the repository root. This rebuilds the packaged template and asset hashes; it does not authorize redesign or skip browser validation. Regenerate examples from their canonical sessions after template/locale changes.
 
 Render accepts only canonical data and the locked template and produces HTML, matching JSON, manifest, quality report, and immutable snapshots. If a commit succeeded but render failed, use render-pending.json to rerender the saved revision rather than applying the patch twice. If helpers are unavailable, preserve canonical data and follow the same rules while explicitly reporting unperformed checks.

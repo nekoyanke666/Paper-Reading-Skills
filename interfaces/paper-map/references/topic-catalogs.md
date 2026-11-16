@@ -30,7 +30,7 @@ Leave terms unconnected when topic membership is all that is known or needed. Dr
 
 Use the same locked viewer, shapes, palette, font rules, node search, sidebar, tree selector, and compact Layout menu. Rootless catalogs have no root highlight. Place new unconnected entries in deterministic four-column slots, starting at x=40/y=60, with 230 horizontal and 160 vertical spacing; reuse existing positions and seek the next free slot. This is an initial placement grid, not a knowledge hierarchy. Sparse edges retain shape-aware cubic/straight behavior and geometry checks.
 
-Hide the all-relations toggle for a view with no edges. Global search locates catalog-only terms and matches glossary names/aliases, definitions, study roles, and properties. Clicking a term shows the same canonical content wherever it occurs; membership links navigate to that exact node in another view. Dragging, saved browser placements, default restoration, and reduced-motion behavior follow the existing interaction contract.
+Keep the same configured detail, tree, history/import and camera controls even in a zero-edge view. Global search locates catalog-only terms and matches glossary names/aliases, definitions, study roles, and properties. Clicking a term shows the same canonical content wherever it occurs; membership links navigate to that exact node in another view. Dragging, permanent full-map files, saved-version navigation, camera pan/zoom/Center, and reduced-motion behavior follow the [interaction contract](interaction.md).
 
 ## Update lifecycle and delivery
 

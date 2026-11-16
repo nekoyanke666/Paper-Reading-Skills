@@ -1,8 +1,15 @@
 {
+  "cameraContractVersion": 1,
   "canonicalStateOverridesBrowserDrafts": true,
+  "detailContractVersion": 1,
+  "historyFormat": {
+    "format": "paper-map-history",
+    "formatVersion": 1,
+    "modelVersion": 1
+  },
   "labelFontSize": 11,
   "layoutVersion": "shape-curves-2",
-  "localeSha256": "a30ef72479390015e9efa25f74324551e3fda45b9076d68fc804ad1c62f73869",
+  "localeSha256": "f44ac47134d150e2ca0eafe715ce26e94ea1e2e8f4038690139ee2ca645bd4e5",
   "maxRelationTypesPerTree": 4,
   "nodeGap": 24,
   "nodeHeight": 116,
@@ -35,16 +42,17 @@
   },
   "nodeWidth": 170,
   "onlyPersistentControls": [
-    "tree-select-if-multiple",
+    "tree-select-always",
     "node-search",
-    "all-relations",
-    "compact-layout-menu"
+    "detail-low-medium-high",
+    "compact-save-history-menu",
+    "compact-zoom-center"
   ],
   "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
   "registryVersion": "2.0.0",
   "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
-  "templateSha256": "90b8c14cd2cd5a45fa18110d5e19a0411bbcea7057f916f91a87c702b0ef5c78",
-  "version": "paper-map-ui-1.3.0",
+  "templateSha256": "bd5c323eb4cee8588ba6fd7f51c3fd78c04f51ae723b44a6e1814003578d2dcf",
+  "version": "paper-map-ui-1.5.0",
   "viewportBaselines": [
     [
       1440,

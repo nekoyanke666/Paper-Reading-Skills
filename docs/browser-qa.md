@@ -1,4 +1,18 @@
-# Browser QA for Version 1.1.0
+# Browser QA
+
+## Version 1.3.0 files, independent detail trees and camera
+
+Date: 2026-11-16. Chrome on Windows; fictional detail-workflow and theory fixtures only. The final viewer is paper-map-ui-1.5.0. Earlier observations below describe their historical versions, not the current save/default behavior.
+
+- At 1440 by 900, 1024 by 768, and 390 by 844, the canvas occupied the remaining viewport below the controls with outer margins; no horizontal document overflow was observed. Tree selection and history import remained configured for a one-tree document. Mobile history and zoom/Center controls stayed within the viewport.
+- Background pointer drag translated the board by the observed screen displacement. The wheel and +/- changed scale; Center restored the current tree's fit. After manual zoom at mobile width, resizing to 1024 and then 1440 refit the graph automatically (observed 26% to 62% to 77%). Opening/closing a sidebar also reframed the available canvas. It did not change node world positions.
+- Low, Medium and High displayed the independently curated 3, 5 and 8 nodes. Shared-node memberships linked the same global definition between modes, with independent coordinates. The low-only question did not appear automatically in High. No automatic path collapse was used.
+- The history popover placed Prev before Next on the first row and Save below, confirmed with actual element rectangles at desktop and mobile widths. A click still opened a node sidebar. At 80% scale, a 48-pixel pointer drag moved a node by 60 world units; three Alt+Left actions restored its original world position and cleared the unsaved state.
+- Earlier in this release's browser check, created a node and a new tree, moved its node from (400,220) to (420,220), and downloaded a full archive. The actual 27,665-byte downloaded file parsed successfully, contained two saved versions and the new content/position. Prev removed the newly created tree from the view; Next restored it. This occurred before the camera addition; the final runtime suites check the combined behavior and signed coordinates.
+- Actual browser upload was blocked by the extension's file-access permission. The permission was not changed and no alternate route was used. Native writable-file picker/write/close was not verified. Mock file tests cover successful close, cancellation, write/close failures and external-file conflicts; core/minimal-DOM tests cover all-version verification, cross-paper import and corrupt-input isolation. A real download is evidence for the download path, not native writable-file or browser upload success.
+- Temporary viewport overrides were reset. The release screenshot is distributed outside the skill source. This check did not rebuild or assess the user's private paper map or academic interpretation.
+
+## Version 1.1.0 checks
 
 Date: 2026-11-15. Browser: Chrome on Windows. Content: fictional theory and mechanism fixtures only. This is separate from automated package validation and does not evaluate real-paper teaching quality.
 

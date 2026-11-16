@@ -6,7 +6,7 @@
 
 **Structural/geometric:** machines check IDs, references, normalized aliases, deduplication, view scope, locale completeness, positions, routes, text collisions, and versions.
 
-**Visual/interactive:** actually inspect fonts/wrapping, sidebar, search/location, shared markers, and all-relations. If no browser test occurred, report it unperformed rather than labeling all three passed.
+**Visual/interactive:** actually inspect fonts/wrapping, sidebar, search/location, shared markers, all detail modes, camera controls, saved checkpoints, and import UI. If no browser test occurred, report it unperformed rather than labeling all three passed.
 
 ## Expert submission review
 
@@ -35,7 +35,7 @@ Canonical snapshot + template version/hash + registry version/hash + locale text
 
 The same input/version set produces byte-identical index.html, paper-state.json, and manifest. Use sorted keys, UTF-8/LF, and no current time, randomness, or machine paths in the render snapshot. Manifest hashes permit reconstruction. Fixed responsive rules do not guarantee pixel identity across different font environments.
 
-Browser drafts never override canonical state. Save notes separately for review/merge; replace with complete consistent snapshots rather than mixing template versions.
+Source rendering never silently replaces saved/imported diagram workspaces or unsaved user edits. Protect and separately review them before merging with canonical research memory; accept complete validated snapshots rather than mixing template versions.
 
 ## Persistence and failure
 
@@ -45,4 +45,4 @@ Report machine results, semantic review scope, actual visual checks, and unverif
 
 ## Regression scenarios
 
-Aliases/reverse direction, symmetric deduplication, distinct qualifiers, missing causal basis, legal cycles, arbitrary extension, rename preserving identity, cross-tree sharing, view-only removal, merge redirects, retirement/restoration, failed-write isolation, stale revisions/roles/settings, template/registry tampering, language/preference persistence, localized labels/statuses, and byte-identical reconstruction. Also test semantic role derivation/reclassification, shape-boundary anchors, ordinary click without pointer capture, drag threshold/live rerouting/cancellation, collision rollback, explicit save/reload, view-scoped defaults, independent shared-node placements, source updates, storage failure, keyboard access, and reduced motion. Minimal-DOM tests do not establish actual touch or browser rendering quality.
+Aliases/reverse direction, symmetric deduplication, distinct qualifiers, missing causal basis, legal cycles, arbitrary extension, rename preserving identity, cross-tree sharing, view-only removal, merge redirects, retirement/restoration, failed-write isolation, stale revisions/roles/settings, template/registry tampering, language/preference persistence, localized labels/statuses, and byte-identical reconstruction. Also test semantic role derivation/reclassification, shape-boundary anchors, ordinary click without pointer capture, drag threshold/live rerouting/cancellation, collision rollback, explicit save/reload, Prev/Next saved checkpoints and retained former futures, full cross-paper archive import, stable v1 compatibility fixtures, independent shared-node placements, source updates, storage failure, keyboard access, and reduced motion. Check independent low/medium/high memberships, per-mode coordinates, saving all modes while low is active, and search switching to a containing mode. Check cursor-anchored zoom, background panning beyond initial bounds, scaled node dragging, signed positions saved/imported, and Center preserving content/history. Minimal-DOM tests do not establish actual touch or browser rendering quality.

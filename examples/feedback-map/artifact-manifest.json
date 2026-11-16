@@ -1,16 +1,16 @@
 {
   "browserVisualQA": "not performed by the renderer",
   "files": {
-    "index.html": "a0aa9dcdef8dc5807b76d510ea8bb3934d200871c18968198da1e13da8539a68",
-    "paper-state.json": "264f94fc0d0a4fa0eaa369cbdc1c2a06b6236ffaad99ddc34d560a7bae9cb914"
+    "index.html": "250cd3268eb1d8a592e41d0f8aabd0e2216673a416acfd51666c185f2c0aa527",
+    "paper-state.json": "deaffa93cf78b5e373bfa042c2a6a1086714f21cc378d14730fb9095ba550d30"
   },
   "layoutVersion": "shape-curves-2",
-  "localeSha256": "a30ef72479390015e9efa25f74324551e3fda45b9076d68fc804ad1c62f73869",
+  "localeSha256": "f44ac47134d150e2ca0eafe715ce26e94ea1e2e8f4038690139ee2ca645bd4e5",
   "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
   "registryVersion": "2.0.0",
   "revision": 1,
   "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
-  "snapshotSha256": "0d9037abb43b21855a2aa3cedd5f33d45b0cc422a581101efa47d824ba7a4442",
-  "templateSha256": "90b8c14cd2cd5a45fa18110d5e19a0411bbcea7057f916f91a87c702b0ef5c78",
-  "templateVersion": "paper-map-ui-1.3.0"
+  "snapshotSha256": "094c5c07dcb306f73219edbe932d468e2c68f4d2a9833eee97a68114a80522e9",
+  "templateSha256": "bd5c323eb4cee8588ba6fd7f51c3fd78c04f51ae723b44a6e1814003578d2dcf",
+  "templateVersion": "paper-map-ui-1.5.0"
 }

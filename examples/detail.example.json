@@ -1,0 +1,5585 @@
+{
+  "audit": [],
+  "claims": [],
+  "corrections": [],
+  "coverage": [],
+  "glossary": [],
+  "graph": {
+    "layoutVersion": "shape-curves-2",
+    "linkRedirects": {},
+    "links": [
+      {
+        "displayLabel": "depends on",
+        "displayStatusSuffix": "",
+        "from": "p",
+        "id": "approach-input",
+        "label": "depends on",
+        "meaning": "Fictional workflow definition: p depends_on a. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "depends_on",
+        "semanticKey": "[\"p\",\"a\",\"depends_on\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "a"
+      },
+      {
+        "displayLabel": "limited by",
+        "displayStatusSuffix": "",
+        "from": "p",
+        "id": "approach-limit",
+        "label": "limited by",
+        "meaning": "Fictional workflow definition: p constrained_by f. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "constrained_by",
+        "semanticKey": "[\"p\",\"f\",\"constrained_by\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "f"
+      },
+      {
+        "displayLabel": "tests",
+        "displayStatusSuffix": "",
+        "from": "p",
+        "id": "approach-question",
+        "label": "tests",
+        "meaning": "Fictional workflow definition: p tests q. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "tests",
+        "semanticKey": "[\"p\",\"q\",\"tests\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "q"
+      },
+      {
+        "displayLabel": "part of",
+        "displayStatusSuffix": "",
+        "from": "h",
+        "id": "bias-validation",
+        "label": "part of",
+        "meaning": "Fictional workflow definition: h part_of d. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "part_of",
+        "semanticKey": "[\"h\",\"d\",\"part_of\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "d"
+      },
+      {
+        "displayLabel": "precedes",
+        "displayStatusSuffix": "",
+        "from": "b",
+        "id": "calibration-estimate",
+        "label": "precedes",
+        "meaning": "Fictional workflow definition: b precedes c. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "precedes",
+        "semanticKey": "[\"b\",\"c\",\"precedes\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "c"
+      },
+      {
+        "displayLabel": "part of",
+        "displayStatusSuffix": "",
+        "from": "c",
+        "id": "estimate-approach",
+        "label": "part of",
+        "meaning": "Fictional workflow definition: c part_of p. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "part_of",
+        "semanticKey": "[\"c\",\"p\",\"part_of\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "p"
+      },
+      {
+        "displayLabel": "limited by",
+        "displayStatusSuffix": "",
+        "from": "c",
+        "id": "estimate-limit",
+        "label": "limited by",
+        "meaning": "Fictional workflow definition: c constrained_by f. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "constrained_by",
+        "semanticKey": "[\"c\",\"f\",\"constrained_by\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "f"
+      },
+      {
+        "displayLabel": "precedes",
+        "displayStatusSuffix": "",
+        "from": "a",
+        "id": "input-calibration",
+        "label": "precedes",
+        "meaning": "Fictional workflow definition: a precedes b. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "precedes",
+        "semanticKey": "[\"a\",\"b\",\"precedes\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "b"
+      },
+      {
+        "displayLabel": "part of",
+        "displayStatusSuffix": "",
+        "from": "e",
+        "id": "reference-validation",
+        "label": "part of",
+        "meaning": "Fictional workflow definition: e part_of d. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "part_of",
+        "semanticKey": "[\"e\",\"d\",\"part_of\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "d"
+      },
+      {
+        "displayLabel": "part of",
+        "displayStatusSuffix": "",
+        "from": "g",
+        "id": "repeats-validation",
+        "label": "part of",
+        "meaning": "Fictional workflow definition: g part_of d. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "part_of",
+        "semanticKey": "[\"g\",\"d\",\"part_of\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "d"
+      },
+      {
+        "displayLabel": "tests",
+        "displayStatusSuffix": "",
+        "from": "d",
+        "id": "validation-estimate",
+        "label": "tests",
+        "meaning": "Fictional workflow definition: d tests c. This is the stated design relationship, not an inferred path shortcut.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "tests",
+        "semanticKey": "[\"d\",\"c\",\"tests\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "c"
+      }
+    ],
+    "locale": {
+      "families": {
+        "association": "Association",
+        "boundary": "Inference boundary",
+        "causal": "Causal effect",
+        "context": "Research context",
+        "evidence": "Evidence",
+        "interaction": "Interaction",
+        "logic": "Logical relation",
+        "method": "Research methods",
+        "sequence": "Sequence",
+        "structure": "Structure"
+      },
+      "languageTag": "en",
+      "nodeTypes": {
+        "algorithm": "Algorithm",
+        "argument": "Argument",
+        "assumption": "Assumption",
+        "claim": "Claim",
+        "concept": "Concept",
+        "counterexample": "Counterexample",
+        "custom-lemma": "Intermediate lemma",
+        "dataset": "Dataset",
+        "definition": "Definition",
+        "entity": "Research entity",
+        "experiment": "Experiment",
+        "finding": "Finding",
+        "hypothesis": "Hypothesis",
+        "interpretation": "Interpretation",
+        "limit": "Limitation",
+        "method": "Method",
+        "metric": "Metric",
+        "model": "Model",
+        "observation": "Observation",
+        "proof": "Proof",
+        "question": "Research question",
+        "source": "Material",
+        "term": "Term or named object",
+        "theorem": "Theorem"
+      },
+      "relationDefinitions": {
+        "activates": "The source causes activation of the target state or activity, distinct from increased abundance alone.",
+        "alternative_to": "The endpoints are alternative explanations of the same question, without necessarily being logically inconsistent.",
+        "associated_with": "The endpoints are associated under stated conditions, without implying causal direction.",
+        "binds": "The endpoints physically bind under the stated conditions; binding alone does not establish downstream effects.",
+        "causes": "Within the stated scope, the source causally produces the target; requires a justified causal basis.",
+        "constrained_by": "The scope or validity of the source claim is constrained by the target condition or limitation.",
+        "contradicts": "The source evidence contradicts the target claim under the stated conditions; uncertainty alone is not contradiction.",
+        "depends_on": "The source claim, method, or derivation depends on the target condition without by itself proving necessity or sufficiency.",
+        "entails": "Under stated premises and valid inference, the source proposition implies the target proposition.",
+        "inhibits": "Within the stated scope, the source negatively affects the specified target aspect; negative effect is distinct from uncertainty.",
+        "is_a": "The source is a kind of the target category, not a component relationship.",
+        "leaves_open": "The source result or argument leaves the target question unresolved rather than supporting a particular answer.",
+        "measures": "The source method measures the target quantity or indicator; measuring does not mean causing.",
+        "motivates": "The source question, result, or gap motivates the target question or hypothesis without establishing it.",
+        "necessary_for": "Within stated scope, the target requires the source condition; direction is condition to outcome, separate from sufficiency.",
+        "note": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "observes": "The source operation or measurement yields the target observation, separate from mechanism interpretation.",
+        "part_of": "The source is a component of the target whole, distinct from belonging to a category.",
+        "precedes": "The source occurs earlier in time or an explicit process order than the target; sequence alone is not causality.",
+        "promotes": "Within the stated scope, the source has a positive causal effect on the specified target aspect.",
+        "proves": "The source proof or valid argument establishes the target proposition; empirical support is not automatically proof.",
+        "requires_concept": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+        "sufficient_for": "Under stated premises, the source condition suffices for the target; necessity evidence alone does not establish sufficiency.",
+        "supports": "The source evidence supports the target claim; strength, conditions, and limitations are recorded separately.",
+        "tests": "The source experiment, analysis, or test is designed to assess the target question or claim."
+      },
+      "relationLabels": {
+        "activates": "activates",
+        "alternative_to": "alternative",
+        "associated_with": "associated",
+        "binds": "binds",
+        "causes": "causes",
+        "constrained_by": "limited by",
+        "contradicts": "contradicts",
+        "depends_on": "depends on",
+        "entails": "entails",
+        "inhibits": "inhibits",
+        "is_a": "is a",
+        "leaves_open": "leaves open",
+        "measures": "measures",
+        "motivates": "motivates",
+        "necessary_for": "necessary for",
+        "note": "note",
+        "observes": "observes",
+        "part_of": "part of",
+        "precedes": "precedes",
+        "promotes": "promotes",
+        "proves": "proves",
+        "requires_concept": "requires",
+        "sufficient_for": "sufficient for",
+        "supports": "supports",
+        "tests": "tests"
+      },
+      "statuses": {
+        "design": "Research design or reading context",
+        "disputed": "Disputed evidence",
+        "hypothesis": "Hypothesis",
+        "inferred": "Evidence-based inference",
+        "supported": "Supported by evidence",
+        "unresolved": "Unresolved",
+        "user": "User note, not yet checked"
+      },
+      "ui": {
+        "allRelations": "All relations",
+        "basis": "Sources and basis",
+        "cancel": "Cancel",
+        "canvasHint": "Drag the background to pan; scroll to zoom. Keyboard: arrows, + / -, Home.",
+        "caution": "Avoid misinterpretation",
+        "centerMap": "Center",
+        "close": "Close details",
+        "conditions": "Conditions",
+        "connect": "Connect",
+        "connectedNodes": "Connected nodes",
+        "create": "Create",
+        "curveMode": "Curves",
+        "defaultLayout": "Default view",
+        "definitions": "Definitions and use",
+        "detail": "Explanation",
+        "detailHigh": "High",
+        "detailLabel": "Node and relationship details",
+        "detailLevel": "Detail level",
+        "detailLow": "Low",
+        "detailMedium": "Medium",
+        "detailOriginalPath": "Original relationships",
+        "detailSummaryDefinition": "Overview of the listed existing path. It adds no direct scientific claim and does not assert transitivity.",
+        "detailUnreviewed": "This older map has no separate detail views; its existing content is retained.",
+        "detailVia": "via {nodes}",
+        "directed": "This edge points from source to target.",
+        "disputedSuffix": " (disputed)",
+        "draftDetail": "User-added concept; provenance and explanation are not yet supplied.",
+        "draftLimits": "User note, not checked against paper evidence.",
+        "draftSaved": "Loaded the new canonical snapshot; local notes remain a separate draft awaiting review.",
+        "draftUnavailable": "Local note storage is unavailable in this environment.",
+        "dragHint": "Drag to move; Alt + arrow keys also move this node.",
+        "edgeError": "Missing relationship semantics, endpoints, or status",
+        "edgeLabel": "Node relationships",
+        "endpointError": "Visible edges must connect nodes in this tree",
+        "extend": "Extend concept",
+        "extendedContext": "Extended context of {name}",
+        "historyCacheRejected": "The browser recovery copy was invalid; the source map remains available.",
+        "historyCopy": "Save a copy",
+        "historyDiskState": "Written to file",
+        "historyDownload": "Download backup",
+        "historyDownloadRequested": "Backup download requested. Keep the JSON file to preserve this history.",
+        "historyDownloadState": "Download requested",
+        "historyFileChanged": "The selected file changed or is not this archive. Import its latest version or save a new copy.",
+        "historyFileSaved": "History written to the selected file.",
+        "historyImport": "Import history",
+        "historyImportFailed": "History was not imported.",
+        "historyImported": "History restored. Its content remains separate from the source paper session.",
+        "historyLegacyRecovered": "Older browser notes were recovered. Save them to a history file.",
+        "historyMenu": "Save & history",
+        "historyNext": "Next",
+        "historyPrevious": "Prev",
+        "historyReady": "Ready",
+        "historySave": "Save",
+        "historySaveFailed": "The file was not saved.",
+        "historySaveFirst": "Save current edits before switching saved versions or importing another history.",
+        "historySourceHeld": "A source update is available. This saved workspace was kept; import the new source snapshot separately to review it.",
+        "historyUnsaved": "Unsaved changes",
+        "historyVersion": "Version {current}/{total}",
+        "hypothesisSuffix": " (hypothesis)",
+        "layout": "Layout",
+        "layoutCollision": "Nodes cannot overlap; the previous position was restored.",
+        "layoutDefault": "Default positions restored for this tree.",
+        "layoutDefaultState": "Default positions",
+        "layoutSaveFailed": "Positions could not be saved; they remain temporary.",
+        "layoutSaved": "Positions saved in this browser.",
+        "layoutSavedState": "Saved in this browser",
+        "layoutUnsaved": "Positions not saved",
+        "limits": "Interpretive limits",
+        "mainTree": "Main tree",
+        "mapLabel": "Concept graph with arbitrary node extensions",
+        "newNodeName": "New node name",
+        "newTree": "Create tree",
+        "newTreeName": "New tree name",
+        "noEvidence": "Concept definition or note; not presented as new evidence.",
+        "noResults": "No matching nodes",
+        "nodeAdded": "Extended the selected node with a new concept.",
+        "nodeError": "Missing node identity, name, or content",
+        "nodeKind": "Node type",
+        "nodeRole": "Visual role",
+        "paperTitle": "Paper title",
+        "positionError": "Invalid node position",
+        "relation": "Relationship",
+        "relationCaveat": "Relationship meaning and evidence state are separate. Dashes mean hypothetical/unresolved, not inhibition. Support, sequence, and association do not automatically imply causality.",
+        "relationDefinition": "Relationship definition",
+        "relationshipAria": "Relationship: {name}",
+        "roleConcept": "Concept · rectangle",
+        "roleEntity": "Named object or term · circle",
+        "roleMethod": "Method · ellipse",
+        "roleProposition": "Question or claim · hexagon",
+        "saveLayout": "Save positions",
+        "schemaError": "Incomplete session format",
+        "search": "Search nodes",
+        "searchResults": "Node search results",
+        "selectTree": "Select tree",
+        "sharedCount": "{name} appears in {count} trees",
+        "sharedHeading": "Same node in other trees",
+        "sourceNode": "Source",
+        "sources": "Sources and evidence",
+        "straightMode": "Straight",
+        "targetNode": "Target",
+        "templateMismatch": "Template versions differ; reopen the page.",
+        "termProperties": "Context and properties",
+        "termStudyRole": "Role in this study",
+        "treeCreated": "Created a tree using the same node as its root.",
+        "treeError": "Incomplete tree scope",
+        "undirected": "This relationship has no direction.",
+        "userSuffix": " (note)",
+        "zoomIn": "Zoom in",
+        "zoomOut": "Zoom out"
+      }
+    },
+    "nodeShapes": {
+      "roles": {
+        "concept": {
+          "height": 72,
+          "labelWidth": 144,
+          "shape": "rectangle",
+          "width": 170
+        },
+        "entity": {
+          "height": 108,
+          "labelWidth": 82,
+          "shape": "circle",
+          "width": 108
+        },
+        "method": {
+          "height": 84,
+          "labelWidth": 130,
+          "shape": "ellipse",
+          "width": 170
+        },
+        "proposition": {
+          "height": 88,
+          "labelWidth": 130,
+          "shape": "hexagon",
+          "width": 170
+        }
+      },
+      "slot": {
+        "height": 116,
+        "width": 170
+      },
+      "typeRoles": {
+        "algorithm": "method",
+        "argument": "proposition",
+        "assumption": "concept",
+        "claim": "proposition",
+        "concept": "concept",
+        "counterexample": "proposition",
+        "dataset": "entity",
+        "definition": "concept",
+        "entity": "entity",
+        "experiment": "method",
+        "finding": "proposition",
+        "hypothesis": "proposition",
+        "interpretation": "proposition",
+        "limit": "concept",
+        "method": "method",
+        "metric": "concept",
+        "model": "concept",
+        "observation": "proposition",
+        "proof": "method",
+        "question": "proposition",
+        "source": "entity",
+        "term": "entity",
+        "theorem": "proposition"
+      },
+      "version": "1.0.0"
+    },
+    "nodeTypes": {
+      "custom-lemma": "Intermediate lemma"
+    },
+    "nodes": [
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Input data. Its definition is the same in every view.",
+        "id": "a",
+        "identity": {
+          "kind": "dataset",
+          "referent": "fictional-workflow:a",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Input data",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Input data",
+        "type": "dataset",
+        "visualRole": "entity"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Calibration. Its definition is the same in every view.",
+        "id": "b",
+        "identity": {
+          "kind": "method",
+          "referent": "fictional-workflow:b",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Calibration",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Calibration",
+        "type": "method",
+        "visualRole": "method"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Estimate. Its definition is the same in every view.",
+        "id": "c",
+        "identity": {
+          "kind": "finding",
+          "referent": "fictional-workflow:c",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Estimate",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Estimate",
+        "type": "finding",
+        "visualRole": "proposition"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Validation. Its definition is the same in every view.",
+        "id": "d",
+        "identity": {
+          "kind": "experiment",
+          "referent": "fictional-workflow:d",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Validation",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Validation",
+        "type": "experiment",
+        "visualRole": "method"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Reference data. Its definition is the same in every view.",
+        "id": "e",
+        "identity": {
+          "kind": "dataset",
+          "referent": "fictional-workflow:e",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Reference data",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Reference data",
+        "type": "dataset",
+        "visualRole": "entity"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Scope bound. Its definition is the same in every view.",
+        "id": "f",
+        "identity": {
+          "kind": "limit",
+          "referent": "fictional-workflow:f",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Scope bound",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Scope bound",
+        "type": "limit",
+        "visualRole": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Repeats. Its definition is the same in every view.",
+        "id": "g",
+        "identity": {
+          "kind": "experiment",
+          "referent": "fictional-workflow:g",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Repeats",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Repeats",
+        "type": "experiment",
+        "visualRole": "method"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Bias check. Its definition is the same in every view.",
+        "id": "h",
+        "identity": {
+          "kind": "experiment",
+          "referent": "fictional-workflow:h",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Bias check",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Bias check",
+        "type": "experiment",
+        "visualRole": "method"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Approach. Its definition is the same in every view.",
+        "id": "p",
+        "identity": {
+          "kind": "method",
+          "referent": "fictional-workflow:p",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Approach",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Approach",
+        "type": "method",
+        "visualRole": "method"
+      },
+      {
+        "aliases": [],
+        "detail": "Shared fictional concept: Study problem. Its definition is the same in every view.",
+        "id": "q",
+        "identity": {
+          "kind": "question",
+          "referent": "fictional-workflow:q",
+          "scope": "fictional-detail-workflow"
+        },
+        "label": "Study problem",
+        "limits": "No real research result is claimed.",
+        "sourceRefs": [
+          {
+            "location": "Fictional workflow specification; not a real paper",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Study problem",
+        "type": "question",
+        "visualRole": "proposition"
+      }
+    ],
+    "redirects": {},
+    "registryVersion": "2.0.0",
+    "relationTypes": {
+      "constrained_by": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The scope or validity of the source claim is constrained by the target condition or limitation.",
+        "directed": true,
+        "family": "boundary",
+        "familyLabel": "boundary",
+        "id": "constrained_by",
+        "label": "limited by",
+        "marker": "arrow"
+      },
+      "depends_on": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The source claim, method, or derivation depends on the target condition without by itself proving necessity or sufficiency.",
+        "directed": true,
+        "family": "logic",
+        "familyLabel": "logic",
+        "id": "depends_on",
+        "label": "depends on",
+        "marker": "arrow"
+      },
+      "note": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "directed": true,
+        "family": "context",
+        "familyLabel": "context",
+        "id": "note",
+        "label": "note",
+        "marker": "arrow"
+      },
+      "part_of": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The source is a component of the target whole, distinct from belonging to a category.",
+        "directed": true,
+        "family": "structure",
+        "familyLabel": "structure",
+        "id": "part_of",
+        "label": "part of",
+        "marker": "arrow"
+      },
+      "precedes": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The source occurs earlier in time or an explicit process order than the target; sequence alone is not causality.",
+        "directed": true,
+        "family": "sequence",
+        "familyLabel": "sequence",
+        "id": "precedes",
+        "label": "precedes",
+        "marker": "arrow"
+      },
+      "tests": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The source experiment, analysis, or test is designed to assess the target question or claim.",
+        "directed": true,
+        "family": "method",
+        "familyLabel": "method",
+        "id": "tests",
+        "label": "tests",
+        "marker": "arrow"
+      }
+    },
+    "retiredLinks": [],
+    "retiredNodes": [],
+    "templateVersion": "paper-map-ui-1.5.0",
+    "trees": [
+      {
+        "detailRoutes": {
+          "high": {
+            "bias-validation": {
+              "bounds": {
+                "maxX": 1224.0,
+                "maxY": 902.0
+              },
+              "d": "M1200.00 878.00 C1105.00 878.00 1065.00 598.00 970.00 598.00",
+              "endpointSignature": "875f32e8f0b2c6f6623679e0ad3863d4350c1032d6748d0b259aaa57caa0fda0",
+              "format": "stable-local-1",
+              "labelBox": [
+                1035.5,
+                722.0,
+                1134.5,
+                754.0
+              ],
+              "labelKey": "part of",
+              "points": [
+                [
+                  1200.0,
+                  878.0
+                ],
+                [
+                  1196.46,
+                  877.87
+                ],
+                [
+                  1192.98,
+                  877.48
+                ],
+                [
+                  1189.54,
+                  876.85
+                ],
+                [
+                  1186.15,
+                  875.97
+                ],
+                [
+                  1182.81,
+                  874.86
+                ],
+                [
+                  1179.51,
+                  873.51
+                ],
+                [
+                  1176.25,
+                  871.94
+                ],
+                [
+                  1173.04,
+                  870.16
+                ],
+                [
+                  1169.87,
+                  868.17
+                ],
+                [
+                  1166.74,
+                  865.97
+                ],
+                [
+                  1163.65,
+                  863.57
+                ],
+                [
+                  1160.59,
+                  860.99
+                ],
+                [
+                  1157.57,
+                  858.22
+                ],
+                [
+                  1154.59,
+                  855.28
+                ],
+                [
+                  1151.64,
+                  852.16
+                ],
+                [
+                  1148.72,
+                  848.88
+                ],
+                [
+                  1145.83,
+                  845.44
+                ],
+                [
+                  1142.98,
+                  841.85
+                ],
+                [
+                  1140.15,
+                  838.12
+                ],
+                [
+                  1137.34,
+                  834.25
+                ],
+                [
+                  1134.57,
+                  830.25
+                ],
+                [
+                  1131.82,
+                  826.12
+                ],
+                [
+                  1129.09,
+                  821.88
+                ],
+                [
+                  1126.38,
+                  817.52
+                ],
+                [
+                  1123.69,
+                  813.06
+                ],
+                [
+                  1121.03,
+                  808.5
+                ],
+                [
+                  1118.38,
+                  803.85
+                ],
+                [
+                  1115.75,
+                  799.11
+                ],
+                [
+                  1113.13,
+                  794.29
+                ],
+                [
+                  1110.53,
+                  789.41
+                ],
+                [
+                  1107.94,
+                  784.45
+                ],
+                [
+                  1105.36,
+                  779.44
+                ],
+                [
+                  1102.79,
+                  774.37
+                ],
+                [
+                  1100.23,
+                  769.26
+                ],
+                [
+                  1097.68,
+                  764.11
+                ],
+                [
+                  1095.14,
+                  758.93
+                ],
+                [
+                  1092.6,
+                  753.72
+                ],
+                [
+                  1090.06,
+                  748.49
+                ],
+                [
+                  1087.53,
+                  743.25
+                ],
+                [
+                  1085.0,
+                  738.0
+                ],
+                [
+                  1082.47,
+                  732.75
+                ],
+                [
+                  1079.94,
+                  727.51
+                ],
+                [
+                  1077.4,
+                  722.28
+                ],
+                [
+                  1074.86,
+                  717.07
+                ],
+                [
+                  1072.32,
+                  711.89
+                ],
+                [
+                  1069.77,
+                  706.74
+                ],
+                [
+                  1067.21,
+                  701.63
+                ],
+                [
+                  1064.64,
+                  696.56
+                ],
+                [
+                  1062.06,
+                  691.55
+                ],
+                [
+                  1059.47,
+                  686.59
+                ],
+                [
+                  1056.87,
+                  681.71
+                ],
+                [
+                  1054.25,
+                  676.89
+                ],
+                [
+                  1051.62,
+                  672.15
+                ],
+                [
+                  1048.97,
+                  667.5
+                ],
+                [
+                  1046.31,
+                  662.94
+                ],
+                [
+                  1043.62,
+                  658.48
+                ],
+                [
+                  1040.91,
+                  654.12
+                ],
+                [
+                  1038.18,
+                  649.88
+                ],
+                [
+                  1035.43,
+                  645.75
+                ],
+                [
+                  1032.66,
+                  641.75
+                ],
+                [
+                  1029.85,
+                  637.88
+                ],
+                [
+                  1027.02,
+                  634.15
+                ],
+                [
+                  1024.17,
+                  630.56
+                ],
+                [
+                  1021.28,
+                  627.12
+                ],
+                [
+                  1018.36,
+                  623.84
+                ],
+                [
+                  1015.41,
+                  620.72
+                ],
+                [
+                  1012.43,
+                  617.78
+                ],
+                [
+                  1009.41,
+                  615.01
+                ],
+                [
+                  1006.35,
+                  612.43
+                ],
+                [
+                  1003.26,
+                  610.03
+                ],
+                [
+                  1000.13,
+                  607.83
+                ],
+                [
+                  996.96,
+                  605.84
+                ],
+                [
+                  993.75,
+                  604.06
+                ],
+                [
+                  990.49,
+                  602.49
+                ],
+                [
+                  987.19,
+                  601.14
+                ],
+                [
+                  983.85,
+                  600.03
+                ],
+                [
+                  980.46,
+                  599.15
+                ],
+                [
+                  977.02,
+                  598.52
+                ],
+                [
+                  973.54,
+                  598.13
+                ],
+                [
+                  970.0,
+                  598.0
+                ]
+              ],
+              "shapeSignature": "c8e9116ac715d1e8087d973e66c5077ea17e3bc2e6b43bf8e524a5b4242a6656",
+              "x": 1085.0,
+              "y": 738.0
+            },
+            "calibration-estimate": {
+              "bounds": {
+                "maxX": 824.0,
+                "maxY": 278.0
+              },
+              "d": "M590.00 238.00 C676.00 238.00 714.00 238.00 800.00 238.00",
+              "endpointSignature": "4a0deccc52a3933d772eaf1dc5fb2a9c72fb9cf9e986fa2915958295b553126a",
+              "format": "stable-local-1",
+              "labelBox": [
+                640.0,
+                222.0,
+                750.0,
+                254.0
+              ],
+              "labelKey": "precedes",
+              "points": [
+                [
+                  590.0,
+                  238.0
+                ],
+                [
+                  593.2,
+                  238.0
+                ],
+                [
+                  596.36,
+                  238.0
+                ],
+                [
+                  599.48,
+                  238.0
+                ],
+                [
+                  602.55,
+                  238.0
+                ],
+                [
+                  605.59,
+                  238.0
+                ],
+                [
+                  608.58,
+                  238.0
+                ],
+                [
+                  611.54,
+                  238.0
+                ],
+                [
+                  614.46,
+                  238.0
+                ],
+                [
+                  617.34,
+                  238.0
+                ],
+                [
+                  620.19,
+                  238.0
+                ],
+                [
+                  623.0,
+                  238.0
+                ],
+                [
+                  625.78,
+                  238.0
+                ],
+                [
+                  628.53,
+                  238.0
+                ],
+                [
+                  631.25,
+                  238.0
+                ],
+                [
+                  633.95,
+                  238.0
+                ],
+                [
+                  636.61,
+                  238.0
+                ],
+                [
+                  639.24,
+                  238.0
+                ],
+                [
+                  641.85,
+                  238.0
+                ],
+                [
+                  644.44,
+                  238.0
+                ],
+                [
+                  647.0,
+                  238.0
+                ],
+                [
+                  649.54,
+                  238.0
+                ],
+                [
+                  652.06,
+                  238.0
+                ],
+                [
+                  654.55,
+                  238.0
+                ],
+                [
+                  657.03,
+                  238.0
+                ],
+                [
+                  659.49,
+                  238.0
+                ],
+                [
+                  661.94,
+                  238.0
+                ],
+                [
+                  664.36,
+                  238.0
+                ],
+                [
+                  666.78,
+                  238.0
+                ],
+                [
+                  669.18,
+                  238.0
+                ],
+                [
+                  671.56,
+                  238.0
+                ],
+                [
+                  673.94,
+                  238.0
+                ],
+                [
+                  676.3,
+                  238.0
+                ],
+                [
+                  678.66,
+                  238.0
+                ],
+                [
+                  681.01,
+                  238.0
+                ],
+                [
+                  683.35,
+                  238.0
+                ],
+                [
+                  685.69,
+                  238.0
+                ],
+                [
+                  688.02,
+                  238.0
+                ],
+                [
+                  690.35,
+                  238.0
+                ],
+                [
+                  692.67,
+                  238.0
+                ],
+                [
+                  695.0,
+                  238.0
+                ],
+                [
+                  697.33,
+                  238.0
+                ],
+                [
+                  699.65,
+                  238.0
+                ],
+                [
+                  701.98,
+                  238.0
+                ],
+                [
+                  704.31,
+                  238.0
+                ],
+                [
+                  706.65,
+                  238.0
+                ],
+                [
+                  708.99,
+                  238.0
+                ],
+                [
+                  711.34,
+                  238.0
+                ],
+                [
+                  713.7,
+                  238.0
+                ],
+                [
+                  716.06,
+                  238.0
+                ],
+                [
+                  718.44,
+                  238.0
+                ],
+                [
+                  720.82,
+                  238.0
+                ],
+                [
+                  723.22,
+                  238.0
+                ],
+                [
+                  725.64,
+                  238.0
+                ],
+                [
+                  728.06,
+                  238.0
+                ],
+                [
+                  730.51,
+                  238.0
+                ],
+                [
+                  732.97,
+                  238.0
+                ],
+                [
+                  735.45,
+                  238.0
+                ],
+                [
+                  737.94,
+                  238.0
+                ],
+                [
+                  740.46,
+                  238.0
+                ],
+                [
+                  743.0,
+                  238.0
+                ],
+                [
+                  745.56,
+                  238.0
+                ],
+                [
+                  748.15,
+                  238.0
+                ],
+                [
+                  750.76,
+                  238.0
+                ],
+                [
+                  753.39,
+                  238.0
+                ],
+                [
+                  756.05,
+                  238.0
+                ],
+                [
+                  758.75,
+                  238.0
+                ],
+                [
+                  761.47,
+                  238.0
+                ],
+                [
+                  764.22,
+                  238.0
+                ],
+                [
+                  767.0,
+                  238.0
+                ],
+                [
+                  769.81,
+                  238.0
+                ],
+                [
+                  772.66,
+                  238.0
+                ],
+                [
+                  775.54,
+                  238.0
+                ],
+                [
+                  778.46,
+                  238.0
+                ],
+                [
+                  781.42,
+                  238.0
+                ],
+                [
+                  784.41,
+                  238.0
+                ],
+                [
+                  787.45,
+                  238.0
+                ],
+                [
+                  790.52,
+                  238.0
+                ],
+                [
+                  793.64,
+                  238.0
+                ],
+                [
+                  796.8,
+                  238.0
+                ],
+                [
+                  800.0,
+                  238.0
+                ]
+              ],
+              "shapeSignature": "ffc38d1533ec99ed3e17e9833576fb97ebd0412f737200f11375c6befdee6687",
+              "x": 695.0,
+              "y": 238.0
+            },
+            "estimate-limit": {
+              "bounds": {
+                "maxX": 1224.0,
+                "maxY": 278.0
+              },
+              "d": "M970.00 238.00 C1065.00 238.00 1105.00 238.00 1200.00 238.00",
+              "endpointSignature": "3fa1c0578f5b9791c52ded60ddb851a4dcfee51d026ab312e386a4b90e25041d",
+              "format": "stable-local-1",
+              "labelBox": [
+                1019.0,
+                222.0,
+                1151.0,
+                254.0
+              ],
+              "labelKey": "limited by",
+              "points": [
+                [
+                  970.0,
+                  238.0
+                ],
+                [
+                  973.54,
+                  238.0
+                ],
+                [
+                  977.02,
+                  238.0
+                ],
+                [
+                  980.46,
+                  238.0
+                ],
+                [
+                  983.85,
+                  238.0
+                ],
+                [
+                  987.19,
+                  238.0
+                ],
+                [
+                  990.49,
+                  238.0
+                ],
+                [
+                  993.75,
+                  238.0
+                ],
+                [
+                  996.96,
+                  238.0
+                ],
+                [
+                  1000.13,
+                  238.0
+                ],
+                [
+                  1003.26,
+                  238.0
+                ],
+                [
+                  1006.35,
+                  238.0
+                ],
+                [
+                  1009.41,
+                  238.0
+                ],
+                [
+                  1012.43,
+                  238.0
+                ],
+                [
+                  1015.41,
+                  238.0
+                ],
+                [
+                  1018.36,
+                  238.0
+                ],
+                [
+                  1021.28,
+                  238.0
+                ],
+                [
+                  1024.17,
+                  238.0
+                ],
+                [
+                  1027.02,
+                  238.0
+                ],
+                [
+                  1029.85,
+                  238.0
+                ],
+                [
+                  1032.66,
+                  238.0
+                ],
+                [
+                  1035.43,
+                  238.0
+                ],
+                [
+                  1038.18,
+                  238.0
+                ],
+                [
+                  1040.91,
+                  238.0
+                ],
+                [
+                  1043.62,
+                  238.0
+                ],
+                [
+                  1046.31,
+                  238.0
+                ],
+                [
+                  1048.97,
+                  238.0
+                ],
+                [
+                  1051.62,
+                  238.0
+                ],
+                [
+                  1054.25,
+                  238.0
+                ],
+                [
+                  1056.87,
+                  238.0
+                ],
+                [
+                  1059.47,
+                  238.0
+                ],
+                [
+                  1062.06,
+                  238.0
+                ],
+                [
+                  1064.64,
+                  238.0
+                ],
+                [
+                  1067.21,
+                  238.0
+                ],
+                [
+                  1069.77,
+                  238.0
+                ],
+                [
+                  1072.32,
+                  238.0
+                ],
+                [
+                  1074.86,
+                  238.0
+                ],
+                [
+                  1077.4,
+                  238.0
+                ],
+                [
+                  1079.94,
+                  238.0
+                ],
+                [
+                  1082.47,
+                  238.0
+                ],
+                [
+                  1085.0,
+                  238.0
+                ],
+                [
+                  1087.53,
+                  238.0
+                ],
+                [
+                  1090.06,
+                  238.0
+                ],
+                [
+                  1092.6,
+                  238.0
+                ],
+                [
+                  1095.14,
+                  238.0
+                ],
+                [
+                  1097.68,
+                  238.0
+                ],
+                [
+                  1100.23,
+                  238.0
+                ],
+                [
+                  1102.79,
+                  238.0
+                ],
+                [
+                  1105.36,
+                  238.0
+                ],
+                [
+                  1107.94,
+                  238.0
+                ],
+                [
+                  1110.53,
+                  238.0
+                ],
+                [
+                  1113.13,
+                  238.0
+                ],
+                [
+                  1115.75,
+                  238.0
+                ],
+                [
+                  1118.38,
+                  238.0
+                ],
+                [
+                  1121.03,
+                  238.0
+                ],
+                [
+                  1123.69,
+                  238.0
+                ],
+                [
+                  1126.38,
+                  238.0
+                ],
+                [
+                  1129.09,
+                  238.0
+                ],
+                [
+                  1131.82,
+                  238.0
+                ],
+                [
+                  1134.57,
+                  238.0
+                ],
+                [
+                  1137.34,
+                  238.0
+                ],
+                [
+                  1140.15,
+                  238.0
+                ],
+                [
+                  1142.98,
+                  238.0
+                ],
+                [
+                  1145.83,
+                  238.0
+                ],
+                [
+                  1148.72,
+                  238.0
+                ],
+                [
+                  1151.64,
+                  238.0
+                ],
+                [
+                  1154.59,
+                  238.0
+                ],
+                [
+                  1157.57,
+                  238.0
+                ],
+                [
+                  1160.59,
+                  238.0
+                ],
+                [
+                  1163.65,
+                  238.0
+                ],
+                [
+                  1166.74,
+                  238.0
+                ],
+                [
+                  1169.87,
+                  238.0
+                ],
+                [
+                  1173.04,
+                  238.0
+                ],
+                [
+                  1176.25,
+                  238.0
+                ],
+                [
+                  1179.51,
+                  238.0
+                ],
+                [
+                  1182.81,
+                  238.0
+                ],
+                [
+                  1186.15,
+                  238.0
+                ],
+                [
+                  1189.54,
+                  238.0
+                ],
+                [
+                  1192.98,
+                  238.0
+                ],
+                [
+                  1196.46,
+                  238.0
+                ],
+                [
+                  1200.0,
+                  238.0
+                ]
+              ],
+              "shapeSignature": "357496fe2f39ef9a2e257a9d1a19734c350787ff9fd585375c96f2522c05f8db",
+              "x": 1085.0,
+              "y": 238.0
+            },
+            "input-calibration": {
+              "bounds": {
+                "maxX": 444.0,
+                "maxY": 278.0
+              },
+              "d": "M179.00 238.00 C296.00 238.00 334.00 238.00 420.00 238.00",
+              "endpointSignature": "587eb4c895ca6c1ad6c80f61cfa6619648cfd429fa63a661119a1a610b532e04",
+              "format": "stable-local-1",
+              "labelBox": [
+                256.12,
+                222.0,
+                366.12,
+                254.0
+              ],
+              "labelKey": "precedes",
+              "points": [
+                [
+                  179.0,
+                  238.0
+                ],
+                [
+                  183.35,
+                  238.0
+                ],
+                [
+                  187.63,
+                  238.0
+                ],
+                [
+                  191.84,
+                  238.0
+                ],
+                [
+                  195.97,
+                  238.0
+                ],
+                [
+                  200.04,
+                  238.0
+                ],
+                [
+                  204.05,
+                  238.0
+                ],
+                [
+                  207.98,
+                  238.0
+                ],
+                [
+                  211.86,
+                  238.0
+                ],
+                [
+                  215.67,
+                  238.0
+                ],
+                [
+                  219.42,
+                  238.0
+                ],
+                [
+                  223.11,
+                  238.0
+                ],
+                [
+                  226.75,
+                  238.0
+                ],
+                [
+                  230.32,
+                  238.0
+                ],
+                [
+                  233.85,
+                  238.0
+                ],
+                [
+                  237.32,
+                  238.0
+                ],
+                [
+                  240.74,
+                  238.0
+                ],
+                [
+                  244.1,
+                  238.0
+                ],
+                [
+                  247.42,
+                  238.0
+                ],
+                [
+                  250.7,
+                  238.0
+                ],
+                [
+                  253.92,
+                  238.0
+                ],
+                [
+                  257.1,
+                  238.0
+                ],
+                [
+                  260.24,
+                  238.0
+                ],
+                [
+                  263.34,
+                  238.0
+                ],
+                [
+                  266.4,
+                  238.0
+                ],
+                [
+                  269.42,
+                  238.0
+                ],
+                [
+                  272.4,
+                  238.0
+                ],
+                [
+                  275.35,
+                  238.0
+                ],
+                [
+                  278.26,
+                  238.0
+                ],
+                [
+                  281.14,
+                  238.0
+                ],
+                [
+                  283.99,
+                  238.0
+                ],
+                [
+                  286.82,
+                  238.0
+                ],
+                [
+                  289.61,
+                  238.0
+                ],
+                [
+                  292.37,
+                  238.0
+                ],
+                [
+                  295.12,
+                  238.0
+                ],
+                [
+                  297.83,
+                  238.0
+                ],
+                [
+                  300.53,
+                  238.0
+                ],
+                [
+                  303.21,
+                  238.0
+                ],
+                [
+                  305.86,
+                  238.0
+                ],
+                [
+                  308.5,
+                  238.0
+                ],
+                [
+                  311.12,
+                  238.0
+                ],
+                [
+                  313.73,
+                  238.0
+                ],
+                [
+                  316.33,
+                  238.0
+                ],
+                [
+                  318.91,
+                  238.0
+                ],
+                [
+                  321.49,
+                  238.0
+                ],
+                [
+                  324.05,
+                  238.0
+                ],
+                [
+                  326.61,
+                  238.0
+                ],
+                [
+                  329.16,
+                  238.0
+                ],
+                [
+                  331.71,
+                  238.0
+                ],
+                [
+                  334.26,
+                  238.0
+                ],
+                [
+                  336.8,
+                  238.0
+                ],
+                [
+                  339.35,
+                  238.0
+                ],
+                [
+                  341.89,
+                  238.0
+                ],
+                [
+                  344.45,
+                  238.0
+                ],
+                [
+                  347.0,
+                  238.0
+                ],
+                [
+                  349.56,
+                  238.0
+                ],
+                [
+                  352.13,
+                  238.0
+                ],
+                [
+                  354.71,
+                  238.0
+                ],
+                [
+                  357.3,
+                  238.0
+                ],
+                [
+                  359.9,
+                  238.0
+                ],
+                [
+                  362.52,
+                  238.0
+                ],
+                [
+                  365.15,
+                  238.0
+                ],
+                [
+                  367.79,
+                  238.0
+                ],
+                [
+                  370.46,
+                  238.0
+                ],
+                [
+                  373.14,
+                  238.0
+                ],
+                [
+                  375.85,
+                  238.0
+                ],
+                [
+                  378.58,
+                  238.0
+                ],
+                [
+                  381.33,
+                  238.0
+                ],
+                [
+                  384.11,
+                  238.0
+                ],
+                [
+                  386.92,
+                  238.0
+                ],
+                [
+                  389.75,
+                  238.0
+                ],
+                [
+                  392.62,
+                  238.0
+                ],
+                [
+                  395.51,
+                  238.0
+                ],
+                [
+                  398.44,
+                  238.0
+                ],
+                [
+                  401.41,
+                  238.0
+                ],
+                [
+                  404.41,
+                  238.0
+                ],
+                [
+                  407.44,
+                  238.0
+                ],
+                [
+                  410.52,
+                  238.0
+                ],
+                [
+                  413.64,
+                  238.0
+                ],
+                [
+                  416.8,
+                  238.0
+                ],
+                [
+                  420.0,
+                  238.0
+                ]
+              ],
+              "shapeSignature": "6d39ccd8f99e01944802501d6d490f996cc853180e076085983d42c25144d9dc",
+              "x": 311.12,
+              "y": 238.0
+            },
+            "reference-validation": {
+              "bounds": {
+                "maxX": 824.0,
+                "maxY": 902.0
+              },
+              "d": "M539.00 878.00 C665.00 878.00 705.00 598.00 800.00 598.00",
+              "endpointSignature": "2c62e6736b2ec23ec754b3323eeabce88076511e7d7f3b74e96f9e16b9f0884c",
+              "format": "stable-local-1",
+              "labelBox": [
+                631.62,
+                722.0,
+                730.62,
+                754.0
+              ],
+              "labelKey": "part of",
+              "points": [
+                [
+                  539.0,
+                  878.0
+                ],
+                [
+                  543.68,
+                  877.87
+                ],
+                [
+                  548.29,
+                  877.48
+                ],
+                [
+                  552.82,
+                  876.85
+                ],
+                [
+                  557.27,
+                  875.97
+                ],
+                [
+                  561.65,
+                  874.86
+                ],
+                [
+                  565.96,
+                  873.51
+                ],
+                [
+                  570.19,
+                  871.94
+                ],
+                [
+                  574.36,
+                  870.16
+                ],
+                [
+                  578.46,
+                  868.17
+                ],
+                [
+                  582.49,
+                  865.97
+                ],
+                [
+                  586.46,
+                  863.57
+                ],
+                [
+                  590.37,
+                  860.99
+                ],
+                [
+                  594.22,
+                  858.22
+                ],
+                [
+                  598.0,
+                  855.28
+                ],
+                [
+                  601.73,
+                  852.16
+                ],
+                [
+                  605.41,
+                  848.88
+                ],
+                [
+                  609.03,
+                  845.44
+                ],
+                [
+                  612.59,
+                  841.85
+                ],
+                [
+                  616.11,
+                  838.12
+                ],
+                [
+                  619.58,
+                  834.25
+                ],
+                [
+                  623.0,
+                  830.25
+                ],
+                [
+                  626.37,
+                  826.12
+                ],
+                [
+                  629.7,
+                  821.88
+                ],
+                [
+                  632.99,
+                  817.52
+                ],
+                [
+                  636.23,
+                  813.06
+                ],
+                [
+                  639.44,
+                  808.5
+                ],
+                [
+                  642.61,
+                  803.85
+                ],
+                [
+                  645.74,
+                  799.11
+                ],
+                [
+                  648.84,
+                  794.29
+                ],
+                [
+                  651.9,
+                  789.41
+                ],
+                [
+                  654.94,
+                  784.45
+                ],
+                [
+                  657.94,
+                  779.44
+                ],
+                [
+                  660.92,
+                  774.37
+                ],
+                [
+                  663.87,
+                  769.26
+                ],
+                [
+                  666.8,
+                  764.11
+                ],
+                [
+                  669.7,
+                  758.93
+                ],
+                [
+                  672.59,
+                  753.72
+                ],
+                [
+                  675.45,
+                  748.49
+                ],
+                [
+                  678.3,
+                  743.25
+                ],
+                [
+                  681.12,
+                  738.0
+                ],
+                [
+                  683.94,
+                  732.75
+                ],
+                [
+                  686.74,
+                  727.51
+                ],
+                [
+                  689.53,
+                  722.28
+                ],
+                [
+                  692.31,
+                  717.07
+                ],
+                [
+                  695.09,
+                  711.89
+                ],
+                [
+                  697.85,
+                  706.74
+                ],
+                [
+                  700.62,
+                  701.63
+                ],
+                [
+                  703.38,
+                  696.56
+                ],
+                [
+                  706.13,
+                  691.55
+                ],
+                [
+                  708.89,
+                  686.59
+                ],
+                [
+                  711.65,
+                  681.71
+                ],
+                [
+                  714.42,
+                  676.89
+                ],
+                [
+                  717.19,
+                  672.15
+                ],
+                [
+                  719.96,
+                  667.5
+                ],
+                [
+                  722.75,
+                  662.94
+                ],
+                [
+                  725.54,
+                  658.48
+                ],
+                [
+                  728.35,
+                  654.12
+                ],
+                [
+                  731.17,
+                  649.88
+                ],
+                [
+                  734.01,
+                  645.75
+                ],
+                [
+                  736.86,
+                  641.75
+                ],
+                [
+                  739.73,
+                  637.88
+                ],
+                [
+                  742.62,
+                  634.15
+                ],
+                [
+                  745.54,
+                  630.56
+                ],
+                [
+                  748.47,
+                  627.12
+                ],
+                [
+                  751.43,
+                  623.84
+                ],
+                [
+                  754.42,
+                  620.72
+                ],
+                [
+                  757.44,
+                  617.78
+                ],
+                [
+                  760.49,
+                  615.01
+                ],
+                [
+                  763.57,
+                  612.43
+                ],
+                [
+                  766.68,
+                  610.03
+                ],
+                [
+                  769.83,
+                  607.83
+                ],
+                [
+                  773.01,
+                  605.84
+                ],
+                [
+                  776.23,
+                  604.06
+                ],
+                [
+                  779.49,
+                  602.49
+                ],
+                [
+                  782.8,
+                  601.14
+                ],
+                [
+                  786.14,
+                  600.03
+                ],
+                [
+                  789.54,
+                  599.15
+                ],
+                [
+                  792.98,
+                  598.52
+                ],
+                [
+                  796.46,
+                  598.13
+                ],
+                [
+                  800.0,
+                  598.0
+                ]
+              ],
+              "shapeSignature": "6d39ccd8f99e01944802501d6d490f996cc853180e076085983d42c25144d9dc",
+              "x": 681.12,
+              "y": 738.0
+            },
+            "repeats-validation": {
+              "bounds": {
+                "maxX": 958.5,
+                "maxY": 980.0
+              },
+              "d": "M885.00 956.00 C885.00 818.00 885.00 778.00 885.00 640.00",
+              "endpointSignature": "0f6566f81276f0dc3590ee0e37593c062f9f9ea2b287c8a037854fb79021bbcf",
+              "format": "stable-local-1",
+              "labelBox": [
+                835.5,
+                782.0,
+                934.5,
+                814.0
+              ],
+              "labelKey": "part of",
+              "points": [
+                [
+                  885.0,
+                  956.0
+                ],
+                [
+                  885.0,
+                  950.87
+                ],
+                [
+                  885.0,
+                  945.83
+                ],
+                [
+                  885.0,
+                  940.88
+                ],
+                [
+                  885.0,
+                  936.01
+                ],
+                [
+                  885.0,
+                  931.23
+                ],
+                [
+                  885.0,
+                  926.52
+                ],
+                [
+                  885.0,
+                  921.89
+                ],
+                [
+                  885.0,
+                  917.34
+                ],
+                [
+                  885.0,
+                  912.87
+                ],
+                [
+                  885.0,
+                  908.46
+                ],
+                [
+                  885.0,
+                  904.12
+                ],
+                [
+                  885.0,
+                  899.85
+                ],
+                [
+                  885.0,
+                  895.65
+                ],
+                [
+                  885.0,
+                  891.5
+                ],
+                [
+                  885.0,
+                  887.42
+                ],
+                [
+                  885.0,
+                  883.39
+                ],
+                [
+                  885.0,
+                  879.42
+                ],
+                [
+                  885.0,
+                  875.5
+                ],
+                [
+                  885.0,
+                  871.63
+                ],
+                [
+                  885.0,
+                  867.81
+                ],
+                [
+                  885.0,
+                  864.04
+                ],
+                [
+                  885.0,
+                  860.31
+                ],
+                [
+                  885.0,
+                  856.62
+                ],
+                [
+                  885.0,
+                  852.97
+                ],
+                [
+                  885.0,
+                  849.35
+                ],
+                [
+                  885.0,
+                  845.78
+                ],
+                [
+                  885.0,
+                  842.23
+                ],
+                [
+                  885.0,
+                  838.71
+                ],
+                [
+                  885.0,
+                  835.22
+                ],
+                [
+                  885.0,
+                  831.76
+                ],
+                [
+                  885.0,
+                  828.32
+                ],
+                [
+                  885.0,
+                  824.9
+                ],
+                [
+                  885.0,
+                  821.49
+                ],
+                [
+                  885.0,
+                  818.11
+                ],
+                [
+                  885.0,
+                  814.74
+                ],
+                [
+                  885.0,
+                  811.37
+                ],
+                [
+                  885.0,
+                  808.02
+                ],
+                [
+                  885.0,
+                  804.68
+                ],
+                [
+                  885.0,
+                  801.34
+                ],
+                [
+                  885.0,
+                  798.0
+                ],
+                [
+                  885.0,
+                  794.66
+                ],
+                [
+                  885.0,
+                  791.32
+                ],
+                [
+                  885.0,
+                  787.98
+                ],
+                [
+                  885.0,
+                  784.63
+                ],
+                [
+                  885.0,
+                  781.26
+                ],
+                [
+                  885.0,
+                  777.89
+                ],
+                [
+                  885.0,
+                  774.51
+                ],
+                [
+                  885.0,
+                  771.1
+                ],
+                [
+                  885.0,
+                  767.68
+                ],
+                [
+                  885.0,
+                  764.24
+                ],
+                [
+                  885.0,
+                  760.78
+                ],
+                [
+                  885.0,
+                  757.29
+                ],
+                [
+                  885.0,
+                  753.77
+                ],
+                [
+                  885.0,
+                  750.22
+                ],
+                [
+                  885.0,
+                  746.65
+                ],
+                [
+                  885.0,
+                  743.03
+                ],
+                [
+                  885.0,
+                  739.38
+                ],
+                [
+                  885.0,
+                  735.69
+                ],
+                [
+                  885.0,
+                  731.96
+                ],
+                [
+                  885.0,
+                  728.19
+                ],
+                [
+                  885.0,
+                  724.37
+                ],
+                [
+                  885.0,
+                  720.5
+                ],
+                [
+                  885.0,
+                  716.58
+                ],
+                [
+                  885.0,
+                  712.61
+                ],
+                [
+                  885.0,
+                  708.58
+                ],
+                [
+                  885.0,
+                  704.5
+                ],
+                [
+                  885.0,
+                  700.35
+                ],
+                [
+                  885.0,
+                  696.15
+                ],
+                [
+                  885.0,
+                  691.88
+                ],
+                [
+                  885.0,
+                  687.54
+                ],
+                [
+                  885.0,
+                  683.13
+                ],
+                [
+                  885.0,
+                  678.66
+                ],
+                [
+                  885.0,
+                  674.11
+                ],
+                [
+                  885.0,
+                  669.48
+                ],
+                [
+                  885.0,
+                  664.77
+                ],
+                [
+                  885.0,
+                  659.99
+                ],
+                [
+                  885.0,
+                  655.12
+                ],
+                [
+                  885.0,
+                  650.17
+                ],
+                [
+                  885.0,
+                  645.13
+                ],
+                [
+                  885.0,
+                  640.0
+                ]
+              ],
+              "shapeSignature": "c8e9116ac715d1e8087d973e66c5077ea17e3bc2e6b43bf8e524a5b4242a6656",
+              "x": 885.0,
+              "y": 798.0
+            },
+            "validation-estimate": {
+              "bounds": {
+                "maxX": 947.5,
+                "maxY": 580.0
+              },
+              "d": "M885.00 556.00 C885.00 436.00 885.00 400.00 885.00 282.00",
+              "endpointSignature": "0720c4d7a5a1cc0e9ead1cc24cf1774460fd84a25650495eaceadc2f00c04c3f",
+              "format": "stable-local-1",
+              "labelBox": [
+                846.5,
+                402.25,
+                923.5,
+                434.25
+              ],
+              "labelKey": "tests",
+              "points": [
+                [
+                  885.0,
+                  556.0
+                ],
+                [
+                  885.0,
+                  551.54
+                ],
+                [
+                  885.0,
+                  547.15
+                ],
+                [
+                  885.0,
+                  542.85
+                ],
+                [
+                  885.0,
+                  538.61
+                ],
+                [
+                  885.0,
+                  534.44
+                ],
+                [
+                  885.0,
+                  530.35
+                ],
+                [
+                  885.0,
+                  526.32
+                ],
+                [
+                  885.0,
+                  522.35
+                ],
+                [
+                  885.0,
+                  518.45
+                ],
+                [
+                  885.0,
+                  514.61
+                ],
+                [
+                  885.0,
+                  510.83
+                ],
+                [
+                  885.0,
+                  507.11
+                ],
+                [
+                  885.0,
+                  503.44
+                ],
+                [
+                  885.0,
+                  499.83
+                ],
+                [
+                  885.0,
+                  496.27
+                ],
+                [
+                  885.0,
+                  492.75
+                ],
+                [
+                  885.0,
+                  489.29
+                ],
+                [
+                  885.0,
+                  485.87
+                ],
+                [
+                  885.0,
+                  482.49
+                ],
+                [
+                  885.0,
+                  479.16
+                ],
+                [
+                  885.0,
+                  475.86
+                ],
+                [
+                  885.0,
+                  472.61
+                ],
+                [
+                  885.0,
+                  469.38
+                ],
+                [
+                  885.0,
+                  466.2
+                ],
+                [
+                  885.0,
+                  463.04
+                ],
+                [
+                  885.0,
+                  459.92
+                ],
+                [
+                  885.0,
+                  456.82
+                ],
+                [
+                  885.0,
+                  453.75
+                ],
+                [
+                  885.0,
+                  450.71
+                ],
+                [
+                  885.0,
+                  447.68
+                ],
+                [
+                  885.0,
+                  444.68
+                ],
+                [
+                  885.0,
+                  441.7
+                ],
+                [
+                  885.0,
+                  438.73
+                ],
+                [
+                  885.0,
+                  435.77
+                ],
+                [
+                  885.0,
+                  432.83
+                ],
+                [
+                  885.0,
+                  429.9
+                ],
+                [
+                  885.0,
+                  426.98
+                ],
+                [
+                  885.0,
+                  424.07
+                ],
+                [
+                  885.0,
+                  421.16
+                ],
+                [
+                  885.0,
+                  418.25
+                ],
+                [
+                  885.0,
+                  415.34
+                ],
+                [
+                  885.0,
+                  412.44
+                ],
+                [
+                  885.0,
+                  409.53
+                ],
+                [
+                  885.0,
+                  406.61
+                ],
+                [
+                  885.0,
+                  403.69
+                ],
+                [
+                  885.0,
+                  400.76
+                ],
+                [
+                  885.0,
+                  397.82
+                ],
+                [
+                  885.0,
+                  394.86
+                ],
+                [
+                  885.0,
+                  391.9
+                ],
+                [
+                  885.0,
+                  388.91
+                ],
+                [
+                  885.0,
+                  385.91
+                ],
+                [
+                  885.0,
+                  382.88
+                ],
+                [
+                  885.0,
+                  379.84
+                ],
+                [
+                  885.0,
+                  376.76
+                ],
+                [
+                  885.0,
+                  373.67
+                ],
+                [
+                  885.0,
+                  370.54
+                ],
+                [
+                  885.0,
+                  367.39
+                ],
+                [
+                  885.0,
+                  364.2
+                ],
+                [
+                  885.0,
+                  360.98
+                ],
+                [
+                  885.0,
+                  357.72
+                ],
+                [
+                  885.0,
+                  354.42
+                ],
+                [
+                  885.0,
+                  351.09
+                ],
+                [
+                  885.0,
+                  347.71
+                ],
+                [
+                  885.0,
+                  344.29
+                ],
+                [
+                  885.0,
+                  340.82
+                ],
+                [
+                  885.0,
+                  337.31
+                ],
+                [
+                  885.0,
+                  333.74
+                ],
+                [
+                  885.0,
+                  330.13
+                ],
+                [
+                  885.0,
+                  326.46
+                ],
+                [
+                  885.0,
+                  322.73
+                ],
+                [
+                  885.0,
+                  318.95
+                ],
+                [
+                  885.0,
+                  315.11
+                ],
+                [
+                  885.0,
+                  311.2
+                ],
+                [
+                  885.0,
+                  307.24
+                ],
+                [
+                  885.0,
+                  303.2
+                ],
+                [
+                  885.0,
+                  299.11
+                ],
+                [
+                  885.0,
+                  294.94
+                ],
+                [
+                  885.0,
+                  290.7
+                ],
+                [
+                  885.0,
+                  286.39
+                ],
+                [
+                  885.0,
+                  282.0
+                ]
+              ],
+              "shapeSignature": "ffc38d1533ec99ed3e17e9833576fb97ebd0412f737200f11375c6befdee6687",
+              "x": 885.0,
+              "y": 418.25
+            }
+          },
+          "low": {
+            "approach-limit": {
+              "bounds": {
+                "maxX": 824.0,
+                "maxY": 238.0
+              },
+              "d": "M590.00 198.00 C676.00 198.00 714.00 198.00 800.00 198.00",
+              "endpointSignature": "9ee1ddb936514d670c130cbb02c30bcf8c23408b4f5e694b65ed2004d7d8dd09",
+              "format": "stable-local-1",
+              "labelBox": [
+                629.0,
+                182.0,
+                761.0,
+                214.0
+              ],
+              "labelKey": "limited by",
+              "points": [
+                [
+                  590.0,
+                  198.0
+                ],
+                [
+                  593.2,
+                  198.0
+                ],
+                [
+                  596.36,
+                  198.0
+                ],
+                [
+                  599.48,
+                  198.0
+                ],
+                [
+                  602.55,
+                  198.0
+                ],
+                [
+                  605.59,
+                  198.0
+                ],
+                [
+                  608.58,
+                  198.0
+                ],
+                [
+                  611.54,
+                  198.0
+                ],
+                [
+                  614.46,
+                  198.0
+                ],
+                [
+                  617.34,
+                  198.0
+                ],
+                [
+                  620.19,
+                  198.0
+                ],
+                [
+                  623.0,
+                  198.0
+                ],
+                [
+                  625.78,
+                  198.0
+                ],
+                [
+                  628.53,
+                  198.0
+                ],
+                [
+                  631.25,
+                  198.0
+                ],
+                [
+                  633.95,
+                  198.0
+                ],
+                [
+                  636.61,
+                  198.0
+                ],
+                [
+                  639.24,
+                  198.0
+                ],
+                [
+                  641.85,
+                  198.0
+                ],
+                [
+                  644.44,
+                  198.0
+                ],
+                [
+                  647.0,
+                  198.0
+                ],
+                [
+                  649.54,
+                  198.0
+                ],
+                [
+                  652.06,
+                  198.0
+                ],
+                [
+                  654.55,
+                  198.0
+                ],
+                [
+                  657.03,
+                  198.0
+                ],
+                [
+                  659.49,
+                  198.0
+                ],
+                [
+                  661.94,
+                  198.0
+                ],
+                [
+                  664.36,
+                  198.0
+                ],
+                [
+                  666.78,
+                  198.0
+                ],
+                [
+                  669.18,
+                  198.0
+                ],
+                [
+                  671.56,
+                  198.0
+                ],
+                [
+                  673.94,
+                  198.0
+                ],
+                [
+                  676.3,
+                  198.0
+                ],
+                [
+                  678.66,
+                  198.0
+                ],
+                [
+                  681.01,
+                  198.0
+                ],
+                [
+                  683.35,
+                  198.0
+                ],
+                [
+                  685.69,
+                  198.0
+                ],
+                [
+                  688.02,
+                  198.0
+                ],
+                [
+                  690.35,
+                  198.0
+                ],
+                [
+                  692.67,
+                  198.0
+                ],
+                [
+                  695.0,
+                  198.0
+                ],
+                [
+                  697.33,
+                  198.0
+                ],
+                [
+                  699.65,
+                  198.0
+                ],
+                [
+                  701.98,
+                  198.0
+                ],
+                [
+                  704.31,
+                  198.0
+                ],
+                [
+                  706.65,
+                  198.0
+                ],
+                [
+                  708.99,
+                  198.0
+                ],
+                [
+                  711.34,
+                  198.0
+                ],
+                [
+                  713.7,
+                  198.0
+                ],
+                [
+                  716.06,
+                  198.0
+                ],
+                [
+                  718.44,
+                  198.0
+                ],
+                [
+                  720.82,
+                  198.0
+                ],
+                [
+                  723.22,
+                  198.0
+                ],
+                [
+                  725.64,
+                  198.0
+                ],
+                [
+                  728.06,
+                  198.0
+                ],
+                [
+                  730.51,
+                  198.0
+                ],
+                [
+                  732.97,
+                  198.0
+                ],
+                [
+                  735.45,
+                  198.0
+                ],
+                [
+                  737.94,
+                  198.0
+                ],
+                [
+                  740.46,
+                  198.0
+                ],
+                [
+                  743.0,
+                  198.0
+                ],
+                [
+                  745.56,
+                  198.0
+                ],
+                [
+                  748.15,
+                  198.0
+                ],
+                [
+                  750.76,
+                  198.0
+                ],
+                [
+                  753.39,
+                  198.0
+                ],
+                [
+                  756.05,
+                  198.0
+                ],
+                [
+                  758.75,
+                  198.0
+                ],
+                [
+                  761.47,
+                  198.0
+                ],
+                [
+                  764.22,
+                  198.0
+                ],
+                [
+                  767.0,
+                  198.0
+                ],
+                [
+                  769.81,
+                  198.0
+                ],
+                [
+                  772.66,
+                  198.0
+                ],
+                [
+                  775.54,
+                  198.0
+                ],
+                [
+                  778.46,
+                  198.0
+                ],
+                [
+                  781.42,
+                  198.0
+                ],
+                [
+                  784.41,
+                  198.0
+                ],
+                [
+                  787.45,
+                  198.0
+                ],
+                [
+                  790.52,
+                  198.0
+                ],
+                [
+                  793.64,
+                  198.0
+                ],
+                [
+                  796.8,
+                  198.0
+                ],
+                [
+                  800.0,
+                  198.0
+                ]
+              ],
+              "shapeSignature": "be98aa4ff059b98c6b78305a7bbb5e624ee4290eee923d09e1e9d5d411a24119",
+              "x": 695.0,
+              "y": 198.0
+            },
+            "approach-question": {
+              "bounds": {
+                "maxX": 444.0,
+                "maxY": 238.0
+              },
+              "d": "M420.00 198.00 C334.00 198.00 296.00 198.00 210.00 198.00",
+              "endpointSignature": "8af60a148ae7eaaa93e339cc58e7851e42584590a699abeda22bd15c13d034d9",
+              "format": "stable-local-1",
+              "labelBox": [
+                276.5,
+                182.0,
+                353.5,
+                214.0
+              ],
+              "labelKey": "tests",
+              "points": [
+                [
+                  420.0,
+                  198.0
+                ],
+                [
+                  416.8,
+                  198.0
+                ],
+                [
+                  413.64,
+                  198.0
+                ],
+                [
+                  410.52,
+                  198.0
+                ],
+                [
+                  407.45,
+                  198.0
+                ],
+                [
+                  404.41,
+                  198.0
+                ],
+                [
+                  401.42,
+                  198.0
+                ],
+                [
+                  398.46,
+                  198.0
+                ],
+                [
+                  395.54,
+                  198.0
+                ],
+                [
+                  392.66,
+                  198.0
+                ],
+                [
+                  389.81,
+                  198.0
+                ],
+                [
+                  387.0,
+                  198.0
+                ],
+                [
+                  384.22,
+                  198.0
+                ],
+                [
+                  381.47,
+                  198.0
+                ],
+                [
+                  378.75,
+                  198.0
+                ],
+                [
+                  376.05,
+                  198.0
+                ],
+                [
+                  373.39,
+                  198.0
+                ],
+                [
+                  370.76,
+                  198.0
+                ],
+                [
+                  368.15,
+                  198.0
+                ],
+                [
+                  365.56,
+                  198.0
+                ],
+                [
+                  363.0,
+                  198.0
+                ],
+                [
+                  360.46,
+                  198.0
+                ],
+                [
+                  357.94,
+                  198.0
+                ],
+                [
+                  355.45,
+                  198.0
+                ],
+                [
+                  352.97,
+                  198.0
+                ],
+                [
+                  350.51,
+                  198.0
+                ],
+                [
+                  348.06,
+                  198.0
+                ],
+                [
+                  345.64,
+                  198.0
+                ],
+                [
+                  343.22,
+                  198.0
+                ],
+                [
+                  340.82,
+                  198.0
+                ],
+                [
+                  338.44,
+                  198.0
+                ],
+                [
+                  336.06,
+                  198.0
+                ],
+                [
+                  333.7,
+                  198.0
+                ],
+                [
+                  331.34,
+                  198.0
+                ],
+                [
+                  328.99,
+                  198.0
+                ],
+                [
+                  326.65,
+                  198.0
+                ],
+                [
+                  324.31,
+                  198.0
+                ],
+                [
+                  321.98,
+                  198.0
+                ],
+                [
+                  319.65,
+                  198.0
+                ],
+                [
+                  317.33,
+                  198.0
+                ],
+                [
+                  315.0,
+                  198.0
+                ],
+                [
+                  312.67,
+                  198.0
+                ],
+                [
+                  310.35,
+                  198.0
+                ],
+                [
+                  308.02,
+                  198.0
+                ],
+                [
+                  305.69,
+                  198.0
+                ],
+                [
+                  303.35,
+                  198.0
+                ],
+                [
+                  301.01,
+                  198.0
+                ],
+                [
+                  298.66,
+                  198.0
+                ],
+                [
+                  296.3,
+                  198.0
+                ],
+                [
+                  293.94,
+                  198.0
+                ],
+                [
+                  291.56,
+                  198.0
+                ],
+                [
+                  289.18,
+                  198.0
+                ],
+                [
+                  286.78,
+                  198.0
+                ],
+                [
+                  284.36,
+                  198.0
+                ],
+                [
+                  281.94,
+                  198.0
+                ],
+                [
+                  279.49,
+                  198.0
+                ],
+                [
+                  277.03,
+                  198.0
+                ],
+                [
+                  274.55,
+                  198.0
+                ],
+                [
+                  272.06,
+                  198.0
+                ],
+                [
+                  269.54,
+                  198.0
+                ],
+                [
+                  267.0,
+                  198.0
+                ],
+                [
+                  264.44,
+                  198.0
+                ],
+                [
+                  261.85,
+                  198.0
+                ],
+                [
+                  259.24,
+                  198.0
+                ],
+                [
+                  256.61,
+                  198.0
+                ],
+                [
+                  253.95,
+                  198.0
+                ],
+                [
+                  251.25,
+                  198.0
+                ],
+                [
+                  248.53,
+                  198.0
+                ],
+                [
+                  245.78,
+                  198.0
+                ],
+                [
+                  243.0,
+                  198.0
+                ],
+                [
+                  240.19,
+                  198.0
+                ],
+                [
+                  237.34,
+                  198.0
+                ],
+                [
+                  234.46,
+                  198.0
+                ],
+                [
+                  231.54,
+                  198.0
+                ],
+                [
+                  228.58,
+                  198.0
+                ],
+                [
+                  225.59,
+                  198.0
+                ],
+                [
+                  222.55,
+                  198.0
+                ],
+                [
+                  219.48,
+                  198.0
+                ],
+                [
+                  216.36,
+                  198.0
+                ],
+                [
+                  213.2,
+                  198.0
+                ],
+                [
+                  210.0,
+                  198.0
+                ]
+              ],
+              "shapeSignature": "ffc38d1533ec99ed3e17e9833576fb97ebd0412f737200f11375c6befdee6687",
+              "x": 315.0,
+              "y": 198.0
+            }
+          },
+          "medium": {
+            "approach-input": {
+              "bounds": {
+                "maxX": 215.0,
+                "maxY": 528.0
+              },
+              "d": "M125.00 260.00 C125.00 371.00 125.00 405.00 125.00 504.00",
+              "endpointSignature": "6899f4e5aae2ce279f9eab7e51d3daedbec73276cba9ecb042242f2f37ee5689",
+              "format": "stable-local-1",
+              "labelBox": [
+                59.0,
+                370.5,
+                191.0,
+                402.5
+              ],
+              "labelKey": "depends on",
+              "points": [
+                [
+                  125.0,
+                  260.0
+                ],
+                [
+                  125.0,
+                  264.13
+                ],
+                [
+                  125.0,
+                  268.18
+                ],
+                [
+                  125.0,
+                  272.17
+                ],
+                [
+                  125.0,
+                  276.09
+                ],
+                [
+                  125.0,
+                  279.94
+                ],
+                [
+                  125.0,
+                  283.74
+                ],
+                [
+                  125.0,
+                  287.46
+                ],
+                [
+                  125.0,
+                  291.13
+                ],
+                [
+                  125.0,
+                  294.74
+                ],
+                [
+                  125.0,
+                  298.29
+                ],
+                [
+                  125.0,
+                  301.79
+                ],
+                [
+                  125.0,
+                  305.23
+                ],
+                [
+                  125.0,
+                  308.62
+                ],
+                [
+                  125.0,
+                  311.96
+                ],
+                [
+                  125.0,
+                  315.25
+                ],
+                [
+                  125.0,
+                  318.5
+                ],
+                [
+                  125.0,
+                  321.69
+                ],
+                [
+                  125.0,
+                  324.85
+                ],
+                [
+                  125.0,
+                  327.96
+                ],
+                [
+                  125.0,
+                  331.03
+                ],
+                [
+                  125.0,
+                  334.06
+                ],
+                [
+                  125.0,
+                  337.06
+                ],
+                [
+                  125.0,
+                  340.02
+                ],
+                [
+                  125.0,
+                  342.94
+                ],
+                [
+                  125.0,
+                  345.84
+                ],
+                [
+                  125.0,
+                  348.7
+                ],
+                [
+                  125.0,
+                  351.53
+                ],
+                [
+                  125.0,
+                  354.34
+                ],
+                [
+                  125.0,
+                  357.12
+                ],
+                [
+                  125.0,
+                  359.88
+                ],
+                [
+                  125.0,
+                  362.61
+                ],
+                [
+                  125.0,
+                  365.33
+                ],
+                [
+                  125.0,
+                  368.02
+                ],
+                [
+                  125.0,
+                  370.7
+                ],
+                [
+                  125.0,
+                  373.36
+                ],
+                [
+                  125.0,
+                  376.01
+                ],
+                [
+                  125.0,
+                  378.65
+                ],
+                [
+                  125.0,
+                  381.27
+                ],
+                [
+                  125.0,
+                  383.89
+                ],
+                [
+                  125.0,
+                  386.5
+                ],
+                [
+                  125.0,
+                  389.1
+                ],
+                [
+                  125.0,
+                  391.7
+                ],
+                [
+                  125.0,
+                  394.3
+                ],
+                [
+                  125.0,
+                  396.9
+                ],
+                [
+                  125.0,
+                  399.5
+                ],
+                [
+                  125.0,
+                  402.1
+                ],
+                [
+                  125.0,
+                  404.7
+                ],
+                [
+                  125.0,
+                  407.31
+                ],
+                [
+                  125.0,
+                  409.93
+                ],
+                [
+                  125.0,
+                  412.56
+                ],
+                [
+                  125.0,
+                  415.2
+                ],
+                [
+                  125.0,
+                  417.85
+                ],
+                [
+                  125.0,
+                  420.52
+                ],
+                [
+                  125.0,
+                  423.2
+                ],
+                [
+                  125.0,
+                  425.9
+                ],
+                [
+                  125.0,
+                  428.62
+                ],
+                [
+                  125.0,
+                  431.36
+                ],
+                [
+                  125.0,
+                  434.12
+                ],
+                [
+                  125.0,
+                  436.91
+                ],
+                [
+                  125.0,
+                  439.72
+                ],
+                [
+                  125.0,
+                  442.56
+                ],
+                [
+                  125.0,
+                  445.43
+                ],
+                [
+                  125.0,
+                  448.33
+                ],
+                [
+                  125.0,
+                  451.26
+                ],
+                [
+                  125.0,
+                  454.23
+                ],
+                [
+                  125.0,
+                  457.24
+                ],
+                [
+                  125.0,
+                  460.28
+                ],
+                [
+                  125.0,
+                  463.36
+                ],
+                [
+                  125.0,
+                  466.48
+                ],
+                [
+                  125.0,
+                  469.64
+                ],
+                [
+                  125.0,
+                  472.85
+                ],
+                [
+                  125.0,
+                  476.11
+                ],
+                [
+                  125.0,
+                  479.41
+                ],
+                [
+                  125.0,
+                  482.76
+                ],
+                [
+                  125.0,
+                  486.16
+                ],
+                [
+                  125.0,
+                  489.62
+                ],
+                [
+                  125.0,
+                  493.13
+                ],
+                [
+                  125.0,
+                  496.69
+                ],
+                [
+                  125.0,
+                  500.32
+                ],
+                [
+                  125.0,
+                  504.0
+                ]
+              ],
+              "shapeSignature": "7264258a138b7029bd146182c30a16aaa8489d77da96a18b649c6e14ba5354dc",
+              "x": 125.0,
+              "y": 386.5
+            },
+            "estimate-approach": {
+              "bounds": {
+                "maxX": 474.0,
+                "maxY": 258.0
+              },
+              "d": "M450.00 218.00 C350.50 218.00 309.50 218.00 210.00 218.00",
+              "endpointSignature": "5421da9b64784ac2eb9dd2188c22986d130ab701b791fd20d96e721be67ea97a",
+              "format": "stable-local-1",
+              "labelBox": [
+                280.5,
+                202.0,
+                379.5,
+                234.0
+              ],
+              "labelKey": "part of",
+              "points": [
+                [
+                  450.0,
+                  218.0
+                ],
+                [
+                  446.3,
+                  218.0
+                ],
+                [
+                  442.65,
+                  218.0
+                ],
+                [
+                  439.05,
+                  218.0
+                ],
+                [
+                  435.5,
+                  218.0
+                ],
+                [
+                  432.0,
+                  218.0
+                ],
+                [
+                  428.55,
+                  218.0
+                ],
+                [
+                  425.15,
+                  218.0
+                ],
+                [
+                  421.79,
+                  218.0
+                ],
+                [
+                  418.47,
+                  218.0
+                ],
+                [
+                  415.2,
+                  218.0
+                ],
+                [
+                  411.97,
+                  218.0
+                ],
+                [
+                  408.78,
+                  218.0
+                ],
+                [
+                  405.63,
+                  218.0
+                ],
+                [
+                  402.51,
+                  218.0
+                ],
+                [
+                  399.43,
+                  218.0
+                ],
+                [
+                  396.38,
+                  218.0
+                ],
+                [
+                  393.37,
+                  218.0
+                ],
+                [
+                  390.39,
+                  218.0
+                ],
+                [
+                  387.44,
+                  218.0
+                ],
+                [
+                  384.52,
+                  218.0
+                ],
+                [
+                  381.62,
+                  218.0
+                ],
+                [
+                  378.75,
+                  218.0
+                ],
+                [
+                  375.91,
+                  218.0
+                ],
+                [
+                  373.09,
+                  218.0
+                ],
+                [
+                  370.29,
+                  218.0
+                ],
+                [
+                  367.51,
+                  218.0
+                ],
+                [
+                  364.75,
+                  218.0
+                ],
+                [
+                  362.01,
+                  218.0
+                ],
+                [
+                  359.28,
+                  218.0
+                ],
+                [
+                  356.57,
+                  218.0
+                ],
+                [
+                  353.88,
+                  218.0
+                ],
+                [
+                  351.19,
+                  218.0
+                ],
+                [
+                  348.52,
+                  218.0
+                ],
+                [
+                  345.86,
+                  218.0
+                ],
+                [
+                  343.2,
+                  218.0
+                ],
+                [
+                  340.55,
+                  218.0
+                ],
+                [
+                  337.91,
+                  218.0
+                ],
+                [
+                  335.27,
+                  218.0
+                ],
+                [
+                  332.63,
+                  218.0
+                ],
+                [
+                  330.0,
+                  218.0
+                ],
+                [
+                  327.37,
+                  218.0
+                ],
+                [
+                  324.73,
+                  218.0
+                ],
+                [
+                  322.09,
+                  218.0
+                ],
+                [
+                  319.45,
+                  218.0
+                ],
+                [
+                  316.8,
+                  218.0
+                ],
+                [
+                  314.14,
+                  218.0
+                ],
+                [
+                  311.48,
+                  218.0
+                ],
+                [
+                  308.81,
+                  218.0
+                ],
+                [
+                  306.12,
+                  218.0
+                ],
+                [
+                  303.43,
+                  218.0
+                ],
+                [
+                  300.72,
+                  218.0
+                ],
+                [
+                  297.99,
+                  218.0
+                ],
+                [
+                  295.25,
+                  218.0
+                ],
+                [
+                  292.49,
+                  218.0
+                ],
+                [
+                  289.71,
+                  218.0
+                ],
+                [
+                  286.91,
+                  218.0
+                ],
+                [
+                  284.09,
+                  218.0
+                ],
+                [
+                  281.25,
+                  218.0
+                ],
+                [
+                  278.38,
+                  218.0
+                ],
+                [
+                  275.48,
+                  218.0
+                ],
+                [
+                  272.56,
+                  218.0
+                ],
+                [
+                  269.61,
+                  218.0
+                ],
+                [
+                  266.63,
+                  218.0
+                ],
+                [
+                  263.62,
+                  218.0
+                ],
+                [
+                  260.57,
+                  218.0
+                ],
+                [
+                  257.49,
+                  218.0
+                ],
+                [
+                  254.37,
+                  218.0
+                ],
+                [
+                  251.22,
+                  218.0
+                ],
+                [
+                  248.03,
+                  218.0
+                ],
+                [
+                  244.8,
+                  218.0
+                ],
+                [
+                  241.53,
+                  218.0
+                ],
+                [
+                  238.21,
+                  218.0
+                ],
+                [
+                  234.85,
+                  218.0
+                ],
+                [
+                  231.45,
+                  218.0
+                ],
+                [
+                  228.0,
+                  218.0
+                ],
+                [
+                  224.5,
+                  218.0
+                ],
+                [
+                  220.95,
+                  218.0
+                ],
+                [
+                  217.35,
+                  218.0
+                ],
+                [
+                  213.7,
+                  218.0
+                ],
+                [
+                  210.0,
+                  218.0
+                ]
+              ],
+              "shapeSignature": "d8db308b47ccb789e13d687020d8c5436a0f20f2374203ecdad0e5219827c2de",
+              "x": 330.0,
+              "y": 218.0
+            },
+            "estimate-limit": {
+              "bounds": {
+                "maxX": 884.0,
+                "maxY": 258.0
+              },
+              "d": "M620.00 218.00 C719.50 218.00 760.50 218.00 860.00 218.00",
+              "endpointSignature": "579a547a6d5f48d87b38870e0f19db13e7a253cfe5324196c03d26f940bf6632",
+              "format": "stable-local-1",
+              "labelBox": [
+                674.0,
+                202.0,
+                806.0,
+                234.0
+              ],
+              "labelKey": "limited by",
+              "points": [
+                [
+                  620.0,
+                  218.0
+                ],
+                [
+                  623.7,
+                  218.0
+                ],
+                [
+                  627.35,
+                  218.0
+                ],
+                [
+                  630.95,
+                  218.0
+                ],
+                [
+                  634.5,
+                  218.0
+                ],
+                [
+                  638.0,
+                  218.0
+                ],
+                [
+                  641.45,
+                  218.0
+                ],
+                [
+                  644.85,
+                  218.0
+                ],
+                [
+                  648.21,
+                  218.0
+                ],
+                [
+                  651.53,
+                  218.0
+                ],
+                [
+                  654.8,
+                  218.0
+                ],
+                [
+                  658.03,
+                  218.0
+                ],
+                [
+                  661.22,
+                  218.0
+                ],
+                [
+                  664.37,
+                  218.0
+                ],
+                [
+                  667.49,
+                  218.0
+                ],
+                [
+                  670.57,
+                  218.0
+                ],
+                [
+                  673.62,
+                  218.0
+                ],
+                [
+                  676.63,
+                  218.0
+                ],
+                [
+                  679.61,
+                  218.0
+                ],
+                [
+                  682.56,
+                  218.0
+                ],
+                [
+                  685.48,
+                  218.0
+                ],
+                [
+                  688.38,
+                  218.0
+                ],
+                [
+                  691.25,
+                  218.0
+                ],
+                [
+                  694.09,
+                  218.0
+                ],
+                [
+                  696.91,
+                  218.0
+                ],
+                [
+                  699.71,
+                  218.0
+                ],
+                [
+                  702.49,
+                  218.0
+                ],
+                [
+                  705.25,
+                  218.0
+                ],
+                [
+                  707.99,
+                  218.0
+                ],
+                [
+                  710.72,
+                  218.0
+                ],
+                [
+                  713.43,
+                  218.0
+                ],
+                [
+                  716.12,
+                  218.0
+                ],
+                [
+                  718.81,
+                  218.0
+                ],
+                [
+                  721.48,
+                  218.0
+                ],
+                [
+                  724.14,
+                  218.0
+                ],
+                [
+                  726.8,
+                  218.0
+                ],
+                [
+                  729.45,
+                  218.0
+                ],
+                [
+                  732.09,
+                  218.0
+                ],
+                [
+                  734.73,
+                  218.0
+                ],
+                [
+                  737.37,
+                  218.0
+                ],
+                [
+                  740.0,
+                  218.0
+                ],
+                [
+                  742.63,
+                  218.0
+                ],
+                [
+                  745.27,
+                  218.0
+                ],
+                [
+                  747.91,
+                  218.0
+                ],
+                [
+                  750.55,
+                  218.0
+                ],
+                [
+                  753.2,
+                  218.0
+                ],
+                [
+                  755.86,
+                  218.0
+                ],
+                [
+                  758.52,
+                  218.0
+                ],
+                [
+                  761.19,
+                  218.0
+                ],
+                [
+                  763.88,
+                  218.0
+                ],
+                [
+                  766.57,
+                  218.0
+                ],
+                [
+                  769.28,
+                  218.0
+                ],
+                [
+                  772.01,
+                  218.0
+                ],
+                [
+                  774.75,
+                  218.0
+                ],
+                [
+                  777.51,
+                  218.0
+                ],
+                [
+                  780.29,
+                  218.0
+                ],
+                [
+                  783.09,
+                  218.0
+                ],
+                [
+                  785.91,
+                  218.0
+                ],
+                [
+                  788.75,
+                  218.0
+                ],
+                [
+                  791.62,
+                  218.0
+                ],
+                [
+                  794.52,
+                  218.0
+                ],
+                [
+                  797.44,
+                  218.0
+                ],
+                [
+                  800.39,
+                  218.0
+                ],
+                [
+                  803.37,
+                  218.0
+                ],
+                [
+                  806.38,
+                  218.0
+                ],
+                [
+                  809.43,
+                  218.0
+                ],
+                [
+                  812.51,
+                  218.0
+                ],
+                [
+                  815.63,
+                  218.0
+                ],
+                [
+                  818.78,
+                  218.0
+                ],
+                [
+                  821.97,
+                  218.0
+                ],
+                [
+                  825.2,
+                  218.0
+                ],
+                [
+                  828.47,
+                  218.0
+                ],
+                [
+                  831.79,
+                  218.0
+                ],
+                [
+                  835.15,
+                  218.0
+                ],
+                [
+                  838.55,
+                  218.0
+                ],
+                [
+                  842.0,
+                  218.0
+                ],
+                [
+                  845.5,
+                  218.0
+                ],
+                [
+                  849.05,
+                  218.0
+                ],
+                [
+                  852.65,
+                  218.0
+                ],
+                [
+                  856.3,
+                  218.0
+                ],
+                [
+                  860.0,
+                  218.0
+                ]
+              ],
+              "shapeSignature": "357496fe2f39ef9a2e257a9d1a19734c350787ff9fd585375c96f2522c05f8db",
+              "x": 740.0,
+              "y": 218.0
+            },
+            "validation-estimate": {
+              "bounds": {
+                "maxX": 597.5,
+                "maxY": 540.0
+              },
+              "d": "M535.00 516.00 C535.00 405.00 535.00 371.00 535.00 262.00",
+              "endpointSignature": "75b1cb936d97d434333fe51e4555741557f67ca5d65603b4a36f7e921ddd389c",
+              "format": "stable-local-1",
+              "labelBox": [
+                496.5,
+                372.25,
+                573.5,
+                404.25
+              ],
+              "labelKey": "tests",
+              "points": [
+                [
+                  535.0,
+                  516.0
+                ],
+                [
+                  535.0,
+                  511.87
+                ],
+                [
+                  535.0,
+                  507.82
+                ],
+                [
+                  535.0,
+                  503.83
+                ],
+                [
+                  535.0,
+                  499.91
+                ],
+                [
+                  535.0,
+                  496.05
+                ],
+                [
+                  535.0,
+                  492.26
+                ],
+                [
+                  535.0,
+                  488.53
+                ],
+                [
+                  535.0,
+                  484.86
+                ],
+                [
+                  535.0,
+                  481.24
+                ],
+                [
+                  535.0,
+                  477.69
+                ],
+                [
+                  535.0,
+                  474.18
+                ],
+                [
+                  535.0,
+                  470.73
+                ],
+                [
+                  535.0,
+                  467.34
+                ],
+                [
+                  535.0,
+                  463.98
+                ],
+                [
+                  535.0,
+                  460.68
+                ],
+                [
+                  535.0,
+                  457.42
+                ],
+                [
+                  535.0,
+                  454.21
+                ],
+                [
+                  535.0,
+                  451.04
+                ],
+                [
+                  535.0,
+                  447.91
+                ],
+                [
+                  535.0,
+                  444.81
+                ],
+                [
+                  535.0,
+                  441.76
+                ],
+                [
+                  535.0,
+                  438.73
+                ],
+                [
+                  535.0,
+                  435.74
+                ],
+                [
+                  535.0,
+                  432.79
+                ],
+                [
+                  535.0,
+                  429.86
+                ],
+                [
+                  535.0,
+                  426.96
+                ],
+                [
+                  535.0,
+                  424.08
+                ],
+                [
+                  535.0,
+                  421.23
+                ],
+                [
+                  535.0,
+                  418.4
+                ],
+                [
+                  535.0,
+                  415.59
+                ],
+                [
+                  535.0,
+                  412.8
+                ],
+                [
+                  535.0,
+                  410.03
+                ],
+                [
+                  535.0,
+                  407.27
+                ],
+                [
+                  535.0,
+                  404.53
+                ],
+                [
+                  535.0,
+                  401.8
+                ],
+                [
+                  535.0,
+                  399.08
+                ],
+                [
+                  535.0,
+                  396.36
+                ],
+                [
+                  535.0,
+                  393.65
+                ],
+                [
+                  535.0,
+                  390.95
+                ],
+                [
+                  535.0,
+                  388.25
+                ],
+                [
+                  535.0,
+                  385.55
+                ],
+                [
+                  535.0,
+                  382.85
+                ],
+                [
+                  535.0,
+                  380.15
+                ],
+                [
+                  535.0,
+                  377.44
+                ],
+                [
+                  535.0,
+                  374.72
+                ],
+                [
+                  535.0,
+                  372.0
+                ],
+                [
+                  535.0,
+                  369.27
+                ],
+                [
+                  535.0,
+                  366.53
+                ],
+                [
+                  535.0,
+                  363.77
+                ],
+                [
+                  535.0,
+                  361.0
+                ],
+                [
+                  535.0,
+                  358.21
+                ],
+                [
+                  535.0,
+                  355.4
+                ],
+                [
+                  535.0,
+                  352.58
+                ],
+                [
+                  535.0,
+                  349.73
+                ],
+                [
+                  535.0,
+                  346.85
+                ],
+                [
+                  535.0,
+                  343.95
+                ],
+                [
+                  535.0,
+                  341.03
+                ],
+                [
+                  535.0,
+                  338.07
+                ],
+                [
+                  535.0,
+                  335.08
+                ],
+                [
+                  535.0,
+                  332.06
+                ],
+                [
+                  535.0,
+                  329.01
+                ],
+                [
+                  535.0,
+                  325.92
+                ],
+                [
+                  535.0,
+                  322.79
+                ],
+                [
+                  535.0,
+                  319.62
+                ],
+                [
+                  535.0,
+                  316.4
+                ],
+                [
+                  535.0,
+                  313.15
+                ],
+                [
+                  535.0,
+                  309.85
+                ],
+                [
+                  535.0,
+                  306.5
+                ],
+                [
+                  535.0,
+                  303.1
+                ],
+                [
+                  535.0,
+                  299.66
+                ],
+                [
+                  535.0,
+                  296.16
+                ],
+                [
+                  535.0,
+                  292.6
+                ],
+                [
+                  535.0,
+                  288.99
+                ],
+                [
+                  535.0,
+                  285.32
+                ],
+                [
+                  535.0,
+                  281.6
+                ],
+                [
+                  535.0,
+                  277.81
+                ],
+                [
+                  535.0,
+                  273.95
+                ],
+                [
+                  535.0,
+                  270.04
+                ],
+                [
+                  535.0,
+                  266.05
+                ],
+                [
+                  535.0,
+                  262.0
+                ]
+              ],
+              "shapeSignature": "ffc38d1533ec99ed3e17e9833576fb97ebd0412f737200f11375c6befdee6687",
+              "x": 535.0,
+              "y": 388.25
+            }
+          }
+        },
+        "detailViews": {
+          "high": {
+            "focusQuestion": "How is the detailed estimate produced and checked?",
+            "linkIds": [
+              "input-calibration",
+              "calibration-estimate",
+              "validation-estimate",
+              "reference-validation",
+              "repeats-validation",
+              "bias-validation",
+              "estimate-limit"
+            ],
+            "nodeIds": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e",
+              "f",
+              "g",
+              "h"
+            ],
+            "positions": {
+              "a": {
+                "x": 40,
+                "y": 180
+              },
+              "b": {
+                "x": 420,
+                "y": 180
+              },
+              "c": {
+                "x": 800,
+                "y": 180
+              },
+              "d": {
+                "x": 800,
+                "y": 540
+              },
+              "e": {
+                "x": 400,
+                "y": 820
+              },
+              "f": {
+                "x": 1200,
+                "y": 180
+              },
+              "g": {
+                "x": 800,
+                "y": 940
+              },
+              "h": {
+                "x": 1200,
+                "y": 820
+              }
+            },
+            "rootId": "a"
+          },
+          "low": {
+            "focusQuestion": "What is the research problem and overall approach?",
+            "linkIds": [
+              "approach-question",
+              "approach-limit"
+            ],
+            "nodeIds": [
+              "q",
+              "p",
+              "f"
+            ],
+            "positions": {
+              "f": {
+                "x": 800,
+                "y": 140
+              },
+              "p": {
+                "x": 420,
+                "y": 140
+              },
+              "q": {
+                "x": 40,
+                "y": 140
+              }
+            },
+            "rootId": "q"
+          },
+          "medium": {
+            "focusQuestion": "What does the approach consume, produce and validate?",
+            "linkIds": [
+              "approach-input",
+              "estimate-approach",
+              "validation-estimate",
+              "estimate-limit"
+            ],
+            "nodeIds": [
+              "p",
+              "a",
+              "c",
+              "d",
+              "f"
+            ],
+            "positions": {
+              "a": {
+                "x": 40,
+                "y": 500
+              },
+              "c": {
+                "x": 450,
+                "y": 160
+              },
+              "d": {
+                "x": 450,
+                "y": 500
+              },
+              "f": {
+                "x": 860,
+                "y": 160
+              },
+              "p": {
+                "x": 40,
+                "y": 160
+              }
+            },
+            "rootId": "p"
+          }
+        },
+        "focusQuestion": "How does the fictional study work?",
+        "id": "main",
+        "kind": "narrative",
+        "linkIds": [
+          "approach-input",
+          "approach-limit",
+          "approach-question",
+          "bias-validation",
+          "calibration-estimate",
+          "estimate-approach",
+          "estimate-limit",
+          "input-calibration",
+          "reference-validation",
+          "repeats-validation",
+          "validation-estimate"
+        ],
+        "nodeIds": [
+          "q",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "p"
+        ],
+        "positions": {
+          "a": {
+            "x": 40,
+            "y": 180
+          },
+          "b": {
+            "x": 420,
+            "y": 180
+          },
+          "c": {
+            "x": 800,
+            "y": 180
+          },
+          "d": {
+            "x": 800,
+            "y": 540
+          },
+          "e": {
+            "x": 400,
+            "y": 820
+          },
+          "f": {
+            "x": 1200,
+            "y": 180
+          },
+          "g": {
+            "x": 800,
+            "y": 940
+          },
+          "h": {
+            "x": 1200,
+            "y": 820
+          },
+          "p": {
+            "x": 40,
+            "y": 160
+          },
+          "q": {
+            "x": 40,
+            "y": 140
+          }
+        },
+        "rootId": "q",
+        "routes": {},
+        "title": "Fictional workflow and validation"
+      }
+    ]
+  },
+  "paper": {
+    "id": "fictional-detail-workflow",
+    "isFictional": true,
+    "title": "Fictional workflow and validation",
+    "version": null
+  },
+  "progress": {
+    "activeEntry": "paper-prepare",
+    "detail": {},
+    "figures": {},
+    "lastQuestion": null,
+    "returnTo": null,
+    "translation": {}
+  },
+  "questions": [],
+  "readingModel": {
+    "inventoryComplete": false,
+    "outline": [],
+    "requiredCoverageIds": [],
+    "researchQuestions": [],
+    "status": "partial",
+    "synthesis": "",
+    "uncertainties": [
+      "No real paper was supplied; this demonstrates data structure and interface behavior only."
+    ]
+  },
+  "revision": 1,
+  "roleProfile": {
+    "announcement": "I will use a formal-verification and algorithm-analysis perspective; this is a fictional demonstration.",
+    "boundaries": [
+      "Experimental evidence is distinct from formal proof."
+    ],
+    "changeReason": null,
+    "leadRole": "Researcher perspective in formal verification and algorithm analysis",
+    "methodsCompetence": [
+      "Definitions and assumptions",
+      "Proof validity",
+      "Counterexamples and scope"
+    ],
+    "paperType": "Theoretical research",
+    "primaryField": "Theoretical computer science",
+    "selectionRationale": "Fictional interface example with conditions, propositions and proof dependencies.",
+    "status": "provisional",
+    "subfields": [
+      "Formal verification"
+    ],
+    "supportingPerspectives": [
+      "Discrete mathematics"
+    ],
+    "teachingApproach": "Use small examples, then return to the original derivation.",
+    "version": 1
+  },
+  "schemaVersion": 2,
+  "settings": {
+    "changeReason": null,
+    "confirmedAt": "2026-11-15T00:00:00Z",
+    "fullTranslation": true,
+    "fullTranslationSource": "default",
+    "interactionLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "pendingFields": [],
+    "presentation": "segmented",
+    "sourceLanguages": [],
+    "status": "confirmed",
+    "translationLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "version": 1
+  },
+  "sources": [
+    {
+      "fullTextAvailable": false,
+      "id": "fictional-example",
+      "label": "Fictional interface example, not research evidence",
+      "note": "No real proof or paper is provided.",
+      "role": "primary"
+    }
+  ]
+}

@@ -22,7 +22,7 @@ One-to-many, many-to-one, multi-step branches, and feedback cycles are supported
 
 For each relationship, state the concrete endpoints and what the connection means in this study. Review whether the source actually supports composition, classification, prerequisite, method dependence, measurement, testing, empirical support, causality, formal implication, or a limitation. Avoid turning the entire map into generic "requires understanding" links when a more precise registered meaning is justified. Conversely, lack of evidence is not permission to add a causal or logical edge for visual richness.
 
-Keep standardized short labels; put the paper-specific meaning, basis, direction, conditions, and caveats in hover/detail content. New evidence may add a qualified parallel edge or a cross-link; the all-relations toggle exposes nonessential cross-links within the current view. Critical refutation or limits must remain visible in the initial view. Do not increase line counts for their own sake, connect every pair, or add vocabulary membership as scientific edges.
+Keep standardized short labels; put the paper-specific meaning, basis, direction, conditions, and caveats in hover/detail content. New evidence may add a qualified parallel edge or cross-link in an appropriate independently curated detail tree. Read [detail views](detail-views.md) when assigning explanatory granularity; high detail should distinguish necessary objects, steps, assumptions, evaluation results and limits rather than leave generic umbrella nodes unexplained. Critical refutation or limits must remain visible in the initial view. Do not increase line counts for their own sake, connect every pair, or add vocabulary membership as scientific edges.
 
 ## Review and report actual coverage
 

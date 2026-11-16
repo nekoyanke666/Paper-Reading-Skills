@@ -39,7 +39,7 @@ def install(home,source=ROOT):
     with tempfile.TemporaryDirectory(prefix='paper-reading-install-') as tmp:
         stage=Path(tmp);shared=stage/'bundle';shared.mkdir()
         for name in ('interfaces','examples'):
-            shutil.copytree(source/name,shared/name,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+            shutil.copytree(source/name,shared/name,ignore=shutil.ignore_patterns('__pycache__','*.pyc','revisions'))
         version=(source/'VERSION').read_text(encoding='utf-8').strip()
         marker={'owner':OWNER,'version':version,'source':str(source),'entries':list(ENTRIES)}
         (shared/'installation.json').write_text(json.dumps(marker,indent=2)+'\n',encoding='utf-8')

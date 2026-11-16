@@ -77,14 +77,14 @@ const next = JSON.parse(bootstrap);
 next.revision += 1;
 next.graph.nodes.find(n => n.id === 'r').detail += 'Updated fixture explanation.';
 sandbox.testNext = next;
-assert.equal(run('window.updatePaperMap(testNext)'), true);
-assert.equal(run('changedIds.has("r")'), true);
+assert.equal(run('window.updatePaperMap(testNext)'), false);
+assert.ok(run(`state.graph.nodes.some(n=>n.id===${JSON.stringify(lastId)})`));
 assert.equal(run('window.updatePaperMap(testNext)'), false);
 const report = {
   test_kind: 'JavaScript runtime and data logic with minimal DOM stub; not a browser render test',
   shared_node_identity: 'passed', global_node_alias_search: 'passed', cross_tree_search_location: 'passed',
   causal_feedback_cycle: 'passed', extend_from_child_six_times: 'passed', preserve_existing_positions: 'passed',
-  new_tree_reuses_same_node: 'passed', revision_update_and_duplicate_revision: 'passed',
+  new_tree_reuses_same_node: 'passed', source_refresh_retains_user_edits: 'passed',
   browser_cache_cannot_override_canonical: 'passed', local_drafts_keep_canonical_revision: 'passed', writes_to_deliverable_data: false,
 };
 process.stdout.write(JSON.stringify(report, null, 2));

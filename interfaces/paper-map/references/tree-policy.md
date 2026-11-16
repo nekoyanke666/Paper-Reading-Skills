@@ -10,7 +10,7 @@ Split when predicates proliferate, topics mix, cross-links become hard to follow
 
 Define a global node once. Views hold nodeIds, linkIds, positions, and routes. A secondary narrative tree shares at least one substantive node with another narrative tree, not merely the same text, so its origin is visible. Catalog-only vocabulary may stand independently; wherever a term recurs, reuse the global node and visible membership links. Shared content updates together; positions and relationships may differ.
 
-Keep shared-count markers and sidebar links that switch and locate the same ID. Displayed edges have both endpoints in the view. All relations expands only this view's cross-links. primary means initial reading path, not stronger evidence; it must not hide refutation or critical limits to beautify a conclusion. Initial primary edges connect all visible nodes to the reading start in narrative views. Catalogs need no root or connected path; topic membership never implies a scientific relation.
+Keep shared-count markers and sidebar links that switch and locate the same ID. Displayed edges have both endpoints in the selected view. Read [detail views](detail-views.md): three independent memberships and relationships reuse globally identical nodes; the parent union is a data container, not a fourth display tree. primary marks narrative importance, not evidence strength or an instruction to hide critical limits. Each actual narrative view needs a connected reading path from its own visible root. Catalogs need no root or connected path; topic membership never implies a scientific relation.
 
 Before archiving a secondary tree, rehome unique important active nodes/edges rather than leaving invisible active material.
 
@@ -27,6 +27,6 @@ One-to-many and many-to-one branches are legal and need no artificial binary bra
 5. Reuse routes only if endpoint, visual-shape, layout-version, and display-label signatures still match.
 6. Move existing nodes only with explicit layout-repair intent/reason, restricted to affected views rather than shuffling the whole map.
 
-Browser drag overlays are view preferences, not canonical position changes; see [interaction](interaction.md). Shared scientific identity does not force identical placements in different views.
+Browser drags are tree/mode-specific diagram edits saved in portable history, separate from canonical research-memory changes; see [interaction](interaction.md). Shared scientific identity does not force identical placements in different views. Camera translation/scale are temporary navigation, not node positions; Center fits and centers the current tree without undoing edits. Signed world coordinates allow expansion in every direction.
 
 Unavoidable crossings may remain if lines do not pass through unrelated nodes and direction remains clear. Machine geometry does not replace expert checking of the reading logic. Localized labels require fresh geometry checks; source identities and prior node positions remain stable where feasible.

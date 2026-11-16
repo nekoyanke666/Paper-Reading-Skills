@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict'),H=require('../interfaces/paper-map/assets/history-core.js'),D=require('../interfaces/paper-map/assets/detail-core.js'),{createHarness,drag}=require('./viewer_harness.cjs');
+(async()=>{
+ let h=createHarness({fixture:'detail-map'});const sourceCount=h.run('state.graph.nodes.length');const counts=[];
+ for(const level of D.LEVELS){h.run(`setDetailMode(${JSON.stringify(level)})`);counts.push(h.run('tree().nodeIds.length'));assert.equal(h.run('layoutDirty()'),false);}
+ assert.deepEqual(counts,[3,5,8]);assert.equal(h.run('state.graph.links.length'),11);
+ h.run('setDetailMode("low");select("node","f")');const definition=h.run('node("f").detail'),low=h.plain('position("f")');h.run('setDetailMode("high")');const high=h.plain('position("f")');assert.notDeepEqual(low,high);assert.equal(h.run('node("f").detail'),definition);
+ h.run('setDetailMode("low")');drag(h,0,100,'f');assert.deepEqual(h.plain('position("f")'),{x:low.x,y:low.y+100});h.run('setDetailMode("high")');assert.deepEqual(h.plain('position("f")'),high);h.run('setDetailMode("low")');assert.equal(await h.run('saveHistory()'),true);
+ const exported=H.parse(h.file.content),model=H.materialize(exported);assert.equal(Object.keys(model.graph.nodes).length,sourceCount);assert.ok(!h.file.content.includes('detailRoutes'));assert.equal(model.graph.trees.main.detailViews.low.positions.f.y,low.y+100);
+ const archived=h.file.content;h=createHarness();h.sandbox.archived=archived;assert.equal(h.run('importHistoryText(archived)'),true);assert.equal(h.run('detailMode'),'low');assert.equal(h.run('tree().nodeIds.length'),3);assert.equal(h.run('state.graph.nodes.length'),10);
+ h.run('query="Repeats"');assert.equal(h.run('matches()[0].id'),'g');h.run('locate("g")');assert.equal(h.run('detailMode'),'high');assert.equal(h.run('selected.id'),'g');h.run('locate("q")');assert.equal(h.run('detailMode'),'low');
+ const bad=H.materialize(exported);bad.graph.trees.main.detailViews.low.nodeIds.push('not-in-master');const broken=H.copy(exported);broken.base=bad;broken.baseHash=H.hash(bad);broken.commits=[];broken.cursor=0;delete broken.checksum;broken.checksum=H.hash(broken);h.sandbox.corrupt=JSON.stringify(broken);const before=h.run('JSON.stringify(state)');assert.throws(()=>h.run('importHistoryText(corrupt)'),/shared records/);assert.equal(h.run('JSON.stringify(state)'),before);
+ console.log(JSON.stringify({threeIndependentTrees:true,sameGlobalNodeDefinitions:true,modeSpecificPositions:true,noAutomaticPathCollapse:true,allViewsSavedFromLow:true,modesSurviveImport:true,searchChoosesContainingView:true,invalidViewImportIsTransactional:true}));
+})().catch(error=>{console.error(error);process.exitCode=1;});

@@ -1,23 +1,41 @@
-# Direct Manipulation and View Preferences
+# Map Interaction and Saved Workspaces
 
 ## Click, drag, and keyboard
 
-A press and release opens the node sidebar. Start dragging only beyond four CSS pixels; acquire pointer capture at that point, never on the initial press. During dragging show an active outline/shadow and reroute attached edges continuously. Do not open details on the release that completed a drag. Escape or pointer cancellation restores the position before that drag. Reject a drop that overlaps another node and explain the rollback with localized feedback. Use Alt + arrow keys for keyboard movement, with Shift for a smaller step. Touch/pointer input follows the same threshold and cancellation rules; essential information never requires hovering.
+A press/release opens node details. Start dragging beyond four CSS pixels and acquire pointer capture only then. Live movement highlights the node and reroutes its attached edges. A completed drag does not open details. Escape/pointer cancellation restores its previous position. Reject overlapping drops within the current tree/view and give localized feedback. Alt + arrow keys move a focused node; Shift uses a smaller step. Keep touch/pointer handling consistent and make essential information available by click, not hover alone.
 
-Selection highlights the node and its immediate relationships; locating a search result briefly highlights its position. New or revised content may pulse briefly. Reduced-motion preference suppresses motion while retaining state changes. Do not add perpetual animation, particles, dashboards, or a separate interaction tutorial to the canvas.
+Selection highlights immediate relationships. Search location and new/revised content may pulse briefly; reduced-motion preference suppresses motion while retaining state changes. Avoid perpetual decorative animation or added dashboards.
 
-## Compact layout menu
+## Camera and viewport
 
-The only additional persistent control is the small Layout button. Its popover contains Curves, Straight, Save positions, Default view, and a concise saved/unsaved state. Curves are the default. Each edge is either one smooth cubic Bezier path (M C) or one straight segment (M L); no orthogonal routing, angular bends, multi-segment polylines, or rounded-elbow substitutes. A self-relation remains a visible cubic loop in either mode because a segment between identical endpoints would disappear. Preserve canonical labels, direction, uncertainty styling, and markers in both modes. Endpoints meet actual shape boundaries, not the common placement slot. Keep feedback directions visually distinct.
+The canvas background occupies all remaining space beneath the title/control row, with the locked outer margins; it is not sized to the initial nodes or a fixed minimum graph height. Clip world content to this viewport. Use a translation-and-scale camera, not scrollbars constrained to a finite initial board. Background drag pans in any direction; node drag changes only that node. Capture the active pointer, ignore other pointer IDs, and restore camera offsets on pointer cancellation/Escape. A click below the drag threshold remains a click.
 
-Dragging produces a temporary overlay. Save positions stores the overlay and edge mode in this browser's localStorage, keyed by paper identity, with positions indexed by tree ID and node ID. It does not write the paper session, alter scientific relationships, or become a shared cross-chat layout. Report storage failure honestly and retain the unsaved state. Warn before leaving with unsaved changes.
+Use compact minus, percentage, plus and Center controls at the lower-left inside the canvas. Wheel zoom is anchored to the world point beneath the pointer; buttons zoom around viewport center. The current implementation uses 8% to 300% zoom, finite signed node coordinates within +/-10,000,000, and no camera-edge clamp. These are practical numeric limits, not a claim of mathematically infinite storage. Home or Center fits and centers all nodes and relationship labels in the selected tree; it changes neither node placements, detail membership nor saved versions. Search/shared navigation centers the target at a readable scale. Keyboard focus on the canvas supports arrows to pan and +/- to zoom. Alt+arrows on a node still move that node.
 
-Default view removes saved and temporary position overrides for the current tree only, returning to canonical positions. It preserves other trees and the selected line mode. Shared nodes have one scientific identity but may have different saved positions in different trees. Saving in one tab can refresh another clean tab; do not overwrite its unsaved work.
+Camera offsets/scale are view-only and do not mark the diagram dirty or create a Save checkpoint. Node coordinates and mode-specific placements do. On a new tree/detail selection or source/import/version restoration, fit the selected tree; every viewport or sidebar resize refits even after manual pan/zoom. Keep a selected node centered at a readable scale; otherwise center the entire current tree. Defer reframing until an active drag ends, preserving all node coordinates. Keep the background grid aligned with the camera, controls outside world scaling, and reduced-motion preferences intact.
 
-## Source updates and safety
+## Fixed controls and three detail views
 
-Load canonical content from the newly rendered snapshot first. Browser note caches never replace it. Load only known active tree/node IDs and finite nonnegative coordinates from the layout preference; discard invalid or removed objects. Preserve valid saved positions through additions and source corrections. A new node starts at its canonical position. If user placement makes updated content hard to follow, offer the existing Default view action; do not change academic content to accommodate a preference.
+Keep the tree selector, node search, Low/Medium/High selector, compact Save & history menu, and compact zoom/Center controls. A one-tree document still has the same configured selector and full import/history capabilities. No template branch may omit a feature because the initial graph is small.
 
-Canonical layout repairs are separate reviewed memory operations. A user may explicitly request promoting a placement into the shared default; then review all affected views, geometry, expected revision, and source-independent layout intent before committing. Ordinary browser dragging never performs that operation.
+Read [detail views](detail-views.md) when creating or revising the three trees. They reference shared global node definitions but have independent memberships, source-grounded connections, roots, and coordinates. Switching does not rewrite data. Searching a hidden concept selects a containing view; shared-node links can navigate between topics and detail modes. There is no automatic path-collapse or relation-renaming mechanism.
 
-Curved/straight user overlays provide live geometric feedback but do not claim to optimize every possible edge crossing. Canonical generated routes must pass geometry gates. Test normal clicks as well as dragging, saved-position reload, reset scope, shared-node navigation, source-update reconciliation, storage failures, and narrow-screen sidebar access before releasing a changed runtime.
+## File saving and version navigation
+
+Read [permanent history](history-format.md) for the frozen archive, compatibility rules, and file I/O. The compact menu places **Prev, Next** in that order on the first action row and **Save** on the following row. Curves/Straight and file import/copy/download functions stay in this popover, with a concise version and persistence status.
+
+Save captures all nodes, links, trees, detail views, positions and relevant definitions/sources, not just dragged coordinates or visible nodes. Prefer the selected writable file and report success only after the stream closes. A download fallback is labeled accurately. Cache recovery never substitutes for a portable file. Cancellation, conflicts, storage failure or invalid imports must not erase working content or prior saved versions.
+
+Prev/Next traverse Save checkpoints, not individual pointer events. Require current content edits to be saved first. Retain all former versions when editing and saving from an older checkpoint. Remove the old restore-default-layout behavior. Browser-created notes keep their provenance until reviewed against sources.
+
+## Routes and feedback
+
+Use one smooth cubic path (M C) by default or one straight segment (M L). Do not use orthogonal bends, rounded-elbow substitutes or multi-segment polylines. A self-relation remains a visible cubic loop in either mode. Preserve canonical labels, direction, uncertainty styles and markers; endpoints meet actual glyph boundaries. Feedback directions remain distinguishable.
+
+Coordinates are specific to a tree and, for reviewed detailViews, a detail mode. Sharing a scientific node does not force its placements to match. The archive omits derived route caches and reconstructs them in the fixed viewer, while preserving exact node coordinates and semantic records.
+
+## Source updates and quality checks
+
+Load authoritative source content before accepting a matching explicit workspace recovery. Never let an unrelated or stale cache replace another paper. Saved/imported workspaces and unsaved user changes are held when a new source snapshot appears; tell the reader an update is available rather than silently replacing their nodes/trees. Reconciliation with canonical paper memory is an explicit reviewed operation.
+
+Test normal clicks, drag/cancellation/collision behavior, full Save and reload, Prev/Next across saved checkpoints, old-future retention, file conflict/cancel handling, same-node navigation, three-view layouts, single-tree imports, and invalid-input isolation. Distinguish mock file tests, browser downloads, and actual native writable-file testing. Do not claim a blocked browser upload succeeded.

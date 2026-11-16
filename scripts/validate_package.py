@@ -19,7 +19,8 @@ def validate(root=ROOT):
         if not description or len(description)>1024 or len(text.splitlines())>500:raise ValueError('invalid skill size or description')
         if re.search(r'^#{1,6} .*?(?:addendum|previous rules|additional work)',text,re.M|re.I):raise ValueError('historical addendum structure remains')
     for p in root.rglob('*'):
-        if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts:continue
+        # Generated immutable preview revisions are not shipped skill resources.
+        if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts or ('examples' in p.parts and 'revisions' in p.parts):continue
         if p.suffix in ('.md','.json','.py','.html','.in','.cjs','.js'):
             text=p.read_text(encoding='utf-8')
             if any(0x3400<=ord(c)<=0x9fff for c in text):raise ValueError('untranslated CJK content remains: '+str(p))
@@ -38,7 +39,8 @@ def validate(root=ROOT):
     assets=root/'interfaces/paper-map/assets';lock=json.loads((assets/'template-lock.json').read_text(encoding='utf-8'))
     for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256'),('node-shapes.json','shapesSha256')]:
         if hashlib.sha256((assets/name).read_bytes()).hexdigest()!=lock[key]:raise ValueError('locked asset mismatch: '+name)
-    compiled=(assets/'viewer-shell.html.in').read_text(encoding='utf-8').replace('__RUNTIME__',(assets/'viewer-runtime.js').read_text(encoding='utf-8'))
+    runtime='\n'.join((assets/name).read_text(encoding='utf-8') for name in ('history-core.js','detail-core.js','history-viewer.js','camera-viewer.js','viewer-runtime.js'))
+    compiled=(assets/'viewer-shell.html.in').read_text(encoding='utf-8').replace('__RUNTIME__',runtime)
     if compiled!=(assets/'graph-viewer.html.in').read_text(encoding='utf-8'):raise ValueError('compiled viewer differs from maintained source')
     subprocess.run(['node','--check',str(assets/'viewer-runtime.js')],check=True,capture_output=True)
     with tempfile.TemporaryDirectory() as tmp:
