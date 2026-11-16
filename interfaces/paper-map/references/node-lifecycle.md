@@ -8,9 +8,9 @@ Store id, identity, label, title/detail, type, aliases, provenance, conditions, 
 
 ## Add
 
-Search current nodes/aliases, glossary, claims, and sources first. Reuse the ID for the same identity. Add only a necessary prerequisite, important question/method/observation/claim, critical limitation, or connecting concept. Mention of a term, paraphrase, or repeated definition question is not sufficient.
+Search current nodes/aliases, glossary, claims, and sources first. Reuse the ID for the same identity. Add a necessary prerequisite, important question/method/observation/claim, critical limitation, connecting concept, or reusable technical term needed to read the paper. A term need not be a new finding to belong in a topic catalog, but incidental mention, paraphrase, or a repeated definition question does not create a new referent.
 
-New nodes need understandable content, source nature, an appropriate view, and a relationship. Keep details not needing display in full memory/evidence index rather than isolated active nodes. Any node can extend or root a new tree; there is no fixed root type or depth. Each tree still has a clear reading start. Reuse IDs across views.
+New nodes need understandable content, source nature, and an appropriate view. Narrative members need a meaningful connected reading path; defined catalog terms can remain unconnected without invented edges or category roots. Keep incidental details not needing lookup/display in full memory or the evidence index. Any substantive node can extend or root a narrative tree; catalogs have a topic and no root. There is no fixed root type or depth. Reuse IDs across views.
 
 ## Update
 

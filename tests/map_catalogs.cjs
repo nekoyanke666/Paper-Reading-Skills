@@ -1,0 +1,22 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const html=fs.readFileSync(path.join(__dirname,'../examples/terminology-map/index.html'),'utf8');
+const boot=JSON.parse(html.match(/<script id="bootstrap" type="application\/json">([\s\S]*?)<\/script>/)[1]);
+const code=[...html.matchAll(/<script(?: [^>]*)?>([\s\S]*?)<\/script>/g)].at(-1)[1],elements=new Map();
+function el(id){if(!elements.has(id))elements.set(id,{textContent:'',innerHTML:'',value:'',style:{},scrollLeft:0,scrollTop:0,clientWidth:1200,clientHeight:760,classList:{values:new Set(),add(...a){a.forEach(v=>this.values.add(v));},remove(...a){a.forEach(v=>this.values.delete(v));},toggle(k,b){if(b===undefined)b=!this.values.has(k);if(b)this.values.add(k);else this.values.delete(k);}},setAttribute(){},addEventListener(){},focus(){},scrollBy(){},getBoundingClientRect(){return {left:0,top:0,width:1200,height:760};}});return elements.get(id);}
+el('bootstrap').textContent=JSON.stringify(boot);
+const sandbox={document:{getElementById:el,querySelectorAll:()=>[],querySelector:()=>null,addEventListener(){}},localStorage:{getItem(){return null;},setItem(){}},location:{protocol:'file:'},crypto:require('node:crypto'),CSS:{escape:v=>v},setInterval(){},setTimeout(){},clearTimeout(){},requestAnimationFrame:f=>f(),ResizeObserver:class{observe(){}},matchMedia:()=>({matches:true}),addEventListener(){}};
+sandbox.window=sandbox;vm.createContext(sandbox);vm.runInContext(code,sandbox);const run=s=>vm.runInContext(s,sandbox);
+run('changeTree("concept-terms")');assert.equal(run('validate(state)'),true);assert.equal(run('tree().rootId'),null);
+assert.equal(el('edge-layer').innerHTML,'');assert.ok(el('all').classList.values.has('hidden'));
+assert.ok(!/class="[^"]*\broot\b/.test(el('nodes').innerHTML));
+run('select("node","input")');assert.ok(el('details').innerHTML.includes('Input set'));assert.ok(el('details').innerHTML.includes('Role in this study'));
+assert.equal(run('query="input domain";matches()[0].id'),'input');
+assert.equal(run('query="denominator is positive";matches()[0].id'),'precision');
+run('locate("precision")');assert.equal(run('activeTree'),'evaluation-terms');assert.ok(!el('all').classList.values.has('hidden'));
+assert.ok(el('details').innerHTML.includes('TP / (TP + FP)'));assert.ok(el('details').innerHTML.includes('Context and properties'));
+assert.equal((el('edge-layer').innerHTML.match(/class="edge /g)||[]).length,2);assert.ok(el('edge-layer').innerHTML.includes('<title>'));
+run('changeTree("proof-terms");select("node","lemma")');assert.ok(el('details').innerHTML.includes('How does A support proposition P?'));
+const next=JSON.parse(JSON.stringify(boot));next.revision++;next.glossary.find(t=>t.id==='lemma-term').definition='Clarified same-referent lemma definition.';sandbox.next=next;
+assert.equal(run('window.updatePaperMap(next)'),true);assert.ok(el('details').innerHTML.includes('Clarified same-referent lemma definition.'));assert.equal(run('changedIds.has("lemma")'),true);
+run('changeTree("proof-detail","lemma")');assert.ok(el('details').innerHTML.includes('Clarified same-referent lemma definition.'));
+console.log(JSON.stringify({testKind:'Minimal-DOM runtime, not browser rendering',rootlessCatalog:true,noSyntheticEdges:true,legacyGlossaryNames:true,termAliasAndPropertySearch:true,sourceBackedProperties:true,sharedDefinitionUpdate:true,oneToManyEdges:true}));

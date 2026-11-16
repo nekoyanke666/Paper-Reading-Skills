@@ -232,6 +232,8 @@ def normalize(state, assets=ASSETS):
     g['links'] = sorted(entries, key=lambda e: e['id'])
     g['linkRedirects'].update(redirects)
     for t in g['trees']:
+        t.setdefault('kind','narrative')
+        if t['kind']=='catalog':t.setdefault('rootId',None)
         t['nodeIds'] = sorted(set(t['nodeIds']),key=lambda i:(i!=t['rootId'],i))
         t['linkIds'] = sorted(set(redirects.get(i, i) for i in t['linkIds']))
         t.setdefault('positions', {})
@@ -296,6 +298,12 @@ def label_box(e, x, y, padding=0):
 
 def find_spot(tree, node_id, anchor_id=None):
     positions = tree['positions']
+    if tree.get('kind')=='catalog':
+        occupied=[rectangle(p,18) for p in positions.values()]
+        for index in range(len(positions)*4+12):
+            p={'x':40+(index%4)*230,'y':60+(index//4)*160}
+            if not any(intersects(rectangle(p,18),r) for r in occupied):return p
+        return {'x':40,'y':max(p['y'] for p in positions.values())+160}
     if not positions:
         return {'x': 400, 'y': 100}
     base = positions.get(anchor_id or tree['rootId'], next(iter(positions.values())))
@@ -479,6 +487,8 @@ def check(state, assets=ASSETS, geometry=True):
     if len(nodes)!=len(g['nodes']) or len(edges)!=len(g['links']):
         raise MapError('duplicate active IDs')
     source_ids = {s['id'] for s in state.get('sources',[])}
+    terms={t['id']:t for t in state.get('glossary',[])}
+    if len(terms)!=len(state.get('glossary',[])):raise MapError('glossary IDs must be unique')
     if len(source_ids)!=len(state.get('sources',[])):
         raise MapError('source IDs must be unique')
     identities = {}
@@ -500,6 +510,8 @@ def check(state, assets=ASSETS, geometry=True):
             warnings.append({'code':'long-label','id':ident})
         if not isinstance(n.get('aliases',[]),list):
             raise MapError('node aliases must be a list')
+        if any(i not in terms for i in n.get('termIds',[])):
+            raise MapError('node termIds must reference the shared glossary')
         for ref in n.get('sourceRefs',[]):
             if ref.get('sourceId') not in source_ids or not ref.get('location'):
                 raise MapError('node source is missing or unlocatable')
@@ -535,8 +547,26 @@ def check(state, assets=ASSETS, geometry=True):
     membership, edge_membership = Counter(),Counter()
     for t in g['trees']:
         ids,link_ids=t['nodeIds'],t['linkIds']
-        if not t.get('title') or not t.get('focusQuestion') or t['rootId'] not in ids:
-            raise MapError('tree needs a focus question, title and visible root')
+        kind=t.get('kind','narrative')
+        if kind not in ('narrative','catalog'):raise MapError('unknown tree kind')
+        if not ids or not t.get('title'):raise MapError('a view needs a title and visible members')
+        if kind=='catalog':
+            if t['id']=='main' or t.get('rootId') is not None or not t.get('topicDescription'):
+                raise MapError('a topic catalog is secondary, rootless, and needs a topic description')
+            for ident in ids:
+                if not nodes[ident].get('termIds') or any(not terms[i].get('definition') for i in nodes[ident]['termIds']):
+                    raise MapError('catalog members need a defined shared glossary term')
+                for term in (terms[i] for i in nodes[ident]['termIds']):
+                    basis=term.get('sourceRefs') or term.get('sources') or nodes[ident].get('sourceRefs')
+                    if not basis or any(r.get('sourceId') not in source_ids or not (r.get('location') or r.get('locator')) for r in basis):
+                        raise MapError('catalog definitions need a traceable source basis')
+                    for facet in term.get('facets',[]):
+                        if not facet.get('label') or not facet.get('value') or not facet.get('sourceRefs'):
+                            raise MapError('term properties need a label, value, and traceable basis')
+                        if any(r.get('sourceId') not in source_ids or not r.get('location') for r in facet['sourceRefs']):
+                            raise MapError('term property source is missing or unlocatable')
+        elif not t.get('focusQuestion') or t.get('rootId') not in ids:
+            raise MapError('narrative tree needs a focus question and visible root')
         if t['id']!='main' and t['title']==state['paper']['title']:
             raise MapError('name a secondary tree by its question, not the paper title')
         if len(ids)!=len(set(ids)) or len(link_ids)!=len(set(link_ids)):
@@ -545,7 +575,7 @@ def check(state, assets=ASSETS, geometry=True):
             raise MapError('tree references inactive objects')
         if any(edges[i]['from'] not in ids or edges[i]['to'] not in ids for i in link_ids):
             raise MapError('tree links must connect visible members')
-        for primary_only in (False,True):
+        for primary_only in (() if kind=='catalog' else (False,True)):
             seen={t['rootId']}
             while True:
                 before=len(seen)
@@ -563,7 +593,7 @@ def check(state, assets=ASSETS, geometry=True):
             if not t.get('densityReview',{}).get('reason'):
                 raise MapError('large tree needs an explicit readability/split review')
             warnings.append({'code':'large-tree-reviewed','id':t['id']})
-        if t['id']!='main' and not any(set(ids)&set(v['nodeIds']) for v in g['trees'] if v['id']!=t['id']):
+        if kind=='narrative' and t['id']!='main' and not any(set(ids)&set(v['nodeIds']) for v in g['trees'] if v['id']!=t['id'] and v.get('kind','narrative')=='narrative'):
             raise MapError('secondary tree needs a visible shared-node connection')
         membership.update(ids)
         edge_membership.update(link_ids)
@@ -645,7 +675,19 @@ def plan(state, patch, assets=ASSETS):
         return found
     for op in patch.get('operations',[]):
         operation=op['op']
-        if operation=='add_node':
+        if operation=='upsert_term':
+            data=copy.deepcopy(op['term'])
+            if not data.get('id') or not data.get('definition') or not op.get('reason'):
+                raise MapError('a glossary term needs an ID, definition, and update reason')
+            if not any(data.get(k) for k in ('targetTerm','target','sourceTerm','original','english','en')):
+                raise MapError('a glossary term needs a recognizable name')
+            old=next((v for v in s['glossary'] if v['id']==data['id']),None)
+            if old:
+                renamed=[old[k] for k in ('targetTerm','target','sourceTerm','original','english','en') if k in data and old.get(k) and data[k]!=old[k]]
+                data['aliases']=unique(old.get('aliases',[])+data.get('aliases',[])+renamed)
+                old.update(data)
+            else:s['glossary'].append(data)
+        elif operation=='add_node':
             data=copy.deepcopy(op['node']); identity(data)
             same=next((old for old in g['nodes'] if identity(old)==identity(data)),None)
             if same:
@@ -696,14 +738,17 @@ def plan(state, patch, assets=ASSETS):
             if set(updates)-allowed:raise MapError('semantic relation changes require retiring the old link and adding a new one')
             data.update(updates)
         elif operation=='add_tree':
-            view=copy.deepcopy(op['tree']);view['rootId']=resolve(view['rootId']);n(view['rootId'])
-            view.setdefault('nodeIds',[view['rootId']]);view['nodeIds']=[resolve(i) for i in view['nodeIds']]
+            view=copy.deepcopy(op['tree']);view.setdefault('kind','narrative')
+            if view['kind']=='catalog':view.setdefault('rootId',None);view.setdefault('nodeIds',[])
+            else:
+                view['rootId']=resolve(view['rootId']);n(view['rootId']);view.setdefault('nodeIds',[view['rootId']])
+            view['nodeIds']=[resolve(i) for i in view['nodeIds']]
             view.setdefault('linkIds',[]);view.setdefault('positions',{});view.setdefault('routes',{})
             if any(old['id']==view['id'] for old in g['trees']):raise MapError('tree ID already exists')
             g['trees'].append(view)
         elif operation=='update_tree':
             view=t(op['id']);updates=copy.deepcopy(op['changes'])
-            if set(updates)-{'title','focusQuestion','rootId','densityReview'} or not op.get('reason'):
+            if set(updates)-{'title','focusQuestion','rootId','densityReview','kind','topicDescription'} or not op.get('reason'):
                 raise MapError('tree updates need a reason and cannot silently replace membership or identity')
             if 'rootId' in updates:updates['rootId']=resolve(updates['rootId'])
             view.update(updates)
@@ -786,7 +831,8 @@ def plan(state, patch, assets=ASSETS):
         else:
             raise MapError(f'unknown operation: {operation}')
     result,report=prepare(s,assets,repair=bool(patch.get('allowLayoutRepair')))
-    report['changed']=stable_json(result['graph'])!=stable_json(current['graph'])
+    report['glossaryChanged']=stable_json(result.get('glossary',[]))!=stable_json(current.get('glossary',[]))
+    report['changed']=stable_json(result['graph'])!=stable_json(current['graph']) or report['glossaryChanged']
     report['refs']=refs
     report['reason']=patch['reason']
     return result,report

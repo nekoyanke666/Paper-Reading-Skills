@@ -1,0 +1,4576 @@
+{
+  "artifact": {
+    "layoutVersion": "shape-curves-2",
+    "localeSha256": "a30ef72479390015e9efa25f74324551e3fda45b9076d68fc804ad1c62f73869",
+    "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
+    "registryVersion": "2.0.0",
+    "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
+    "snapshotSha256": "74c69b3abe2e9104ebe826a0cdda726614e53ae840f4016237465d0f6406d180",
+    "templateSha256": "90b8c14cd2cd5a45fa18110d5e19a0411bbcea7057f916f91a87c702b0ef5c78",
+    "templateVersion": "paper-map-ui-1.3.0"
+  },
+  "glossary": [
+    {
+      "aliases": [],
+      "definition": "A fictional assumption required by the demonstration argument.",
+      "en": "condition A",
+      "english": "Condition A",
+      "facets": [],
+      "id": "condition-a",
+      "languageTag": "en",
+      "original": "Condition A",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "sourceTerm": "condition A",
+      "studyRole": "Identify the premise whose role must remain visible when the proof is expanded.",
+      "target": "Condition A",
+      "targetTerm": "condition A"
+    },
+    {
+      "aliases": [],
+      "definition": "The tradeoff between false positive calls and missed reference positives.",
+      "english": "Error balance",
+      "facets": [],
+      "id": "error-balance-term",
+      "original": "Error balance",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "studyRole": "Understanding the tradeoff requires both precision and recall.",
+      "target": "Error balance"
+    },
+    {
+      "aliases": [
+        "input domain"
+      ],
+      "definition": "A named collection on which a procedure is defined.",
+      "english": "Input set",
+      "facets": [],
+      "id": "input-set",
+      "original": "Input set",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "studyRole": "Keep the objects being processed distinct from conditions imposed on them.",
+      "target": "Input set"
+    },
+    {
+      "aliases": [],
+      "definition": "A supporting proposition used within a larger argument.",
+      "english": "Intermediate lemma",
+      "facets": [],
+      "id": "lemma-term",
+      "original": "Intermediate lemma",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "studyRole": "Make the intermediate reasoning step reusable in several views.",
+      "target": "Intermediate lemma"
+    },
+    {
+      "aliases": [],
+      "definition": "The fraction of positive calls that are true positives.",
+      "english": "Precision",
+      "facets": [
+        {
+          "label": "Definition",
+          "sourceRefs": [
+            {
+              "location": "Fictional terminology guide, not research evidence",
+              "sourceId": "fictional-example"
+            }
+          ],
+          "value": "TP / (TP + FP), when the denominator is positive."
+        },
+        {
+          "label": "Interpretation",
+          "sourceRefs": [
+            {
+              "location": "Fictional terminology guide, not research evidence",
+              "sourceId": "fictional-example"
+            }
+          ],
+          "value": "It can improve when false calls are removed, even if some real positives are missed."
+        }
+      ],
+      "id": "precision-term",
+      "original": "Precision",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "studyRole": "Describe how trustworthy the positive-call set is.",
+      "target": "Precision"
+    },
+    {
+      "aliases": [],
+      "definition": "An ordered account of how premises would establish a proposition.",
+      "english": "Proof outline",
+      "facets": [],
+      "id": "proof-term",
+      "original": "Proof outline",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "studyRole": "Distinguish a procedure or argument from its final claim.",
+      "target": "Proof outline"
+    },
+    {
+      "aliases": [],
+      "definition": "The fictional proposition whose validity the main question asks about.",
+      "english": "Proposition P",
+      "facets": [],
+      "id": "proposition-term",
+      "original": "Proposition P",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "studyRole": "Identify the target statement without treating a diagram as a real proof.",
+      "target": "Proposition P"
+    },
+    {
+      "aliases": [],
+      "definition": "The fraction of reference positives that are called positive.",
+      "english": "Recall",
+      "facets": [],
+      "id": "recall-term",
+      "original": "Recall",
+      "sourceRefs": [
+        {
+          "location": "Fictional terminology guide, not research evidence",
+          "sourceId": "fictional-example"
+        }
+      ],
+      "studyRole": "Describe how much of the reference-positive set is recovered.",
+      "target": "Recall"
+    }
+  ],
+  "graph": {
+    "linkRedirects": {},
+    "links": [
+      {
+        "displayLabel": "entails",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "a",
+        "id": "a-lemma",
+        "label": "entails",
+        "meaning": "Fictional relationship illustrating entails. Not a verified paper conclusion.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-theory"
+        },
+        "relationType": "entails",
+        "semanticKey": "[\"a\",\"lemma\",\"entails\",{\"sample\":\"fictional-theory\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "lemma"
+      },
+      {
+        "displayLabel": "depends on",
+        "displayStatusSuffix": "",
+        "from": "proof",
+        "id": "a-proof",
+        "label": "depends on",
+        "meaning": "Fictional relationship illustrating depends_on. Not a verified paper conclusion.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-theory"
+        },
+        "relationType": "depends_on",
+        "semanticKey": "[\"proof\",\"a\",\"depends_on\",{\"sample\":\"fictional-theory\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "a"
+      },
+      {
+        "displayLabel": "requires",
+        "displayStatusSuffix": "",
+        "from": "error-balance",
+        "id": "balance-precision",
+        "label": "requires",
+        "meaning": "Understanding this tradeoff requires the meaning and denominator of precision. This is a teaching prerequisite, not a causal claim.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "requires_concept",
+        "semanticKey": "[\"error-balance\",\"precision\",\"requires_concept\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional terminology guide, not research evidence",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "precision"
+      },
+      {
+        "displayLabel": "requires",
+        "displayStatusSuffix": "",
+        "from": "error-balance",
+        "id": "balance-recall",
+        "label": "requires",
+        "meaning": "Understanding this tradeoff requires the meaning and denominator of recall. This is a teaching prerequisite, not a causal claim.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {},
+        "relationType": "requires_concept",
+        "semanticKey": "[\"error-balance\",\"recall\",\"requires_concept\",{}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional terminology guide, not research evidence",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "recall"
+      },
+      {
+        "displayLabel": "entails",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "lemma",
+        "id": "lemma-p",
+        "label": "entails",
+        "meaning": "Fictional relationship illustrating entails. Not a verified paper conclusion.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-theory"
+        },
+        "relationType": "entails",
+        "semanticKey": "[\"lemma\",\"p\",\"entails\",{\"sample\":\"fictional-theory\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "p"
+      },
+      {
+        "displayLabel": "limited by",
+        "displayStatusSuffix": "",
+        "from": "p",
+        "id": "p-bound",
+        "label": "limited by",
+        "meaning": "Fictional relationship illustrating constrained_by. Not a verified paper conclusion.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-theory"
+        },
+        "relationType": "constrained_by",
+        "semanticKey": "[\"p\",\"boundary\",\"constrained_by\",{\"sample\":\"fictional-theory\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "unresolved",
+        "to": "boundary"
+      },
+      {
+        "displayLabel": "depends on",
+        "displayStatusSuffix": "",
+        "from": "proof",
+        "id": "proof-input",
+        "label": "depends on",
+        "meaning": "The fictional proof procedure depends on specifying its input set, not only its assumptions.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-theory"
+        },
+        "relationType": "depends_on",
+        "semanticKey": "[\"proof\",\"input\",\"depends_on\",{\"sample\":\"fictional-theory\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "input"
+      },
+      {
+        "displayLabel": "proves",
+        "displayStatusSuffix": " (hypothesis)",
+        "from": "proof",
+        "id": "proof-p",
+        "label": "proves",
+        "meaning": "Fictional relationship illustrating proves. Not a verified paper conclusion.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-theory"
+        },
+        "relationType": "proves",
+        "semanticKey": "[\"proof\",\"p\",\"proves\",{\"sample\":\"fictional-theory\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "hypothesis",
+        "to": "p"
+      },
+      {
+        "displayLabel": "requires",
+        "displayStatusSuffix": "",
+        "from": "q",
+        "id": "q-a",
+        "label": "requires",
+        "meaning": "Fictional relationship illustrating requires_concept. Not a verified paper conclusion.",
+        "originalLabels": [],
+        "primary": true,
+        "qualifiers": {
+          "sample": "fictional-theory"
+        },
+        "relationType": "requires_concept",
+        "semanticKey": "[\"q\",\"a\",\"requires_concept\",{\"sample\":\"fictional-theory\"}]",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "status": "design",
+        "to": "a"
+      }
+    ],
+    "locale": {
+      "families": {
+        "association": "Association",
+        "boundary": "Inference boundary",
+        "causal": "Causal effect",
+        "context": "Research context",
+        "evidence": "Evidence",
+        "interaction": "Interaction",
+        "logic": "Logical relation",
+        "method": "Research methods",
+        "sequence": "Sequence",
+        "structure": "Structure"
+      },
+      "languageTag": "en",
+      "nodeTypes": {
+        "algorithm": "Algorithm",
+        "argument": "Argument",
+        "assumption": "Assumption",
+        "claim": "Claim",
+        "concept": "Concept",
+        "counterexample": "Counterexample",
+        "custom-lemma": "Intermediate lemma",
+        "dataset": "Dataset",
+        "definition": "Definition",
+        "entity": "Research entity",
+        "experiment": "Experiment",
+        "finding": "Finding",
+        "hypothesis": "Hypothesis",
+        "interpretation": "Interpretation",
+        "limit": "Limitation",
+        "method": "Method",
+        "metric": "Metric",
+        "model": "Model",
+        "observation": "Observation",
+        "proof": "Proof",
+        "question": "Research question",
+        "source": "Material",
+        "term": "Term or named object",
+        "theorem": "Theorem"
+      },
+      "relationDefinitions": {
+        "activates": "The source causes activation of the target state or activity, distinct from increased abundance alone.",
+        "alternative_to": "The endpoints are alternative explanations of the same question, without necessarily being logically inconsistent.",
+        "associated_with": "The endpoints are associated under stated conditions, without implying causal direction.",
+        "binds": "The endpoints physically bind under the stated conditions; binding alone does not establish downstream effects.",
+        "causes": "Within the stated scope, the source causally produces the target; requires a justified causal basis.",
+        "constrained_by": "The scope or validity of the source claim is constrained by the target condition or limitation.",
+        "contradicts": "The source evidence contradicts the target claim under the stated conditions; uncertainty alone is not contradiction.",
+        "depends_on": "The source claim, method, or derivation depends on the target condition without by itself proving necessity or sufficiency.",
+        "entails": "Under stated premises and valid inference, the source proposition implies the target proposition.",
+        "inhibits": "Within the stated scope, the source negatively affects the specified target aspect; negative effect is distinct from uncertainty.",
+        "is_a": "The source is a kind of the target category, not a component relationship.",
+        "leaves_open": "The source result or argument leaves the target question unresolved rather than supporting a particular answer.",
+        "measures": "The source method measures the target quantity or indicator; measuring does not mean causing.",
+        "motivates": "The source question, result, or gap motivates the target question or hypothesis without establishing it.",
+        "necessary_for": "Within stated scope, the target requires the source condition; direction is condition to outcome, separate from sufficiency.",
+        "note": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "observes": "The source operation or measurement yields the target observation, separate from mechanism interpretation.",
+        "part_of": "The source is a component of the target whole, distinct from belonging to a category.",
+        "precedes": "The source occurs earlier in time or an explicit process order than the target; sequence alone is not causality.",
+        "promotes": "Within the stated scope, the source has a positive causal effect on the specified target aspect.",
+        "proves": "The source proof or valid argument establishes the target proposition; empirical support is not automatically proof.",
+        "requires_concept": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+        "sufficient_for": "Under stated premises, the source condition suffices for the target; necessity evidence alone does not establish sufficiency.",
+        "supports": "The source evidence supports the target claim; strength, conditions, and limitations are recorded separately.",
+        "tests": "The source experiment, analysis, or test is designed to assess the target question or claim."
+      },
+      "relationLabels": {
+        "activates": "activates",
+        "alternative_to": "alternative",
+        "associated_with": "associated",
+        "binds": "binds",
+        "causes": "causes",
+        "constrained_by": "limited by",
+        "contradicts": "contradicts",
+        "depends_on": "depends on",
+        "entails": "entails",
+        "inhibits": "inhibits",
+        "is_a": "is a",
+        "leaves_open": "leaves open",
+        "measures": "measures",
+        "motivates": "motivates",
+        "necessary_for": "necessary for",
+        "note": "note",
+        "observes": "observes",
+        "part_of": "part of",
+        "precedes": "precedes",
+        "promotes": "promotes",
+        "proves": "proves",
+        "requires_concept": "requires",
+        "sufficient_for": "sufficient for",
+        "supports": "supports",
+        "tests": "tests"
+      },
+      "statuses": {
+        "design": "Research design or reading context",
+        "disputed": "Disputed evidence",
+        "hypothesis": "Hypothesis",
+        "inferred": "Evidence-based inference",
+        "supported": "Supported by evidence",
+        "unresolved": "Unresolved",
+        "user": "User note, not yet checked"
+      },
+      "ui": {
+        "allRelations": "All relations",
+        "basis": "Sources and basis",
+        "cancel": "Cancel",
+        "caution": "Avoid misinterpretation",
+        "close": "Close details",
+        "conditions": "Conditions",
+        "connect": "Connect",
+        "connectedNodes": "Connected nodes",
+        "create": "Create",
+        "curveMode": "Curves",
+        "defaultLayout": "Default view",
+        "definitions": "Definitions and use",
+        "detail": "Explanation",
+        "detailLabel": "Node and relationship details",
+        "directed": "This edge points from source to target.",
+        "disputedSuffix": " (disputed)",
+        "draftDetail": "User-added concept; provenance and explanation are not yet supplied.",
+        "draftLimits": "User note, not checked against paper evidence.",
+        "draftSaved": "Loaded the new canonical snapshot; local notes remain a separate draft awaiting review.",
+        "draftUnavailable": "Local note storage is unavailable in this environment.",
+        "dragHint": "Drag to move; Alt + arrow keys also move this node.",
+        "edgeError": "Missing relationship semantics, endpoints, or status",
+        "edgeLabel": "Node relationships",
+        "endpointError": "Visible edges must connect nodes in this tree",
+        "extend": "Extend concept",
+        "extendedContext": "Extended context of {name}",
+        "hypothesisSuffix": " (hypothesis)",
+        "layout": "Layout",
+        "layoutCollision": "Nodes cannot overlap; the previous position was restored.",
+        "layoutDefault": "Default positions restored for this tree.",
+        "layoutDefaultState": "Default positions",
+        "layoutSaveFailed": "Positions could not be saved; they remain temporary.",
+        "layoutSaved": "Positions saved in this browser.",
+        "layoutSavedState": "Saved in this browser",
+        "layoutUnsaved": "Positions not saved",
+        "limits": "Interpretive limits",
+        "mainTree": "Main tree",
+        "mapLabel": "Concept graph with arbitrary node extensions",
+        "newNodeName": "New node name",
+        "newTree": "Create tree",
+        "newTreeName": "New tree name",
+        "noEvidence": "Concept definition or note; not presented as new evidence.",
+        "noResults": "No matching nodes",
+        "nodeAdded": "Extended the selected node with a new concept.",
+        "nodeError": "Missing node identity, name, or content",
+        "nodeKind": "Node type",
+        "nodeRole": "Visual role",
+        "paperTitle": "Paper title",
+        "positionError": "Invalid node position",
+        "relation": "Relationship",
+        "relationCaveat": "Relationship meaning and evidence state are separate. Dashes mean hypothetical/unresolved, not inhibition. Support, sequence, and association do not automatically imply causality.",
+        "relationDefinition": "Relationship definition",
+        "relationshipAria": "Relationship: {name}",
+        "roleConcept": "Concept · rectangle",
+        "roleEntity": "Named object or term · circle",
+        "roleMethod": "Method · ellipse",
+        "roleProposition": "Question or claim · hexagon",
+        "saveLayout": "Save positions",
+        "schemaError": "Incomplete session format",
+        "search": "Search nodes",
+        "searchResults": "Node search results",
+        "selectTree": "Select tree",
+        "sharedCount": "{name} appears in {count} trees",
+        "sharedHeading": "Same node in other trees",
+        "sourceNode": "Source",
+        "sources": "Sources and evidence",
+        "straightMode": "Straight",
+        "targetNode": "Target",
+        "templateMismatch": "Template versions differ; reopen the page.",
+        "termProperties": "Context and properties",
+        "termStudyRole": "Role in this study",
+        "treeCreated": "Created a tree using the same node as its root.",
+        "treeError": "Incomplete tree scope",
+        "undirected": "This relationship has no direction.",
+        "userSuffix": " (note)"
+      }
+    },
+    "nodeShapes": {
+      "roles": {
+        "concept": {
+          "height": 72,
+          "labelWidth": 144,
+          "shape": "rectangle",
+          "width": 170
+        },
+        "entity": {
+          "height": 108,
+          "labelWidth": 82,
+          "shape": "circle",
+          "width": 108
+        },
+        "method": {
+          "height": 84,
+          "labelWidth": 130,
+          "shape": "ellipse",
+          "width": 170
+        },
+        "proposition": {
+          "height": 88,
+          "labelWidth": 130,
+          "shape": "hexagon",
+          "width": 170
+        }
+      },
+      "slot": {
+        "height": 116,
+        "width": 170
+      },
+      "typeRoles": {
+        "algorithm": "method",
+        "argument": "proposition",
+        "assumption": "concept",
+        "claim": "proposition",
+        "concept": "concept",
+        "counterexample": "proposition",
+        "dataset": "entity",
+        "definition": "concept",
+        "entity": "entity",
+        "experiment": "method",
+        "finding": "proposition",
+        "hypothesis": "proposition",
+        "interpretation": "proposition",
+        "limit": "concept",
+        "method": "method",
+        "metric": "concept",
+        "model": "concept",
+        "observation": "proposition",
+        "proof": "method",
+        "question": "proposition",
+        "source": "entity",
+        "term": "entity",
+        "theorem": "proposition"
+      },
+      "version": "1.0.0"
+    },
+    "nodeTypes": {
+      "custom-lemma": "Intermediate lemma"
+    },
+    "nodes": [
+      {
+        "aliases": [
+          "assumption A"
+        ],
+        "detail": "Fictional interface concept: Condition A. No real paper result or proof is claimed.",
+        "id": "a",
+        "identity": {
+          "kind": "assumption",
+          "referent": "a",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Condition A",
+        "limits": "Demonstration only; not verified against a paper.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "condition-a"
+        ],
+        "title": "Condition A",
+        "type": "assumption",
+        "visualRole": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional interface concept: Scope limits. No real paper result or proof is claimed.",
+        "id": "boundary",
+        "identity": {
+          "kind": "limit",
+          "referent": "boundary",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Scope limits",
+        "limits": "Demonstration only; not verified against a paper.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "Scope limits",
+        "type": "limit",
+        "visualRole": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional background example for terminology lookup, not a result of a real paper.",
+        "id": "error-balance",
+        "identity": {
+          "kind": "concept",
+          "referent": "fictional-terminology:error-balance",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Error balance",
+        "limits": "Definitions illustrate the reusable interface only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional terminology guide, not research evidence",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "error-balance-term"
+        ],
+        "title": "Error balance",
+        "type": "concept",
+        "visualRole": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "A fictional named set on which the proof procedure is defined. This object is distinct from the condition imposed on it; no real theorem is claimed.",
+        "id": "input",
+        "identity": {
+          "kind": "entity",
+          "referent": "fictional-example:input-set",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Input set",
+        "limits": "Demonstration only; not verified against a paper.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "input-set"
+        ],
+        "title": "Input set",
+        "type": "entity",
+        "visualRole": "entity"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional interface concept: Intermediate lemma. No real paper result or proof is claimed.",
+        "id": "lemma",
+        "identity": {
+          "kind": "custom-lemma",
+          "referent": "lemma",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Intermediate lemma",
+        "limits": "Demonstration only; not verified against a paper.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "lemma-term"
+        ],
+        "title": "Intermediate lemma",
+        "type": "custom-lemma",
+        "visualRole": "proposition"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional interface concept: Proposition P. No real paper result or proof is claimed.",
+        "id": "p",
+        "identity": {
+          "kind": "theorem",
+          "referent": "p",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Proposition P",
+        "limits": "Demonstration only; not verified against a paper.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "proposition-term"
+        ],
+        "title": "Proposition P",
+        "type": "theorem",
+        "visualRole": "proposition"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional background example for terminology lookup, not a result of a real paper.",
+        "id": "precision",
+        "identity": {
+          "kind": "metric",
+          "referent": "fictional-terminology:precision",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Precision",
+        "limits": "Definitions illustrate the reusable interface only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional terminology guide, not research evidence",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "precision-term"
+        ],
+        "title": "Precision",
+        "type": "metric",
+        "visualRole": "concept"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional interface concept: Proof outline. No real paper result or proof is claimed.",
+        "id": "proof",
+        "identity": {
+          "kind": "proof",
+          "referent": "proof",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Proof outline",
+        "limits": "Demonstration only; not verified against a paper.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "proof-term"
+        ],
+        "title": "Proof outline",
+        "type": "proof",
+        "visualRole": "method"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional interface concept: When does P hold?. No real paper result or proof is claimed.",
+        "id": "q",
+        "identity": {
+          "kind": "question",
+          "referent": "q",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "When does P hold?",
+        "limits": "Demonstration only; not verified against a paper.",
+        "sourceRefs": [
+          {
+            "location": "Fictional interface demonstration",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [],
+        "title": "When does P hold?",
+        "type": "question",
+        "visualRole": "proposition"
+      },
+      {
+        "aliases": [],
+        "detail": "Fictional background example for terminology lookup, not a result of a real paper.",
+        "id": "recall",
+        "identity": {
+          "kind": "metric",
+          "referent": "fictional-terminology:recall",
+          "scope": "fictional-theory-interface-example"
+        },
+        "label": "Recall",
+        "limits": "Definitions illustrate the reusable interface only.",
+        "sourceRefs": [
+          {
+            "location": "Fictional terminology guide, not research evidence",
+            "sourceId": "fictional-example"
+          }
+        ],
+        "termIds": [
+          "recall-term"
+        ],
+        "title": "Recall",
+        "type": "metric",
+        "visualRole": "concept"
+      }
+    ],
+    "redirects": {},
+    "relationTypes": {
+      "constrained_by": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The scope or validity of the source claim is constrained by the target condition or limitation.",
+        "directed": true,
+        "family": "boundary",
+        "familyLabel": "boundary",
+        "id": "constrained_by",
+        "label": "limited by",
+        "marker": "arrow"
+      },
+      "depends_on": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The source claim, method, or derivation depends on the target condition without by itself proving necessity or sufficiency.",
+        "directed": true,
+        "family": "logic",
+        "familyLabel": "logic",
+        "id": "depends_on",
+        "label": "depends on",
+        "marker": "arrow"
+      },
+      "entails": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Under stated premises and valid inference, the source proposition implies the target proposition.",
+        "directed": true,
+        "family": "logic",
+        "familyLabel": "logic",
+        "id": "entails",
+        "label": "entails",
+        "marker": "arrow"
+      },
+      "note": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "A user or teaching extension; unchecked notes are not established findings of the paper.",
+        "directed": true,
+        "family": "context",
+        "familyLabel": "context",
+        "id": "note",
+        "label": "note",
+        "marker": "arrow"
+      },
+      "proves": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "The source proof or valid argument establishes the target proposition; empirical support is not automatically proof.",
+        "directed": true,
+        "family": "logic",
+        "familyLabel": "logic",
+        "id": "proves",
+        "label": "proves",
+        "marker": "arrow"
+      },
+      "requires_concept": {
+        "caveat": "Meaning and evidence state are separate; support, sequence, and association do not establish causality.",
+        "definition": "Understanding the source requires first understanding the target concept; a teaching prerequisite, not a causal or logical necessity proof.",
+        "directed": true,
+        "family": "context",
+        "familyLabel": "context",
+        "id": "requires_concept",
+        "label": "requires",
+        "marker": "arrow"
+      }
+    },
+    "trees": [
+      {
+        "focusQuestion": "When does P hold?",
+        "id": "main",
+        "kind": "narrative",
+        "linkIds": [
+          "a-proof",
+          "p-bound",
+          "proof-input",
+          "proof-p",
+          "q-a"
+        ],
+        "nodeIds": [
+          "q",
+          "a",
+          "boundary",
+          "input",
+          "p",
+          "proof"
+        ],
+        "positions": {
+          "a": {
+            "x": 90,
+            "y": 210
+          },
+          "boundary": {
+            "x": 740,
+            "y": 500
+          },
+          "input": {
+            "x": 20,
+            "y": 470
+          },
+          "p": {
+            "x": 670,
+            "y": 250
+          },
+          "proof": {
+            "x": 310,
+            "y": 420
+          },
+          "q": {
+            "x": 390,
+            "y": 60
+          }
+        },
+        "rootId": "q",
+        "routes": {
+          "a-proof": {
+            "bounds": {
+              "maxX": 375.0,
+              "maxY": 502.0
+            },
+            "d": "M310.00 478.00 C296.00 478.00 274.00 268.00 260.00 268.00",
+            "endpointSignature": "fbee89b02f795fec915bdc0786130f8952b44ccb6b0d6fa6991f1573c31f9b1e",
+            "format": "stable-local-1",
+            "labelBox": [
+              219.0,
+              357.0,
+              351.0,
+              389.0
+            ],
+            "labelKey": "depends on",
+            "points": [
+              [
+                310.0,
+                478.0
+              ],
+              [
+                309.47,
+                477.9
+              ],
+              [
+                308.94,
+                477.61
+              ],
+              [
+                308.39,
+                477.14
+              ],
+              [
+                307.84,
+                476.48
+              ],
+              [
+                307.29,
+                475.64
+              ],
+              [
+                306.72,
+                474.63
+              ],
+              [
+                306.15,
+                473.46
+              ],
+              [
+                305.58,
+                472.12
+              ],
+              [
+                304.99,
+                470.62
+              ],
+              [
+                304.41,
+                468.98
+              ],
+              [
+                303.81,
+                467.18
+              ],
+              [
+                303.21,
+                465.24
+              ],
+              [
+                302.61,
+                463.17
+              ],
+              [
+                302.0,
+                460.96
+              ],
+              [
+                301.39,
+                458.62
+              ],
+              [
+                300.77,
+                456.16
+              ],
+              [
+                300.14,
+                453.58
+              ],
+              [
+                299.52,
+                450.89
+              ],
+              [
+                298.89,
+                448.09
+              ],
+              [
+                298.25,
+                445.19
+              ],
+              [
+                297.61,
+                442.19
+              ],
+              [
+                296.97,
+                439.09
+              ],
+              [
+                296.32,
+                435.91
+              ],
+              [
+                295.67,
+                432.64
+              ],
+              [
+                295.02,
+                429.29
+              ],
+              [
+                294.36,
+                425.87
+              ],
+              [
+                293.71,
+                422.39
+              ],
+              [
+                293.05,
+                418.83
+              ],
+              [
+                292.38,
+                415.22
+              ],
+              [
+                291.72,
+                411.55
+              ],
+              [
+                291.05,
+                407.84
+              ],
+              [
+                290.38,
+                404.08
+              ],
+              [
+                289.71,
+                400.28
+              ],
+              [
+                289.04,
+                396.45
+              ],
+              [
+                288.37,
+                392.58
+              ],
+              [
+                287.7,
+                388.7
+              ],
+              [
+                287.02,
+                384.79
+              ],
+              [
+                286.35,
+                380.87
+              ],
+              [
+                285.67,
+                376.94
+              ],
+              [
+                285.0,
+                373.0
+              ],
+              [
+                284.33,
+                369.06
+              ],
+              [
+                283.65,
+                365.13
+              ],
+              [
+                282.98,
+                361.21
+              ],
+              [
+                282.3,
+                357.3
+              ],
+              [
+                281.63,
+                353.42
+              ],
+              [
+                280.96,
+                349.55
+              ],
+              [
+                280.29,
+                345.72
+              ],
+              [
+                279.62,
+                341.92
+              ],
+              [
+                278.95,
+                338.16
+              ],
+              [
+                278.28,
+                334.45
+              ],
+              [
+                277.62,
+                330.78
+              ],
+              [
+                276.95,
+                327.17
+              ],
+              [
+                276.29,
+                323.61
+              ],
+              [
+                275.64,
+                320.13
+              ],
+              [
+                274.98,
+                316.71
+              ],
+              [
+                274.33,
+                313.36
+              ],
+              [
+                273.68,
+                310.09
+              ],
+              [
+                273.03,
+                306.91
+              ],
+              [
+                272.39,
+                303.81
+              ],
+              [
+                271.75,
+                300.81
+              ],
+              [
+                271.11,
+                297.91
+              ],
+              [
+                270.48,
+                295.11
+              ],
+              [
+                269.86,
+                292.42
+              ],
+              [
+                269.23,
+                289.84
+              ],
+              [
+                268.61,
+                287.38
+              ],
+              [
+                268.0,
+                285.04
+              ],
+              [
+                267.39,
+                282.83
+              ],
+              [
+                266.79,
+                280.76
+              ],
+              [
+                266.19,
+                278.82
+              ],
+              [
+                265.59,
+                277.02
+              ],
+              [
+                265.01,
+                275.38
+              ],
+              [
+                264.42,
+                273.88
+              ],
+              [
+                263.85,
+                272.54
+              ],
+              [
+                263.28,
+                271.37
+              ],
+              [
+                262.71,
+                270.36
+              ],
+              [
+                262.16,
+                269.52
+              ],
+              [
+                261.61,
+                268.86
+              ],
+              [
+                261.06,
+                268.39
+              ],
+              [
+                260.53,
+                268.1
+              ],
+              [
+                260.0,
+                268.0
+              ]
+            ],
+            "shapeSignature": "be98aa4ff059b98c6b78305a7bbb5e624ee4290eee923d09e1e9d5d411a24119",
+            "x": 285.0,
+            "y": 373.0
+          },
+          "p-bound": {
+            "bounds": {
+              "maxX": 880.0,
+              "maxY": 546.0
+            },
+            "d": "M755.00 352.00 C755.00 420.50 825.00 445.50 825.00 522.00",
+            "endpointSignature": "23ef2d7fa20c507521a1895967dbf0da0c3dc6502814276b1f75667393891871",
+            "format": "stable-local-1",
+            "labelBox": [
+              724.0,
+              418.0,
+              856.0,
+              450.0
+            ],
+            "labelKey": "limited by",
+            "points": [
+              [
+                755.0,
+                352.0
+              ],
+              [
+                755.03,
+                354.55
+              ],
+              [
+                755.13,
+                357.06
+              ],
+              [
+                755.29,
+                359.53
+              ],
+              [
+                755.51,
+                361.96
+              ],
+              [
+                755.79,
+                364.36
+              ],
+              [
+                756.12,
+                366.72
+              ],
+              [
+                756.51,
+                369.05
+              ],
+              [
+                756.96,
+                371.34
+              ],
+              [
+                757.46,
+                373.6
+              ],
+              [
+                758.01,
+                375.83
+              ],
+              [
+                758.61,
+                378.04
+              ],
+              [
+                759.25,
+                380.21
+              ],
+              [
+                759.94,
+                382.36
+              ],
+              [
+                760.68,
+                384.48
+              ],
+              [
+                761.46,
+                386.57
+              ],
+              [
+                762.28,
+                388.64
+              ],
+              [
+                763.14,
+                390.69
+              ],
+              [
+                764.04,
+                392.71
+              ],
+              [
+                764.97,
+                394.72
+              ],
+              [
+                765.94,
+                396.7
+              ],
+              [
+                766.94,
+                398.67
+              ],
+              [
+                767.97,
+                400.62
+              ],
+              [
+                769.03,
+                402.55
+              ],
+              [
+                770.12,
+                404.47
+              ],
+              [
+                771.24,
+                406.37
+              ],
+              [
+                772.38,
+                408.26
+              ],
+              [
+                773.54,
+                410.14
+              ],
+              [
+                774.72,
+                412.01
+              ],
+              [
+                775.93,
+                413.87
+              ],
+              [
+                777.15,
+                415.72
+              ],
+              [
+                778.39,
+                417.56
+              ],
+              [
+                779.64,
+                419.4
+              ],
+              [
+                780.91,
+                421.23
+              ],
+              [
+                782.18,
+                423.06
+              ],
+              [
+                783.47,
+                424.88
+              ],
+              [
+                784.77,
+                426.71
+              ],
+              [
+                786.07,
+                428.53
+              ],
+              [
+                787.38,
+                430.35
+              ],
+              [
+                788.69,
+                432.17
+              ],
+              [
+                790.0,
+                434.0
+              ],
+              [
+                791.31,
+                435.83
+              ],
+              [
+                792.62,
+                437.67
+              ],
+              [
+                793.93,
+                439.51
+              ],
+              [
+                795.23,
+                441.35
+              ],
+              [
+                796.53,
+                443.21
+              ],
+              [
+                797.82,
+                445.08
+              ],
+              [
+                799.09,
+                446.95
+              ],
+              [
+                800.36,
+                448.84
+              ],
+              [
+                801.61,
+                450.74
+              ],
+              [
+                802.85,
+                452.65
+              ],
+              [
+                804.07,
+                454.58
+              ],
+              [
+                805.28,
+                456.53
+              ],
+              [
+                806.46,
+                458.49
+              ],
+              [
+                807.62,
+                460.47
+              ],
+              [
+                808.76,
+                462.47
+              ],
+              [
+                809.88,
+                464.49
+              ],
+              [
+                810.97,
+                466.53
+              ],
+              [
+                812.03,
+                468.6
+              ],
+              [
+                813.06,
+                470.68
+              ],
+              [
+                814.06,
+                472.8
+              ],
+              [
+                815.03,
+                474.94
+              ],
+              [
+                815.96,
+                477.1
+              ],
+              [
+                816.86,
+                479.3
+              ],
+              [
+                817.72,
+                481.52
+              ],
+              [
+                818.54,
+                483.77
+              ],
+              [
+                819.32,
+                486.06
+              ],
+              [
+                820.06,
+                488.38
+              ],
+              [
+                820.75,
+                490.73
+              ],
+              [
+                821.39,
+                493.12
+              ],
+              [
+                821.99,
+                495.54
+              ],
+              [
+                822.54,
+                498.0
+              ],
+              [
+                823.04,
+                500.5
+              ],
+              [
+                823.49,
+                503.04
+              ],
+              [
+                823.88,
+                505.62
+              ],
+              [
+                824.21,
+                508.24
+              ],
+              [
+                824.49,
+                510.9
+              ],
+              [
+                824.71,
+                513.61
+              ],
+              [
+                824.87,
+                516.36
+              ],
+              [
+                824.97,
+                519.16
+              ],
+              [
+                825.0,
+                522.0
+              ]
+            ],
+            "shapeSignature": "357496fe2f39ef9a2e257a9d1a19734c350787ff9fd585375c96f2522c05f8db",
+            "x": 790.0,
+            "y": 434.0
+          },
+          "proof-input": {
+            "bounds": {
+              "maxX": 377.89,
+              "maxY": 509.29
+            },
+            "d": "M353.89 441.24 C240.71 340.04 211.71 390.04 138.04 485.29",
+            "endpointSignature": "ddd838b4554d6c371934853e116f18947357e9f15e30fd90d4e2e0a5b4ee96e5",
+            "format": "stable-local-1",
+            "labelBox": [
+              138.5,
+              390.45,
+              270.5,
+              422.45
+            ],
+            "labelKey": "depends on",
+            "points": [
+              [
+                353.89,
+                441.24
+              ],
+              [
+                349.68,
+                437.51
+              ],
+              [
+                345.56,
+                433.93
+              ],
+              [
+                341.51,
+                430.49
+              ],
+              [
+                337.53,
+                427.18
+              ],
+              [
+                333.62,
+                424.01
+              ],
+              [
+                329.79,
+                420.98
+              ],
+              [
+                326.03,
+                418.08
+              ],
+              [
+                322.33,
+                415.31
+              ],
+              [
+                318.71,
+                412.67
+              ],
+              [
+                315.14,
+                410.17
+              ],
+              [
+                311.64,
+                407.79
+              ],
+              [
+                308.21,
+                405.55
+              ],
+              [
+                304.83,
+                403.43
+              ],
+              [
+                301.52,
+                401.43
+              ],
+              [
+                298.26,
+                399.56
+              ],
+              [
+                295.05,
+                397.81
+              ],
+              [
+                291.91,
+                396.19
+              ],
+              [
+                288.81,
+                394.68
+              ],
+              [
+                285.77,
+                393.3
+              ],
+              [
+                282.78,
+                392.03
+              ],
+              [
+                279.83,
+                390.88
+              ],
+              [
+                276.94,
+                389.85
+              ],
+              [
+                274.09,
+                388.93
+              ],
+              [
+                271.28,
+                388.12
+              ],
+              [
+                268.52,
+                387.43
+              ],
+              [
+                265.79,
+                386.84
+              ],
+              [
+                263.11,
+                386.37
+              ],
+              [
+                260.46,
+                386.0
+              ],
+              [
+                257.86,
+                385.74
+              ],
+              [
+                255.28,
+                385.59
+              ],
+              [
+                252.74,
+                385.54
+              ],
+              [
+                250.24,
+                385.59
+              ],
+              [
+                247.76,
+                385.75
+              ],
+              [
+                245.31,
+                386.0
+              ],
+              [
+                242.89,
+                386.36
+              ],
+              [
+                240.5,
+                386.82
+              ],
+              [
+                238.13,
+                387.37
+              ],
+              [
+                235.78,
+                388.01
+              ],
+              [
+                233.46,
+                388.76
+              ],
+              [
+                231.15,
+                389.59
+              ],
+              [
+                228.86,
+                390.52
+              ],
+              [
+                226.59,
+                391.54
+              ],
+              [
+                224.34,
+                392.65
+              ],
+              [
+                222.1,
+                393.84
+              ],
+              [
+                219.87,
+                395.13
+              ],
+              [
+                217.66,
+                396.5
+              ],
+              [
+                215.45,
+                397.95
+              ],
+              [
+                213.25,
+                399.49
+              ],
+              [
+                211.06,
+                401.11
+              ],
+              [
+                208.87,
+                402.81
+              ],
+              [
+                206.69,
+                404.59
+              ],
+              [
+                204.5,
+                406.45
+              ],
+              [
+                202.32,
+                408.38
+              ],
+              [
+                200.14,
+                410.39
+              ],
+              [
+                197.95,
+                412.48
+              ],
+              [
+                195.76,
+                414.64
+              ],
+              [
+                193.57,
+                416.87
+              ],
+              [
+                191.36,
+                419.17
+              ],
+              [
+                189.15,
+                421.55
+              ],
+              [
+                186.93,
+                423.99
+              ],
+              [
+                184.7,
+                426.5
+              ],
+              [
+                182.45,
+                429.07
+              ],
+              [
+                180.19,
+                431.71
+              ],
+              [
+                177.91,
+                434.41
+              ],
+              [
+                175.62,
+                437.18
+              ],
+              [
+                173.3,
+                440.0
+              ],
+              [
+                170.97,
+                442.89
+              ],
+              [
+                168.61,
+                445.84
+              ],
+              [
+                166.23,
+                448.84
+              ],
+              [
+                163.82,
+                451.9
+              ],
+              [
+                161.39,
+                455.01
+              ],
+              [
+                158.93,
+                458.17
+              ],
+              [
+                156.44,
+                461.39
+              ],
+              [
+                153.92,
+                464.66
+              ],
+              [
+                151.36,
+                467.98
+              ],
+              [
+                148.77,
+                471.35
+              ],
+              [
+                146.15,
+                474.77
+              ],
+              [
+                143.48,
+                478.23
+              ],
+              [
+                140.78,
+                481.74
+              ],
+              [
+                138.04,
+                485.29
+              ]
+            ],
+            "shapeSignature": "7264258a138b7029bd146182c30a16aaa8489d77da96a18b649c6e14ba5354dc",
+            "x": 204.5,
+            "y": 406.45
+          },
+          "proof-p": {
+            "bounds": {
+              "maxX": 714.5,
+              "maxY": 502.0
+            },
+            "d": "M480.00 478.00 C557.00 478.00 593.00 308.00 670.00 308.00",
+            "endpointSignature": "8a86394938fd370f0ba82a711b36e20372f225137ef52f78c43ca2a087eb5a04",
+            "format": "stable-local-1",
+            "labelBox": [
+              459.5,
+              377.0,
+              690.5,
+              409.0
+            ],
+            "labelKey": "proves (hypothesis)",
+            "points": [
+              [
+                480.0,
+                478.0
+              ],
+              [
+                482.87,
+                477.92
+              ],
+              [
+                485.7,
+                477.69
+              ],
+              [
+                488.49,
+                477.3
+              ],
+              [
+                491.25,
+                476.77
+              ],
+              [
+                493.98,
+                476.09
+              ],
+              [
+                496.67,
+                475.27
+              ],
+              [
+                499.33,
+                474.32
+              ],
+              [
+                501.95,
+                473.24
+              ],
+              [
+                504.55,
+                472.03
+              ],
+              [
+                507.11,
+                470.7
+              ],
+              [
+                509.65,
+                469.24
+              ],
+              [
+                512.16,
+                467.67
+              ],
+              [
+                514.64,
+                465.99
+              ],
+              [
+                517.1,
+                464.2
+              ],
+              [
+                519.53,
+                462.31
+              ],
+              [
+                521.94,
+                460.32
+              ],
+              [
+                524.32,
+                458.23
+              ],
+              [
+                526.68,
+                456.05
+              ],
+              [
+                529.02,
+                453.79
+              ],
+              [
+                531.34,
+                451.44
+              ],
+              [
+                533.65,
+                449.01
+              ],
+              [
+                535.93,
+                446.5
+              ],
+              [
+                538.19,
+                443.92
+              ],
+              [
+                540.44,
+                441.28
+              ],
+              [
+                542.68,
+                438.57
+              ],
+              [
+                544.9,
+                435.8
+              ],
+              [
+                547.1,
+                432.98
+              ],
+              [
+                549.3,
+                430.1
+              ],
+              [
+                551.48,
+                427.18
+              ],
+              [
+                553.65,
+                424.21
+              ],
+              [
+                555.81,
+                421.2
+              ],
+              [
+                557.97,
+                418.16
+              ],
+              [
+                560.11,
+                415.08
+              ],
+              [
+                562.25,
+                411.98
+              ],
+              [
+                564.39,
+                408.85
+              ],
+              [
+                566.51,
+                405.71
+              ],
+              [
+                568.64,
+                402.54
+              ],
+              [
+                570.76,
+                399.37
+              ],
+              [
+                572.88,
+                396.19
+              ],
+              [
+                575.0,
+                393.0
+              ],
+              [
+                577.12,
+                389.81
+              ],
+              [
+                579.24,
+                386.63
+              ],
+              [
+                581.36,
+                383.46
+              ],
+              [
+                583.49,
+                380.29
+              ],
+              [
+                585.61,
+                377.15
+              ],
+              [
+                587.75,
+                374.02
+              ],
+              [
+                589.89,
+                370.92
+              ],
+              [
+                592.03,
+                367.84
+              ],
+              [
+                594.19,
+                364.8
+              ],
+              [
+                596.35,
+                361.79
+              ],
+              [
+                598.52,
+                358.82
+              ],
+              [
+                600.7,
+                355.9
+              ],
+              [
+                602.9,
+                353.02
+              ],
+              [
+                605.1,
+                350.2
+              ],
+              [
+                607.32,
+                347.43
+              ],
+              [
+                609.56,
+                344.72
+              ],
+              [
+                611.81,
+                342.08
+              ],
+              [
+                614.07,
+                339.5
+              ],
+              [
+                616.35,
+                336.99
+              ],
+              [
+                618.66,
+                334.56
+              ],
+              [
+                620.98,
+                332.21
+              ],
+              [
+                623.32,
+                329.95
+              ],
+              [
+                625.68,
+                327.77
+              ],
+              [
+                628.06,
+                325.68
+              ],
+              [
+                630.47,
+                323.69
+              ],
+              [
+                632.9,
+                321.8
+              ],
+              [
+                635.36,
+                320.01
+              ],
+              [
+                637.84,
+                318.33
+              ],
+              [
+                640.35,
+                316.76
+              ],
+              [
+                642.89,
+                315.3
+              ],
+              [
+                645.45,
+                313.97
+              ],
+              [
+                648.05,
+                312.76
+              ],
+              [
+                650.67,
+                311.68
+              ],
+              [
+                653.33,
+                310.73
+              ],
+              [
+                656.02,
+                309.91
+              ],
+              [
+                658.75,
+                309.23
+              ],
+              [
+                661.51,
+                308.7
+              ],
+              [
+                664.3,
+                308.31
+              ],
+              [
+                667.13,
+                308.08
+              ],
+              [
+                670.0,
+                308.0
+              ]
+            ],
+            "shapeSignature": "ffc38d1533ec99ed3e17e9833576fb97ebd0412f737200f11375c6befdee6687",
+            "x": 575.0,
+            "y": 393.0
+          },
+          "q-a": {
+            "bounds": {
+              "maxX": 414.0,
+              "maxY": 292.0
+            },
+            "d": "M390.00 118.00 C340.00 118.00 310.00 268.00 260.00 268.00",
+            "endpointSignature": "d5317e23f5690f60efe08a694d1ed8bfb06ec9d90f7044208f5ec984ad9f3406",
+            "format": "stable-local-1",
+            "labelBox": [
+              270.0,
+              177.0,
+              380.0,
+              209.0
+            ],
+            "labelKey": "requires",
+            "points": [
+              [
+                390.0,
+                118.0
+              ],
+              [
+                388.13,
+                118.07
+              ],
+              [
+                386.29,
+                118.28
+              ],
+              [
+                384.46,
+                118.62
+              ],
+              [
+                382.64,
+                119.09
+              ],
+              [
+                380.85,
+                119.68
+              ],
+              [
+                379.07,
+                120.4
+              ],
+              [
+                377.31,
+                121.24
+              ],
+              [
+                375.56,
+                122.2
+              ],
+              [
+                373.83,
+                123.27
+              ],
+              [
+                372.11,
+                124.45
+              ],
+              [
+                370.41,
+                125.73
+              ],
+              [
+                368.71,
+                127.11
+              ],
+              [
+                367.04,
+                128.6
+              ],
+              [
+                365.37,
+                130.17
+              ],
+              [
+                363.72,
+                131.84
+              ],
+              [
+                362.08,
+                133.6
+              ],
+              [
+                360.45,
+                135.44
+              ],
+              [
+                358.83,
+                137.36
+              ],
+              [
+                357.22,
+                139.36
+              ],
+              [
+                355.62,
+                141.44
+              ],
+              [
+                354.04,
+                143.58
+              ],
+              [
+                352.46,
+                145.79
+              ],
+              [
+                350.88,
+                148.07
+              ],
+              [
+                349.32,
+                150.4
+              ],
+              [
+                347.76,
+                152.79
+              ],
+              [
+                346.21,
+                155.23
+              ],
+              [
+                344.67,
+                157.72
+              ],
+              [
+                343.13,
+                160.26
+              ],
+              [
+                341.6,
+                162.84
+              ],
+              [
+                340.08,
+                165.46
+              ],
+              [
+                338.56,
+                168.11
+              ],
+              [
+                337.04,
+                170.8
+              ],
+              [
+                335.53,
+                173.51
+              ],
+              [
+                334.02,
+                176.25
+              ],
+              [
+                332.51,
+                179.01
+              ],
+              [
+                331.01,
+                181.79
+              ],
+              [
+                329.5,
+                184.58
+              ],
+              [
+                328.0,
+                187.38
+              ],
+              [
+                326.5,
+                190.19
+              ],
+              [
+                325.0,
+                193.0
+              ],
+              [
+                323.5,
+                195.81
+              ],
+              [
+                322.0,
+                198.62
+              ],
+              [
+                320.5,
+                201.42
+              ],
+              [
+                318.99,
+                204.21
+              ],
+              [
+                317.49,
+                206.99
+              ],
+              [
+                315.98,
+                209.75
+              ],
+              [
+                314.47,
+                212.49
+              ],
+              [
+                312.96,
+                215.2
+              ],
+              [
+                311.44,
+                217.89
+              ],
+              [
+                309.92,
+                220.54
+              ],
+              [
+                308.4,
+                223.16
+              ],
+              [
+                306.87,
+                225.74
+              ],
+              [
+                305.33,
+                228.28
+              ],
+              [
+                303.79,
+                230.77
+              ],
+              [
+                302.24,
+                233.21
+              ],
+              [
+                300.68,
+                235.6
+              ],
+              [
+                299.12,
+                237.93
+              ],
+              [
+                297.54,
+                240.21
+              ],
+              [
+                295.96,
+                242.42
+              ],
+              [
+                294.38,
+                244.56
+              ],
+              [
+                292.78,
+                246.64
+              ],
+              [
+                291.17,
+                248.64
+              ],
+              [
+                289.55,
+                250.56
+              ],
+              [
+                287.92,
+                252.4
+              ],
+              [
+                286.28,
+                254.16
+              ],
+              [
+                284.63,
+                255.83
+              ],
+              [
+                282.96,
+                257.4
+              ],
+              [
+                281.29,
+                258.89
+              ],
+              [
+                279.59,
+                260.27
+              ],
+              [
+                277.89,
+                261.55
+              ],
+              [
+                276.17,
+                262.73
+              ],
+              [
+                274.44,
+                263.8
+              ],
+              [
+                272.69,
+                264.76
+              ],
+              [
+                270.93,
+                265.6
+              ],
+              [
+                269.15,
+                266.32
+              ],
+              [
+                267.36,
+                266.91
+              ],
+              [
+                265.54,
+                267.38
+              ],
+              [
+                263.71,
+                267.72
+              ],
+              [
+                261.87,
+                267.93
+              ],
+              [
+                260.0,
+                268.0
+              ]
+            ],
+            "shapeSignature": "357496fe2f39ef9a2e257a9d1a19734c350787ff9fd585375c96f2522c05f8db",
+            "x": 325.0,
+            "y": 193.0
+          }
+        },
+        "title": "Fictional example: concepts and terminology"
+      },
+      {
+        "id": "concept-terms",
+        "kind": "catalog",
+        "linkIds": [],
+        "nodeIds": [
+          "a",
+          "input"
+        ],
+        "positions": {
+          "a": {
+            "x": 40,
+            "y": 60
+          },
+          "input": {
+            "x": 270,
+            "y": 60
+          }
+        },
+        "rootId": null,
+        "routes": {},
+        "title": "Concepts and objects",
+        "topicDescription": "Definitions of the assumptions and objects used in the fictional argument."
+      },
+      {
+        "id": "evaluation-terms",
+        "kind": "catalog",
+        "linkIds": [
+          "balance-precision",
+          "balance-recall"
+        ],
+        "nodeIds": [
+          "error-balance",
+          "precision",
+          "recall"
+        ],
+        "positions": {
+          "error-balance": {
+            "x": 400,
+            "y": 60
+          },
+          "precision": {
+            "x": 100,
+            "y": 350
+          },
+          "recall": {
+            "x": 700,
+            "y": 350
+          }
+        },
+        "rootId": null,
+        "routes": {
+          "balance-precision": {
+            "bounds": {
+              "maxX": 424.0,
+              "maxY": 432.0
+            },
+            "d": "M400.00 118.00 C350.00 118.00 320.00 408.00 270.00 408.00",
+            "endpointSignature": "30f25d6c87a4ac5b8ddaf412b3ccb9632452334afb75ae7c2a9e2794c70569e9",
+            "format": "stable-local-1",
+            "labelBox": [
+              280.0,
+              247.0,
+              390.0,
+              279.0
+            ],
+            "labelKey": "requires",
+            "points": [
+              [
+                400.0,
+                118.0
+              ],
+              [
+                398.13,
+                118.13
+              ],
+              [
+                396.29,
+                118.53
+              ],
+              [
+                394.46,
+                119.19
+              ],
+              [
+                392.64,
+                120.1
+              ],
+              [
+                390.85,
+                121.26
+              ],
+              [
+                389.07,
+                122.65
+              ],
+              [
+                387.31,
+                124.27
+              ],
+              [
+                385.56,
+                126.12
+              ],
+              [
+                383.83,
+                128.19
+              ],
+              [
+                382.11,
+                130.46
+              ],
+              [
+                380.41,
+                132.94
+              ],
+              [
+                378.71,
+                135.62
+              ],
+              [
+                377.04,
+                138.48
+              ],
+              [
+                375.37,
+                141.54
+              ],
+              [
+                373.72,
+                144.76
+              ],
+              [
+                372.08,
+                148.16
+              ],
+              [
+                370.45,
+                151.72
+              ],
+              [
+                368.83,
+                155.44
+              ],
+              [
+                367.22,
+                159.3
+              ],
+              [
+                365.62,
+                163.31
+              ],
+              [
+                364.04,
+                167.46
+              ],
+              [
+                362.46,
+                171.73
+              ],
+              [
+                360.88,
+                176.13
+              ],
+              [
+                359.32,
+                180.64
+              ],
+              [
+                357.76,
+                185.26
+              ],
+              [
+                356.21,
+                189.98
+              ],
+              [
+                354.67,
+                194.8
+              ],
+              [
+                353.13,
+                199.71
+              ],
+              [
+                351.6,
+                204.7
+              ],
+              [
+                350.08,
+                209.76
+              ],
+              [
+                348.56,
+                214.89
+              ],
+              [
+                347.04,
+                220.08
+              ],
+              [
+                345.53,
+                225.33
+              ],
+              [
+                344.02,
+                230.62
+              ],
+              [
+                342.51,
+                235.95
+              ],
+              [
+                341.01,
+                241.32
+              ],
+              [
+                339.5,
+                246.72
+              ],
+              [
+                338.0,
+                252.13
+              ],
+              [
+                336.5,
+                257.56
+              ],
+              [
+                335.0,
+                263.0
+              ],
+              [
+                333.5,
+                268.44
+              ],
+              [
+                332.0,
+                273.87
+              ],
+              [
+                330.5,
+                279.28
+              ],
+              [
+                329.0,
+                284.68
+              ],
+              [
+                327.49,
+                290.05
+              ],
+              [
+                325.98,
+                295.38
+              ],
+              [
+                324.47,
+                300.67
+              ],
+              [
+                322.96,
+                305.92
+              ],
+              [
+                321.44,
+                311.11
+              ],
+              [
+                319.92,
+                316.24
+              ],
+              [
+                318.4,
+                321.3
+              ],
+              [
+                316.86,
+                326.29
+              ],
+              [
+                315.33,
+                331.2
+              ],
+              [
+                313.79,
+                336.02
+              ],
+              [
+                312.24,
+                340.74
+              ],
+              [
+                310.68,
+                345.36
+              ],
+              [
+                309.12,
+                349.87
+              ],
+              [
+                307.54,
+                354.27
+              ],
+              [
+                305.96,
+                358.54
+              ],
+              [
+                304.38,
+                362.69
+              ],
+              [
+                302.78,
+                366.7
+              ],
+              [
+                301.17,
+                370.56
+              ],
+              [
+                299.55,
+                374.28
+              ],
+              [
+                297.92,
+                377.84
+              ],
+              [
+                296.28,
+                381.24
+              ],
+              [
+                294.63,
+                384.46
+              ],
+              [
+                292.96,
+                387.52
+              ],
+              [
+                291.28,
+                390.38
+              ],
+              [
+                289.59,
+                393.06
+              ],
+              [
+                287.89,
+                395.54
+              ],
+              [
+                286.17,
+                397.81
+              ],
+              [
+                284.44,
+                399.88
+              ],
+              [
+                282.69,
+                401.73
+              ],
+              [
+                280.93,
+                403.35
+              ],
+              [
+                279.15,
+                404.74
+              ],
+              [
+                277.36,
+                405.9
+              ],
+              [
+                275.54,
+                406.81
+              ],
+              [
+                273.71,
+                407.47
+              ],
+              [
+                271.87,
+                407.87
+              ],
+              [
+                270.0,
+                408.0
+              ]
+            ],
+            "shapeSignature": "589b6dba556ca48b52ed7a8a2275ea4da59dc0524ae46c33c07335b78bc98ee0",
+            "x": 335.0,
+            "y": 263.0
+          },
+          "balance-recall": {
+            "bounds": {
+              "maxX": 724.0,
+              "maxY": 432.0
+            },
+            "d": "M570.00 118.00 C620.00 118.00 650.00 408.00 700.00 408.00",
+            "endpointSignature": "3dfd612a07cf6f954c656e2a57279f48cac298bb287341a71dd1c1593a6a085a",
+            "format": "stable-local-1",
+            "labelBox": [
+              580.0,
+              247.0,
+              690.0,
+              279.0
+            ],
+            "labelKey": "requires",
+            "points": [
+              [
+                570.0,
+                118.0
+              ],
+              [
+                571.87,
+                118.13
+              ],
+              [
+                573.71,
+                118.53
+              ],
+              [
+                575.54,
+                119.19
+              ],
+              [
+                577.35,
+                120.1
+              ],
+              [
+                579.15,
+                121.26
+              ],
+              [
+                580.93,
+                122.65
+              ],
+              [
+                582.69,
+                124.27
+              ],
+              [
+                584.44,
+                126.12
+              ],
+              [
+                586.17,
+                128.19
+              ],
+              [
+                587.89,
+                130.46
+              ],
+              [
+                589.59,
+                132.94
+              ],
+              [
+                591.28,
+                135.62
+              ],
+              [
+                592.96,
+                138.48
+              ],
+              [
+                594.63,
+                141.54
+              ],
+              [
+                596.28,
+                144.76
+              ],
+              [
+                597.92,
+                148.16
+              ],
+              [
+                599.55,
+                151.72
+              ],
+              [
+                601.17,
+                155.44
+              ],
+              [
+                602.78,
+                159.3
+              ],
+              [
+                604.38,
+                163.31
+              ],
+              [
+                605.96,
+                167.46
+              ],
+              [
+                607.54,
+                171.73
+              ],
+              [
+                609.12,
+                176.13
+              ],
+              [
+                610.68,
+                180.64
+              ],
+              [
+                612.24,
+                185.26
+              ],
+              [
+                613.79,
+                189.98
+              ],
+              [
+                615.33,
+                194.8
+              ],
+              [
+                616.87,
+                199.71
+              ],
+              [
+                618.4,
+                204.7
+              ],
+              [
+                619.92,
+                209.76
+              ],
+              [
+                621.44,
+                214.89
+              ],
+              [
+                622.96,
+                220.08
+              ],
+              [
+                624.47,
+                225.33
+              ],
+              [
+                625.98,
+                230.62
+              ],
+              [
+                627.49,
+                235.95
+              ],
+              [
+                629.0,
+                241.32
+              ],
+              [
+                630.5,
+                246.72
+              ],
+              [
+                632.0,
+                252.13
+              ],
+              [
+                633.5,
+                257.56
+              ],
+              [
+                635.0,
+                263.0
+              ],
+              [
+                636.5,
+                268.44
+              ],
+              [
+                638.0,
+                273.87
+              ],
+              [
+                639.5,
+                279.28
+              ],
+              [
+                641.01,
+                284.68
+              ],
+              [
+                642.51,
+                290.05
+              ],
+              [
+                644.02,
+                295.38
+              ],
+              [
+                645.53,
+                300.67
+              ],
+              [
+                647.04,
+                305.92
+              ],
+              [
+                648.56,
+                311.11
+              ],
+              [
+                650.08,
+                316.24
+              ],
+              [
+                651.6,
+                321.3
+              ],
+              [
+                653.13,
+                326.29
+              ],
+              [
+                654.67,
+                331.2
+              ],
+              [
+                656.21,
+                336.02
+              ],
+              [
+                657.76,
+                340.74
+              ],
+              [
+                659.32,
+                345.36
+              ],
+              [
+                660.88,
+                349.87
+              ],
+              [
+                662.46,
+                354.27
+              ],
+              [
+                664.04,
+                358.54
+              ],
+              [
+                665.62,
+                362.69
+              ],
+              [
+                667.22,
+                366.7
+              ],
+              [
+                668.83,
+                370.56
+              ],
+              [
+                670.45,
+                374.28
+              ],
+              [
+                672.08,
+                377.84
+              ],
+              [
+                673.72,
+                381.24
+              ],
+              [
+                675.37,
+                384.46
+              ],
+              [
+                677.04,
+                387.52
+              ],
+              [
+                678.71,
+                390.38
+              ],
+              [
+                680.41,
+                393.06
+              ],
+              [
+                682.11,
+                395.54
+              ],
+              [
+                683.83,
+                397.81
+              ],
+              [
+                685.56,
+                399.88
+              ],
+              [
+                687.31,
+                401.73
+              ],
+              [
+                689.07,
+                403.35
+              ],
+              [
+                690.85,
+                404.74
+              ],
+              [
+                692.64,
+                405.9
+              ],
+              [
+                694.46,
+                406.81
+              ],
+              [
+                696.29,
+                407.47
+              ],
+              [
+                698.13,
+                407.87
+              ],
+              [
+                700.0,
+                408.0
+              ]
+            ],
+            "shapeSignature": "589b6dba556ca48b52ed7a8a2275ea4da59dc0524ae46c33c07335b78bc98ee0",
+            "x": 635.0,
+            "y": 263.0
+          }
+        },
+        "title": "Evaluation terms",
+        "topicDescription": "Independent background vocabulary with a useful one-to-many prerequisite branch."
+      },
+      {
+        "focusQuestion": "How does A support proposition P?",
+        "id": "proof-detail",
+        "kind": "narrative",
+        "linkIds": [
+          "a-lemma",
+          "lemma-p"
+        ],
+        "nodeIds": [
+          "a",
+          "lemma",
+          "p"
+        ],
+        "positions": {
+          "a": {
+            "x": 90,
+            "y": 260
+          },
+          "lemma": {
+            "x": 420,
+            "y": 120
+          },
+          "p": {
+            "x": 750,
+            "y": 340
+          }
+        },
+        "rootId": "a",
+        "routes": {
+          "a-lemma": {
+            "bounds": {
+              "maxX": 557.57,
+              "maxY": 408.63
+            },
+            "d": "M231.75 354.00 C378.18 446.88 411.18 306.88 472.97 222.00",
+            "endpointSignature": "0bb3db96c8d08ecb8f804e332b4493cb7a11e180834ea6648021d845c57d8c2a",
+            "format": "stable-local-1",
+            "labelBox": [
+              291.57,
+              303.03,
+              533.57,
+              335.03
+            ],
+            "labelKey": "entails (hypothesis)",
+            "points": [
+              [
+                231.75,
+                354.0
+              ],
+              [
+                237.19,
+                357.37
+              ],
+              [
+                242.52,
+                360.53
+              ],
+              [
+                247.75,
+                363.48
+              ],
+              [
+                252.88,
+                366.22
+              ],
+              [
+                257.91,
+                368.76
+              ],
+              [
+                262.84,
+                371.09
+              ],
+              [
+                267.68,
+                373.23
+              ],
+              [
+                272.42,
+                375.17
+              ],
+              [
+                277.07,
+                376.92
+              ],
+              [
+                281.62,
+                378.48
+              ],
+              [
+                286.09,
+                379.85
+              ],
+              [
+                290.47,
+                381.05
+              ],
+              [
+                294.76,
+                382.07
+              ],
+              [
+                298.97,
+                382.91
+              ],
+              [
+                303.09,
+                383.58
+              ],
+              [
+                307.13,
+                384.09
+              ],
+              [
+                311.1,
+                384.43
+              ],
+              [
+                314.98,
+                384.61
+              ],
+              [
+                318.79,
+                384.63
+              ],
+              [
+                322.53,
+                384.5
+              ],
+              [
+                326.19,
+                384.21
+              ],
+              [
+                329.78,
+                383.78
+              ],
+              [
+                333.3,
+                383.21
+              ],
+              [
+                336.75,
+                382.49
+              ],
+              [
+                340.14,
+                381.64
+              ],
+              [
+                343.46,
+                380.65
+              ],
+              [
+                346.72,
+                379.53
+              ],
+              [
+                349.91,
+                378.29
+              ],
+              [
+                353.05,
+                376.92
+              ],
+              [
+                356.13,
+                375.43
+              ],
+              [
+                359.15,
+                373.83
+              ],
+              [
+                362.12,
+                372.11
+              ],
+              [
+                365.04,
+                370.28
+              ],
+              [
+                367.9,
+                368.34
+              ],
+              [
+                370.71,
+                366.3
+              ],
+              [
+                373.48,
+                364.16
+              ],
+              [
+                376.2,
+                361.92
+              ],
+              [
+                378.87,
+                359.59
+              ],
+              [
+                381.51,
+                357.17
+              ],
+              [
+                384.1,
+                354.66
+              ],
+              [
+                386.65,
+                352.07
+              ],
+              [
+                389.16,
+                349.4
+              ],
+              [
+                391.64,
+                346.65
+              ],
+              [
+                394.08,
+                343.83
+              ],
+              [
+                396.49,
+                340.94
+              ],
+              [
+                398.87,
+                337.98
+              ],
+              [
+                401.22,
+                334.96
+              ],
+              [
+                403.54,
+                331.88
+              ],
+              [
+                405.83,
+                328.75
+              ],
+              [
+                408.1,
+                325.56
+              ],
+              [
+                410.35,
+                322.32
+              ],
+              [
+                412.57,
+                319.03
+              ],
+              [
+                414.78,
+                315.71
+              ],
+              [
+                416.96,
+                312.34
+              ],
+              [
+                419.13,
+                308.94
+              ],
+              [
+                421.29,
+                305.5
+              ],
+              [
+                423.43,
+                302.03
+              ],
+              [
+                425.57,
+                298.54
+              ],
+              [
+                427.69,
+                295.03
+              ],
+              [
+                429.8,
+                291.5
+              ],
+              [
+                431.91,
+                287.95
+              ],
+              [
+                434.01,
+                284.39
+              ],
+              [
+                436.11,
+                280.82
+              ],
+              [
+                438.21,
+                277.24
+              ],
+              [
+                440.31,
+                273.66
+              ],
+              [
+                442.41,
+                270.08
+              ],
+              [
+                444.52,
+                266.51
+              ],
+              [
+                446.63,
+                262.95
+              ],
+              [
+                448.74,
+                259.39
+              ],
+              [
+                450.87,
+                255.85
+              ],
+              [
+                453.0,
+                252.33
+              ],
+              [
+                455.15,
+                248.83
+              ],
+              [
+                457.31,
+                245.35
+              ],
+              [
+                459.49,
+                241.91
+              ],
+              [
+                461.69,
+                238.49
+              ],
+              [
+                463.9,
+                235.11
+              ],
+              [
+                466.13,
+                231.77
+              ],
+              [
+                468.39,
+                228.46
+              ],
+              [
+                470.66,
+                225.21
+              ],
+              [
+                472.97,
+                222.0
+              ]
+            ],
+            "shapeSignature": "aa1c3f6f9465b34268cb2fc31922ba924555f2a8b4778f99d117cef811ad8761",
+            "x": 412.57,
+            "y": 319.03
+          },
+          "lemma-p": {
+            "bounds": {
+              "maxX": 815.0,
+              "maxY": 422.0
+            },
+            "d": "M590.00 178.00 C653.50 178.00 686.50 398.00 750.00 398.00",
+            "endpointSignature": "d300749f6f358e9deacd5ef6cf6c31025363eb732f4b8bf0be2e041a67c7a747",
+            "format": "stable-local-1",
+            "labelBox": [
+              549.0,
+              272.0,
+              791.0,
+              304.0
+            ],
+            "labelKey": "entails (hypothesis)",
+            "points": [
+              [
+                590.0,
+                178.0
+              ],
+              [
+                592.37,
+                178.1
+              ],
+              [
+                594.71,
+                178.41
+              ],
+              [
+                597.02,
+                178.9
+              ],
+              [
+                599.3,
+                179.59
+              ],
+              [
+                601.56,
+                180.47
+              ],
+              [
+                603.8,
+                181.53
+              ],
+              [
+                606.01,
+                182.76
+              ],
+              [
+                608.2,
+                184.16
+              ],
+              [
+                610.36,
+                185.73
+              ],
+              [
+                612.5,
+                187.45
+              ],
+              [
+                614.62,
+                189.33
+              ],
+              [
+                616.72,
+                191.36
+              ],
+              [
+                618.8,
+                193.54
+              ],
+              [
+                620.86,
+                195.85
+              ],
+              [
+                622.9,
+                198.3
+              ],
+              [
+                624.93,
+                200.88
+              ],
+              [
+                626.93,
+                203.58
+              ],
+              [
+                628.93,
+                206.4
+              ],
+              [
+                630.9,
+                209.33
+              ],
+              [
+                632.86,
+                212.38
+              ],
+              [
+                634.8,
+                215.52
+              ],
+              [
+                636.74,
+                218.76
+              ],
+              [
+                638.66,
+                222.1
+              ],
+              [
+                640.56,
+                225.52
+              ],
+              [
+                642.46,
+                229.03
+              ],
+              [
+                644.34,
+                232.61
+              ],
+              [
+                646.22,
+                236.26
+              ],
+              [
+                648.08,
+                239.98
+              ],
+              [
+                649.94,
+                243.77
+              ],
+              [
+                651.79,
+                247.61
+              ],
+              [
+                653.63,
+                251.5
+              ],
+              [
+                655.46,
+                255.44
+              ],
+              [
+                657.29,
+                259.42
+              ],
+              [
+                659.12,
+                263.44
+              ],
+              [
+                660.94,
+                267.48
+              ],
+              [
+                662.75,
+                271.56
+              ],
+              [
+                664.57,
+                275.65
+              ],
+              [
+                666.38,
+                279.76
+              ],
+              [
+                668.19,
+                283.88
+              ],
+              [
+                670.0,
+                288.0
+              ],
+              [
+                671.81,
+                292.12
+              ],
+              [
+                673.62,
+                296.24
+              ],
+              [
+                675.43,
+                300.35
+              ],
+              [
+                677.25,
+                304.44
+              ],
+              [
+                679.06,
+                308.52
+              ],
+              [
+                680.88,
+                312.56
+              ],
+              [
+                682.71,
+                316.58
+              ],
+              [
+                684.54,
+                320.56
+              ],
+              [
+                686.37,
+                324.5
+              ],
+              [
+                688.21,
+                328.39
+              ],
+              [
+                690.06,
+                332.23
+              ],
+              [
+                691.92,
+                336.01
+              ],
+              [
+                693.78,
+                339.74
+              ],
+              [
+                695.66,
+                343.39
+              ],
+              [
+                697.54,
+                346.97
+              ],
+              [
+                699.44,
+                350.48
+              ],
+              [
+                701.34,
+                353.9
+              ],
+              [
+                703.26,
+                357.24
+              ],
+              [
+                705.2,
+                360.48
+              ],
+              [
+                707.14,
+                363.62
+              ],
+              [
+                709.1,
+                366.67
+              ],
+              [
+                711.07,
+                369.6
+              ],
+              [
+                713.07,
+                372.42
+              ],
+              [
+                715.07,
+                375.12
+              ],
+              [
+                717.1,
+                377.7
+              ],
+              [
+                719.14,
+                380.15
+              ],
+              [
+                721.2,
+                382.46
+              ],
+              [
+                723.28,
+                384.63
+              ],
+              [
+                725.38,
+                386.67
+              ],
+              [
+                727.5,
+                388.55
+              ],
+              [
+                729.64,
+                390.27
+              ],
+              [
+                731.8,
+                391.84
+              ],
+              [
+                733.99,
+                393.24
+              ],
+              [
+                736.2,
+                394.47
+              ],
+              [
+                738.44,
+                395.53
+              ],
+              [
+                740.7,
+                396.4
+              ],
+              [
+                742.98,
+                397.1
+              ],
+              [
+                745.29,
+                397.59
+              ],
+              [
+                747.63,
+                397.9
+              ],
+              [
+                750.0,
+                398.0
+              ]
+            ],
+            "shapeSignature": "cc7e376584e59be36520b902ddf5a55f1fbf5114ff62dd6f85ef3ce42ab83331",
+            "x": 670.0,
+            "y": 288.0
+          }
+        },
+        "title": "How does A support proposition P?"
+      },
+      {
+        "id": "proof-terms",
+        "kind": "catalog",
+        "linkIds": [
+          "lemma-p"
+        ],
+        "nodeIds": [
+          "lemma",
+          "p",
+          "proof"
+        ],
+        "positions": {
+          "lemma": {
+            "x": 40,
+            "y": 60
+          },
+          "p": {
+            "x": 270,
+            "y": 60
+          },
+          "proof": {
+            "x": 500,
+            "y": 60
+          }
+        },
+        "rootId": null,
+        "routes": {
+          "lemma-p": {
+            "bounds": {
+              "maxX": 385.0,
+              "maxY": 274.0
+            },
+            "d": "M157.53 162.00 C228.50 258.00 251.50 258.00 322.47 162.00",
+            "endpointSignature": "153e18ec5cc76e8b99809b46e6f6ea64eb3d7dcbbf6dbf9c8d1150d09ebe3ea8",
+            "format": "stable-local-1",
+            "labelBox": [
+              119.0,
+              218.0,
+              361.0,
+              250.0
+            ],
+            "labelKey": "entails (hypothesis)",
+            "points": [
+              [
+                157.53,
+                162.0
+              ],
+              [
+                160.17,
+                165.56
+              ],
+              [
+                162.76,
+                169.02
+              ],
+              [
+                165.32,
+                172.39
+              ],
+              [
+                167.83,
+                175.68
+              ],
+              [
+                170.3,
+                178.88
+              ],
+              [
+                172.73,
+                181.98
+              ],
+              [
+                175.12,
+                185.0
+              ],
+              [
+                177.48,
+                187.92
+              ],
+              [
+                179.8,
+                190.75
+              ],
+              [
+                182.08,
+                193.5
+              ],
+              [
+                184.33,
+                196.16
+              ],
+              [
+                186.55,
+                198.72
+              ],
+              [
+                188.74,
+                201.2
+              ],
+              [
+                190.9,
+                203.58
+              ],
+              [
+                193.02,
+                205.88
+              ],
+              [
+                195.12,
+                208.08
+              ],
+              [
+                197.19,
+                210.19
+              ],
+              [
+                199.24,
+                212.22
+              ],
+              [
+                201.26,
+                214.15
+              ],
+              [
+                203.26,
+                216.0
+              ],
+              [
+                205.24,
+                217.76
+              ],
+              [
+                207.19,
+                219.42
+              ],
+              [
+                209.13,
+                221.0
+              ],
+              [
+                211.04,
+                222.48
+              ],
+              [
+                212.94,
+                223.88
+              ],
+              [
+                214.82,
+                225.18
+              ],
+              [
+                216.68,
+                226.39
+              ],
+              [
+                218.53,
+                227.52
+              ],
+              [
+                220.37,
+                228.55
+              ],
+              [
+                222.19,
+                229.5
+              ],
+              [
+                224.01,
+                230.36
+              ],
+              [
+                225.81,
+                231.12
+              ],
+              [
+                227.6,
+                231.8
+              ],
+              [
+                229.39,
+                232.38
+              ],
+              [
+                231.17,
+                232.88
+              ],
+              [
+                232.94,
+                233.28
+              ],
+              [
+                234.71,
+                233.59
+              ],
+              [
+                236.47,
+                233.82
+              ],
+              [
+                238.24,
+                233.95
+              ],
+              [
+                240.0,
+                234.0
+              ],
+              [
+                241.76,
+                233.95
+              ],
+              [
+                243.53,
+                233.82
+              ],
+              [
+                245.29,
+                233.6
+              ],
+              [
+                247.06,
+                233.28
+              ],
+              [
+                248.83,
+                232.88
+              ],
+              [
+                250.61,
+                232.38
+              ],
+              [
+                252.4,
+                231.79
+              ],
+              [
+                254.19,
+                231.12
+              ],
+              [
+                255.99,
+                230.36
+              ],
+              [
+                257.81,
+                229.5
+              ],
+              [
+                259.63,
+                228.56
+              ],
+              [
+                261.47,
+                227.52
+              ],
+              [
+                263.32,
+                226.4
+              ],
+              [
+                265.18,
+                225.18
+              ],
+              [
+                267.06,
+                223.88
+              ],
+              [
+                268.96,
+                222.48
+              ],
+              [
+                270.87,
+                221.0
+              ],
+              [
+                272.81,
+                219.42
+              ],
+              [
+                274.76,
+                217.75
+              ],
+              [
+                276.74,
+                216.0
+              ],
+              [
+                278.74,
+                214.16
+              ],
+              [
+                280.76,
+                212.22
+              ],
+              [
+                282.81,
+                210.19
+              ],
+              [
+                284.88,
+                208.08
+              ],
+              [
+                286.98,
+                205.88
+              ],
+              [
+                289.1,
+                203.58
+              ],
+              [
+                291.26,
+                201.19
+              ],
+              [
+                293.45,
+                198.72
+              ],
+              [
+                295.67,
+                196.16
+              ],
+              [
+                297.92,
+                193.5
+              ],
+              [
+                300.2,
+                190.75
+              ],
+              [
+                302.52,
+                187.92
+              ],
+              [
+                304.88,
+                185.0
+              ],
+              [
+                307.27,
+                181.98
+              ],
+              [
+                309.7,
+                178.88
+              ],
+              [
+                312.17,
+                175.68
+              ],
+              [
+                314.68,
+                172.39
+              ],
+              [
+                317.24,
+                169.02
+              ],
+              [
+                319.83,
+                165.56
+              ],
+              [
+                322.47,
+                162.0
+              ]
+            ],
+            "shapeSignature": "cc7e376584e59be36520b902ddf5a55f1fbf5114ff62dd6f85ef3ce42ab83331",
+            "x": 240.0,
+            "y": 234.0
+          }
+        },
+        "title": "Proof vocabulary",
+        "topicDescription": "Definitions needed to read the fictional argument; only one meaningful relationship is shown."
+      }
+    ]
+  },
+  "paper": {
+    "id": "fictional-theory-interface-example",
+    "isFictional": true,
+    "title": "Fictional example: concepts and terminology",
+    "version": null
+  },
+  "revision": 1,
+  "schemaVersion": 2,
+  "settings": {
+    "changeReason": null,
+    "confirmedAt": "2026-11-15T00:00:00Z",
+    "fullTranslation": true,
+    "fullTranslationSource": "default",
+    "interactionLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "pendingFields": [],
+    "presentation": "segmented",
+    "sourceLanguages": [],
+    "status": "confirmed",
+    "translationLanguage": {
+      "name": "English",
+      "tag": "en"
+    },
+    "version": 1
+  },
+  "sources": [
+    {
+      "id": "fictional-example",
+      "label": "Fictional interface example, not research evidence",
+      "note": "No real proof or paper is provided."
+    }
+  ]
+}

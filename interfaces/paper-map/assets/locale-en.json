@@ -170,6 +170,8 @@
     "straightMode": "Straight",
     "targetNode": "Target",
     "templateMismatch": "Template versions differ; reopen the page.",
+    "termProperties": "Context and properties",
+    "termStudyRole": "Role in this study",
     "treeCreated": "Created a tree using the same node as its root.",
     "treeError": "Incomplete tree scope",
     "undirected": "This relationship has no direction.",

@@ -19,6 +19,8 @@ Read [paper-expert](../../interfaces/paper-expert/SKILL.md), [paper-teach](../..
 
 Read [paper-answer](../../interfaces/paper-answer/SKILL.md). Its direct-answer, necessary-recall, incorrect-premise, and ambiguity rules apply to every case and cannot be replaced by case classification. Answer in the saved interaction language, regardless of whether full translation was enabled.
 
+Explain technical vocabulary needed for the answer in place, with names and study-specific meanings. Follow paper-teach's terminology contract to save useful definitions/properties and evaluate topical catalogs through paper-map even if the answer does not change the main research chain.
+
 Use its routing to select the smallest sufficient set of interfaces. After specialist checks, return to the original question and organize the answer. Handle mixed questions in dependency order without cycling through entries. For an unlisted case, use the general fallback to answer supported parts and identify specific unknowns and gaps.
 
 ### 3. Save new understanding and corrections

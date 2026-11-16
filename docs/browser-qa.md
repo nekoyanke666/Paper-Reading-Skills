@@ -14,3 +14,11 @@ Date: 2026-11-15. Browser: Chrome on Windows. Content: fictional theory and mech
 ## Scope limits
 
 Cancellation, collision rollback, storage failure, shared-view placement isolation, source-update reconciliation, and keyboard handler behavior have automated runtime coverage. Actual touch hardware, assistive technology, and every possible graph/drag arrangement were not tested. Browser-local saved placements are separate from deterministic canonical snapshots. The supplied private RNA paper was reviewed through its saved source corpus and passed structural/geometry checks; its actual browser rendering was not tested.
+
+## Version 1.2.0 topic-catalog checks
+
+Date: 2026-11-16. Chrome on Windows, fictional terminology fixture only. At 1440 by 900, 1024 by 768, and 390 by 844, observed a rootless view with no edges, global search by a glossary alias/property, definition/study-role/property sidebars, one-to-many edges, and same-node navigation back to the main argument. The all-relations control is absent in zero-edge views. Edge accessibility descriptions include the concrete endpoints and paper-specific meaning. Repeated source references in the property panel were consolidated without losing their property scopes.
+
+Observed responsive issues were corrected: the opened sidebar could compress a medium-width title, and phone controls could leave the search field too narrow. Medium-width open-detail headers now wrap the title, and phone tree selectors occupy their own row with a readable search field beneath. Temporary viewport overrides were reset. A screenshot of the final branching/property view is a release artifact outside the repository.
+
+New catalog tests also cover rootlessness, provenance, shared definition updates, aliases, sparse connectivity exceptions, and glossary-only persistence. They do not measure real-paper concept coverage. No existing private paper was rebuilt or evaluated for completeness in this release.

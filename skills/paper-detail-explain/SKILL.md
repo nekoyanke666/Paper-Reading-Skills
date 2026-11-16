@@ -25,6 +25,8 @@ Organize the manuscript by the research logic and prerequisite dependencies. Inc
 
 ## 3. Deliver a connected account with technical depth
 
+Explain necessary technical vocabulary at the point of use and follow paper-teach's terminology contract to retain definitions, study roles, and verified properties in reusable topical catalogs through paper-map. Prior figure teaching or an existing sidebar does not replace the explanation here.
+
 Use connected explanatory prose. Establish the overall problem and contribution at the opening, then develop the narrative through the obstacles, design choices, evidence, and conclusions. Briefly reactivate earlier concepts where they become useful and explain why each next step follows. Do not turn each paragraph into a numbered question/answer checklist or a separate miniature lesson.
 
 Call [paper-methods](../../interfaces/paper-methods/SKILL.md) for methods, statistics, equations, proofs, or design. Explain how the actual procedure transforms inputs into outputs, why the steps are justified, and how computations relate to the biological/physical/social or formal objects. Define notation and assumptions, work through important calculations/derivations with source-backed or explicitly invented teaching examples, and return to the paper's actual result and limits. Naming a method or paraphrasing a formula is insufficient.

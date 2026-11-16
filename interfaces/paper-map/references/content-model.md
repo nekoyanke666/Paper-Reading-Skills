@@ -2,7 +2,7 @@
 
 ## Build an intelligible model
 
-Start from the source-defined research problem, then identify the objects being studied, concepts needed to understand them, operations or arguments, observations, claims, and limits. A map is not a list of questions. Any existing node may connect to a necessary definition, named object, mechanism, method, counterexample, or unresolved issue. Add a node only when it contributes a distinct, reusable unit of understanding; improve the sidebar when the detail does not need its own relationships.
+Start from the source-defined research problem, then identify the objects being studied, concepts needed to understand them, operations or arguments, observations, claims, and limits. A map is not a list of questions. Any existing node may connect to a necessary definition, named object, mechanism, method, counterexample, or unresolved issue. Add a node when it contributes a distinct, reusable unit of understanding or terminology lookup; a catalog term does not require its own relationships. Improve the sidebar for an incidental property that does not need a separate referent. Check whole-paper breadth through the coverage contract rather than stopping at a small abstract-like chain.
 
 Before accepting a comparison or discrimination question, check that the reader can identify the actual alternatives. Name those alternatives in the question's detail and, when their definitions or separate relationships matter, give them substantive nodes. Do not leave a generic question such as "Which state?" without specifying the relevant states. Do not invent an exhaustive classification when the paper tests only selected categories.
 

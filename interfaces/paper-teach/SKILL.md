@@ -19,6 +19,8 @@ Develop concepts in understandable steps within a connected account. Avoid front
 
 When introducing a technical term, give its target-language form, original/English term where relevant, and its meaning or role in this study. Do not explain it with more unexplained jargon. Reuse glossary definitions; distinguish homonyms and return terminology corrections to shared memory.
 
+For technical vocabulary introduced, reused without sufficient context, or corrected during figure/detail/question work, read [terminology teaching and retention](references/terminology.md). Explain it at the point of use, save its study-specific meaning and verified properties in the shared glossary, and evaluate topical catalog updates through paper-map even when the main research chain is unchanged. A map/sidebar supplements the explanation; it does not replace it.
+
 Analogies are allowed when their correspondences and limits are explicit. Then return to the actual disciplinary concept, argument, and method. Do not later treat the analogy as the research object itself.
 
 ## 3. Make connections and transitions explicit

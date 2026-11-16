@@ -16,12 +16,13 @@ Creates a candidate with canonical relations and checked geometry without overwr
 
 Common fields: expectedRevision, roleVersion, settingsVersion, reason, importance, semanticReview, operations. Importance includes core_concept, evidence_change, relation_change, correction, or unresolved_question. semanticReview provides concise identity/relation/scope notes.
 
+- upsert_term: supply a glossary term with id, recognizable name, definition, and an explicit reason; reuse the ID only for the same referent. Save studyRole and verified facets where useful.
 - add_node: reuse identity or create, place in treeId near anchorId, optionally name a ref for `$name` references.
 - update_node: change same-referent name/detail/sources/limits/status; retain old name as alias.
 - reclassify_node: provide newType, reason, and evidence that referent is unchanged; derive its registered visual role.
 - set_visual_role: supply id, one of concept/method/entity/proposition, and reason; keep the referent and ID, then regenerate affected shape signatures/routes.
 - add_link/update_link: normalize/deduplicate or update source/support state; changed meaning/endpoints/conditions require retire-and-add.
-- add_tree/update_tree: focused-question title, shared nodes, justified root/title changes.
+- add_tree/update_tree: narrative views use focused-question titles/shared anchors; catalog views use kind=catalog, rootId=null, topicDescription, and actual glossary-bound members. Zero edges and disconnected catalog members are legal. Conversions or title/scope/root changes need an explicit reason.
 - attach_node/attach_link: reuse existing objects without copying IDs.
 - remove_from_tree/detach_link: view-only change; root removal needs replacementRootId.
 - merge_nodes: supply same-referent basis, keep target ID, reconnect and redirect.

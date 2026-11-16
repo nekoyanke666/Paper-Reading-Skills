@@ -1,0 +1,11 @@
+{
+  "browserVisualQA": "not performed by this checker",
+  "links": 9,
+  "nodes": 10,
+  "passed": true,
+  "registryVersion": "2.0.0",
+  "semanticSourceReview": "requires the selected expert",
+  "templateVersion": "paper-map-ui-1.3.0",
+  "trees": 5,
+  "warnings": []
+}

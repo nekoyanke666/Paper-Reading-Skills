@@ -23,6 +23,8 @@ At the first opening, call [paper-narrative](../../interfaces/paper-narrative/SK
 
 Call [paper-figures](../../interfaces/paper-figures/SKILL.md) in complete-figure mode. Give the figure's purpose and necessary background, display the actual figure with its identifier, explain each panel's reading, design, comparisons, observations, conclusions, and limits, then integrate the panels.
 
+Explain required technical names and abbreviations where they first matter, including their original/English forms and study-specific meaning. Follow paper-teach's terminology contract to retain useful definitions/properties in topical catalogs through paper-map; the term need not be a main result to merit a definition.
+
 When methods, statistics, equations, or proofs obstruct understanding, call [paper-methods](../../interfaces/paper-methods/SKILL.md), explain enough to interpret the current evidence, and return to the figure. Adapt to the actual figure type; do not invent groups, sample sizes, or error bars for theoretical or qualitative figures.
 
 Apply paper-figures' supporting-evidence rule: discuss controls, validation, or limitations that materially affect the main conclusion beside the relevant main figure and explain why they are needed. Index the remaining supplements without routinely explaining every item.

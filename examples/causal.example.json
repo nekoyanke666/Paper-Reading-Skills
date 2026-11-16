@@ -273,6 +273,8 @@
         "straightMode": "Straight",
         "targetNode": "Target",
         "templateMismatch": "Template versions differ; reopen the page.",
+        "termProperties": "Context and properties",
+        "termStudyRole": "Role in this study",
         "treeCreated": "Created a tree using the same node as its root.",
         "treeError": "Incomplete tree scope",
         "undirected": "This relationship has no direction.",
@@ -476,11 +478,12 @@
     },
     "retiredLinks": [],
     "retiredNodes": [],
-    "templateVersion": "paper-map-ui-1.2.0",
+    "templateVersion": "paper-map-ui-1.3.0",
     "trees": [
       {
         "focusQuestion": "How does M act?",
         "id": "main",
+        "kind": "narrative",
         "linkIds": [
           "m-r",
           "q-m",
@@ -1899,6 +1902,7 @@
       {
         "focusQuestion": "How does R form negative feedback?",
         "id": "feedback",
+        "kind": "narrative",
         "linkIds": [
           "r-response",
           "response-r"

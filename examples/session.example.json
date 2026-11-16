@@ -352,6 +352,8 @@
         "straightMode": "Straight",
         "targetNode": "Target",
         "templateMismatch": "Template versions differ; reopen the page.",
+        "termProperties": "Context and properties",
+        "termStudyRole": "Role in this study",
         "treeCreated": "Created a tree using the same node as its root.",
         "treeError": "Incomplete tree scope",
         "undirected": "This relationship has no direction.",
@@ -645,11 +647,12 @@
     },
     "retiredLinks": [],
     "retiredNodes": [],
-    "templateVersion": "paper-map-ui-1.2.0",
+    "templateVersion": "paper-map-ui-1.3.0",
     "trees": [
       {
         "focusQuestion": "When does P hold?",
         "id": "main",
+        "kind": "narrative",
         "linkIds": [
           "a-proof",
           "p-bound",
@@ -2424,6 +2427,7 @@
       {
         "focusQuestion": "How does A support proposition P?",
         "id": "proof-detail",
+        "kind": "narrative",
         "linkIds": [
           "a-lemma",
           "lemma-p"

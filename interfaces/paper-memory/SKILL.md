@@ -35,7 +35,7 @@ Save the whole plan before segmentation. For full detail explanation, also save 
 
 Track translation, figures, and detail separately. Keep full translation disabled/skipped distinct from completed. Save the map's stable entry, successful rendered revision, per-invocation update decision, and conversation-aware link delivery under progress.map. A no-change review or delivery record does not force a graph revision or render. Preserve returnTo for inserted questions; answering does not complete the interrupted lesson. Record only whether something was explained, the reader reported understanding, or questions remain; do not assume comprehension.
 
-The glossary unifies source terms, English terminology where useful, target-language terms, aliases, study-specific meaning, prerequisites, and sources. Claims record statement, evidence kind, locator, conditions, limits, and status. Settings, expert profile, and graph share this session rather than contradictory copies.
+The glossary also stores studyRole and useful verified contextual properties (facets with their own sourceRefs); topic catalogs reference these definitions through node.termIds instead of duplicating them. The glossary unifies source terms, English terminology where useful, target-language terms, aliases, study-specific meaning, prerequisites, and sources. Claims record statement, evidence kind, locator, conditions, limits, and status. Settings, expert profile, and graph share this session rather than contradictory copies.
 
 ## 5. Commit and verify recovery
 

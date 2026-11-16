@@ -12,13 +12,13 @@
 
 A patch records reason, importance, roleVersion, settingsVersion, and concise public identity/relation/scope notes: whether objects are the same, why the relation/direction fits, and which sources/limits apply. These are verifiable summaries, not hidden thought.
 
-Correct source extraction does not guarantee correct interpretation. Check hypotheses were not upgraded, refutation did not disappear, homonyms were not merged, synonymous relationships were normalized, and a complete evidence chain remains navigable after splitting. Confirm selected-language output without changing canonical semantics.
+Correct source extraction does not guarantee correct interpretation. Compare the entire source-to-map crosswalk with actual paper content: important methods/contributions/results/limits need visible main anchors and intelligible branches. More edges alone does not prove richer understanding; one-to-many branches must preserve each relation's meaning. Review required vocabulary and useful topic catalogs even when the main graph is unchanged. Check hypotheses were not upgraded, refutation did not disappear, homonyms were not merged, synonymous relationships were normalized, and a complete evidence chain remains navigable after splitting. Confirm selected-language output without changing canonical semantics.
 
 ## Machine blockers
 
 - Duplicate/missing IDs, unknown or unlocatable sources/types, invalid positions, duplicate semantic identities/edges.
 - Unknown relationships, ID/label/direction disagreement, missing evidence state or required basis.
-- Dangling endpoints, out-of-view endpoints, missing roots, disconnected secondary views, active objects invisible everywhere.
+- Dangling endpoints, out-of-view endpoints, missing narrative roots, disconnected narrative paths, invalid/empty catalogs, catalog members without shared definitions/source basis, active objects invisible everywhere.
 - More than four normalized predicates per tree; large trees without density review.
 - Node overlap, edge labels over nodes/labels, unrelated-node crossings, stale endpoint/label/shape geometry; unknown visual roles; paths other than a single M C cubic or M L segment.
 - Unjustified moves/merges/retirements, silent cascades, stale revisions/settings/roles, or cross-paper writes.
@@ -26,6 +26,8 @@ Correct source extraction does not guarantee correct interpretation. Check hypot
 - Template/registry hash mismatch or noncanonical data bypassing checks before render.
 
 Conservative width budgets do not replace actual font checks. Shorten an overlong name and retain detail in the sidebar rather than shrinking illegibly or truncating meaning.
+
+Catalog regressions cover rootless/zero-edge and sparse disconnected views, unchanged narrative connectivity requirements, term definition/property provenance, shared lookup identities, glossary-only commits/renders, alias retention, one-to-many edges, glossary-property search, and cross-view correction display. Main concept coverage remains an expert source review; graph validity alone cannot establish that the paper is fully represented.
 
 ## Reproduction unit
 
