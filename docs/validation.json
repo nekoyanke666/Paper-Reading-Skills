@@ -2,34 +2,44 @@
   "passed": true,
   "publicEntries": 4,
   "internalInterfaces": 13,
-  "referencesChecked": 143,
+  "referencesChecked": 150,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Chrome fictional direction fixture at 1440x900, 1024x768 and 390x844; 300% native-vector/font sizing; no automatic zoom during selection/search/navigation/resize/Center; see browser-qa.md",
+  "browserVisualQA": "Chrome actual ordinary Save created neighboring history file without chooser/download; note/tree/position persisted through reload and Prev/Next; retained local sample; see browser-qa.md",
   "unitTests": {
-    "passed": 59,
+    "passed": 60,
     "failed": 0
   },
   "formalSkillValidation": {
     "passed": 17,
     "failed": 0
   },
-  "javascriptRuntime": "Eight minimal-DOM/core suites passed: prior map/history/detail cases plus relative direction, reciprocal/self/undirected/inhibitory cases, user-only zoom and native rendering setup",
+  "javascriptRuntime": "Nine suites passed: eight core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Existing written-workflow review retained; not independently executed",
   "translationReview": "English instructions and new UI labels reviewed; source-backed glossary and narrative/catalog distinctions preserved",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
     "modelVersion": 1,
     "frozenV1Fixture": "passed",
-    "fortySaveBytes": 36868,
-    "repeatedSnapshotBytes": 1899202
+    "fortySaveBytes": 37661,
+    "repeatedSnapshotBytes": 1935405
   },
   "responsiveCamera": "User-only zoom. Selection, search, tree/detail switches, viewport/sidebar resize, Center, history and import preserve scale; translation-only centering. Native SVG edges and actual-size HTML text/glyphs.",
-  "directionFocus": "Blue incoming, green outgoing, purple self, slate undirected; reciprocal paths, T endpoints, dashed uncertainty and grouped source-to-target text retained"
+  "directionFocus": "Blue incoming, green outgoing, purple self, slate undirected; reciprocal paths, T endpoints, dashed uncertainty and grouped source-to-target text retained",
+  "managedStorage": {
+    "protocol": "paper-map-local-v1",
+    "version": 1,
+    "scope": "allocated relative to each paper entry in its current workspace",
+    "ordinarySave": "direct neighboring history record, no picker/download",
+    "backup": "explicit external destination, independent of managed state",
+    "workspaceIsolation": "root-scoped browser recovery and filesystem records; copied active folder tested",
+    "realFilesystemAndHttp": "passed",
+    "runtimeLifecycle": "agent host uses retained serve session; portable user launcher included"
+  }
 }

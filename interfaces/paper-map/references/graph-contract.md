@@ -7,6 +7,7 @@ Read these focused rules when their branch applies:
 - [Content model](content-model.md): substantive concepts/objects/methods/propositions and four semantic shapes.
 - [Interaction](interaction.md): dragging, camera navigation, line modes, feedback, and full saved-version files.
 - [Detail views](detail-views.md): three independently curated trees with shared global nodes and separate coordinates.
+- [Local storage](local-storage.md): dynamically allocated per-paper entry space, ordinary fixed-relative Save, startup and independent backup.
 - [Permanent history](history-format.md): fixed v1 portable archive, base plus deltas, saved checkpoints and import.
 - [Direction focus](direction-focus.md): selected-node direction colors, endpoints, reciprocal/self/undirected distinctions and grouped accessible text.
 - [Appearance](appearance.md): locked template, dimensions, persistent controls, localization, responsive checks.

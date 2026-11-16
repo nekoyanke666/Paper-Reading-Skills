@@ -10,7 +10,7 @@
   },
   "labelFontSize": 11,
   "layoutVersion": "shape-curves-2",
-  "localeSha256": "5bce57f7cdbcaebfdc1f035ee3c554614f209e2cdd6e820cf0ec1f7abdf9fe6c",
+  "localeSha256": "ecb3f34d1e85243520cc7713d553f5227652c3d9a02451d5b172c068ff14fd2b",
   "maxRelationTypesPerTree": 4,
   "nodeGap": 24,
   "nodeHeight": 116,
@@ -53,8 +53,10 @@
   "registryVersion": "2.0.0",
   "renderingVersion": "native-vector-text-1",
   "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
-  "templateSha256": "80ada7499ae6a35f84d58a66ae4bf055f788902e9e18ae9e72f9f1cef981307a",
-  "version": "paper-map-ui-1.5.1",
+  "storageContractVersion": 1,
+  "storageServiceSha256": "adeaa0791b933ea81ab3aa1b26d5e30134c1d5077c0a65fd0d2e3927cc5d665d",
+  "templateSha256": "bc2d875ac6cb4aba4cbd0eebb7633131ecabfa2c3652befc1e0c6ed3e5006315",
+  "version": "paper-map-ui-1.6.0",
   "viewportBaselines": [
     [
       1440,

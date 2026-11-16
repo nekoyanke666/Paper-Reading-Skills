@@ -2,7 +2,7 @@
 
 ## Prepare the entry by default
 
-paper-prepare creates or restores a usable entry once the primary paper and interaction language are confirmed. Do not require a separate map request or wait for translation/full teaching. Use one stable location, such as `outputs/papers/<paper-id>/map/index.html`, and save its workspace-relative entryPath in session.progress.map. Keep generated artifacts in the workspace, not the installed skill.
+paper-prepare creates or restores a usable entry once the primary paper and interaction language are confirmed. Do not require a separate map request or wait for translation/full teaching. Read [local storage](local-storage.md) to allocate the paper's own output/record space during creation, start its loopback helper and preserve its workspace-relative paths. Use one stable location, such as `outputs/papers/<paper-id>/map/index.html`, and save its workspace-relative entryPath in session.progress.map. Keep generated artifacts in the workspace, not the installed skill.
 
 Use source-backed content only. A partial model can start with a provisional research-question root, or an identifiable paper root if the question is still unknown, and no edges. Clearly explain partial scope in the sidebar. A minimal tree is valid; no placeholder findings or invented relationships are needed. Replacing a provisional root follows identity/lifecycle rules and retains history.
 
@@ -18,7 +18,7 @@ If nothing important changed, preserve graph identities, positions, map revision
 
 ## Deliver the first link promptly
 
-As soon as an entry exists and required checks succeed, include a clickable link in the current response. If preparation continues in batches, give it in the next available response rather than withholding it until all preparation finishes. Resolve a local entry to an absolute file link supported by the host. A local artifact does not require or imply external hosting/publication.
+As soon as an entry exists and required checks succeed, include a clickable link in the current response. If preparation continues in batches, give it in the next available response rather than withholding it until all preparation finishes. Deliver the helper's verified local URL for a Save-enabled entry. Keep the absolute local artifact/launcher link available as a portable reopening route; opening index.html directly is a read-only preview for ordinary saving. Never replace this with one hardcoded path or port across users, papers or workspaces. A local artifact does not require or imply external hosting/publication.
 
 Save lastSuccessfulRenderRevision and a delivery record in progress.map. In a new conversation sharing this paper, provide the same saved link once when the entry is first used there; use a host conversation ID when available. A global delivered flag must not suppress delivery to another conversation. If the conversation cannot be identified, use visible context or provide the existing link once when uncertain; do not invent a chat ID.
 

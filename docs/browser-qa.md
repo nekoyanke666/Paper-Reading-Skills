@@ -1,5 +1,16 @@
 # Browser QA
 
+## Version 1.4.0 per-paper managed saving
+
+Date: 2026-11-16. Chrome on Windows, fictional direction fixture, final viewer paper-map-ui-1.6.0 and local storage protocol v1. Earlier records below describe historical browser-selected file saving; ordinary Save now uses the map's reserved history/ directory.
+
+- The generated sample reserved its own output folder, relative map-storage.json, history/, runtime and portable launchers. The local entry used an allocated loopback port. An initial short detached launch was terminated by the agent command host; the delivered sample instead uses a retained --serve process session. The startup contract now documents verifying service liveness rather than treating launcher output as proof of availability.
+- Through the actual browser UI, added Managed storage example, created Managed local example, moved that shared node from (400,220) to (420,220), and clicked ordinary Save. No destination picker or download was requested. The page reported Saved in this map folder and its relative history filename.
+- Inspected the actual neighboring JSON file using the v1 validator: it contained five global nodes, two trees, the new note/tree and exact moved position. The first content save produced two saved versions and a 20,702-byte file. A later Save of the selected tree preference retained that same record path and added a third version.
+- Reload restored both trees and the moved node; the served page contained the disk archive in its managed bootstrap. Prev returned to the earlier main-only state; Next restored the new tree. Final folder-scoped storage/bootstrap and a further ordinary Save were checked after the workspace-cache isolation changes. The same four public entries, direction cues and user-only zoom remain intact.
+- A 1440x900 screenshot of the working Save/history menu was saved outside the source package. The live sample tab and its helper were intentionally retained as a usable deliverable; temporary viewport overrides were reset.
+- Real loopback/filesystem integration separately checks independently allocated workspace folders, relocation including a copied live-service lock, concurrent launch reuse, stale-write rejection, malformed archives, recovery records, imported-record retention and nonexposure of arbitrary files. Native external-backup picker completion was not repeated; mock tests verify that only explicit backup invokes it, close/cancel failure preserves edits, and backup does not change managed saved status. No private-paper map was rebuilt.
+
 ## Version 1.3.1 selected-node direction and manual zoom
 
 Date: 2026-11-16. Chrome on Windows; the fictional direction-focus fixture only. Final viewer: paper-map-ui-1.5.1. Earlier release records below describe historical auto-fit and rendering behavior that this release supersedes.

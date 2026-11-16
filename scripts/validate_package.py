@@ -20,7 +20,7 @@ def validate(root=ROOT):
         if re.search(r'^#{1,6} .*?(?:addendum|previous rules|additional work)',text,re.M|re.I):raise ValueError('historical addendum structure remains')
     for p in root.rglob('*'):
         # Generated immutable preview revisions are not shipped skill resources.
-        if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts or ('examples' in p.parts and 'revisions' in p.parts):continue
+        if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts or ('examples' in p.parts and ('revisions' in p.parts or 'history' in p.parts)) or p.name in ('service.json','service.lock'):continue
         if p.suffix in ('.md','.json','.py','.html','.in','.cjs','.js'):
             text=p.read_text(encoding='utf-8')
             if any(0x3400<=ord(c)<=0x9fff for c in text):raise ValueError('untranslated CJK content remains: '+str(p))
@@ -37,7 +37,7 @@ def validate(root=ROOT):
     manifest=json.loads((root/'.codex-plugin/plugin.json').read_text(encoding='utf-8'))
     if manifest['skills']!='./skills/':raise ValueError('plugin must expose only the public skills directory')
     assets=root/'interfaces/paper-map/assets';lock=json.loads((assets/'template-lock.json').read_text(encoding='utf-8'))
-    for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256'),('node-shapes.json','shapesSha256')]:
+    for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256'),('node-shapes.json','shapesSha256'),('map-server.cjs','storageServiceSha256')]:
         if hashlib.sha256((assets/name).read_bytes()).hexdigest()!=lock[key]:raise ValueError('locked asset mismatch: '+name)
     runtime='\n'.join((assets/name).read_text(encoding='utf-8') for name in ('history-core.js','detail-core.js','history-viewer.js','camera-viewer.js','focus-viewer.js','viewer-runtime.js'))
     compiled=(assets/'viewer-shell.html.in').read_text(encoding='utf-8').replace('__RUNTIME__',runtime)

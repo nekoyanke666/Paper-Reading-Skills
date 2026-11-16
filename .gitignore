@@ -5,3 +5,8 @@ __pycache__/
 work/
 render-pending.json
 examples/*-map/revisions/
+
+# Local records and service credentials are never part of the skill package.
+examples/*-map/history/
+**/.paper-map/service.json
+**/.paper-map/service.lock

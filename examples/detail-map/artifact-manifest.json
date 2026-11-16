@@ -1,16 +1,23 @@
 {
   "browserVisualQA": "not performed by the renderer",
   "files": {
-    "index.html": "0b03325e69dbb3b688277c6b733ceba81a03c924cf43ee8a44125f5dd55a301d",
-    "paper-state.json": "7a0d4efd41deb0648ebba527367a78471a0f9641863aa6272d0d3a7b113e32cf"
+    ".paper-map/detail-core.js": "c3e546a6b1d55afc991b237a89206b4f9ec1f78058610e6e8afa1ca2c145aece",
+    ".paper-map/history-core.js": "7d87e29f6a981fa4447fdd2f7901c687700002e828bc83a2805605aec17feaa6",
+    ".paper-map/map-server.cjs": "adeaa0791b933ea81ab3aa1b26d5e30134c1d5077c0a65fd0d2e3927cc5d665d",
+    "index.html": "a9ea1e8ca4fcb7d29c9026212ed612f56f553c6a8afa8e4048f96533cf323f76",
+    "map-storage.json": "349a6a3c023ac6bbb54fe7c37bca9bb1091e3999ab6939d493acecf9f9abe362",
+    "open-map.cmd": "cbbb4b10f11c6bd5aa277bed76422e70b867635d670f976932d3ea2a6f692033",
+    "open-map.sh": "2f517b8311f0b17771dfcaf3f32dfc6ad143fb1b06efe754ced49f2d8b63c9c8",
+    "paper-state.json": "5e0d42bb689700acac1b8a31fb298de61d447a5e07154c102a5b1ea94888db12"
   },
   "layoutVersion": "shape-curves-2",
-  "localeSha256": "5bce57f7cdbcaebfdc1f035ee3c554614f209e2cdd6e820cf0ec1f7abdf9fe6c",
+  "localeSha256": "ecb3f34d1e85243520cc7713d553f5227652c3d9a02451d5b172c068ff14fd2b",
   "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
   "registryVersion": "2.0.0",
   "revision": 1,
   "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
-  "snapshotSha256": "b27d1dc102debd7bb817438d28bd926cc400d582616d0fa60ebb17dcc9313006",
-  "templateSha256": "80ada7499ae6a35f84d58a66ae4bf055f788902e9e18ae9e72f9f1cef981307a",
-  "templateVersion": "paper-map-ui-1.5.1"
+  "snapshotSha256": "aebe3b38dc2a680b0c5f90edc9c75462fa2126abf2b1b2a649807e23c03e6018",
+  "storageServiceSha256": "adeaa0791b933ea81ab3aa1b26d5e30134c1d5077c0a65fd0d2e3927cc5d665d",
+  "templateSha256": "bc2d875ac6cb4aba4cbd0eebb7633131ecabfa2c3652befc1e0c6ed3e5006315",
+  "templateVersion": "paper-map-ui-1.6.0"
 }

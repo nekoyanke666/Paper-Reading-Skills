@@ -1,36 +1,52 @@
 /* File persistence and saved-version navigation for the fixed map viewer. */
 const History=PaperMapHistory;
-let historyBook=null,historyFile=null,diskChecksum=null,historyBusy=false,historyImported=false,historyExportStatus='initial',cacheTimer=null;
-let savedSourceFingerprint='',historyHandleEpoch=0;
-let dirtyMemo=null;
+let historyBook=null,historyBusy=false,historyImported=false,historyExportStatus='initial',cacheTimer=null,managedStore=null,managedNewRecord=false;
+let savedSourceFingerprint='';
+let dirtyMemo=null,recoveryPending=false;
 function sourceFingerprint(){return BOOT.artifact?.snapshotSha256||History.hash(History.pack(BOOT));}
-function workspaceKey(){return 'paper-map-workspace-v1:'+BOOT.paper.id;}
+function workspaceKey(){return managedStore?'paper-map-workspace-v2:'+managedStore.rootId+':'+BOOT.paper.id:'paper-map-workspace-v1:'+BOOT.paper.id;}
 function currentModel(){return History.pack(state,customPositions,{edgeMode,detailMode:typeof detailMode==='undefined'?'high':detailMode,activeTree});}
 function contentSignature(model){const m=History.copy(model);delete m.preferences;return History.stable(m);}
 function workspaceDirty(){if(!historyBook)return false;if(nodeDrag?.started)return true;const key=JSON.stringify([localDraftRevision,customPositions,state.paper.id,state.revision]);if(dirtyMemo?.book===historyBook.checksum&&dirtyMemo.key===key)return dirtyMemo.value;const value=contentSignature(currentModel())!==contentSignature(History.materialize(historyBook));dirtyMemo={book:historyBook.checksum,key,value};return value;}
 function cacheWorkspace(){
- if(!historyBook)return;
- try{localStorage.setItem(workspaceKey(),JSON.stringify({format:1,sourceFingerprint:savedSourceFingerprint,history:historyBook,working:currentModel(),diskChecksum,exportStatus:historyExportStatus,imported:historyImported}));}
+ if(!historyBook||recoveryPending)return;
+ try{localStorage.setItem(workspaceKey(),JSON.stringify({format:2,sourceFingerprint:savedSourceFingerprint,history:historyBook,working:currentModel(),exportStatus:historyExportStatus,imported:historyImported,newRecord:managedNewRecord}));}
  catch(_){/* File saves remain authoritative when browser storage is unavailable. */}
 }
 function scheduleWorkspaceCache(){clearTimeout(cacheTimer);cacheTimer=setTimeout(cacheWorkspace,160);}
-function handleDatabase(action,value){return new Promise((resolve,reject)=>{
- if(typeof indexedDB==='undefined'){resolve(null);return;}const request=indexedDB.open('paper-map-files',1);
- request.onupgradeneeded=()=>request.result.createObjectStore('handles');request.onerror=()=>reject(request.error);
- request.onsuccess=()=>{const db=request.result,tx=db.transaction('handles',action==='get'?'readonly':'readwrite'),store=tx.objectStore('handles');const op=action==='get'?store.get(workspaceKey()):store.put(value,workspaceKey());op.onsuccess=()=>resolve(op.result);op.onerror=()=>reject(op.error);tx.oncomplete=()=>db.close();};
- });}
 function useModel(model){
  const next=History.unpack(model);validate(next);state=next;customPositions={};savedPositions={};edgeMode=savedEdgeMode=model.preferences.edgeMode;
  if(typeof detailMode!=='undefined')detailMode=model.preferences.detailMode;
  activeTree=model.preferences.activeTree;detailCacheKey='';canonicalRevision=next.revision;localDraftRevision=0;selected=null;query='';$('search').value='';manualZoom=false;routeCacheKey='';newIds.clear();changedIds.clear();$('app').classList.remove('open');
 }
+function sameTimeline(a,b){return History.hash({baseHash:a.baseHash,commits:a.commits})===History.hash({baseHash:b.baseHash,commits:b.commits});}
+function compatibleCache(c){
+ if(c.sourceFingerprint===savedSourceFingerprint)return true;
+ const strip=m=>{m=History.copy(m);delete m.preferences;if(m.graph?.locale)delete m.graph.locale.ui;return m;};
+ return History.stable(strip(c.history.base))===History.stable(strip(History.pack(BOOT)));
+}
+function readManagedMount(){
+ try{const raw=document.getElementById('managed-store')?.textContent;if(!raw)return null;const m=JSON.parse(raw);if(m.protocol!=='paper-map-local-v1'||!/^https?:$/.test(location.protocol)||!m.rootId||!m.token||!m.etag)throw Error('Invalid managed storage');if(m.archive)History.verify(m.archive);return m;}catch(_){notice(ui('historyManagedUnavailable'));return null;}
+}
+async function preserveRecovery(c){
+ let localKept=false;recoveryPending=true;
+ try{
+  const text=History.stringify(History.commit(c.history,c.working,undefined,'recovery'));
+  try{localStorage.setItem(workspaceKey()+':recovery:'+History.sha256(text),JSON.stringify(c));localKept=true;}catch(_){}
+  if(managedStore){const response=await fetch('/api/recover',{method:'POST',headers:{'Content-Type':'application/json','X-Paper-Map-Token':managedStore.token},body:text});const result=await response.json();if(!response.ok)throw Error(result.error);notice(ui('historyRecoveryKept',{path:result.path}));recoveryPending=false;}
+  else if(localKept)recoveryPending=false;
+ }catch(_){recoveryPending=!localKept;notice(ui('historyRecoveryFailed'));}
+}
 function initializeWorkspace(){
- savedSourceFingerprint=sourceFingerprint();historyBook=History.create(currentModel());let restored=false;
- try{const cached=JSON.parse(localStorage.getItem(workspaceKey())||'null');
-  if(cached?.format===1&&cached.sourceFingerprint===savedSourceFingerprint){History.verify(cached.history);History.validateModel(cached.working);historyBook=cached.history;diskChecksum=cached.diskChecksum||null;historyExportStatus=cached.exportStatus||'initial';historyImported=!!cached.imported;useModel(cached.working);restored=true;}
- }catch(_){notice(ui('historyCacheRejected'));}
- if(!restored)try{const legacy=JSON.parse(localStorage.getItem(storageKey)||'null');if(legacy?.baseRevision===BOOT.revision&&legacy.draftRevision>0&&legacy.draftState?.paper?.id===BOOT.paper.id){const model=History.pack(legacySnapshot(legacy.draftState),customPositions,{edgeMode,detailMode,activeTree});useModel(model);localDraftRevision=legacy.draftRevision;notice(ui('historyLegacyRecovered'));}}catch(_){/* Leave an incompatible legacy copy untouched. */}
- const epoch=historyHandleEpoch;handleDatabase('get').then(record=>{if(record?.sourceFingerprint===savedSourceFingerprint&&epoch===historyHandleEpoch&&!historyFile)historyFile=record.handle;}).catch(()=>{});
+ savedSourceFingerprint=sourceFingerprint();historyBook=History.create(currentModel());managedStore=readManagedMount();let cached=null,restored=false;
+ try{const c=JSON.parse(localStorage.getItem(workspaceKey())||'null');if([1,2].includes(c?.format)){History.verify(c.history);History.validateModel(c.working);cached=c;}}catch(_){notice(ui('historyCacheRejected'));}
+ if(managedStore?.archive){
+  historyBook=managedStore.archive;useModel(History.materialize(historyBook));historyExportStatus='managed';historyImported=true;sourceUnavailable=true;restored=true;
+  if(cached&&compatibleCache(cached)&&(cached.newRecord||sameTimeline(cached.history,historyBook))){historyBook=cached.history;useModel(cached.working);managedNewRecord=!!cached.newRecord;}
+  else if(cached&&(!sameTimeline(cached.history,historyBook)||History.stable(cached.working)!==History.stable(History.materialize(cached.history))))preserveRecovery(cached);
+ }else if(cached&&compatibleCache(cached)){historyBook=cached.history;useModel(cached.working);historyImported=!!cached.imported;managedNewRecord=!!cached.newRecord;historyExportStatus='initial';restored=true;}
+ else if(cached)preserveRecovery(cached);
+ if(!restored&&!managedStore)try{const legacy=JSON.parse(localStorage.getItem(storageKey)||'null');if(legacy?.baseRevision===BOOT.revision&&legacy.draftRevision>0&&legacy.draftState?.paper?.id===BOOT.paper.id){const model=History.pack(legacySnapshot(legacy.draftState),customPositions,{edgeMode,detailMode,activeTree});useModel(model);localDraftRevision=legacy.draftRevision;notice(ui('historyLegacyRecovered'));}}catch(_){}
 }
 function historyVersion(delta){
  if(historyBusy)return false;if(workspaceDirty()){notice(ui('historySaveFirst'));return false;}
@@ -51,31 +67,36 @@ function importHistoryText(text,handle=null){
  if(typeof text!=='string'||text.length>History.MAX_BYTES)throw Error('History file exceeds supported size');
  const raw=JSON.parse(text),book=raw.format===History.FORMAT?History.parse(text):History.create(History.pack(legacySnapshot(raw)));
  const model=History.materialize(book);validate(History.unpack(model));
- const writableHandle=raw.format===History.FORMAT?handle:null;
- useModel(model);historyBook=book;historyFile=writableHandle;historyHandleEpoch++;diskChecksum=raw.format===History.FORMAT?History.sha256(text):null;historyImported=true;historyExportStatus=writableHandle?'file':'imported';sourceUnavailable=true;
- if(writableHandle)handleDatabase('put',{sourceFingerprint:savedSourceFingerprint,handle:writableHandle}).catch(()=>{});
+ useModel(model);historyBook=book;historyImported=true;managedNewRecord=true;historyExportStatus='imported';sourceUnavailable=true;
  layoutOpen=true;render();requestAnimationFrame(centerView);cacheWorkspace();notice(ui('historyImported'));return true;
 }
 function selectHistoryFile(){if(historyBusy)return;if(workspaceDirty()){notice(ui('historySaveFirst'));return;}$('history-file').click();}
 function downloadHistory(text){const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=archiveFilename();document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
 function archiveFilename(){return state.paper.id.replace(/[^\w.-]+/g,'-')+'.paper-map-history.json';}
-async function saveHistory(copyFile=false,downloadOnly=false){
+async function backupHistory(downloadOnly=false){
  if(historyBusy)return false;
- let handle=copyFile?null:historyFile;
- // Open a picker directly from the click, before hashing or other asynchronous work.
- let picker=null;try{if(!downloadOnly&&!handle&&typeof window.showSaveFilePicker==='function')picker=window.showSaveFilePicker({suggestedName:archiveFilename(),types:[{description:'Paper map history',accept:{'application/json':['.json']}}]});}catch(error){notice(ui('historySaveFailed')+' '+error.message);return false;}
+ let picker;try{if(!downloadOnly&&typeof window.showSaveFilePicker==='function')picker=window.showSaveFilePicker({suggestedName:archiveFilename(),types:[{description:'Paper map backup',accept:{'application/json':['.json']}}]});}catch(error){notice(ui('historyBackupFailed')+' '+error.message);return false;}
  historyBusy=true;renderLayout();
  try{
-  if(picker)handle=await picker;
+  const handle=picker?await picker:null,text=History.stringify(History.commit(historyBook,currentModel(),undefined,'backup'));
+  if(handle){const stream=await handle.createWritable();try{await stream.write(text);await stream.close();}catch(error){try{await stream.abort();}catch(_){}throw error;}notice(ui('historyBackupSaved'));}
+  else{downloadHistory(text);notice(ui('historyDownloadRequested'));}
+  return true;
+ }catch(error){if(error.name!=='AbortError')notice(ui('historyBackupFailed')+' '+error.message);return false;}
+ finally{historyBusy=false;renderLayout();}
+}
+async function saveHistory(copyFile=false,downloadOnly=false){
+ if(copyFile||downloadOnly)return backupHistory(downloadOnly);
+ if(historyBusy)return false;if(!managedStore){notice(ui('historyManagedUnavailable'));return false;}
+ historyBusy=true;renderLayout();
+ try{
   const candidate=History.commit(historyBook,currentModel()),text=History.stringify(candidate);
-  if(handle){
-   const file=await handle.getFile();if(file.size&&History.sha256(await file.text())!==diskChecksum)throw Error(ui('historyFileChanged'));
-   const stream=await handle.createWritable();try{await stream.write(text);await stream.close();}catch(error){try{await stream.abort();}catch(_){}throw error;}
-   historyFile=handle;historyHandleEpoch++;diskChecksum=History.sha256(text);historyExportStatus='file';
-   handleDatabase('put',{sourceFingerprint:savedSourceFingerprint,handle}).catch(()=>{});
-  }else{downloadHistory(text);historyExportStatus='download';}
-  historyBook=candidate;localDraftRevision=0;sourceUnavailable=true;cacheWorkspace();layoutOpen=true;notice(ui(handle?'historyFileSaved':'historyDownloadRequested'));return true;
- }catch(error){if(error.name!=='AbortError')notice(ui('historySaveFailed')+' '+error.message);return false;}
+  const response=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json','X-Paper-Map-Token':managedStore.token,'X-Paper-Map-Version':managedStore.etag,'X-Paper-Map-New-Record':managedNewRecord?'1':'0'},body:text});
+  const result=await response.json();if(!response.ok)throw Error(response.status===409?ui('historyManagedConflict'):result.error||ui('historySaveFailed'));
+  if(result.protocol!=='paper-map-local-v1'||!result.etag||!result.path?.startsWith('history/'))throw Error('Invalid storage acknowledgement');
+  managedStore.etag=result.etag;managedStore.path=result.path;managedStore.archive=candidate;managedNewRecord=false;
+  historyBook=candidate;localDraftRevision=0;historyExportStatus='managed';sourceUnavailable=true;cacheWorkspace();layoutOpen=true;notice(ui('historyManagedSaved',{path:result.path}));return true;
+ }catch(error){notice(ui('historySaveFailed')+' '+error.message);return false;}
  finally{historyBusy=false;renderLayout();}
 }
 function renderHistoryControls(){
@@ -84,8 +105,8 @@ function renderHistoryControls(){
  $('previous-save').textContent=ui('historyPrevious');$('next-save').textContent=ui('historyNext');
  $('previous-save').disabled=historyBusy||workspaceDirty()||historyBook.cursor===0;$('next-save').disabled=historyBusy||workspaceDirty()||historyBook.cursor===historyBook.commits.length;
  $('import-history').textContent=ui('historyImport');$('import-history').disabled=historyBusy;
- $('save-copy').textContent=ui('historyCopy');$('download-history').textContent=ui('historyDownload');
- $('save-copy').disabled=historyBusy;$('download-history').disabled=historyBusy;
+ $('save-copy').textContent=ui('historyBackup');
+ $('save-copy').disabled=historyBusy;
  const version=ui('historyVersion',{current:historyBook.cursor+1,total:historyBook.commits.length+1});
- $('layout-state').textContent=version+' · '+ui(workspaceDirty()?'historyUnsaved':historyExportStatus==='file'?'historyDiskState':historyExportStatus==='download'?'historyDownloadState':'historyReady');
+ $('layout-state').textContent=version+' · '+ui(workspaceDirty()?'historyUnsaved':historyExportStatus==='managed'?'historyManagedState':managedStore?'historyReady':'historyManagedOffline');
 }

@@ -1,0 +1,9 @@
+{
+  "format": "paper-map-storage",
+  "historyDirectory": "history",
+  "launcher": "open-map.cmd",
+  "pointer": "history/current.json",
+  "protocol": "paper-map-local-v1",
+  "service": ".paper-map/map-server.cjs",
+  "version": 1
+}

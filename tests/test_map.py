@@ -103,6 +103,17 @@ class MapTests(unittest.TestCase):
             for name in ('index.html','paper-state.json','artifact-manifest.json','quality-report.json'):
                 self.assertEqual((d/'a'/name).read_bytes(),(d/'b'/name).read_bytes())
             for name,sha in a['files'].items():self.assertEqual(hashlib.sha256((d/'a'/name).read_bytes()).hexdigest(),sha)
+    def test_map_allocates_relative_storage_and_preserves_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            out=Path(directory)/'a different workspace'/'paper-map';R.render(STATE,out)
+            config=json.loads((out/'map-storage.json').read_text(encoding='utf-8'))
+            self.assertEqual(config['historyDirectory'],'history')
+            self.assertNotIn(str(out),(out/'map-storage.json').read_text(encoding='utf-8'))
+            self.assertTrue((out/'history').is_dir())
+            for name in ('open-map.cmd','.paper-map/map-server.cjs','.paper-map/history-core.js','.paper-map/detail-core.js'):
+                self.assertTrue((out/name).is_file())
+            saved=out/'history'/'retained.paper-map-history.json';saved.write_text('existing user record',encoding='utf-8')
+            R.render(STATE,out);self.assertEqual(saved.read_text(encoding='utf-8'),'existing user record')
     def test_17_tampered_template_rejected(self):
         import shutil
         with tempfile.TemporaryDirectory(dir=None) as d:

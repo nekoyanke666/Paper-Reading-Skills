@@ -211,6 +211,16 @@
     "directionOutgoing": "Outgoing from this node",
     "directionSelf": "Self relation",
     "directionUndirected": "Undirected connection",
-    "connectionAria": "{endpoints} · {relation} · {direction}"
+    "connectionAria": "{endpoints} · {relation} · {direction}",
+    "historyBackup": "Back up elsewhere",
+    "historyBackupFailed": "The backup was not written.",
+    "historyBackupSaved": "Backup written. The managed record was not changed.",
+    "historyManagedUnavailable": "Open this map through open-map.cmd or the local service link to save into its history folder. No location picker is used for Save.",
+    "historyManagedOffline": "Local saving unavailable",
+    "historyManagedState": "Saved in this map folder",
+    "historyManagedSaved": "Saved to {path}.",
+    "historyManagedConflict": "Another page saved a newer record. Your edits remain here; back them up before reloading the latest record.",
+    "historyRecoveryKept": "A previous draft was preserved in {path}.",
+    "historyRecoveryFailed": "The previous recovery copy remains in browser storage; it could not be copied to the history folder."
   }
 }

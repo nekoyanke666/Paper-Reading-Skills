@@ -24,9 +24,9 @@ Read [detail views](detail-views.md) when creating or revising the three trees. 
 
 ## File saving and version navigation
 
-Read [permanent history](history-format.md) for the frozen archive, compatibility rules, and file I/O. The compact menu places **Prev, Next** in that order on the first action row and **Save** on the following row. Curves/Straight and file import/copy/download functions stay in this popover, with a concise version and persistence status.
+Read [permanent history](history-format.md) for the frozen archive, compatibility rules, and file I/O. The compact menu places **Prev, Next** in that order on the first action row and **Save** on the following row. Curves/Straight, Import history and Back up elsewhere stay in this popover, with a concise version and persistence status.
 
-Save captures all nodes, links, trees, detail views, positions and relevant definitions/sources, not just dragged coordinates or visible nodes. Prefer the selected writable file and report success only after the stream closes. A download fallback is labeled accurately. Cache recovery never substitutes for a portable file. Cancellation, conflicts, storage failure or invalid imports must not erase working content or prior saved versions.
+Save captures all nodes, links, trees, detail views, positions and relevant definitions/sources, not just dragged coordinates or visible nodes. Use [local storage](local-storage.md): ordinary Save writes into this entry's reserved history folder with no picker/download. Only Back up elsewhere chooses an external destination and reports native close/download status accurately. Cache recovery never substitutes for the actual managed file. Cancellation, conflicts, storage failure or invalid imports must not erase working content or prior saved versions.
 
 Prev/Next traverse Save checkpoints, not individual pointer events. Require current content edits to be saved first. Retain all former versions when editing and saving from an older checkpoint. Remove the old restore-default-layout behavior. Browser-created notes keep their provenance until reviewed against sources.
 

@@ -50,6 +50,10 @@ Reports impact, refs, quality, and changed state without writing the canonical s
 
 After checks, paper-memory commits a revision and renders the matching site. No change means no revision/rewrite. This is an internal process, not a per-node approval flow.
 
+## Start the local entry
+
+After render, reserve/reuse this paper's actual output folder and follow [local storage](local-storage.md). Run `node <map folder>/.paper-map/map-server.cjs --root <map folder> --start` and verify its returned local URL. Save the workspace-relative root/history/launcher paths and replaceable service URL in progress.map. Paths and ports must be resolved per paper and active workspace, never copied from an example user or previous chat. A static-file link alone does not enable neighboring-file saves.
+
 ## Portable diagram archives
 
 `node scripts/history_ctl.cjs check saved.paper-map-history.json`

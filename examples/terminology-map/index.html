@@ -5,17 +5,18 @@
 .map-shell{position:relative;flex:1;min-height:0}.map-shell>.map{height:100%}.node{width:170px;height:116px;border:0;border-radius:0;background:transparent;box-shadow:none;touch-action:none}.node.root,.node.selected{background:transparent;border:0;box-shadow:none}.node-glyph{position:absolute;inset:0;width:170px;height:116px;overflow:visible;pointer-events:none;filter:drop-shadow(0 3px 7px #21433208);transition:filter .17s}.node-glyph>*{fill:#fff;stroke:#c2d5c7;stroke-width:1.25;transition:fill .16s,stroke .16s,stroke-width .16s}.node.root .node-glyph>*{fill:#edf6ed;stroke:#6eaa87}.node:hover .node-glyph>*{fill:#f4faf2;stroke:#68a284;stroke-width:1.8}.node.selected .node-glyph>*{fill:#eef8ed;stroke:#23765c;stroke-width:2.3}.node.neighbor .node-glyph>*{stroke:#86b59a}.node.selected.neighbor .node-glyph>*{stroke:#23765c}.node.node-dragging{z-index:15}.node.node-dragging .node-glyph{filter:drop-shadow(0 8px 12px #21433228)}.node-main{position:absolute;inset:0;width:100%;height:100%;padding:0;display:grid;place-items:center;background:transparent;cursor:grab;touch-action:none;user-select:none;font-size:15px}.node-main:hover{background:transparent}.node-main>span{display:block;line-height:1.4;overflow-wrap:anywhere;word-break:normal}.node-dragging .node-main{cursor:grabbing}.shared{top:9px;right:-8px}.role-entity .shared{top:0;right:22px}.edge{stroke-linecap:round;transition:stroke-width .14s,opacity .14s}.edge-group.focused .edge{stroke-width:2.8;filter:drop-shadow(0 0 2px #23765c22)}.edge-label:hover rect{stroke-width:1.8;fill:#e9f5e7}.node.located .node-glyph{animation:locatePulse 1.2s ease-out}.node.revised .node-glyph{animation:locatePulse 1.4s ease-out}.layout-tools{position:absolute;top:12px;right:13px;z-index:32}.layout-toggle{padding:8px 12px;border:1px solid var(--border);border-radius:7px;background:#fffffff2;font-size:12px;box-shadow:0 2px 8px #21433206}.layout-toggle.unsaved:after{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#c88b36;margin-left:7px}.layout-panel{position:absolute;right:0;top:39px;width:246px;padding:13px;background:#fff;border:1px solid var(--border);border-radius:9px;box-shadow:0 6px 22px #21433214}.layout-state{display:block;font-size:12px;color:#66816d;margin-bottom:10px}.layout-modes,.layout-actions{display:flex;gap:7px}.layout-modes{margin-bottom:9px}.layout-panel button{flex:1;border:1px solid var(--border);border-radius:6px;background:#fff;padding:8px 6px;font-size:12px}.layout-panel button[aria-pressed=true]{background:#edf6ed;border-color:#79a98a;color:#23765c}.layout-panel button:disabled{opacity:.42;cursor:default}.layout-actions #save-layout:not(:disabled){background:#23765c;color:#fff;border-color:#23765c}.editor select{width:100%;padding:9px;border:1px solid var(--border);border-radius:6px;background:#fff;font-size:13px}@keyframes locatePulse{0%{filter:drop-shadow(0 0 0 #23765c)}35%{filter:drop-shadow(0 0 9px #23765c66)}100%{filter:drop-shadow(0 3px 7px #21433208)}}@media(max-width:650px){.layout-tools{top:9px;right:9px}.layout-panel{width:225px}}@media(prefers-reduced-motion:reduce){.node-glyph,.node-glyph>*,.edge{transition:none!important;animation:none!important}}
 .node.node-collision .node-glyph>*{stroke:#bf7256;fill:#fff3ec;stroke-width:2.4}.topbar h1{overflow-wrap:anywhere}@media(max-width:1200px){.app.open .topbar{flex-wrap:wrap}.app.open .topbar h1{flex-basis:100%}}@media(max-width:720px){.tree-select{flex:1 1 100%;width:100%;max-width:100%}.search-wrap{flex:1 1 140px;min-width:140px}}.history-files{margin-top:8px}.layout-actions{flex-wrap:wrap}#save-layout{flex-basis:100%}.layout-actions button{min-width:80px}#layout-state{line-height:1.6}.detail-controls{display:flex;border:1px solid var(--border);border-radius:7px;overflow:hidden;background:#fff;flex-shrink:0}.detail-controls button{border:0;border-right:1px solid var(--border);background:#fff;padding:10px 11px;font-size:12px}.detail-controls button:last-child{border-right:0}.detail-controls button[aria-pressed=true]{background:#edf6ed;color:#23765c}.detail-controls button:focus-visible{outline-offset:-3px}.app{height:100vh;height:100dvh;overflow:hidden}.main{min-height:0}.map-shell{min-height:0;flex:1 1 0}.map-shell>.map{position:absolute;inset:0;height:auto;min-height:0;overflow:hidden;cursor:grab;touch-action:none}.extent{position:absolute;inset:0;width:100%!important;height:100%!important;margin:0;min-height:0;pointer-events:none}.board{position:absolute;left:0;top:0;pointer-events:none}.node,.edge-label{pointer-events:auto}.camera-tools{position:absolute;bottom:12px;left:13px;z-index:18;display:flex;align-items:center;border:1px solid var(--border);border-radius:8px;background:#fffffff2;box-shadow:0 2px 8px #21433209;overflow:hidden}.camera-tools button{border:0;background:transparent;min-width:35px;height:35px;padding:0 10px;font-size:17px}.camera-tools button:hover{background:var(--soft)}.camera-tools button:disabled{opacity:.35;cursor:default}.camera-tools output{min-width:48px;text-align:center;font-size:11px;font-variant-numeric:tabular-nums}.camera-tools #center-map{font-size:12px;border-left:1px solid var(--border);padding:0 12px}.camera-tools button:focus-visible{outline-offset:-3px}@media(max-width:650px){.camera-tools{bottom:9px;left:9px}}
 :root{--focus-in:#356ecc;--focus-out:#147c62;--focus-self:#8657bf;--focus-neutral:#64748b}.direction-incoming{--direction-color:var(--focus-in)}.direction-outgoing{--direction-color:var(--focus-out)}.direction-self{--direction-color:var(--focus-self)}.direction-undirected{--direction-color:var(--focus-neutral)}.edge-halo{fill:none;stroke:#fcfdfa;stroke-width:7;stroke-linecap:round;vector-effect:non-scaling-stroke;pointer-events:none}.edge-group.focused .edge{stroke-width:3;vector-effect:non-scaling-stroke;filter:none}.edge-group[data-direction]:not([data-direction=""]) .edge{stroke:var(--direction-color)}.edge-group[data-direction]:not([data-direction=""]) .edge-label rect{stroke:var(--direction-color);stroke-width:1.2;fill:#fff}.edge-group[data-direction]:not([data-direction=""]) .edge-label text{fill:var(--direction-color);font-weight:600}.map.node-focus .edge-group.dim{opacity:.10}.map.node-focus .node.dim{opacity:.28}.edge-group.focused:hover .edge,.edge-group.focused:focus-within .edge{stroke-width:4.2}.node.neighbor:not(.selected) .node-glyph>*{stroke:var(--direction-color,#86b59a);stroke-width:2}.node.neighbor.direction-both:not(.selected) .node-glyph>*{stroke:url(#focus-both);stroke-width:2.4}.connection-groups{margin-top:18px}.connection-group{border-left:3px solid var(--direction-color);padding:0 0 0 11px;margin-top:16px}.connection-group h4{font-size:12px;line-height:1.6;margin:0 0 4px;color:var(--direction-color);font-weight:600}.connection-group .related{padding:8px 0;color:var(--ink)}.connection-group .related small{color:var(--direction-color)}.connection-group .related span{display:block;overflow-wrap:anywhere}.connection-group .related:hover{background:#f8faf6}
-@media(max-width:720px){.app.open .details{height:44vh;height:44dvh;max-height:44vh;max-height:44dvh}.app.open .main{padding-bottom:calc(44vh + 12px);padding-bottom:calc(44dvh + 12px)}}.board{--map-zoom:1}.board .node{width:calc(170px * var(--map-zoom));height:calc(116px * var(--map-zoom))}.board .node-glyph{width:100%;height:100%}.board .node-main{font-size:calc(15px * var(--map-zoom))}.board .shared{top:calc(21.5px * var(--map-zoom) - 12.5px);right:calc(7px * var(--map-zoom) - 15px)}.board .role-entity .shared{top:calc(12.5px * var(--map-zoom) - 12.5px);right:calc(37px * var(--map-zoom) - 15px)}</style></head><body><div class="app" id="app"><main class="main"><div class="topbar"><h1 id="paper-title">Paper title</h1><label class="sr-only" for="tree">Select tree</label><select class="tree-select" id="tree"></select><div class="search-wrap"><label class="sr-only" for="search">Search nodes</label><input class="search" type="search" id="search" placeholder="Search nodes" autocomplete="off"><div class="search-results hidden" id="search-results" aria-label="Node search results"></div></div><div class="detail-controls" id="detail-controls" role="group" aria-label="Detail level"><button id="detail-low" aria-pressed="false">Low</button><button id="detail-medium" aria-pressed="false">Medium</button><button id="detail-high" aria-pressed="true">High</button></div></div><div class="map-shell"><section class="map" id="map" tabindex="0" aria-label="Concept graph with arbitrary node extensions"><div class="extent" id="extent"><div class="board" id="board"><svg class="edges" id="edges" aria-label="Node relationships"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9ab19f"></path></marker><marker id="support-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#23765c"></path></marker><marker id="causal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5c7d92"></path></marker><marker id="inhibit" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M8 0 L8 10" stroke="#5c7d92" stroke-width="2"></path></marker><linearGradient id="focus-both" x1="0%" x2="100%"><stop offset="50%" stop-color="#356ecc"/><stop offset="50%" stop-color="#147c62"/></linearGradient><marker id="focus-incoming-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#356ecc" stroke="#fcfdfa" stroke-width=".5"/></marker><marker id="focus-incoming-inhibit" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M10 1 L10 11" fill="none" stroke="#356ecc" stroke-width="2.2"/></marker><marker id="focus-outgoing-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#147c62" stroke="#fcfdfa" stroke-width=".5"/></marker><marker id="focus-outgoing-inhibit" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M10 1 L10 11" fill="none" stroke="#147c62" stroke-width="2.2"/></marker><marker id="focus-self-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#8657bf" stroke="#fcfdfa" stroke-width=".5"/></marker><marker id="focus-self-inhibit" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M10 1 L10 11" fill="none" stroke="#8657bf" stroke-width="2.2"/></marker></defs><g id="edge-layer"></g></svg><div id="nodes"></div></div></div></section><div class="camera-tools" role="group" aria-label="Canvas navigation"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value" aria-live="off">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="center-map">Center</button></div><div class="layout-tools"><button class="layout-toggle" id="layout-toggle" aria-expanded="false" aria-controls="layout-panel">Layout</button><div class="layout-panel hidden" id="layout-panel"><output class="layout-state" id="layout-state" aria-live="polite"></output><div class="layout-modes"><button id="curve-mode" aria-pressed="true">Curves</button><button id="straight-mode" aria-pressed="false">Straight</button></div><div class="layout-actions"><button id="previous-save">Prev</button><button id="next-save">Next</button><button id="save-layout">Save</button></div><div class="layout-actions history-files"><button id="import-history">Import history</button><button id="save-copy">Save copy</button></div><div class="layout-actions history-files"><button id="download-history">Download backup</button></div></div></div><input type="file" id="history-file" accept="application/json,.json" hidden></div></main><aside class="details" id="details" aria-label="Node and relationship details"></aside></div><div class="notice hidden" id="notice" role="status"></div>
+@media(max-width:720px){.app.open .details{height:44vh;height:44dvh;max-height:44vh;max-height:44dvh}.app.open .main{padding-bottom:calc(44vh + 12px);padding-bottom:calc(44dvh + 12px)}}.board{--map-zoom:1}.board .node{width:calc(170px * var(--map-zoom));height:calc(116px * var(--map-zoom))}.board .node-glyph{width:100%;height:100%}.board .node-main{font-size:calc(15px * var(--map-zoom))}.board .shared{top:calc(21.5px * var(--map-zoom) - 12.5px);right:calc(7px * var(--map-zoom) - 15px)}.board .role-entity .shared{top:calc(12.5px * var(--map-zoom) - 12.5px);right:calc(37px * var(--map-zoom) - 15px)}</style></head><body><div class="app" id="app"><main class="main"><div class="topbar"><h1 id="paper-title">Paper title</h1><label class="sr-only" for="tree">Select tree</label><select class="tree-select" id="tree"></select><div class="search-wrap"><label class="sr-only" for="search">Search nodes</label><input class="search" type="search" id="search" placeholder="Search nodes" autocomplete="off"><div class="search-results hidden" id="search-results" aria-label="Node search results"></div></div><div class="detail-controls" id="detail-controls" role="group" aria-label="Detail level"><button id="detail-low" aria-pressed="false">Low</button><button id="detail-medium" aria-pressed="false">Medium</button><button id="detail-high" aria-pressed="true">High</button></div></div><div class="map-shell"><section class="map" id="map" tabindex="0" aria-label="Concept graph with arbitrary node extensions"><div class="extent" id="extent"><div class="board" id="board"><svg class="edges" id="edges" aria-label="Node relationships"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9ab19f"></path></marker><marker id="support-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#23765c"></path></marker><marker id="causal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5c7d92"></path></marker><marker id="inhibit" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M8 0 L8 10" stroke="#5c7d92" stroke-width="2"></path></marker><linearGradient id="focus-both" x1="0%" x2="100%"><stop offset="50%" stop-color="#356ecc"/><stop offset="50%" stop-color="#147c62"/></linearGradient><marker id="focus-incoming-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#356ecc" stroke="#fcfdfa" stroke-width=".5"/></marker><marker id="focus-incoming-inhibit" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M10 1 L10 11" fill="none" stroke="#356ecc" stroke-width="2.2"/></marker><marker id="focus-outgoing-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#147c62" stroke="#fcfdfa" stroke-width=".5"/></marker><marker id="focus-outgoing-inhibit" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M10 1 L10 11" fill="none" stroke="#147c62" stroke-width="2.2"/></marker><marker id="focus-self-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#8657bf" stroke="#fcfdfa" stroke-width=".5"/></marker><marker id="focus-self-inhibit" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M10 1 L10 11" fill="none" stroke="#8657bf" stroke-width="2.2"/></marker></defs><g id="edge-layer"></g></svg><div id="nodes"></div></div></div></section><div class="camera-tools" role="group" aria-label="Canvas navigation"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value" aria-live="off">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="center-map">Center</button></div><div class="layout-tools"><button class="layout-toggle" id="layout-toggle" aria-expanded="false" aria-controls="layout-panel">Layout</button><div class="layout-panel hidden" id="layout-panel"><output class="layout-state" id="layout-state" aria-live="polite"></output><div class="layout-modes"><button id="curve-mode" aria-pressed="true">Curves</button><button id="straight-mode" aria-pressed="false">Straight</button></div><div class="layout-actions"><button id="previous-save">Prev</button><button id="next-save">Next</button><button id="save-layout">Save</button></div><div class="layout-actions history-files"><button id="import-history">Import history</button><button id="save-copy">Save copy</button></div></div></div><input type="file" id="history-file" accept="application/json,.json" hidden></div></main><aside class="details" id="details" aria-label="Node and relationship details"></aside></div><div class="notice hidden" id="notice" role="status"></div>
 <script id="bootstrap" type="application/json">{
   "artifact": {
     "layoutVersion": "shape-curves-2",
-    "localeSha256": "5bce57f7cdbcaebfdc1f035ee3c554614f209e2cdd6e820cf0ec1f7abdf9fe6c",
+    "localeSha256": "ecb3f34d1e85243520cc7713d553f5227652c3d9a02451d5b172c068ff14fd2b",
     "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
     "registryVersion": "2.0.0",
     "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
-    "snapshotSha256": "7749f11071dd81008c2916485a28b6a157ff46a76644463bcee0202f69273bae",
-    "templateSha256": "80ada7499ae6a35f84d58a66ae4bf055f788902e9e18ae9e72f9f1cef981307a",
-    "templateVersion": "paper-map-ui-1.5.1"
+    "snapshotSha256": "88850684808fb24a3ad71b4e51c4c7a85da0742f6dee3d9bfeb727450779943a",
+    "storageServiceSha256": "adeaa0791b933ea81ab3aa1b26d5e30134c1d5077c0a65fd0d2e3927cc5d665d",
+    "templateSha256": "bc2d875ac6cb4aba4cbd0eebb7633131ecabfa2c3652befc1e0c6ed3e5006315",
+    "templateVersion": "paper-map-ui-1.6.0"
   },
   "glossary": [
     {
@@ -526,6 +527,9 @@
         "endpointError": "Visible edges must connect nodes in this tree",
         "extend": "Extend concept",
         "extendedContext": "Extended context of {name}",
+        "historyBackup": "Back up elsewhere",
+        "historyBackupFailed": "The backup was not written.",
+        "historyBackupSaved": "Backup written. The managed record was not changed.",
         "historyCacheRejected": "The browser recovery copy was invalid; the source map remains available.",
         "historyCopy": "Save a copy",
         "historyDiskState": "Written to file",
@@ -538,10 +542,17 @@
         "historyImportFailed": "History was not imported.",
         "historyImported": "History restored. Its content remains separate from the source paper session.",
         "historyLegacyRecovered": "Older browser notes were recovered. Save them to a history file.",
+        "historyManagedConflict": "Another page saved a newer record. Your edits remain here; back them up before reloading the latest record.",
+        "historyManagedOffline": "Local saving unavailable",
+        "historyManagedSaved": "Saved to {path}.",
+        "historyManagedState": "Saved in this map folder",
+        "historyManagedUnavailable": "Open this map through open-map.cmd or the local service link to save into its history folder. No location picker is used for Save.",
         "historyMenu": "Save & history",
         "historyNext": "Next",
         "historyPrevious": "Prev",
         "historyReady": "Ready",
+        "historyRecoveryFailed": "The previous recovery copy remains in browser storage; it could not be copied to the history folder.",
+        "historyRecoveryKept": "A previous draft was preserved in {path}.",
         "historySave": "Save",
         "historySaveFailed": "The file was not saved.",
         "historySaveFirst": "Save current edits before switching saved versions or importing another history.",
@@ -4737,37 +4748,53 @@ return {LEVELS,selected,validate,view};
 
 /* File persistence and saved-version navigation for the fixed map viewer. */
 const History=PaperMapHistory;
-let historyBook=null,historyFile=null,diskChecksum=null,historyBusy=false,historyImported=false,historyExportStatus='initial',cacheTimer=null;
-let savedSourceFingerprint='',historyHandleEpoch=0;
-let dirtyMemo=null;
+let historyBook=null,historyBusy=false,historyImported=false,historyExportStatus='initial',cacheTimer=null,managedStore=null,managedNewRecord=false;
+let savedSourceFingerprint='';
+let dirtyMemo=null,recoveryPending=false;
 function sourceFingerprint(){return BOOT.artifact?.snapshotSha256||History.hash(History.pack(BOOT));}
-function workspaceKey(){return 'paper-map-workspace-v1:'+BOOT.paper.id;}
+function workspaceKey(){return managedStore?'paper-map-workspace-v2:'+managedStore.rootId+':'+BOOT.paper.id:'paper-map-workspace-v1:'+BOOT.paper.id;}
 function currentModel(){return History.pack(state,customPositions,{edgeMode,detailMode:typeof detailMode==='undefined'?'high':detailMode,activeTree});}
 function contentSignature(model){const m=History.copy(model);delete m.preferences;return History.stable(m);}
 function workspaceDirty(){if(!historyBook)return false;if(nodeDrag?.started)return true;const key=JSON.stringify([localDraftRevision,customPositions,state.paper.id,state.revision]);if(dirtyMemo?.book===historyBook.checksum&&dirtyMemo.key===key)return dirtyMemo.value;const value=contentSignature(currentModel())!==contentSignature(History.materialize(historyBook));dirtyMemo={book:historyBook.checksum,key,value};return value;}
 function cacheWorkspace(){
- if(!historyBook)return;
- try{localStorage.setItem(workspaceKey(),JSON.stringify({format:1,sourceFingerprint:savedSourceFingerprint,history:historyBook,working:currentModel(),diskChecksum,exportStatus:historyExportStatus,imported:historyImported}));}
+ if(!historyBook||recoveryPending)return;
+ try{localStorage.setItem(workspaceKey(),JSON.stringify({format:2,sourceFingerprint:savedSourceFingerprint,history:historyBook,working:currentModel(),exportStatus:historyExportStatus,imported:historyImported,newRecord:managedNewRecord}));}
  catch(_){/* File saves remain authoritative when browser storage is unavailable. */}
 }
 function scheduleWorkspaceCache(){clearTimeout(cacheTimer);cacheTimer=setTimeout(cacheWorkspace,160);}
-function handleDatabase(action,value){return new Promise((resolve,reject)=>{
- if(typeof indexedDB==='undefined'){resolve(null);return;}const request=indexedDB.open('paper-map-files',1);
- request.onupgradeneeded=()=>request.result.createObjectStore('handles');request.onerror=()=>reject(request.error);
- request.onsuccess=()=>{const db=request.result,tx=db.transaction('handles',action==='get'?'readonly':'readwrite'),store=tx.objectStore('handles');const op=action==='get'?store.get(workspaceKey()):store.put(value,workspaceKey());op.onsuccess=()=>resolve(op.result);op.onerror=()=>reject(op.error);tx.oncomplete=()=>db.close();};
- });}
 function useModel(model){
  const next=History.unpack(model);validate(next);state=next;customPositions={};savedPositions={};edgeMode=savedEdgeMode=model.preferences.edgeMode;
  if(typeof detailMode!=='undefined')detailMode=model.preferences.detailMode;
  activeTree=model.preferences.activeTree;detailCacheKey='';canonicalRevision=next.revision;localDraftRevision=0;selected=null;query='';$('search').value='';manualZoom=false;routeCacheKey='';newIds.clear();changedIds.clear();$('app').classList.remove('open');
 }
+function sameTimeline(a,b){return History.hash({baseHash:a.baseHash,commits:a.commits})===History.hash({baseHash:b.baseHash,commits:b.commits});}
+function compatibleCache(c){
+ if(c.sourceFingerprint===savedSourceFingerprint)return true;
+ const strip=m=>{m=History.copy(m);delete m.preferences;if(m.graph?.locale)delete m.graph.locale.ui;return m;};
+ return History.stable(strip(c.history.base))===History.stable(strip(History.pack(BOOT)));
+}
+function readManagedMount(){
+ try{const raw=document.getElementById('managed-store')?.textContent;if(!raw)return null;const m=JSON.parse(raw);if(m.protocol!=='paper-map-local-v1'||!/^https?:$/.test(location.protocol)||!m.rootId||!m.token||!m.etag)throw Error('Invalid managed storage');if(m.archive)History.verify(m.archive);return m;}catch(_){notice(ui('historyManagedUnavailable'));return null;}
+}
+async function preserveRecovery(c){
+ let localKept=false;recoveryPending=true;
+ try{
+  const text=History.stringify(History.commit(c.history,c.working,undefined,'recovery'));
+  try{localStorage.setItem(workspaceKey()+':recovery:'+History.sha256(text),JSON.stringify(c));localKept=true;}catch(_){}
+  if(managedStore){const response=await fetch('/api/recover',{method:'POST',headers:{'Content-Type':'application/json','X-Paper-Map-Token':managedStore.token},body:text});const result=await response.json();if(!response.ok)throw Error(result.error);notice(ui('historyRecoveryKept',{path:result.path}));recoveryPending=false;}
+  else if(localKept)recoveryPending=false;
+ }catch(_){recoveryPending=!localKept;notice(ui('historyRecoveryFailed'));}
+}
 function initializeWorkspace(){
- savedSourceFingerprint=sourceFingerprint();historyBook=History.create(currentModel());let restored=false;
- try{const cached=JSON.parse(localStorage.getItem(workspaceKey())||'null');
-  if(cached?.format===1&&cached.sourceFingerprint===savedSourceFingerprint){History.verify(cached.history);History.validateModel(cached.working);historyBook=cached.history;diskChecksum=cached.diskChecksum||null;historyExportStatus=cached.exportStatus||'initial';historyImported=!!cached.imported;useModel(cached.working);restored=true;}
- }catch(_){notice(ui('historyCacheRejected'));}
- if(!restored)try{const legacy=JSON.parse(localStorage.getItem(storageKey)||'null');if(legacy?.baseRevision===BOOT.revision&&legacy.draftRevision>0&&legacy.draftState?.paper?.id===BOOT.paper.id){const model=History.pack(legacySnapshot(legacy.draftState),customPositions,{edgeMode,detailMode,activeTree});useModel(model);localDraftRevision=legacy.draftRevision;notice(ui('historyLegacyRecovered'));}}catch(_){/* Leave an incompatible legacy copy untouched. */}
- const epoch=historyHandleEpoch;handleDatabase('get').then(record=>{if(record?.sourceFingerprint===savedSourceFingerprint&&epoch===historyHandleEpoch&&!historyFile)historyFile=record.handle;}).catch(()=>{});
+ savedSourceFingerprint=sourceFingerprint();historyBook=History.create(currentModel());managedStore=readManagedMount();let cached=null,restored=false;
+ try{const c=JSON.parse(localStorage.getItem(workspaceKey())||'null');if([1,2].includes(c?.format)){History.verify(c.history);History.validateModel(c.working);cached=c;}}catch(_){notice(ui('historyCacheRejected'));}
+ if(managedStore?.archive){
+  historyBook=managedStore.archive;useModel(History.materialize(historyBook));historyExportStatus='managed';historyImported=true;sourceUnavailable=true;restored=true;
+  if(cached&&compatibleCache(cached)&&(cached.newRecord||sameTimeline(cached.history,historyBook))){historyBook=cached.history;useModel(cached.working);managedNewRecord=!!cached.newRecord;}
+  else if(cached&&(!sameTimeline(cached.history,historyBook)||History.stable(cached.working)!==History.stable(History.materialize(cached.history))))preserveRecovery(cached);
+ }else if(cached&&compatibleCache(cached)){historyBook=cached.history;useModel(cached.working);historyImported=!!cached.imported;managedNewRecord=!!cached.newRecord;historyExportStatus='initial';restored=true;}
+ else if(cached)preserveRecovery(cached);
+ if(!restored&&!managedStore)try{const legacy=JSON.parse(localStorage.getItem(storageKey)||'null');if(legacy?.baseRevision===BOOT.revision&&legacy.draftRevision>0&&legacy.draftState?.paper?.id===BOOT.paper.id){const model=History.pack(legacySnapshot(legacy.draftState),customPositions,{edgeMode,detailMode,activeTree});useModel(model);localDraftRevision=legacy.draftRevision;notice(ui('historyLegacyRecovered'));}}catch(_){}
 }
 function historyVersion(delta){
  if(historyBusy)return false;if(workspaceDirty()){notice(ui('historySaveFirst'));return false;}
@@ -4788,31 +4815,36 @@ function importHistoryText(text,handle=null){
  if(typeof text!=='string'||text.length>History.MAX_BYTES)throw Error('History file exceeds supported size');
  const raw=JSON.parse(text),book=raw.format===History.FORMAT?History.parse(text):History.create(History.pack(legacySnapshot(raw)));
  const model=History.materialize(book);validate(History.unpack(model));
- const writableHandle=raw.format===History.FORMAT?handle:null;
- useModel(model);historyBook=book;historyFile=writableHandle;historyHandleEpoch++;diskChecksum=raw.format===History.FORMAT?History.sha256(text):null;historyImported=true;historyExportStatus=writableHandle?'file':'imported';sourceUnavailable=true;
- if(writableHandle)handleDatabase('put',{sourceFingerprint:savedSourceFingerprint,handle:writableHandle}).catch(()=>{});
+ useModel(model);historyBook=book;historyImported=true;managedNewRecord=true;historyExportStatus='imported';sourceUnavailable=true;
  layoutOpen=true;render();requestAnimationFrame(centerView);cacheWorkspace();notice(ui('historyImported'));return true;
 }
 function selectHistoryFile(){if(historyBusy)return;if(workspaceDirty()){notice(ui('historySaveFirst'));return;}$('history-file').click();}
 function downloadHistory(text){const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=archiveFilename();document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
 function archiveFilename(){return state.paper.id.replace(/[^\w.-]+/g,'-')+'.paper-map-history.json';}
-async function saveHistory(copyFile=false,downloadOnly=false){
+async function backupHistory(downloadOnly=false){
  if(historyBusy)return false;
- let handle=copyFile?null:historyFile;
- // Open a picker directly from the click, before hashing or other asynchronous work.
- let picker=null;try{if(!downloadOnly&&!handle&&typeof window.showSaveFilePicker==='function')picker=window.showSaveFilePicker({suggestedName:archiveFilename(),types:[{description:'Paper map history',accept:{'application/json':['.json']}}]});}catch(error){notice(ui('historySaveFailed')+' '+error.message);return false;}
+ let picker;try{if(!downloadOnly&&typeof window.showSaveFilePicker==='function')picker=window.showSaveFilePicker({suggestedName:archiveFilename(),types:[{description:'Paper map backup',accept:{'application/json':['.json']}}]});}catch(error){notice(ui('historyBackupFailed')+' '+error.message);return false;}
  historyBusy=true;renderLayout();
  try{
-  if(picker)handle=await picker;
+  const handle=picker?await picker:null,text=History.stringify(History.commit(historyBook,currentModel(),undefined,'backup'));
+  if(handle){const stream=await handle.createWritable();try{await stream.write(text);await stream.close();}catch(error){try{await stream.abort();}catch(_){}throw error;}notice(ui('historyBackupSaved'));}
+  else{downloadHistory(text);notice(ui('historyDownloadRequested'));}
+  return true;
+ }catch(error){if(error.name!=='AbortError')notice(ui('historyBackupFailed')+' '+error.message);return false;}
+ finally{historyBusy=false;renderLayout();}
+}
+async function saveHistory(copyFile=false,downloadOnly=false){
+ if(copyFile||downloadOnly)return backupHistory(downloadOnly);
+ if(historyBusy)return false;if(!managedStore){notice(ui('historyManagedUnavailable'));return false;}
+ historyBusy=true;renderLayout();
+ try{
   const candidate=History.commit(historyBook,currentModel()),text=History.stringify(candidate);
-  if(handle){
-   const file=await handle.getFile();if(file.size&&History.sha256(await file.text())!==diskChecksum)throw Error(ui('historyFileChanged'));
-   const stream=await handle.createWritable();try{await stream.write(text);await stream.close();}catch(error){try{await stream.abort();}catch(_){}throw error;}
-   historyFile=handle;historyHandleEpoch++;diskChecksum=History.sha256(text);historyExportStatus='file';
-   handleDatabase('put',{sourceFingerprint:savedSourceFingerprint,handle}).catch(()=>{});
-  }else{downloadHistory(text);historyExportStatus='download';}
-  historyBook=candidate;localDraftRevision=0;sourceUnavailable=true;cacheWorkspace();layoutOpen=true;notice(ui(handle?'historyFileSaved':'historyDownloadRequested'));return true;
- }catch(error){if(error.name!=='AbortError')notice(ui('historySaveFailed')+' '+error.message);return false;}
+  const response=await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json','X-Paper-Map-Token':managedStore.token,'X-Paper-Map-Version':managedStore.etag,'X-Paper-Map-New-Record':managedNewRecord?'1':'0'},body:text});
+  const result=await response.json();if(!response.ok)throw Error(response.status===409?ui('historyManagedConflict'):result.error||ui('historySaveFailed'));
+  if(result.protocol!=='paper-map-local-v1'||!result.etag||!result.path?.startsWith('history/'))throw Error('Invalid storage acknowledgement');
+  managedStore.etag=result.etag;managedStore.path=result.path;managedStore.archive=candidate;managedNewRecord=false;
+  historyBook=candidate;localDraftRevision=0;historyExportStatus='managed';sourceUnavailable=true;cacheWorkspace();layoutOpen=true;notice(ui('historyManagedSaved',{path:result.path}));return true;
+ }catch(error){notice(ui('historySaveFailed')+' '+error.message);return false;}
  finally{historyBusy=false;renderLayout();}
 }
 function renderHistoryControls(){
@@ -4821,10 +4853,10 @@ function renderHistoryControls(){
  $('previous-save').textContent=ui('historyPrevious');$('next-save').textContent=ui('historyNext');
  $('previous-save').disabled=historyBusy||workspaceDirty()||historyBook.cursor===0;$('next-save').disabled=historyBusy||workspaceDirty()||historyBook.cursor===historyBook.commits.length;
  $('import-history').textContent=ui('historyImport');$('import-history').disabled=historyBusy;
- $('save-copy').textContent=ui('historyCopy');$('download-history').textContent=ui('historyDownload');
- $('save-copy').disabled=historyBusy;$('download-history').disabled=historyBusy;
+ $('save-copy').textContent=ui('historyBackup');
+ $('save-copy').disabled=historyBusy;
  const version=ui('historyVersion',{current:historyBook.cursor+1,total:historyBook.commits.length+1});
- $('layout-state').textContent=version+' · '+ui(workspaceDirty()?'historyUnsaved':historyExportStatus==='file'?'historyDiskState':historyExportStatus==='download'?'historyDownloadState':'historyReady');
+ $('layout-state').textContent=version+' · '+ui(workspaceDirty()?'historyUnsaved':historyExportStatus==='managed'?'historyManagedState':managedStore?'historyReady':'historyManagedOffline');
 }
 
 /* View-only camera: screen = world * zoom + camera. No scientific coordinates change. */
@@ -5182,7 +5214,7 @@ function endNodeDrag(e,cancel=false){if(!nodeDrag||e.pointerId!==nodeDrag.pointe
 function keyboardMove(e,id){if(!e.altKey||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();const p=position(id),step=e.shiftKey?5:20,dx=e.key==='ArrowLeft'?-step:e.key==='ArrowRight'?step:0,dy=e.key==='ArrowUp'?-step:e.key==='ArrowDown'?step:0,next={x:Math.max(-1e7,Math.min(1e7,p.x+dx)),y:Math.max(-1e7,Math.min(1e7,p.y+dy))};if(collides(id,next)){notice(ui('layoutCollision'));return;}(customPositions[viewKey()]||={})[id]=next;manualZoom=true;layoutOpen=true;routeCacheKey='';render();document.querySelector(`[data-node="${CSS.escape(id)}"]`)?.focus();scheduleWorkspaceCache();}
 
 $('layout-toggle').onclick=()=>{layoutOpen=!layoutOpen;renderLayout();};
-$('save-layout').onclick=()=>saveHistory();$('previous-save').onclick=()=>historyVersion(-1);$('next-save').onclick=()=>historyVersion(1);$('import-history').onclick=selectHistoryFile;$('save-copy').onclick=()=>saveHistory(true);$('download-history').onclick=()=>saveHistory(false,true);
+$('save-layout').onclick=()=>saveHistory();$('previous-save').onclick=()=>historyVersion(-1);$('next-save').onclick=()=>historyVersion(1);$('import-history').onclick=selectHistoryFile;$('save-copy').onclick=()=>saveHistory(true);
 $('history-file').onchange=async e=>{const file=e.target.files?.[0];try{if(file){if(file.size>History.MAX_BYTES)throw Error('History file too large');importHistoryText(await file.text());}}catch(error){notice(ui('historyImportFailed')+' '+error.message);}finally{e.target.value='';}};
 $('curve-mode').onclick=()=>setEdgeMode('curve');$('straight-mode').onclick=()=>setEdgeMode('straight');
 $('tree').onchange=e=>changeTree(e.target.value);for(const level of Detail.LEVELS)$('detail-'+level).onclick=()=>setDetailMode(level);
@@ -5202,7 +5234,7 @@ window.getPaperMapCamera=()=>({x:camera.x,y:camera.y,zoom});
 
 window.getPaperMapState=()=>clone(state);
 window.getPaperMapLayout=()=>({paperId:state.paper.id,positions:clone(customPositions),edgeMode,dirty:layoutDirty()});
-window.updatePaperMap=function(next){validate(next);if(next.artifact&&BOOT.artifact&&next.artifact.templateSha256!==BOOT.artifact.templateSha256){notice(ui('templateMismatch'));return false;}if(next.paper.id!==state.paper.id||next.revision<=canonicalRevision)return false;if(nodeDrag)return false;if(historyImported||historyExportStatus==='file'||historyExportStatus==='download'||workspaceDirty()){sourceUnavailable=true;notice(ui('historySourceHeld'));return false;}if(localDraftRevision){persist();notice(ui('draftSaved'));}const old=new Map(state.graph.nodes.map(n=>[n.id,JSON.stringify([n,termsFor(n)])]));newIds=new Set(next.graph.nodes.filter(n=>!old.has(n.id)).map(n=>n.id));changedIds=new Set(next.graph.nodes.filter(n=>old.has(n.id)&&JSON.stringify([n,(next.glossary||[]).filter(t=>(n.termIds||[]).includes(t.id))])!==old.get(n.id)).map(n=>n.id));if(selected){const redirects=selected.kind==='node'?next.graph.redirects:next.graph.linkRedirects,seen=new Set();while(redirects?.[selected.id]&&!seen.has(selected.id)){seen.add(selected.id);selected.id=redirects[selected.id];}}state=clone(next);canonicalRevision=next.revision;localDraftRevision=0;customPositions=cleanPositions(customPositions);savedPositions=cleanPositions(savedPositions);if(!state.graph.trees.some(t=>t.id===activeTree))activeTree='main';routeCacheKey='';detailCacheKey='';historyBook=History.commit(historyBook,currentModel(),new Date().toISOString(),'source-update');cacheWorkspace();render();setTimeout(()=>{newIds.clear();changedIds.clear();document.querySelectorAll('.new-node,.revised').forEach(el=>el.classList.remove('new-node','revised'));},1900);return true;};
+window.updatePaperMap=function(next){validate(next);if(next.artifact&&BOOT.artifact&&next.artifact.templateSha256!==BOOT.artifact.templateSha256){notice(ui('templateMismatch'));return false;}if(next.paper.id!==state.paper.id||next.revision<=canonicalRevision)return false;if(nodeDrag)return false;if(historyImported||historyExportStatus==='managed'||workspaceDirty()){sourceUnavailable=true;notice(ui('historySourceHeld'));return false;}if(localDraftRevision){persist();notice(ui('draftSaved'));}const old=new Map(state.graph.nodes.map(n=>[n.id,JSON.stringify([n,termsFor(n)])]));newIds=new Set(next.graph.nodes.filter(n=>!old.has(n.id)).map(n=>n.id));changedIds=new Set(next.graph.nodes.filter(n=>old.has(n.id)&&JSON.stringify([n,(next.glossary||[]).filter(t=>(n.termIds||[]).includes(t.id))])!==old.get(n.id)).map(n=>n.id));if(selected){const redirects=selected.kind==='node'?next.graph.redirects:next.graph.linkRedirects,seen=new Set();while(redirects?.[selected.id]&&!seen.has(selected.id)){seen.add(selected.id);selected.id=redirects[selected.id];}}state=clone(next);canonicalRevision=next.revision;localDraftRevision=0;customPositions=cleanPositions(customPositions);savedPositions=cleanPositions(savedPositions);if(!state.graph.trees.some(t=>t.id===activeTree))activeTree='main';routeCacheKey='';detailCacheKey='';historyBook=History.commit(historyBook,currentModel(),new Date().toISOString(),'source-update');cacheWorkspace();render();setTimeout(()=>{newIds.clear();changedIds.clear();document.querySelectorAll('.new-node,.revised').forEach(el=>el.classList.remove('new-node','revised'));},1900);return true;};
 async function refresh(){if(!/^https?:$/.test(location.protocol)||sourceUnavailable)return;try{const response=await fetch('paper-state.json',{cache:'no-store'});if(!response.ok){sourceUnavailable=true;return;}const next=await response.json();if(next.revision>canonicalRevision)window.updatePaperMap(next);}catch(_){sourceUnavailable=true;}}
 validate(state);restoreLayout();initializeWorkspace();render();requestAnimationFrame(centerView);
 new ResizeObserver(resizeCamera).observe($('map'));

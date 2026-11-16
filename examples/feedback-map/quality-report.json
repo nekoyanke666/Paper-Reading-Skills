@@ -5,7 +5,7 @@
   "passed": true,
   "registryVersion": "2.0.0",
   "semanticSourceReview": "requires the selected expert",
-  "templateVersion": "paper-map-ui-1.5.1",
+  "templateVersion": "paper-map-ui-1.6.0",
   "trees": 2,
   "warnings": []
 }
