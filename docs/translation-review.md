@@ -1,8 +1,10 @@
 # English Translation and Workflow Review
 
-All four entry instructions, thirteen internal interfaces, focused reference documents, default UI text, relationship definitions/aliases, example content, and supporting messages are in English. The instructions govern behavior; English is not a fixed language for future paper sessions.
+All six entry instructions, thirteen internal interfaces, focused reference documents, default UI text, relationship definitions/aliases, example content, and supporting messages are in English. The instructions govern behavior; English is not a fixed language for future paper sessions.
 
 ## Review basis
+
+Version 1.5.0 adds paper-add-map and paper-skill-help in English. The review distinguishes a new view from integration into an existing view, and node identity reuse from content integration. Explicit integration instructions authorize the supported work; an unstated preference with a useful concrete proposal triggers a popup, while a declined integration does not trigger another prompt. Read-only help uses the saved or current conversation language without starting paper setup. Standalone explanatory trees preserve their own root/connectivity and use an explicit reason rather than a fabricated shared concept. These are written-workflow checks, not an executed end-to-end teaching or integration-dialog evaluation.
 
 The English release was compared with the preceding Chinese draft and the accepted requirements. The review checked meaning, task scope, instruction strength, ordering, exceptions, and cross-references rather than only checking whether non-English characters remained. The original requirement groups are preserved in these principal owners:
 
@@ -15,7 +17,7 @@ The English release was compared with the preceding Chinese draft and the accept
 - Whole-paper memory before segmentation, stored explanations, shared terms/claims, independent progress, and interruption recovery: paper-memory.
 - Discipline-specific role selection, announcement, persistence, confirmation, and justified updates: paper-expert.
 - Fixed minimal map surface, stable identities, canonical relationship semantics, cycles, arbitrary extension, shared nodes, global search, lifecycle, stable layout, and explicit quality gates: paper-map and its focused references.
-- Only four public workflows, ordered scope, selective internal calls, and no independent extra entry: skills/ and the plugin/installer boundaries.
+- Six public workflows with selective internal calls: the original four reading entries plus requested topic-tree creation and read-only usage help; skills/ and the plugin/installer boundaries.
 
 ## Deliberate changes requested for this release
 

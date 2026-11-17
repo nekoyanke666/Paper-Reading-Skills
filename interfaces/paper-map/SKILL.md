@@ -1,6 +1,6 @@
 ---
 name: paper-map
-description: Internal interface. Prepare a stable map entry by default during paper-prepare, deliver its first usable link, and maintain the tree when any of the four entries identifies meaningful changes. Preserve locked appearance, canonical identities/relations, localization, lifecycle, and quality gates.
+description: Internal interface. Prepare a stable map entry by default during paper-prepare, deliver its first usable link, and maintain the tree when a paper-content entry identifies meaningful changes or explicitly requests a new topic tree. Preserve locked appearance, canonical identities/relations, localization, lifecycle, and quality gates.
 ---
 
 # Paper Map
@@ -11,14 +11,15 @@ Input: canonical session, significant conceptual/evidential changes, and map sco
 
 For an existing-map open/reopen request, follow [open the entry](references/open-entry.md): resolve its saved workspace-relative location, check/restart its local service, and present the verified URL through the host's browser panel when supported. This navigation-only case preserves scientific data and reading progress; no manual launcher is required from the reader when the agent can execute locally.
 
-Restore [paper-memory](../paper-memory/SKILL.md) and [paper-expert](../paper-expert/SKILL.md), including confirmed language settings, paper, integrated model, glossary, claims, graph, and revision. This interface is called by four entries, not a fifth public entry:
+Restore [paper-memory](../paper-memory/SKILL.md) and [paper-expert](../paper-expert/SKILL.md), including confirmed language settings, paper, integrated model, glossary, claims, graph, and revision. Five paper-content entries use this interface; paper-skill-help describes capabilities without invoking map changes:
 
 - paper-prepare: always prepare or restore the stable map entry, then assess important content, versions, and corrections.
 - paper-figure-explain: important concepts, interventions, results, or evidence relationships introduced by a figure.
 - paper-detail-explain: changes in arguments, dependencies, proofs/mechanisms, conditions, or limitations within a complete topic.
 - paper-ask: important new understanding, relationships, evidence, or corrections arising from an answer.
+- paper-add-map: an explicitly requested new topic tree in the existing entry, with a separate integration decision; follow [requested trees](references/tree-requests.md).
 
-Every invocation of every public entry evaluates changes, including continuations and narrow requests. Judge whether this work affects prerequisites, the research thread, support, scope, or significant unknowns. Save the decision and its short reason in progress.map.review. If no meaningful change is needed, retain the graph without a map revision or rewrite. A repeated definition may improve an existing node/term; not every word or question deserves a node. Necessary reusable technical vocabulary can justify a topical catalog update even when no principal finding changes. Assess main-argument coverage and terminology retention separately rather than treating a vocabulary-only update as no change.
+Every invocation of a paper-content entry evaluates changes, including continuations and narrow requests. Judge whether this work affects prerequisites, the research thread, support, scope, or significant unknowns. Save the decision and its short reason in progress.map.review. If no meaningful change is needed, retain the graph without a map revision or rewrite. A repeated definition may improve an existing node/term; not every word or question deserves a node. Necessary reusable technical vocabulary can justify a topical catalog update even when no principal finding changes. Assess main-argument coverage and terminology retention separately rather than treating a vocabulary-only update as no change.
 
 Read [local storage](references/local-storage.md) when allocating, starting, moving or upgrading an entry: reserve a per-paper space relative to its current workspace, reuse it across conversations, and provide a checked local-service URL. Ordinary Save writes to that entry's history folder; only Back up elsewhere asks for a destination.
 
@@ -30,7 +31,7 @@ Persist the entry's stable workspace-relative path under progress.map.entryPath.
 
 Determine concepts/claims, sources, conditions, and evidence state from original material and session before drawing. A map is a view of full memory, not a replacement for understanding.
 
-The main tree answers the core paper question, uses that question as its reading start, and takes the paper title. Name secondary narrative trees by focused questions and reuse substantive shared nodes. Name topic catalogs by their lookup subject; they can contain independent glossary-bound terms. Full guidance needs an integrated whole-paper model; a local answer's graph claims only local scope. Distinguish hypotheses, fictional examples, user notes, and supported findings.
+The main tree answers the core paper question, uses that question as its reading start, and takes the paper title. Name secondary narrative trees by focused questions and reuse substantive shared nodes when genuine overlap exists. An explicitly independent narrative without such an anchor uses the documented standalone reason; do not fabricate overlap. Name topic catalogs by their lookup subject; they can contain independent glossary-bound terms. Full guidance needs an integrated whole-paper model; a local answer's graph claims only local scope. Distinguish hypotheses, fictional examples, user notes, and supported findings.
 
 For first construction or a completeness/richer-relationship review, read [concept and relationship coverage](references/concept-coverage.md) and build the source-to-map crosswalk. The main view must expose the entire research architecture with substantive anchors for its important contributions, methods, results, and limits. One-to-many, many-to-one, and feedback connections are allowed; each edge retains its own meaning and basis.
 

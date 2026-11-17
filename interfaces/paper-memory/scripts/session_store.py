@@ -86,7 +86,7 @@ def validate(state: dict, session_dir: Path) -> None:
             raise SessionError('the whole-paper model needs traceable claims')
     progress = state.get('progress', {})
     if progress.get('activeEntry') not in (None, 'paper-prepare', 'paper-figure-explain',
-                                           'paper-detail-explain', 'paper-ask'):
+                                           'paper-detail-explain', 'paper-ask', 'paper-add-map', 'paper-skill-help'):
         raise SessionError('invalid active entry')
 
 

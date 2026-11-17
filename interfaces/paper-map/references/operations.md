@@ -22,7 +22,7 @@ Common fields: expectedRevision, roleVersion, settingsVersion, reason, importanc
 - reclassify_node: provide newType, reason, and evidence that referent is unchanged; derive its registered visual role.
 - set_visual_role: supply id, one of concept/method/entity/proposition, and reason; keep the referent and ID, then regenerate affected shape signatures/routes.
 - add_link/update_link: normalize/deduplicate or update source/support state; changed meaning/endpoints/conditions require retire-and-add.
-- add_tree/update_tree: narrative views use focused-question titles/shared anchors; catalog views use kind=catalog, rootId=null, topicDescription, and actual glossary-bound members. Zero edges and disconnected catalog members are legal. Conversions or title/scope/root changes need an explicit reason.
+- add_tree/update_tree: narrative views use focused-question titles/shared anchors, or explicit standalone=true with standaloneReason when no genuine anchor exists; catalog views use kind=catalog, rootId=null, topicDescription, and actual glossary-bound members. Zero edges and disconnected catalog members are legal. Conversions or title/scope/root changes need an explicit reason.
 - set_detail_views: supply treeId, complete low/medium/high view records in levels, and a reason. Reuse global IDs; validate each view independently, including its root, endpoints, positions and source-backed relations.
 - attach_node/attach_link: reuse existing objects without copying IDs.
 - remove_from_tree/detach_link: view-only change; root removal needs replacementRootId.

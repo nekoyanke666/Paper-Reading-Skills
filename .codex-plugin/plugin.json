@@ -1,7 +1,7 @@
 {
   "name": "paper-reading-skills",
-  "version": "1.4.1",
-  "description": "Four paper-reading workflows with persistent research memory, source-grounded teaching, configurable language and translation, and an interactive concept map.",
+  "version": "1.5.0",
+  "description": "Six paper workflows for source-grounded reading, persistent memory, configurable translation, topic-tree creation and usage help, with a shared interactive concept map.",
   "author": {
     "name": "nekoyanke666"
   },

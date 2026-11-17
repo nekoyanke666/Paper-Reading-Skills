@@ -9,6 +9,8 @@ Answer the current question while preserving the whole-paper context and ongoing
 
 For a request only to open or reopen an existing map, restore the active paper/location through [paper-memory](../../interfaces/paper-memory/SKILL.md), then use [paper-map](../../interfaces/paper-map/SKILL.md) and its [opening contract](../../interfaces/paper-map/references/open-entry.md). Check/recover the local service and open its web URL in the host browser panel when available. Preserve the reading position, save a no-change map review, and finish without restarting setup or research teaching. For a mixed opening/content request, open the map and continue with the process below.
 
+For an explicit request to add a new topic tree, route to [paper-add-map](../paper-add-map/SKILL.md); preserve any accompanying question and return point. For package usage or a list of skills, use [paper-skill-help](../paper-skill-help/SKILL.md). A local concept question alone does not imply a request for a new tree.
+
 ## Process
 
 ### 1. Restore the question's context

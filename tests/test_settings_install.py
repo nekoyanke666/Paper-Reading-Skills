@@ -149,18 +149,49 @@ class SettingsTests(unittest.TestCase):
         s=copy.deepcopy(EXAMPLE);s['readingModel']['status']='verified'
         with self.assertRaises(S.SessionError):S.validate(s,ROOT)
 
+    def test_map_request_preserves_reading_return_point_and_pending_proposal(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'session.json';s=S.checkpoint(p,copy.deepcopy(EXAMPLE),-1,'example')
+            s['progress'].update(activeEntry='paper-add-map',returnTo={'entry':'paper-detail-explain','topic':'proof','next':'continue argument'})
+            request={'id':'request-1','treeIds':['metric-lookup'],'integrationPreference':'unspecified','status':'awaiting-integration','proposal':{'targetTreeIds':['main'],'basedOnRevision':s['revision']}}
+            s['progress'].setdefault('map',{})['treeRequests']=[request]
+            saved=S.checkpoint(p,s,0,'independent tree ready; integration pending')
+            restored=json.loads(p.read_text(encoding='utf-8'))
+            self.assertEqual(restored['progress']['returnTo'],saved['progress']['returnTo'])
+            self.assertEqual(restored['progress']['map']['treeRequests'],[request])
+
 class InstallationTests(unittest.TestCase):
-    def test_only_four_entries_discovered_and_shared_links_resolve(self):
+    def test_only_six_entries_discovered_and_shared_links_resolve(self):
         with tempfile.TemporaryDirectory() as d:
             home=Path(d)/'codex';I.install(home)
-            self.assertEqual(len(list((home/'skills').rglob('SKILL.md'))),4)
+            self.assertEqual({p.parent.name for p in (home/'skills').glob('*/SKILL.md')},set(I.ENTRIES))
+            self.assertEqual(len(I.ENTRIES),6)
             self.assertEqual(len(list((home/'paper-reading-skills/interfaces').rglob('SKILL.md'))),13)
             for p in home.rglob('*.md'):
                 for ref in re.findall(r'\]\(([^)]+)\)',p.read_text(encoding='utf-8')):
                     if '://' not in ref and not ref.startswith('#'):self.assertTrue((p.parent/ref).resolve().exists(),(p,ref))
             # A second install is an owned upgrade, not an unrelated overwrite.
             I.install(home)
-            self.assertEqual(len(list((home/'skills').rglob('SKILL.md'))),4)
+            self.assertEqual(len(list((home/'skills').rglob('SKILL.md'))),6)
+
+    def test_new_entry_does_not_overwrite_an_unowned_destination(self):
+        with tempfile.TemporaryDirectory() as d:
+            home=Path(d);foreign=home/'skills/paper-add-map';foreign.mkdir(parents=True)
+            original=foreign/'user.txt';original.write_text('keep this skill',encoding='utf-8')
+            with self.assertRaises(ValueError):I.install(home)
+            self.assertEqual(original.read_text(encoding='utf-8'),'keep this skill')
+            self.assertFalse((home/'paper-reading-skills').exists())
+
+    def test_upgrade_from_four_entries_adds_two_without_touching_other_skills(self):
+        with tempfile.TemporaryDirectory() as d:
+            home=Path(d);I.install(home)
+            for name in ('paper-add-map','paper-skill-help'):
+                I.remove_owned_target(home/'skills'/name,home)
+            unrelated=home/'skills/my-skill';unrelated.mkdir();(unrelated/'SKILL.md').write_text('keep',encoding='utf-8')
+            I.install(home)
+            self.assertTrue((home/'skills/paper-add-map/SKILL.md').is_file())
+            self.assertTrue((home/'skills/paper-skill-help/SKILL.md').is_file())
+            self.assertEqual((unrelated/'SKILL.md').read_text(encoding='utf-8'),'keep')
 
     def test_unrelated_destination_is_preserved(self):
         with tempfile.TemporaryDirectory() as d:

@@ -3,12 +3,12 @@ from pathlib import Path
 import ast,hashlib,json,re,subprocess,sys,tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
-PUBLIC={'paper-prepare','paper-figure-explain','paper-detail-explain','paper-ask'}
+PUBLIC={'paper-prepare','paper-figure-explain','paper-detail-explain','paper-ask','paper-add-map','paper-skill-help'}
 
 
 def validate(root=ROOT):
     root=Path(root).resolve();skills=list((root/'skills').glob('*/SKILL.md'));internal=list((root/'interfaces').glob('*/SKILL.md'))
-    if {p.parent.name for p in skills}!=PUBLIC or len(internal)!=13:raise ValueError('expected four public entries and thirteen internal interfaces')
+    if {p.parent.name for p in skills}!=PUBLIC or len(internal)!=13:raise ValueError('expected six public entries and thirteen internal interfaces')
     all_skills=skills+internal;targets={p.resolve():0 for p in internal};references=0
     for p in all_skills:
         text=p.read_text(encoding='utf-8');parts=text.split('---',2)
@@ -48,7 +48,7 @@ def validate(root=ROOT):
             code=re.findall(r'<script(?: [^>]*)?>(.*?)</script>',html.read_text(encoding='utf-8'),re.S)[-1]
             script=Path(tmp)/'viewer.js';script.write_text(code,encoding='utf-8')
             subprocess.run(['node','--check',str(script)],check=True,capture_output=True)
-    return {'passed':True,'publicEntries':4,'internalInterfaces':13,'referencesChecked':references,
+    return {'passed':True,'publicEntries':len(PUBLIC),'internalInterfaces':13,'referencesChecked':references,
             'englishInstructionAndDefaultAssetScan':'passed','lockedAssets':'passed','javascriptSyntax':'passed',
             'semanticTranslationReview':'see docs/translation-review.md','realPaperTeaching':'not tested','browserVisualQA':'separate scoped record in docs/browser-qa.md'}
 

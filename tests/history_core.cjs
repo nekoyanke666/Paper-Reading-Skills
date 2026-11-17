@@ -10,6 +10,12 @@ const moved=H.materialize(history);m=H.copy(moved);m.graph.nodes.extra={id:'extr
 m.graph.trees.saved={id:'saved',kind:'narrative',title:'User tree',focusQuestion:'User tree',rootId:'extra',nodeIds:['extra'],linkIds:[],positions:{extra:{x:40,y:60}}};m.graph.treeOrder.push('saved');
 history=H.commit(history,m,'2026-11-16T00:01:00.000Z');assert.equal(history.commits.length,2);
 const bytes=H.stringify(history),loaded=H.parse(bytes);assert.deepEqual(H.materialize(loaded),m);assert.equal(H.unpack(H.materialize(loaded)).graph.trees.at(-1).id,'saved');
+// A requested topic is an additive checkpoint, preserving prior user edits and the v1 envelope.
+const added=H.materialize(loaded);added.graph.trees['topic-lookup']={id:'topic-lookup',kind:'catalog',title:'Requested term lookup',topicDescription:'A separate lookup, without integration into existing views',rootId:null,nodeIds:['input'],linkIds:[],positions:{input:{x:40,y:60}}};added.graph.treeOrder.push('topic-lookup');
+const withTopic=H.parse(H.stringify(H.commit(loaded,added,'2026-11-17T00:00:00.000Z','topic-addition')));
+assert.equal(withTopic.formatVersion,1);assert.equal(withTopic.modelVersion,1);
+const restoredTopic=H.materialize(withTopic);assert.deepEqual(restoredTopic.graph.trees.main,m.graph.trees.main);assert.deepEqual(restoredTopic.graph.nodes.extra,m.graph.nodes.extra);assert.deepEqual(restoredTopic.graph.trees.saved,m.graph.trees.saved);
+assert.deepEqual(H.materialize(withTopic,2),m);assert.deepEqual(H.unpack(restoredTopic).graph.trees.at(-1).nodeIds,['input']);
 let older=H.navigate(loaded,0);assert.deepEqual(H.materialize(older),base);older=H.navigate(older,2);assert.ok(H.materialize(older).graph.nodes.extra);
 older=H.navigate(older,1);const edited=H.materialize(older);edited.graph.nodes.a.detail+=' A new note after restoring an older save.';
 const appended=H.commit(older,edited,'2026-11-16T00:02:00.000Z');assert.equal(appended.commits.length,3);assert.equal(appended.commits[2].origin,1);assert.ok(H.materialize(appended,2).graph.nodes.extra);

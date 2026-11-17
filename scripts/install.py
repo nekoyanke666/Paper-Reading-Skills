@@ -1,9 +1,9 @@
-"""Install only the four public entries; keep shared interfaces outside discovery."""
+"""Install only the six public entries; keep shared interfaces outside discovery."""
 from pathlib import Path
 import argparse,json,os,shutil,stat,tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
-ENTRIES=('paper-prepare','paper-figure-explain','paper-detail-explain','paper-ask')
+ENTRIES=('paper-prepare','paper-figure-explain','paper-detail-explain','paper-ask','paper-add-map','paper-skill-help')
 OWNER='paper-reading-skills'
 
 

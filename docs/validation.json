@@ -1,27 +1,27 @@
 {
   "passed": true,
-  "publicEntries": 4,
+  "publicEntries": 6,
   "internalInterfaces": 13,
-  "referencesChecked": 160,
+  "referencesChecked": 187,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "v1.4.1 verified service health and queued host-panel request; existing v1.4.0 full browser audit retained; see browser-qa.md",
+  "browserVisualQA": "Not rerun in v1.5.0; locked viewer unchanged. Earlier scoped audits retained in browser-qa.md",
   "unitTests": {
-    "passed": 60,
+    "passed": 67,
     "failed": 0
   },
   "formalSkillValidation": {
-    "passed": 17,
+    "passed": 19,
     "failed": 0
   },
   "javascriptRuntime": "Nine suites passed: eight core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Existing written-workflow review retained; not independently executed",
-  "translationReview": "English instructions and new UI labels reviewed; source-backed glossary and narrative/catalog distinctions preserved",
-  "version": "1.4.1",
+  "translationReview": "English instructions reviewed for requested/declined/unspecified integration, global node identity, read-only help, and preserved language settings",
+  "version": "1.5.0",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -42,16 +42,26 @@
     "realFilesystemAndHttp": "passed",
     "runtimeLifecycle": "agent host uses retained serve session; portable user launcher included"
   },
-  "lastFullRuntimeVersion": "1.4.0",
+  "lastFullRuntimeVersion": "1.5.0",
   "currentTargetedTests": {
-    "settingsAndInstaller": 17,
-    "formalSkillValidation": 17,
-    "packageAndReferences": "passed"
+    "settingsAndInstaller": 20,
+    "formalSkillValidation": 19,
+    "packageAndReferences": "passed",
+    "newMapBehavior": "Independent and selected-target additions; standalone reason/root/connectivity; saved-user-edit retention in v1 checkpoint"
   },
   "mapOpening": {
-    "serviceHealth": "live local sample checked",
-    "hostPanelRequest": "submitted to calling chat; initially queued, then an open in-app tab at that URL was reported",
+    "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
+    "hostPanelRequest": "Historical v1.4.1 record; no request in this release",
     "observedPanelRender": false,
     "readerEntry": "one-click direct web link; no typed request, command or launcher required"
-  }
+  },
+  "topicTreeRequests": {
+    "sameEntry": true,
+    "integrationPolicy": "explicit yes applies; explicit no preserves old views; useful unstated integration gets a concrete popup proposal",
+    "flatCatalogs": "zero edges supported",
+    "standaloneNarratives": "explicit reason; internal connectivity retained",
+    "managedReconciliation": "written agent workflow, not an automatic merge engine",
+    "popupAndRealPaperIntegration": "not executed end-to-end"
+  },
+  "installedEntryReferencesChecked": 58
 }

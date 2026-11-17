@@ -1,6 +1,6 @@
 # Startup Settings
 
-Read when a primary paper has no confirmed settings, settings are incomplete, or the user requests a change. Settings belong to one paper session, not reusable skill files. All four entries use this protocol; no fifth start entry is introduced.
+Read when a primary paper has no confirmed settings, settings are incomplete, or the user requests a change. Settings belong to one paper session, not reusable skill files. Paper-content entries use this protocol; there is no separate start skill. paper-add-map reuses saved settings and asks only for genuinely missing settings needed by its topic, without restarting full preparation. paper-skill-help is read-only, works without a paper, and uses the saved interaction language when already available or the current conversation language otherwise; it never opens a setup dialog just to show help.
 
 ## Questions and defaults
 

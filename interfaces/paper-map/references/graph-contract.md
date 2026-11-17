@@ -13,7 +13,8 @@ Read these focused rules when their branch applies:
 - [Appearance](appearance.md): locked template, dimensions, persistent controls, localization, responsive checks.
 - [Lifecycle](node-lifecycle.md): identity, addition, update, view removal, merge, retirement, restoration.
 - [Relationships](relation-policy.md): meanings, aliases/reverses, conditions, statuses, extensions.
-- [Trees/layout](tree-policy.md): questions, sharing, cycles, incremental positions/routes.
+- [Trees/layout](tree-policy.md): questions, sharing, cycles, incremental positions/routes. Secondary independent narratives may carry standalone=true and a nonempty standaloneReason; this additive metadata does not change the archive version or waive internal connectivity.
+- [Requested topic trees](tree-requests.md): same-map additions, integration decisions, pending proposals and preservation of managed user edits.
 - [Quality](quality-gates.md): semantic/machine/browser checks and reproducibility.
 - [Operations](operations.md): optional helpers, patches, commits, and recovery.
 - [Entry/link delivery](delivery.md): default preparation, per-call review, stable paths, first links, and update notices.

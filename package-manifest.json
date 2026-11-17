@@ -1,12 +1,14 @@
 {
   "name": "paper-reading-skills",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "instructionLanguage": "en",
   "publicEntries": [
     "paper-prepare",
     "paper-figure-explain",
     "paper-detail-explain",
-    "paper-ask"
+    "paper-ask",
+    "paper-add-map",
+    "paper-skill-help"
   ],
   "internalInterfaceCount": 13,
   "outputLanguage": "asked per primary paper session and persisted",

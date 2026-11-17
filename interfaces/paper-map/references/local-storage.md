@@ -1,6 +1,6 @@
 # Per-Paper Local Storage
 
-Read when creating, upgrading, starting, relocating or delivering a map, or changing Save/Backup behavior. The implementation is assets/map-server.cjs and the generated relative map-storage.json contract. This is part of paper-map, not a fifth public skill.
+Read when creating, upgrading, starting, relocating or delivering a map, or changing Save/Backup behavior. The implementation is assets/map-server.cjs and the generated relative map-storage.json contract. This is part of paper-map, not a separate public skill.
 
 ## Allocate the space during creation
 

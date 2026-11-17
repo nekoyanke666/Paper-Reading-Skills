@@ -1,6 +1,6 @@
 # Topic Catalogs for Terminology
 
-Read for new or clarified technical vocabulary during paper-figure-explain, paper-detail-explain, paper-ask, or relevant preparation. Use [terminology teaching](../../paper-teach/references/terminology.md) for the explanation and source judgment, then maintain this reference view through the existing paper-map interface. Four public entries remain unchanged.
+Read for new or clarified technical vocabulary during paper-figure-explain, paper-detail-explain, paper-ask, or relevant preparation. Use [terminology teaching](../../paper-teach/references/terminology.md) for the explanation and source judgment, then maintain this reference view through the existing paper-map interface. Explicit requests for a new catalog use paper-add-map and the [requested-tree workflow](tree-requests.md).
 
 ## Two purposes in one viewer
 
@@ -34,7 +34,7 @@ Keep the same configured detail, tree, history/import and camera controls even i
 
 ## Update lifecycle and delivery
 
-On each of the four entry invocations, assess new/clarified definitions and topic organization independently of whether the main research chain changed. A vocabulary-only change can justify a catalog update. Repetition can improve the existing definition; it does not force a new node, category, or edge. Record the reason and changed scope in progress.map.review, and preserve the existing entry path.
+On each paper-content entry invocation, assess new/clarified definitions and topic organization independently of whether the main research chain changed. A vocabulary-only change can justify a catalog update. Repetition can improve the existing definition; it does not force a new node, category, or edge. Record the reason and changed scope in progress.map.review, and preserve the existing entry path.
 
 Use upsert_term for glossary additions/corrections, then add/update/attach the corresponding nodes and catalog memberships within a reviewed patch. add_tree supports kind=catalog, rootId=null, topicDescription, nodeIds, and linkIds. A patch may start an empty catalog and add its first member before final validation; an empty final view is invalid. update_tree can change kind only with an explicit reason and all resulting invariants satisfied. Retire invented links explicitly when migrating a formerly forced-connected dictionary; do not silently convert a real argument into a catalog.
 

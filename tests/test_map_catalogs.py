@@ -63,6 +63,47 @@ class CatalogTests(unittest.TestCase):
         updated=next(t for t in s['glossary'] if t['id']=='condition-a')
         self.assertIn('Condition A',updated['aliases']);self.assertEqual(updated['id'],term['id'])
 
+    def test_independent_new_catalog_preserves_old_views_and_global_definitions(self):
+        ops=[dict(op='add_tree',tree=dict(id='new-lookup',kind='catalog',rootId=None,title='Metric lookup',topicDescription='Requested independent lookup',nodeIds=[],linkIds=[])),dict(op='attach_node',nodeId='precision',treeId='new-lookup')]
+        s,_=E.plan(STATE,patch(ops))
+        self.assertEqual(s['graph']['nodes'],STATE['graph']['nodes'])
+        self.assertEqual(s['glossary'],STATE['glossary'])
+        for old in STATE['graph']['trees']:self.assertEqual(view(s,old['id']),old)
+        self.assertEqual(view(s,'new-lookup')['nodeIds'],['precision'])
+        self.assertEqual(view(s,'new-lookup')['linkIds'],[])
+
+    def test_integration_only_changes_the_selected_existing_view(self):
+        ops=[dict(op='add_tree',tree=dict(id='new-lookup',kind='catalog',rootId=None,title='Metric lookup',topicDescription='Requested lookup',nodeIds=[],linkIds=[])),dict(op='attach_node',nodeId='precision',treeId='new-lookup'),dict(op='attach_node',nodeId='precision',treeId='concept-terms')]
+        s,_=E.plan(STATE,patch(ops))
+        self.assertIn('precision',view(s,'new-lookup')['nodeIds'])
+        target=view(s,'concept-terms');self.assertIn('precision',target['nodeIds'])
+        for ident,pos in view(STATE,'concept-terms')['positions'].items():self.assertEqual(target['positions'][ident],pos)
+        for old in STATE['graph']['trees']:
+            if old['id']!='concept-terms':self.assertEqual(view(s,old['id']),old)
+        self.assertEqual(len(s['graph']['nodes']),len(STATE['graph']['nodes']))
+
+    def independent_narrative(self):
+        s=copy.deepcopy(STATE);v=copy.deepcopy(view(s,'evaluation-terms'))
+        v.update(id='metric-explanation',kind='narrative',title='How are the metrics related?',focusQuestion='What does error balance compare?',rootId='error-balance',standalone=True,standaloneReason='Independent topic with no existing narrative anchor.')
+        s['graph']['trees'].append(v)
+        return s,v
+
+    def test_standalone_narrative_needs_explicit_reason_but_no_fake_anchor(self):
+        s,v=self.independent_narrative();prepared,_=E.prepare(s);self.assertTrue(E.check(prepared)['passed'])
+        for value in ('',None,True):
+            s,v=self.independent_narrative();v['standaloneReason']=value
+            with self.assertRaisesRegex(E.MapError,'nonempty reason'):E.prepare(s)
+        s,v=self.independent_narrative();v.pop('standalone')
+        with self.assertRaisesRegex(E.MapError,'shared-node'):E.prepare(s)
+        s,v=self.independent_narrative();v['standalone']='true'
+        with self.assertRaisesRegex(E.MapError,'boolean'):E.prepare(s)
+
+    def test_standalone_does_not_relax_connectivity_or_main_rules(self):
+        s,v=self.independent_narrative();v['linkIds']=[]
+        with self.assertRaisesRegex(E.MapError,'readable path'):E.prepare(s)
+        s=copy.deepcopy(STATE);view(s,'main').update(standalone=True,standaloneReason='Not allowed')
+        with self.assertRaisesRegex(E.MapError,'cannot be the main'):E.prepare(s)
+
     def test_one_to_many_has_independent_edges(self):
         v=view(STATE,'evaluation-terms');edges=[e for e in STATE['graph']['links'] if e['id'] in v['linkIds']]
         self.assertEqual({e['from'] for e in edges},{'error-balance'});self.assertEqual({e['to'] for e in edges},{'precision','recall'})

@@ -604,6 +604,10 @@ def check(state, assets=ASSETS, geometry=True):
                             raise MapError('term property source is missing or unlocatable')
         elif not t.get('focusQuestion') or t.get('rootId') not in ids:
             raise MapError('narrative tree needs a focus question and visible root')
+        if 'standalone' in t and not isinstance(t['standalone'],bool):
+            raise MapError('standalone must be a boolean')
+        if t.get('standalone') and (kind!='narrative' or t['id']=='main' or not isinstance(t.get('standaloneReason'),str) or not t['standaloneReason'].strip()):
+            raise MapError('standalone narrative needs a nonempty reason and cannot be the main tree')
         if t['id']!='main' and t['title']==state['paper']['title']:
             raise MapError('name a secondary tree by its question, not the paper title')
         if len(ids)!=len(set(ids)) or len(link_ids)!=len(set(link_ids)):
@@ -630,7 +634,7 @@ def check(state, assets=ASSETS, geometry=True):
             if not t.get('densityReview',{}).get('reason'):
                 raise MapError('large tree needs an explicit readability/split review')
             warnings.append({'code':'large-tree-reviewed','id':t['id']})
-        if kind=='narrative' and t['id']!='main' and not any(set(ids)&set(v['nodeIds']) for v in g['trees'] if v['id']!=t['id'] and v.get('kind','narrative')=='narrative'):
+        if kind=='narrative' and t['id']!='main' and not t.get('standalone') and not any(set(ids)&set(v['nodeIds']) for v in g['trees'] if v['id']!=t['id'] and v.get('kind','narrative')=='narrative'):
             raise MapError('secondary tree needs a visible shared-node connection')
         membership.update(ids)
         edge_membership.update(link_ids)
@@ -777,7 +781,7 @@ def plan(state, patch, assets=ASSETS):
             g['trees'].append(view)
         elif operation=='update_tree':
             view=t(op['id']);updates=copy.deepcopy(op['changes'])
-            if set(updates)-{'title','focusQuestion','rootId','densityReview','kind','topicDescription'} or not op.get('reason'):
+            if set(updates)-{'title','focusQuestion','rootId','densityReview','kind','topicDescription','standalone','standaloneReason'} or not op.get('reason'):
                 raise MapError('tree updates need a reason and cannot silently replace membership or identity')
             if 'rootId' in updates:updates['rootId']=resolve(updates['rootId'])
             view.update(updates)
