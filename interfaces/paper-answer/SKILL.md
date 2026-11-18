@@ -5,6 +5,8 @@ description: Internal interface. Apply the common answer contract before paper-a
 
 # Paper Answer
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: question, restored paper context, sources, and accessible common rules. Output: a direct, justified answer in the saved interaction language, unresolved parts, and memory updates.
 
 ## 1. Apply the common answer contract
@@ -16,6 +18,8 @@ Follow [paper-teach](../paper-teach/SKILL.md) and [paper-evidence](../paper-evid
 - If context supports a likely interpretation, answer it and state that interpretation. Ask only when different interpretations would materially change the answer.
 
 Complete necessary source checks before presenting the answer. “Direct answer first” governs presentation, not guessing a conclusion before finding evidence.
+
+Use already verified, still-current material when it answers the question; retrieve additional passages only for material uncertainty, missing support or an explicit audit. A short question does not need all specialist interfaces, a full source inventory or a map rebuild. If some parts are established while others need checking, distinguish the verified finding from the unresolved scope in a concise progress update, then complete the necessary checks. Keep the final answer direct and self-contained, without delaying it for unrelated maintenance or repeated validation.
 
 ## 2. Obtain the smallest sufficient specialist checks
 

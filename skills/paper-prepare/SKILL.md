@@ -5,6 +5,8 @@ description: Prepare a primary paper, confirm its language and translation prefe
 
 # Paper Prepare
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Turn the primary paper into a verifiable, resumable reading workspace. Complete preparation includes source inventory, extraction quality, an expert profile, a whole-paper research model, and a source-to-target translation if enabled. If the user requests only part of this work, complete that scope and report the broader readiness state accurately.
 
 ## Process

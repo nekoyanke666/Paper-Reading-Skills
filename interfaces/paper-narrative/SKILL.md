@@ -5,6 +5,8 @@ description: Internal interface. Build an overview, full-paper explanation, post
 
 # Paper Narrative
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: verified whole-paper model or explicitly limited local scope, original text, and progress. Output: the requested narrative in the saved language, source crosswalk, open issues, and resume point. Follow paper-teach and paper-evidence without independently switching stages.
 
 ## 1. Choose the narrative mode

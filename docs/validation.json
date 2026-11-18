@@ -8,7 +8,7 @@
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "No viewer changes in v1.5.4; prior v1.5.3 real-browser checks remain incomplete. See browser-qa.md.",
+  "browserVisualQA": "No viewer changes in v1.5.5; prior v1.5.3 real-browser checks remain incomplete. See browser-qa.md.",
   "unitTests": {
     "passed": 67,
     "failed": 0
@@ -20,8 +20,8 @@
   "javascriptRuntime": "Ten suites passed: nine core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Written contract reviewed against 12 cases, including no history, rich history, mismatched old wording, explicit local recall and groundwork versus complete explanation. No independent generation comparison executed.",
-  "translationReview": "Written English contract review for mandatory adjacent English names on every translated important/domain-term occurrence, same-paragraph repeats, bold/plain text, captions/headings, later answers and non-English source provenance. No live teaching-output audit performed.",
-  "version": "1.5.4",
+  "translationReview": "Written review of time-priority notice and scope-aware reuse rules. Required completeness, per-occurrence inline English, source checks and state/history safety retained; no live latency benchmark performed.",
+  "version": "1.5.5",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -46,8 +46,8 @@
   "currentTargetedTests": {
     "formalSkillValidation": 19,
     "packageAndReferences": "passed",
-    "installation": "Six entries and shared resources match source; 58 entry and 116 shared Markdown references resolve",
-    "scope": "Instruction-only terminology patch; no text-matching behavioral tests. Unit/runtime results are retained from v1.5.3."
+    "installation": "Six entries and shared resources match source; installed Markdown links resolve; all nineteen SKILL.md files carry the time-priority notice",
+    "scope": "Instruction-only time/scope patch; no wording-matching behavioral tests. Unit/runtime results retained from v1.5.3."
   },
   "mapOpening": {
     "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
@@ -119,5 +119,23 @@
     "mapping": "Canonical English source name or separately verified English equivalent; no invented equivalent or unexplained acronym substitute",
     "savedLanguage": "unchanged",
     "liveOutputAudit": "not performed"
+  },
+  "responseEfficiency": {
+    "noticeCoverage": "six public entries and thirteen internal interfaces",
+    "rules": [
+      "scope context/source retrieval to the actual request",
+      "reuse matching source-grounded work and accessible instructions",
+      "invalidate affected work for new sources, corrections, scope changes or requested rewrites",
+      "reuse complete verified standalone manuscripts without treating old delivery as new delivery",
+      "avoid redundant preparation, checks, checkpoints and map renders"
+    ],
+    "protected": [
+      "requested completeness",
+      "independent understanding",
+      "every-mention inline English",
+      "evidence verification",
+      "saved-state and history safety"
+    ],
+    "measuredLatencyImprovement": "not benchmarked"
   }
 }

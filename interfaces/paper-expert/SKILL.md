@@ -5,6 +5,8 @@ description: Internal interface. Select and persist a discipline-appropriate exp
 
 # Paper Expert
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: session, available source material, and research task. Output: an appropriate roleProfile, a concise first announcement in the session language, or a justified profile update.
 
 ## 1. Select from the actual research

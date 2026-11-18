@@ -5,6 +5,8 @@ description: Create a new topic tree in an existing paper map, including unconne
 
 # Paper Add Map
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Create the requested new tree inside the paper's existing map, not a separate website or replacement main tree. A new tree is an explicit deliverable; it does not depend on whether an incidental teaching update would otherwise justify a tree.
 
 ## Process

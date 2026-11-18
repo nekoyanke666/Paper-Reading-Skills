@@ -5,6 +5,8 @@ description: Introduce a primary paper, then display and explain its main figure
 
 # Paper Figure Explain
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Help the reader first follow how the figures connect the research question, evidence, and conclusions. A full guide follows main-figure and panel order. A specified figure requires only that scope and its necessary prerequisites.
 
 ## Process

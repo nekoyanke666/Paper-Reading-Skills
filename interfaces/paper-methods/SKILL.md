@@ -5,6 +5,8 @@ description: Internal interface. Explain how methods, statistics, equations, pro
 
 # Paper Methods
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: methodological/design question, original material, evidence, and expert profile. Output: intelligible principles, assumptions, and inference limits, or a discriminating design labeled as a new proposal, in the session language.
 
 ## 1. Match question and research type

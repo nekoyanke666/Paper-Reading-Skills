@@ -5,6 +5,8 @@ description: Teach the entire paper as a self-contained expert narrative for a r
 
 # Paper Detail Explain
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 The primary deliverable is a complete, self-contained explanation of the paper that lets a reader outside its field return to the original text, figures, equations, and methods with understanding, even without any earlier conversation. Reconstruct why the problem matters, what was missing, how the approach addresses it, how the evidence was produced, and what the results establish. Use a paper-appropriate expert perspective without impersonating authors or inventing a history of their decisions. Earlier explanations do not supply missing premises for this deliverable.
 
 ## 1. Restore understanding and interpret the request
@@ -20,6 +22,8 @@ This entry is independent of prior figure teaching, translation, answers and old
 ## 2. Build the complete narrative before delivering chapters
 
 Call [paper-narrative](../../interfaces/paper-narrative/SKILL.md) in full-explanation mode and read its [full-explanation contract](../../interfaces/paper-narrative/references/full-explanation.md). Build the source-to-topic crosswalk and a complete reader-facing manuscript covering the paper's substantive content. Save it under this paper's output/explanations/detail/<run-id>/manuscript.md and provide its link when ready. It must contain the explanation itself, not just an outline, summary, translation, or plan for future chapters.
+
+A complete, source-verified, self-contained manuscript may be reused as a whole when its paper/source versions, expert perspective, language, requested scope and current teaching/terminology requirements still match. Validate the fit and changed portions, preserve new-run/start intent and delivery records, and avoid redrafting unchanged chapters solely because another invocation occurred. A requested rewrite, reported confusion, stale evidence or inadequate earlier manuscript requires the relevant revision. Old chat fragments never replace the independent complete account.
 
 Organize the manuscript by the research logic and prerequisite dependencies. Incorporate the abstract's claims, introduction, every result/argument, methods/proofs, discussion, limitations, and essential supporting evidence. Adapt to the paper's actual discipline and structure. Put a method next to the result it enables even when the source places Methods later; explain the transition and retain source locators.
 

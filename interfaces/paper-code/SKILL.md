@@ -5,6 +5,8 @@ description: Internal interface. Trace paper code, data processing, or figure ge
 
 # Paper Code
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: analysis to understand/reproduce, repository/data, and paper version. Output: traceable input–processing–output explanation, source crosswalk, actual execution/verification scope, and gaps, in the session language.
 
 ## 1. Identify implementation and task

@@ -5,6 +5,8 @@ description: Internal interface. Prepare a stable map entry by default during pa
 
 # Paper Map
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: canonical session, significant conceptual/evidential changes, and map scope. Output: an expert-structured knowledge/relationship graph with independently understandable node explanations and matching saved memory, fixed appearance and explicit verification scope. Helpers support reproducibility; source interpretation and conceptual organization remain the saved expert's responsibility.
 
 ## 1. Restore the entry and evaluate changes

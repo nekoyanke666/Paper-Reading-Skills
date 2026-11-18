@@ -5,6 +5,8 @@ description: Answer paper questions directly, then explain with necessary recall
 
 # Paper Ask
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Answer the current question while preserving the whole-paper context and ongoing reading task. A question does not automatically restart preparation, all figures, or full explanation.
 
 For a request only to open or reopen an existing map, restore the active paper/location through [paper-memory](../../interfaces/paper-memory/SKILL.md), then use [paper-map](../../interfaces/paper-map/SKILL.md) and its [opening contract](../../interfaces/paper-map/references/open-entry.md). Check/recover the local service and open its web URL in the host browser panel when available. Preserve the reading position, save a no-change map review, and finish without restarting setup or research teaching. For a mixed opening/content request, open the map and continue with the process below.
@@ -16,6 +18,8 @@ For an explicit request to add a new topic tree, route to [paper-add-map](../pap
 ### 1. Restore the question's context
 
 Read [paper-memory](../../interfaces/paper-memory/SKILL.md) to restore paper identity/version, settings, integrated model, relevant terms, claims, and sources. If a question interrupts figure or detailed explanation, save the original entry, topic/figure/paragraph, and next step in returnTo, separately from the question record.
+
+Use paper-memory's scoped restoration: a narrow question retrieves its relevant evidence and context, rather than rereading the whole paper or restarting the learning workflow. Reuse accessible instructions, valid source checks and existing settings. A terminology/relationship update is evaluated briefly; actual map mutation and rendering remain conditional on meaningful change, not a prerequisite for every answer.
 
 Read [paper-expert](../../interfaces/paper-expert/SKILL.md), [paper-teach](../../interfaces/paper-teach/SKILL.md), and [paper-evidence](../../interfaces/paper-evidence/SKILL.md). If no profile exists, choose one from available material and announce it briefly. If this is the first entry, complete the shared startup settings before language-dependent output; independent source inspection may proceed while answers are pending. Partial sources may support a local answer, but not a claim of full-paper understanding.
 

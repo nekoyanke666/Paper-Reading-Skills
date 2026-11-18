@@ -5,6 +5,8 @@ description: Explain the six public paper skills, their order, purposes and exam
 
 # Paper Skill Help
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Explain how to use this package. This is a read-only help request, not preparation, paper teaching or map editing. Do not ask for a paper, translation settings or startup configuration merely to show help. Do not execute example requests or start a map service.
 
 Use the saved interaction language if the active session is already available; otherwise use the user's current conversation language. Reading package instructions to check capabilities does not require loading private paper files.

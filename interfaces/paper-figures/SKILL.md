@@ -5,6 +5,8 @@ description: Internal interface. Inspect and display original figures for comple
 
 # Paper Figures
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: requested figures, original images/captions/methods, context, and shared terminology. Output: source-followable explanation in the session language, evidence locations, supporting-figure choices, and panel-level progress. Follow paper-teach and paper-evidence.
 
 ## 1. Inspect and display the actual figure

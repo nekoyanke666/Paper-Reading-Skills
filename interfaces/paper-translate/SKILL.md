@@ -5,6 +5,8 @@ description: Internal interface. Produce full, continued, or local source-to-tar
 
 # Paper Translate
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: readable original, requested scope, confirmed language settings, glossary, and translation progress. Output: aligned original and target-language text, separate notes, terminology revisions, and remaining scope.
 
 ## 1. Confirm settings, source, and scope

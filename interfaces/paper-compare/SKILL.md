@@ -5,6 +5,8 @@ description: Internal interface. Compare a primary paper with other research on 
 
 # Paper Compare
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: primary paper, comparison material, versions, and question. Output: sourced comparability, common ground, differences, conflict assessment, and remaining gaps, in the saved language.
 
 ## 1. Establish the comparison basis

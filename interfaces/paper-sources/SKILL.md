@@ -5,6 +5,8 @@ description: Internal interface. Inventory, obtain, and quality-check a primary 
 
 # Paper Sources
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: paper clues, requested material scope, and current source index. Output: original files, source/version inventory, extraction quality and coverage updates, and the interpretive effects of gaps.
 
 ## 1. Identify material roles and versions

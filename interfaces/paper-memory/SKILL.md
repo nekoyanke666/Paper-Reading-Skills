@@ -5,15 +5,21 @@ description: Internal interface. Restore the paper, language settings, research 
 
 # Paper Memory
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: paper identity clues, requested scope, and any existing session. Output: traceable context, confirmed or pending settings, readiness, a resume point, and a committed revision.
 
 ## 1. Restore or initialize the session
 
 Read the [session contract](references/session-contract.md). Keep mutable memory at `work/papers/<stable-paper-id>/paper-session.json`, originals in sources/, and location indexes and necessary extracted content in corpus/. Do not store per-paper state inside reusable skill files.
 
-Identify the primary paper/version, then restore settings, roleProfile, readingModel, sources/coverage, glossary, claims, questions/corrections, and progress. A new primary paper gets a separate session; supporting papers, files, and code do not replace it. Restore the whole model before retrieving the current source and surrounding context. Chat summaries alone are insufficient.
+Identify the primary paper/version, then restore the session context at the scope needed for this request. For a local question, retrieve confirmed settings, the valid role/model summary, the relevant terms/claims/source locators and interrupted return point; inspect full sections or graph data only when the answer or an authorized update requires them. Use the saved integrated model for context without rereading every source or dumping every prior explanation. Chat summaries alone are insufficient. A new primary paper gets a separate session; supporting papers, files and code do not replace it.
 
 Calling an interface means reading its linked instructions, executing them, and returning to the caller; it does not create another agent. Reuse instructions already read and still directly accessible in the same task. Reread after context loss or when inaccessible. Interfaces handle their caller's scope without restarting entries or recursively reacquiring the same dependencies.
+
+Match work to the requested scope. Help, a local question and a continuation do not trigger full preparation, translation, whole-paper rereading, role reselection, manuscript rebuilding or map rendering by default. Reuse source-grounded work when its paper/source versions, role, settings, requested scope and current output requirements still match. Changed sources, corrections, missing evidence or a requested rewrite require targeted rechecking or expansion; a status flag alone never proves prior verification. Batch independent read-only retrieval where useful, keep dependent writes sequential, and avoid duplicate checkpoints for the same coherent change. Once necessary checks pass and the required work is recoverable, deliver the result without extra exploratory passes.
+
+Read the saved session once where possible and extract the needed fields instead of emitting the entire session, graph or corpus into the model context. Reload the current revision and managed-record version before a write when concurrency could invalidate the earlier read; efficient reuse never authorizes a stale overwrite.
 
 ## 2. Resolve startup settings
 
@@ -23,7 +29,7 @@ Independent identification, downloads, extraction, indexing, and internal resear
 
 ## 3. Check readiness for whole-paper guidance
 
-Before full figure or detailed guidance, read the entire text, all main figures/captions, actual methods/proofs/materials, and supporting evidence essential to the main conclusion. Build complete coverage with source, locator, read/checked status, then integrate questions, the whole outline and dependencies, claims/evidence, methodological premises, limitations, and unknowns.
+Before first full figure or detailed guidance, establish understanding of the entire text, all main figures/captions, actual methods/proofs/materials, and supporting evidence essential to the main conclusion. Build complete coverage with source, locator, read/checked status, then integrate questions, the whole outline and dependencies, claims/evidence, methodological premises, limitations, and unknowns. When that source-grounded model remains valid, restore it and recheck only affected or uncertain material rather than repeat the full reading on every invocation.
 
 Mark readingModel.status=verified only when required sources are available, all requiredCoverageIds are verified, the full model is integrated, and the expert profile is confirmed. Missing essential material leaves the model partial with explained effects. Local questions may proceed within the supported scope. Follow actual structure rather than inventing sections or labeling missing content inapplicable.
 

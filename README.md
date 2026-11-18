@@ -6,6 +6,8 @@ In detail, figure and question work, every occurrence of an important translated
 
 ## Public entries
 
+All six public entries and thirteen internal interfaces explicitly prioritize the reader's time. Narrow questions use scoped context and evidence retrieval; valid prior work is reused; full preparation, manuscript rebuilding and map rendering run only when the requested task needs them. Required completeness, source checks, per-mention English terminology and saved-history protection remain in force.
+
 - [paper-prepare](skills/paper-prepare/SKILL.md): identify the primary paper, collect/check sources, select an expert perspective, build a whole-paper model, and produce the aligned translation when enabled.
 - [paper-figure-explain](skills/paper-figure-explain/SKILL.md): give a short overview, display actual figures, explain main figures/panels in order, and include essential supporting evidence.
 - [paper-detail-explain](skills/paper-detail-explain/SKILL.md): build a complete reader guide and teach the entire paper as a self-contained expert narrative, including background, methods and calculations, without assuming earlier teaching. Recorded personal connections are optional supplements after the relevant core explanation. Segmented delivery follows substantial chapters of that whole.

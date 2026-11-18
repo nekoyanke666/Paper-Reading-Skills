@@ -5,6 +5,8 @@ description: Internal interface. Apply the confirmed interaction language, clear
 
 # Paper Teach
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: settings and expert profile, current topic, shared terms, and optional prior teaching context. Output: an accessible explanation and any terminology/comprehension updates.
 
 ## 1. Organize around the reader's goals

@@ -5,6 +5,8 @@ description: Internal interface. Check important claims against sources, evidenc
 
 # Paper Evidence
 
+**The user's time is valuable.** Minimize unnecessary waiting: reuse valid work, load only relevant material, and avoid redundant steps while preserving the requested completeness, evidence checks and saved-state safety.
+
 Input: claim, sources, saved expert profile, and claim index. Output: located evidence, supported scope, compatible alternatives, and claim/correction updates.
 
 ## 1. Establish the answerable scope
