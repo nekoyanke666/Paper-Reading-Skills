@@ -17,7 +17,7 @@ Develop concepts in understandable steps within a connected account. Avoid front
 
 ## 2. Explain terms without replacing the real concept
 
-When introducing a technical term, give its target-language form, original/English term where relevant, and its meaning or role in this study. Do not explain it with more unexplained jargon. Reuse glossary definitions; distinguish homonyms and return terminology corrections to shared memory.
+Whenever naming an important translated concept or technical term, place its verified English name immediately beside the target-language name. Repeat this pairing on every occurrence, including within the same paragraph, answer, chapter or later conversation; an earlier pairing never licenses omission. This applies to ordinary prose and emphasized/bold terminology alike. Explain its meaning or role when needed, without using more unexplained jargon. Reuse glossary definitions and English names, distinguish homonyms, and return corrections to shared memory. Follow the exact pairing and source rules in the terminology reference below.
 
 For technical vocabulary introduced, reused without sufficient context, or corrected during figure/detail/question work, read [terminology teaching and retention](references/terminology.md). Explain it at the point of use, save its study-specific meaning and verified properties in the shared glossary, and evaluate topical catalog updates through paper-map even when the main research chain is unchanged. A map/sidebar supplements the explanation; it does not replace it.
 

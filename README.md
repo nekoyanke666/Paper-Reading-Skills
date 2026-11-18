@@ -2,6 +2,8 @@
 
 Six public skills for understanding research papers across disciplines. English instructions define the workflow; each paper session asks for its output language and whether to produce a full translation (**Yes by default**). Explanations, questions, and map content then use the saved language.
 
+In detail, figure and question work, every occurrence of an important translated concept or technical term carries its verified English name immediately beside it, including repeated mentions and bold terms. Earlier appearances or a separate glossary never make later English names optional. The surrounding explanation remains in the saved interaction language.
+
 ## Public entries
 
 - [paper-prepare](skills/paper-prepare/SKILL.md): identify the primary paper, collect/check sources, select an expert perspective, build a whole-paper model, and produce the aligned translation when enabled.

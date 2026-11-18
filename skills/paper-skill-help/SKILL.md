@@ -22,6 +22,8 @@ List these six public skills with a short purpose and a usable example for each,
 
 Describe the usual order as prepare, figure overview, then complete explanation; questions can interrupt any stage, and new topic trees can be requested whenever useful. This is guidance, not a mandatory sequence. A narrow question does not require completing every preceding stage.
 
+Mention that detail, figure and ask explanations pair every occurrence of an important translated concept or technical term with its verified English name, including repeated and bold mentions. This supports direct lookup in the source and does not change the saved interaction language.
+
 ## Always explain the tree choices
 
 Include both integrated and non-integrated examples whenever presenting the full skill list or explaining paper-add-map. For a narrowly scoped help question, answer that question first and offer only relevant examples.

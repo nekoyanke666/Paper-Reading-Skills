@@ -21,7 +21,7 @@ Follow source sections and paragraphs. Under each stable identifier, show origin
 
 Keep translation faithful and natural, preserving causality, comparison objects, negation, conditions, pronoun references, and uncertainty. Annotate source ambiguity or omission separately rather than silently resolving it into certainty. Improve awkward wording without changing the argument.
 
-Use shared terminology. If no established target-language equivalent exists, retain the original term and explain the chosen rendering. For batches, state the current range, cumulative completion, and remaining ranges.
+Use shared terminology and the [inline-English terminology rule](../paper-teach/references/terminology.md): every named occurrence of an important translated concept or technical term includes its verified English name immediately beside it, including repeats and emphasized terms. An aligned original paragraph is not a substitute for this pairing. Keep the translation in the selected language; English names are lookup anchors, not additional author claims. If no established target-language equivalent exists, retain the original term and explain the chosen rendering. For batches, state the current range, cumulative completion, and remaining ranges.
 
 ## 3. Separate translation from teaching
 

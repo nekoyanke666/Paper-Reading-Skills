@@ -29,7 +29,7 @@ Build this core from current sources and the verified research model, not by sti
 
 ## 3. Deliver a connected account with technical depth
 
-Explain necessary technical vocabulary at the point of use and follow paper-teach's terminology contract to retain definitions, study roles, and verified properties in reusable topical catalogs through paper-map. Prior figure teaching or an existing sidebar does not replace the explanation here.
+Explain necessary technical vocabulary at the point of use and apply paper-teach's mandatory inline-English terminology rule on every named occurrence of an important translated concept or technical term, including repeats and bold terms. Never drop the English name because this paragraph, chapter or an earlier conversation already supplied it. Follow the shared terminology contract to retain canonical mappings, definitions, study roles and verified properties in reusable topical catalogs through paper-map. Prior figure teaching or an existing sidebar does not replace the explanation or inline English here.
 
 Use connected explanatory prose. Establish the overall problem and contribution at the opening, then develop the narrative through the obstacles, design choices, evidence, and conclusions. Teach the necessary background before relying on it; laying groundwork prepares a later full explanation, rather than standing in for it. At a later dependency, name the concept, restate its relevant meaning or result, and explain its role now. A bare "as mentioned earlier" is insufficient. Do not turn each paragraph into a numbered question/answer checklist or a separate miniature lesson.
 

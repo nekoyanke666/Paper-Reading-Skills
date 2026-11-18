@@ -23,7 +23,7 @@ At the first opening, call [paper-narrative](../../interfaces/paper-narrative/SK
 
 Call [paper-figures](../../interfaces/paper-figures/SKILL.md) in complete-figure mode. Give the figure's purpose and necessary background, display the actual figure with its identifier, explain each panel's reading, design, comparisons, observations, conclusions, and limits, then integrate the panels.
 
-Explain required technical names and abbreviations where they first matter, including their original/English forms and study-specific meaning. Follow paper-teach's terminology contract to retain useful definitions/properties in topical catalogs through paper-map; the term need not be a main result to merit a definition.
+Explain required technical names and abbreviations where they first matter, with their study-specific meaning. Apply paper-teach's mandatory inline-English terminology rule on every named occurrence of an important translated concept or technical term, including repeated mentions in the same panel, caption, heading or bold text. An earlier definition or English label never licenses omission. Follow the shared terminology contract to retain canonical mappings and useful definitions/properties in topical catalogs through paper-map; the term need not be a main result to merit a definition.
 
 When methods, statistics, equations, or proofs obstruct understanding, call [paper-methods](../../interfaces/paper-methods/SKILL.md), explain enough to interpret the current evidence, and return to the figure. Adapt to the actual figure type; do not invent groups, sample sizes, or error bars for theoretical or qualitative figures.
 

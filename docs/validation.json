@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 6,
   "internalInterfaces": 13,
-  "referencesChecked": 208,
+  "referencesChecked": 209,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Not completed in v1.5.3: headless browser attempts did not complete; Computer Use rejected Chrome operation because Google Chrome was not approved. No desktop/mobile rendering or native gesture pass claimed. See browser-qa.md",
+  "browserVisualQA": "No viewer changes in v1.5.4; prior v1.5.3 real-browser checks remain incomplete. See browser-qa.md.",
   "unitTests": {
     "passed": 67,
     "failed": 0
@@ -20,8 +20,8 @@
   "javascriptRuntime": "Ten suites passed: nine core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Written contract reviewed against 12 cases, including no history, rich history, mismatched old wording, explicit local recall and groundwork versus complete explanation. No independent generation comparison executed.",
-  "translationReview": "English instructions reviewed for temporary focus return, zoom restoration on exit, resize behavior, explicit navigation boundaries and existing-viewer upgrade; prior expert-map/detail rules retained.",
-  "version": "1.5.3",
+  "translationReview": "Written English contract review for mandatory adjacent English names on every translated important/domain-term occurrence, same-paragraph repeats, bold/plain text, captions/headings, later answers and non-English source provenance. No live teaching-output audit performed.",
+  "version": "1.5.4",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -44,12 +44,10 @@
   },
   "lastFullRuntimeVersion": "1.5.3",
   "currentTargetedTests": {
-    "unitTests": 67,
-    "javascriptRuntimeSuites": 10,
     "formalSkillValidation": 19,
     "packageAndReferences": "passed",
-    "installation": "Six entry skills and shared resources match source; installed Markdown references resolve; installed lock is paper-map-ui-1.6.1",
-    "scope": "Actual runtime-path regression reproduced before fix. Focus-return, queued-frame and simulated sidebar resize coverage is minimal-DOM, not real-browser gestures."
+    "installation": "Six entries and shared resources match source; 58 entry and 116 shared Markdown references resolve",
+    "scope": "Instruction-only terminology patch; no text-matching behavioral tests. Unit/runtime results are retained from v1.5.3."
   },
   "mapOpening": {
     "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
@@ -108,5 +106,18 @@
     "viewer": "paper-map-ui-1.6.1",
     "cameraContractVersion": 3,
     "browserQA": "blocked, not passed"
+  },
+  "inlineEnglishTerminology": {
+    "entries": [
+      "paper-detail-explain",
+      "paper-figure-explain",
+      "paper-ask"
+    ],
+    "rule": "Verified English name adjacent to every occurrence of an important translated concept or technical term",
+    "repetition": "Required even within the same sentence/paragraph and across later answers; not first-use-only",
+    "formatting": "Bold/plain text, headings, lists, tables, captions, summaries, recaps and translated passages",
+    "mapping": "Canonical English source name or separately verified English equivalent; no invented equivalent or unexplained acronym substitute",
+    "savedLanguage": "unchanged",
+    "liveOutputAudit": "not performed"
   }
 }

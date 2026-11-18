@@ -23,7 +23,7 @@ Read [paper-expert](../../interfaces/paper-expert/SKILL.md), [paper-teach](../..
 
 Read [paper-answer](../../interfaces/paper-answer/SKILL.md). Its direct-answer, necessary-recall, incorrect-premise, and ambiguity rules apply to every case and cannot be replaced by case classification. Answer in the saved interaction language, regardless of whether full translation was enabled.
 
-Explain technical vocabulary needed for the answer in place, with names and study-specific meanings. Follow paper-teach's terminology contract to save useful definitions/properties and evaluate topical catalogs through paper-map even if the answer does not change the main research chain.
+Explain technical vocabulary needed for the answer in place, with names and study-specific meanings. Apply paper-teach's mandatory inline-English terminology rule on every named occurrence of an important translated concept or technical term, including repeated mentions in the same answer, recaps and bold terms. Prior answers or earlier English labels never license omission. Follow the shared terminology contract to save canonical mappings and useful definitions/properties, and evaluate topical catalogs through paper-map even if the answer does not change the main research chain.
 
 Use its routing to select the smallest sufficient set of interfaces. After specialist checks, return to the original question and organize the answer. Handle mixed questions in dependency order without cycling through entries. For an unlisted case, use the general fallback to answer supported parts and identify specific unknowns and gaps.
 
