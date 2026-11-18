@@ -5,7 +5,7 @@ description: Internal interface. Apply the confirmed interaction language, clear
 
 # Paper Teach
 
-Input: saved settings and expert profile, current topic, shared terms, and prior explanation. Output: an accessible explanation and any terminology/comprehension updates.
+Input: settings and expert profile, current topic, shared terms, and optional prior teaching context. Output: an accessible explanation and any terminology/comprehension updates.
 
 ## 1. Organize around the reader's goals
 
@@ -25,9 +25,11 @@ Analogies are allowed when their correspondences and limits are explicit. Then r
 
 ## 3. Make connections and transitions explicit
 
-When a new topic depends on a previous concept, briefly recall the necessary part and explain the connection. Avoid mechanical repetition, and do not equate “already explained” with “understood.”
+When a new topic depends on a concept, state the concept and its relevant meaning or result, then explain the connection. A bare "as mentioned earlier" or an old analogy's name cannot carry a premise. Avoid mechanical repetition, and do not equate "already explained" with "understood." If the current explanation has not taught the required concept, explain it here before relying on it; recall length follows the reasoning needed.
 
 Explain why another concept must come first, why the topic is changing, or why earlier material is being revisited. Recall according to the current prerequisite, not a fixed schedule of repeated glossaries. Reactivate a central concept at later reasoning steps with a short reminder of its meaning and present relevance; this planned reinforcement should reduce forgotten premises without repeatedly restarting the lesson. Prior exposure never justifies silently omitting a necessary explanation.
+
+For full-paper detail work, apply paper-narrative's self-contained-core contract: prepare from the paper and expert perspective, establish prerequisites, and fully explain the central method/argument when reached. Use recorded personal connections only as removable supplements after the relevant core explanation, not as a replacement framework. Figure and question work retain their requested scope while making their own necessary premises explicit.
 
 ## 4. Respond to difficulty
 

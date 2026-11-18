@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 6,
   "internalInterfaces": 13,
-  "referencesChecked": 187,
+  "referencesChecked": 188,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Not rerun in v1.5.0; locked viewer unchanged. Earlier scoped audits retained in browser-qa.md",
+  "browserVisualQA": "Not rerun in v1.5.1; renderer and map assets unchanged. Earlier scoped audits retained in browser-qa.md",
   "unitTests": {
     "passed": 67,
     "failed": 0
@@ -19,9 +19,9 @@
   },
   "javascriptRuntime": "Nine suites passed: eight core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
-  "detailNarrativeReview": "Existing written-workflow review retained; not independently executed",
-  "translationReview": "English instructions reviewed for requested/declined/unspecified integration, global node identity, read-only help, and preserved language settings",
-  "version": "1.5.0",
+  "detailNarrativeReview": "Written contract reviewed against 12 cases, including no history, rich history, mismatched old wording, explicit local recall and groundwork versus complete explanation. No independent generation comparison executed.",
+  "translationReview": "English meaning reviewed for a source-derived expert core, history-independent coverage/depth, removable recorded supplements after the relevant topic, and explicit recall. Core consistency does not mean identical prose.",
+  "version": "1.5.1",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -44,10 +44,10 @@
   },
   "lastFullRuntimeVersion": "1.5.0",
   "currentTargetedTests": {
-    "settingsAndInstaller": 20,
     "formalSkillValidation": 19,
     "packageAndReferences": "passed",
-    "newMapBehavior": "Independent and selected-target additions; standalone reason/root/connectivity; saved-user-edit retention in v1 checkpoint"
+    "installation": "Six public entries match installed source with rewritten shared-resource paths; all entry references resolve; installed shared instructions match source",
+    "scope": "Instruction-only patch; no new text-matching tests. Unit/runtime counts refer to retained v1.5.0 results."
   },
   "mapOpening": {
     "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
@@ -63,5 +63,13 @@
     "managedReconciliation": "written agent workflow, not an automatic merge engine",
     "popupAndRealPaperIntegration": "not executed end-to-end"
   },
-  "installedEntryReferencesChecked": 58
+  "installedEntryReferencesChecked": 58,
+  "selfContainedDetail": {
+    "priorTeachingRequired": false,
+    "coreBasis": "current sources and verified study model under a paper-appropriate expert perspective",
+    "historyRole": "optional recorded connections after the relevant core topic",
+    "historyRemovalReview": "core remains complete after all personalized supplements are removed",
+    "consistency": "same source/version, role, scope and settings retain substantially the same core coverage and depth; no verbatim guarantee",
+    "liveComparativeGeneration": "not performed"
+  }
 }

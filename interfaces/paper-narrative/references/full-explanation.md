@@ -2,6 +2,18 @@
 
 Read for paper-detail-explain's full-explanation mode, including new runs, rewrites, and continuation. The outcome is an accessible, continuous account of the entire paper, backed by a complete manuscript and recoverable delivery progress. Other narrative modes remain scoped to their callers.
 
+## A self-contained core, with optional personal connections
+
+Write for a reader outside the field who has not read any earlier explanation. Establish an appropriate expert perspective from the paper and keep that perspective explicit. Use current sources, verified background and the research model to decide what must be taught; the chat's previous wording, question order and apparent familiarity do not define the core narrative.
+
+For fixed paper/version, expert perspective, requested scope and language/presentation settings, history-rich and history-free runs should teach substantially the same research architecture, necessary definitions, prerequisite chain, substantive methods/calculations, evidence and limitations. This is content consistency, not a promise of identical prose or a rigid chapter template. Prior exposure does not authorize less explanation. An explicit user request to skip or focus on material remains authoritative.
+
+Develop the source-to-topic crosswalk and core account before selecting personal connections. Existing source-grounded notes may help verify facts and locate sources, but old answers are not primary evidence or prose to transplant. Check every reused claim or example for fit with the present paper, model and argument. Reconstruct missing understanding from the sources if no teaching history exists; do not ask the reader to complete figure teaching or produce old chat records first. Missing scientific sources still require truthful partial scope.
+
+Only when an actual relevant record exists may it support a history-based supplement, such as revisiting a particular question, correcting a prior misconception or comparing a previously used example. Put it after the related topic's core explanation is complete, identify it as an optional connection, restate the actual idea involved and explain why the connection helps here. Keep it proportionate; do not retell unrelated prior lessons. Never imply remembered discussion without a record. Source-based background required for understanding belongs in the core, even if a previous conversation also covered it.
+
+Supplements must be removable without breaking the argument, removing a definition, or leaving unexplained references. In each run record coreCoverage through the source crosswalk, and supplements separately with their record basis, relevance and placement. A reader can follow the complete core without opening old chats, the glossary, a map, or another teaching run.
+
 ## Research narrative and breadth
 
 First understand the actual paper as a whole. Build a crosswalk from every substantive source section and central claim to where the explanation teaches it. Include material presented outside the main results: methods/proofs, relevant captions, qualifications, and essential supplemental controls. A source section can be distributed across several narrative chapters; prose order is chosen for comprehension rather than copied from publication order.
@@ -30,7 +42,11 @@ Revise the manuscript when questions reveal an unclear premise or an error. Prop
 
 Introduce background when it enables the next inference, not as an unrelated textbook preface. Before relying on a technical term, explain its selected-language/original name and concrete role in this study. State what the entities, measured quantities, states, or comparison objects actually are; avoid an unexplained "signal," "model," or "score."
 
-Use brief contextual recall at consequential dependencies. For example, when a shared measurement enters a later calculation, remind the reader why its source was ambiguous and explain how the new model handles that ambiguity. Later recall should add the relationship now needed, not mechanically repeat a glossary. Previously displayed figures or completed figure teaching do not prove comprehension.
+Laying groundwork introduces the objects, problem and prerequisites needed for a later full explanation. It does not justify replacing that full explanation with a slogan or transplanting an old analogy into a different argument. Teach the central model, operation or inference completely where the narrative reaches it; reuse the groundwork to make its steps understandable.
+
+Use explicit contextual recall at consequential dependencies. Name the concept or result, restate the part needed now, and connect it to the current reasoning. For the fictional classifier example, "Precision is the fraction of positive calls that are correct; removing false positive calls can therefore improve it even when some real positives are missed" supports the next calculation. "As mentioned earlier, the score improves" supplies neither the quantity nor the reasoning. The first is a local explanation; the second is an unresolved pointer. Length follows what the inference needs, not a one-sentence recall quota.
+
+Within the current narrative, brief recall can reinforce a concept already explained there. For material found only in earlier chats, provide the necessary explanation here first; a reference to that chat is optional afterward. Previously displayed figures, completion flags and claimed familiarity do not prove comprehension. Do not make the reader retrieve the intended referent from a pronoun, an old metaphor or a bare "as above."
 
 When changing direction, give the reason in the argument: "To decide whether this apparent gain comes from the model rather than the evaluation setup, we now need to examine the comparison." This is a transition into substantive explanation, not a promise to explain an essential premise in another installment.
 
@@ -52,16 +68,17 @@ Restored memory informs the new explanation without automatically choosing its s
 
 Retain the saved presentation preference. For segmented delivery, choose substantial chapters after drafting the whole argument. A chapter should resolve a meaningful stage of understanding with its needed prerequisites, reasoning, and evidence; a sentence, a figure panel, or an isolated definition does not automatically merit a separate installment. Chapters may each contain several concepts, methods, or figures. No fixed topic count or mandatory per-subheading pause applies.
 
-At a continuation, use a few sentences to restore the live problem and essential previous idea, then carry the narrative forward. End at a natural boundary with a concise synthesis and the question that logically follows. Do not replace the explanation with an administrative statement that a segment was completed. Save the boundary for recovery without presenting the cursor as the reader's understanding.
+At a continuation, state the live problem and explain the essential prerequisite sufficiently to follow the current chapter without finding an earlier message. A brief recap is enough only when it actually restores the entities and reasoning; otherwise explain the premise again. Continue the same research argument rather than importing unrelated material from other runs. End at a natural boundary with a concise synthesis and the question that logically follows. Do not replace the explanation with an administrative statement that a segment was completed. Save the boundary for recovery without presenting the cursor as the reader's understanding.
 
 ## Completion review
 
 Before marking manuscript-ready or full explanation delivered, check their respective coverage against the actual source crosswalk:
 
 - Could a non-specialist identify the study's objects, problem, prior approach, gap, and contribution without guessing undefined terms?
+- With earlier chats unavailable and every personalized supplement removed, does the manuscript still explain the entire requested scope, including all prerequisites? For the same source/scope/profile/settings, would a run without teaching history retain substantially the same core breadth and technical depth?
 - Does every substantive section and major result/argument have an explained location, including Methods/proofs and important supporting evidence? Are gaps explicit?
 - Can the reader trace the important measurements, mathematical operations, algorithmic steps, or analytic choices to their inputs, assumptions, outputs, and interpretations?
-- Do necessary recall and transitions make the dependency chain understandable instead of leaving disconnected facts or deferred prerequisites?
+- Does every recall state its actual referent, needed meaning/result and present relevance, rather than relying on "as mentioned earlier"? Does groundwork lead to a full explanation of the central mechanism/method instead of replacing it?
 - Are the abstract's claims supported and qualified by the explained evidence, with a final synthesis of significance, tradeoffs, scope, limitations, and unknowns?
 - Do manuscript-ready, chapters-delivered, and reader-understanding records match what was actually written, shown, or reported?
 

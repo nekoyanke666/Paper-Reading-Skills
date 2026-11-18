@@ -6,7 +6,7 @@ Six public skills for understanding research papers across disciplines. English 
 
 - [paper-prepare](skills/paper-prepare/SKILL.md): identify the primary paper, collect/check sources, select an expert perspective, build a whole-paper model, and produce the aligned translation when enabled.
 - [paper-figure-explain](skills/paper-figure-explain/SKILL.md): give a short overview, display actual figures, explain main figures/panels in order, and include essential supporting evidence.
-- [paper-detail-explain](skills/paper-detail-explain/SKILL.md): build a complete reader guide and teach the entire paper as a connected research narrative, including methods and calculations. Segmented delivery follows substantial chapters of that whole.
+- [paper-detail-explain](skills/paper-detail-explain/SKILL.md): build a complete reader guide and teach the entire paper as a self-contained expert narrative, including background, methods and calculations, without assuming earlier teaching. Recorded personal connections are optional supplements after the relevant core explanation. Segmented delivery follows substantial chapters of that whole.
 - [paper-ask](skills/paper-ask/SKILL.md): answer questions directly with necessary context and evidence, preserving the interrupted reading position.
 
 - [paper-add-map](skills/paper-add-map/SKILL.md): create a new topic tree in the same map, including unconnected term catalogs; inspect related trees and propose integration when useful, or directly apply explicitly requested integration.

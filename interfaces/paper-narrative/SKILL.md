@@ -10,7 +10,7 @@ Input: verified whole-paper model or explicitly limited local scope, original te
 ## 1. Choose the narrative mode
 
 - **Overview:** existing knowledge, gap, question, research object, principal findings, and significance; do not front-load all methods.
-- **Full explanation:** a complete reader-facing manuscript and connected teaching of the entire paper for paper-detail-explain. Read the [full-explanation contract](references/full-explanation.md) for breadth, technical depth, narrative runs, segmentation, and completion. It is not merely details omitted during figure reading.
+- **Full explanation:** a self-contained expert account of the entire paper for a reader with no earlier teaching context, backed by a complete manuscript. Read the [full-explanation contract](references/full-explanation.md) for a history-independent core, optional recorded connections, breadth, technical depth, runs, segmentation and completion. Its scope comes from the paper, not details left over from earlier figure reading or questions.
 - **Post-figure integration:** return to relevant prose, methods, and discussion to add material the figures do not convey sufficiently and check their joint conclusions.
 - **Scoped review:** only already-covered or requested material, retaining terminology, evidence, and limitations while distinguishing unread content. Understanding checks and requested quizzes use paper-answer.
 
@@ -26,7 +26,7 @@ Save each topic's source, section/paragraph, and conceptual dependencies. Establ
 
 Proceed through the relationship between questions and evidence. Source order may change to aid understanding, but explain why the next topic is needed and retain source locations.
 
-Develop ideas in dependency order without omitting crucial premises or limits. Connect the live problem, necessary concepts, design/argument, actual result, interpretation, sources, and alternatives in continuous explanatory prose. These are ingredients of the argument, not mandatory headings or a separate response per ingredient. In full explanation, choose substantial chapters of the whole manuscript, with brief meaningful recall and transitions. Previously explained figures still need relevant recall; exposure is not understanding.
+Develop ideas in dependency order without omitting crucial premises or limits. Connect the live problem, necessary concepts, design/argument, actual result, interpretation, sources, and alternatives in continuous explanatory prose. These are ingredients of the argument, not mandatory headings or a separate response per ingredient. In full explanation, choose substantial chapters of the whole manuscript and explicitly restate what a later inference needs. Previously explained figures or answers do not supply an explanation missing here. Earlier personal connections are optional supplements after the relevant core account; they do not decide its scope or replace its argument.
 
 Full explanation of methods must cover what affects design, measurement, analysis, reproducibility, and interpretation. Explain the purpose and location of remaining concrete procedures rather than skipping the section. The caller obtains relevant figure, methods, or code checks through their interfaces.
 
