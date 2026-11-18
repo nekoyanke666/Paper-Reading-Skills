@@ -6,6 +6,8 @@ Read when generating/upgrading the viewer, saving or importing a map, recovering
 
 Save captures the complete global node/link records, all trees and all three detail views, mode-specific positions, definitions/properties/sources, identities/aliases, evidence states, and view preferences. It never exports only the visible low-detail nodes. Browser-created content retains user-note provenance and does not become verified paper evidence merely because it was saved.
 
+Text fields keep their original Markdown/TeX strings under the [rich-text contract](rich-text.md). Display formatting never writes generated HTML or math markup into the model or old commits. The same fixed v1 archive accepts plain text and formatted source without a schema migration.
+
 Read [per-paper local storage](local-storage.md) before creating or starting the entry. Allocate history/ relative to this paper's generated HTML in its current workspace, not a fixed global or user-specific path. Ordinary Save writes its managed archive there through the supplied loopback service without asking for a destination. The service completes and checks the disk write before the viewer reports success. A static HTML preview cannot substitute a picker/download for this operation.
 
 Back up elsewhere alone selects an external destination (or explicitly requests a browser download when a picker is unavailable). Backup does not change the managed record, cursor or unsaved status. The source paper session/state and installed skill files remain separate. Browser recovery is supplementary; a fresh local page loads the actual saved disk archive. The compact menu orders Prev, Next on the first row, Save on the next, and Import history plus Back up elsewhere below.

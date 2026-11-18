@@ -1,0 +1,22 @@
+/* Scoped typography: preserve the existing sidebar and graph surface. */
+.markdown-content{font-size:12px;line-height:1.95;min-width:0;overflow-wrap:anywhere}
+.summary.markdown-content{font-size:13px}
+.source .markdown-content{font-size:11px;color:#7b887a;line-height:1.8}
+.markdown-content p{font-size:inherit;line-height:inherit;margin:0 0 10px}
+.markdown-content>:first-child{margin-top:0}
+.markdown-content>:last-child{margin-bottom:0}
+.markdown-content h1,.markdown-content h2,.markdown-content h3,.markdown-content h4,.markdown-content h5,.markdown-content h6{font-size:1.15em;font-weight:600;line-height:1.6;margin:16px 0 8px;color:inherit}
+.markdown-content h1{font-size:1.35em}.markdown-content h2{font-size:1.25em}
+.markdown-content ul,.markdown-content ol{margin:8px 0 12px;padding-left:22px}
+.markdown-content li{margin:3px 0}.markdown-content li>p{margin:0 0 4px}
+.markdown-content blockquote{margin:10px 0;padding:3px 12px;border-left:3px solid var(--border);color:var(--muted)}
+.markdown-content a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
+.markdown-content pre{margin:10px 0;padding:11px;background:var(--soft);border:1px solid var(--border);border-radius:5px;overflow:auto;max-width:100%}
+.markdown-content code{font-family:Consolas,"Cascadia Code",monospace;font-size:.92em;white-space:pre-wrap}
+.markdown-content :not(pre)>code{background:var(--soft);padding:1px 4px;border-radius:3px}
+.markdown-content pre code{white-space:pre;overflow-wrap:normal}
+.markdown-content table{display:block;max-width:100%;overflow:auto;border-collapse:collapse;margin:10px 0}
+.markdown-content th,.markdown-content td{padding:6px 9px;border:1px solid var(--border);text-align:left}
+.markdown-content hr{border:0;border-top:1px solid var(--border);margin:14px 0}
+.markdown-content .katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;margin:12px 0;padding:4px 0}
+.markdown-content .math-source{color:inherit;overflow-wrap:anywhere}

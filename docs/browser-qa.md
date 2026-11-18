@@ -1,5 +1,13 @@
 # Browser QA
 
+## Version 1.6.0 Markdown and mathematics
+
+Date: 2026-11-18. Viewer paper-map-ui-1.7.0 adds scoped sidebar typography with embedded Marked 18.2.1, KaTeX 0.19.1, their full license notices and twenty WOFF2 fonts. No new panel or toolbar, graph-label typesetting, external service route or archive version is introduced.
+
+The rich_text.cjs suite exercises real parser/math libraries and the compiled sidebar through a minimal DOM: emphasis/headings/lists/tables/code/links; inline/display delimiters; fractions, matrices and aligned expressions; literal code/dollars; unsupported-math fallback; escaped raw HTML/unsafe URL handling; isolated math macros; original-source v1 Save/import/Prev/Next. All eleven runtime suites passed, including camera return and real local HTTP/filesystem saving. All 67 Python checks passed with the richer compiled artifacts. The compiler verifies pinned vendor hashes and embeds every math-font URL.
+
+No fresh actual-browser audit was performed. Prior browser automation was unavailable/rejected as recorded below; it was not retried for this release. Desktop/mobile font rendering, table/code/equation overflow and real CSS layout are unverified. Parser/markup checks are not reported as visual QA. No private paper map was rebuilt.
+
 ## Version 1.5.3 temporary node inspection
 
 Date: 2026-11-18. The maintained viewer is paper-map-ui-1.6.1, camera contract 3. This patch changes camera return behavior without changing the graph/archive schema, visual palette, layout or controls.

@@ -1,6 +1,6 @@
 """Check package structure, reachable references, English defaults, and locked assets."""
 from pathlib import Path
-import ast,hashlib,json,re,subprocess,sys,tempfile
+import ast,hashlib,importlib.util,json,re,subprocess,sys,tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 PUBLIC={'paper-prepare','paper-figure-explain','paper-detail-explain','paper-ask','paper-add-map','paper-skill-help'}
@@ -23,7 +23,8 @@ def validate(root=ROOT):
         if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts or ('examples' in p.parts and ('revisions' in p.parts or 'history' in p.parts)) or p.name in ('service.json','service.lock'):continue
         if p.suffix in ('.md','.json','.py','.html','.in','.cjs','.js'):
             text=p.read_text(encoding='utf-8')
-            if any(0x3400<=ord(c)<=0x9fff for c in text):raise ValueError('untranslated CJK content remains: '+str(p))
+            vendored=p.is_relative_to(root/'interfaces/paper-map/assets/vendor')
+            if not vendored and any(0x3400<=ord(c)<=0x9fff for c in text):raise ValueError('untranslated CJK content remains: '+str(p))
             if p.suffix=='.py':ast.parse(text)
             if p.suffix=='.json':json.loads(text)
         if p.suffix=='.md':
@@ -37,10 +38,10 @@ def validate(root=ROOT):
     manifest=json.loads((root/'.codex-plugin/plugin.json').read_text(encoding='utf-8'))
     if manifest['skills']!='./skills/':raise ValueError('plugin must expose only the public skills directory')
     assets=root/'interfaces/paper-map/assets';lock=json.loads((assets/'template-lock.json').read_text(encoding='utf-8'))
-    for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256'),('node-shapes.json','shapesSha256'),('map-server.cjs','storageServiceSha256')]:
+    for name,key in [('graph-viewer.html.in','templateSha256'),('relation-registry.json','registrySha256'),('locale-en.json','localeSha256'),('node-shapes.json','shapesSha256'),('map-server.cjs','storageServiceSha256'),('vendor/vendor-lock.json','richTextVendorLockSha256')]:
         if hashlib.sha256((assets/name).read_bytes()).hexdigest()!=lock[key]:raise ValueError('locked asset mismatch: '+name)
-    runtime='\n'.join((assets/name).read_text(encoding='utf-8') for name in ('history-core.js','detail-core.js','history-viewer.js','camera-viewer.js','focus-viewer.js','viewer-runtime.js'))
-    compiled=(assets/'viewer-shell.html.in').read_text(encoding='utf-8').replace('__RUNTIME__',runtime)
+    spec=importlib.util.spec_from_file_location('map_template_builder',root/'scripts/build_map_template.py');builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
+    compiled=builder.compile_template(assets)
     if compiled!=(assets/'graph-viewer.html.in').read_text(encoding='utf-8'):raise ValueError('compiled viewer differs from maintained source')
     subprocess.run(['node','--check',str(assets/'viewer-runtime.js')],check=True,capture_output=True)
     with tempfile.TemporaryDirectory() as tmp:

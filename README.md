@@ -26,7 +26,7 @@ Independent inventory, downloads, extraction checks, indexing, and internal read
 
 ## Install locally in Codex
 
-Use Python 3.11 or later for the workflow helpers and Node.js for the local Save-enabled viewer. Neither requires third-party packages; the local service was tested with Node 24.
+Use Python 3.11 or later for the workflow helpers and Node.js for the local Save-enabled viewer. The workflow helpers need no additional Python or npm installation; browser Markdown/math libraries and fonts are bundled locally. The local service was tested with Node 24.
 
 ```sh
 git clone https://github.com/nekoyanke666/Paper-Reading-Skills.git
@@ -41,6 +41,8 @@ Installed skills should be available on the next turn. If the host has not refre
 Use `$paper-prepare` with a primary paper, then `$paper-figure-explain`, `$paper-detail-explain`, or `$paper-ask` as needed. Use `$paper-add-map` for a requested new topic tree in the existing map and `$paper-skill-help` for usage examples. Help works without a paper or setup questions.
 
 ## Research and map behavior
+
+Sidebar explanations support Markdown and LaTeX math: `$...$`, `\(...\)`, `$$...$$`, `\[...\]` and fenced math blocks. Marked and KaTeX, their styles/fonts and license notices are bundled into generated HTML for local rendering. Source strings survive fixed-v1 Save/import/history unchanged; short graph names remain literal. See the [rich-text contract](interfaces/paper-map/references/rich-text.md).
 
 The map is organized as a domain expert's model of the knowledge and research logic: substantive concepts/objects, mechanisms or arguments, methods, evidence and meaningful relationships. Its structure is not the order of questions or answers in a chat. Node labels remain concise; the sidebar provides a complete local explanation of the referent, relevant workings and study role without relying on old examples or figure warnings. See the [expert content model](interfaces/paper-map/references/content-model.md) and [node explanation contract](interfaces/paper-map/references/node-explanations.md).
 
@@ -75,6 +77,7 @@ node tests/history_viewer.cjs
 node tests/detail_viewer.cjs
 node tests/camera_viewer.cjs
 node tests/camera_focus.cjs
+node tests/rich_text.cjs
 node tests/direction_focus.cjs
 node tests/managed_store.cjs
 ```

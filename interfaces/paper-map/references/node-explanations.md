@@ -8,6 +8,8 @@ Write as the saved domain expert for a reader outside that field who opens this 
 
 The node name is concise. Its detail is a complete account of the node's declared scope, not a short label paraphrase, a clipped passage from a lecture, an illustration, or commentary about what the reader should avoid believing. Completeness is judged by intelligibility and substance, not a fixed word count. Do not turn every small node into an unrelated textbook chapter. If one node combines independently meaningful subjects, refine its scope and use additional substantive nodes through the normal identity rules.
 
+Use [Markdown and mathematical text](rich-text.md) to organize the sidebar with paragraphs, emphasis, headings, lists, tables or formulas where they help. Define the mathematical objects and operations in prose as required; a typeset formula is not its explanation. Keep the original Markdown/TeX string in node.detail and related fields, with verified English names beside every important translated term.
+
 Adapt the account to the referent rather than printing a generic form:
 
 - A concept or named object needs a clear definition, relevant structure/properties or distinctions, and its study-specific role. Name the actual objects or alternatives rather than relying on an unspecified "signal," "type" or "state."

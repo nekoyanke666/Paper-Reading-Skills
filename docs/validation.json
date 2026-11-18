@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 6,
   "internalInterfaces": 13,
-  "referencesChecked": 209,
+  "referencesChecked": 215,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "No viewer changes in v1.5.5; prior v1.5.3 real-browser checks remain incomplete. See browser-qa.md.",
+  "browserVisualQA": "Not performed in v1.6.0; actual desktop/mobile typography and overflow unverified. Prior browser automation restrictions retained in browser-qa.md.",
   "unitTests": {
     "passed": 67,
     "failed": 0
@@ -17,11 +17,11 @@
     "passed": 19,
     "failed": 0
   },
-  "javascriptRuntime": "Ten suites passed: nine core/minimal-DOM suites plus real local HTTP/filesystem integration",
+  "javascriptRuntime": "Eleven suites passed: ten parser/core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Written contract reviewed against 12 cases, including no history, rich history, mismatched old wording, explicit local recall and groundwork versus complete explanation. No independent generation comparison executed.",
-  "translationReview": "Written review of time-priority notice and scope-aware reuse rules. Required completeness, per-occurrence inline English, source checks and state/history safety retained; no live latency benchmark performed.",
-  "version": "1.5.5",
+  "translationReview": "Rich-text instructions reviewed for raw source preservation, math/code distinction, English terminology and independent explanation rules. No real-paper teaching or visual audit claimed.",
+  "version": "1.6.0",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -42,12 +42,14 @@
     "realFilesystemAndHttp": "passed",
     "runtimeLifecycle": "agent host uses retained serve session; portable user launcher included"
   },
-  "lastFullRuntimeVersion": "1.5.3",
+  "lastFullRuntimeVersion": "1.6.0",
   "currentTargetedTests": {
+    "unitTests": 67,
+    "javascriptRuntimeSuites": 11,
     "formalSkillValidation": 19,
     "packageAndReferences": "passed",
-    "installation": "Six entries and shared resources match source; installed Markdown links resolve; all nineteen SKILL.md files carry the time-priority notice",
-    "scope": "Instruction-only time/scope patch; no wording-matching behavioral tests. Unit/runtime results retained from v1.5.3."
+    "installation": "Six entries, shared instructions, pinned libraries and WOFF2 fonts match source; installed Markdown references resolve; viewer paper-map-ui-1.7.0",
+    "scope": "Real parser/math libraries, compiled sidebar integration and v1 history round trips; minimal-DOM, not actual browser layout."
   },
   "mapOpening": {
     "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
@@ -137,5 +139,24 @@
       "saved-state and history safety"
     ],
     "measuredLatencyImprovement": "not benchmarked"
+  },
+  "richText": {
+    "viewer": "paper-map-ui-1.7.0",
+    "contractVersion": 1,
+    "libraries": {
+      "marked": "18.2.1",
+      "katex": "0.19.1"
+    },
+    "offline": "libraries, full licenses, styles and twenty WOFF2 fonts embedded into generated HTML",
+    "fields": "sidebar node/term/relation/source descriptions; canvas names stay literal",
+    "math": [
+      "inline dollar and parenthesis delimiters",
+      "display double-dollar and bracket delimiters",
+      "explicit math fences",
+      "fractions/matrices/aligned expressions"
+    ],
+    "persistence": "original Markdown/TeX strings; frozen v1 envelope/model unchanged; rendering does not rewrite old commits",
+    "boundaries": "raw HTML escaped; active URL schemes and remote Markdown images blocked; untrusted math commands disabled; unsupported math retained as source",
+    "visualQA": "not performed"
   }
 }

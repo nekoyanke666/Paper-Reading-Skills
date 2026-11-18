@@ -38,6 +38,8 @@ Clarify that identical concepts can reuse the same global node in different tree
 
 Explain that the map is organized from the appropriate domain expert's view of the knowledge and research logic, not the order of questions in the chat. Node names stay concise; clicking them opens a substantive, self-contained explanation of the object/concept, relevant workings and study role, rather than an earlier-example reference or a warning about a figure.
 
+When explaining map text capabilities, mention that sidebars support Markdown and inline/display LaTeX math, including fractions and matrices. The source is preserved in Save history and rendered locally with bundled libraries/fonts. Short canvas names remain literal text. Give syntax examples only when relevant to the help question.
+
 ## Keep the boundary clear
 
 Only these six are public entry skills. The thirteen internal interfaces are supporting resources called as needed, not extra commands the reader must learn. To answer a deeper capability question, read the relevant linked entry and its focused references; do not claim unimplemented features. If the user now explicitly requests an action, route to that entry rather than silently executing a help example.

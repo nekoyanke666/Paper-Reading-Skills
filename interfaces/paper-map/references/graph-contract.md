@@ -11,6 +11,7 @@ Read these focused rules when their branch applies:
 - [Detail views](detail-views.md): three independently curated trees with shared global nodes and separate coordinates.
 - [Local storage](local-storage.md): dynamically allocated per-paper entry space, ordinary fixed-relative Save, startup and independent backup.
 - [Permanent history](history-format.md): fixed v1 portable archive, base plus deltas, saved checkpoints and import.
+- [Markdown and math](rich-text.md): source strings rendered locally in sidebars; graph labels remain literal and history retains the original Markdown/TeX.
 - [Direction focus](direction-focus.md): selected-node direction colors, endpoints, reciprocal/self/undirected distinctions and grouped accessible text.
 - [Appearance](appearance.md): locked template, dimensions, persistent controls, localization, responsive checks.
 - [Lifecycle](node-lifecycle.md): identity, addition, update, view removal, merge, retirement, restoration.

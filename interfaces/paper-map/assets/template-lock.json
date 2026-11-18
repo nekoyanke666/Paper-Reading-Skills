@@ -52,11 +52,17 @@
   "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
   "registryVersion": "2.0.0",
   "renderingVersion": "native-vector-text-1",
+  "richTextContractVersion": 1,
+  "richTextVendorLockSha256": "6ab6bdcc5588678292a2244481ade2db2e4006f69fddf939c4fe030e042c0f5c",
+  "richTextVersions": {
+    "katex": "0.19.1",
+    "marked": "18.2.1"
+  },
   "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
   "storageContractVersion": 1,
   "storageServiceSha256": "adeaa0791b933ea81ab3aa1b26d5e30134c1d5077c0a65fd0d2e3927cc5d665d",
-  "templateSha256": "9113474d3cf0793dfe8da4dca78a1e3747eed27119a17507d2ee99d1fdb8d210",
-  "version": "paper-map-ui-1.6.1",
+  "templateSha256": "05b234d80bb2e3da657f6a30b30b368572821f3a39038fc2139bcb66c241d18a",
+  "version": "paper-map-ui-1.7.0",
   "viewportBaselines": [
     [
       1440,
