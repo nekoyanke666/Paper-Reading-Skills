@@ -5,6 +5,8 @@ Read these focused rules when their branch applies:
 - [Concept coverage](concept-coverage.md): whole-paper inventory, main overview breadth, precise branching relationships, and omission review.
 - [Topic catalogs](topic-catalogs.md): rootless/unconnected vocabulary views, shared definitions, contextual properties, and update lifecycle.
 - [Content model](content-model.md): substantive concepts/objects/methods/propositions and four semantic shapes.
+- [Complete node explanations](node-explanations.md): self-contained expert accounts, canonical definition/context consistency and semantic acceptance checks; examples, chat excerpts and figure warnings do not replace an explanation.
+- [Node explanations](node-explanations.md): complete local expert explanations, independent of chat, invented illustrations or figure-warning fragments.
 - [Interaction](interaction.md): dragging, camera navigation, line modes, feedback, and full saved-version files.
 - [Detail views](detail-views.md): three independently curated trees with shared global nodes and separate coordinates.
 - [Local storage](local-storage.md): dynamically allocated per-paper entry space, ordinary fixed-relative Save, startup and independent backup.

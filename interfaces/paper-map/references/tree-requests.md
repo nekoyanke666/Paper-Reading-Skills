@@ -18,6 +18,8 @@ Search global nodes, aliases, terms, claims and source locators before allocatin
 
 Maintain the new view in the existing selector, search and cross-tree navigation. Preserve positions in existing views; arrange the new view independently. Apply the fixed geometry, canonical predicate labels, per-view density and relationship checks. Lack of evidence is a reason to qualify or omit a relationship, not invent one.
 
+Build its structure from the [expert content model](content-model.md), not the order of the request or previous answers. Apply [complete node explanations](node-explanations.md) to every new or substantively revised node, including rootless catalog terms. A requested lookup list can omit edges while retaining full explanations; lack of links does not justify fragmentary definitions.
+
 ## Inspect and decide integration
 
 Inspect existing narrative views and catalogs, glossary aliases and all three detail memberships for useful overlap. Evaluate prerequisite concepts, directly relevant methods, interpretation of evidence, limitations and corrections. Sharing a word or appearing in the same paper does not justify a semantic edge.

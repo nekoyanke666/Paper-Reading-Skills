@@ -16,6 +16,8 @@ Retain the 170 by 116 placement slot and locked shape profiles: concept rectangl
 
 Shared nodes have the same ID/name/content in every view, with view-specific positions allowed. Keep the visible shared-count marker and sidebar navigation. Catalogs have no root highlight or synthetic category node. Use existing root, selection, and addition styles rather than a new color per node type.
 
+Keep node names concise while displaying the complete explanatory text in the sidebar under the [node explanation contract](node-explanations.md). Do not reduce a sidebar to a label summary, lecture excerpt, example or caution in order to keep the graph visually compact. This is a content requirement and does not change the locked layout or add a new UI panel.
+
 ## Edges and interaction
 
 Registered semantics determine the resting line family, color and arrow/T marker. During node selection, the [direction-focus contract](direction-focus.md) temporarily colors incident edges by relative direction while retaining semantic labels, T endpoints, undirected status and uncertainty dashes; clearing selection restores the resting palette. Paths are smooth cubic curves by default, with a user-selectable single straight segment mode; neither mode uses angular or rounded orthogonal polylines. Endpoints meet actual glyph boundaries. Read the [interaction contract](interaction.md) for click/drag separation, feedback, full file history, and camera operation. Always show the standardized localized relationship name; show full meaning, conditions, direction, and basis in details. Color is not a substitute for text. Dashes indicate hypothesis/uncertainty, never inhibition; inhibition uses a T marker. Undirected relations do not receive causal arrows.

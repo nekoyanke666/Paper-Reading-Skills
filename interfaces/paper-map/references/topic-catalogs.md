@@ -20,7 +20,7 @@ Every canonical catalog node references at least one glossary term with a nonemp
 
 Glossary additions use targetTerm/sourceTerm (or the existing target/original/english representation), aliases, definition, studyRole, and sourceRefs. Optional facets is an array of {label, value, sourceRefs}; sourceRefs uses registered sourceId and location. Select meaningful properties rather than forcing every term through a large generic form. Legacy sources with locator remain readable, while new facet references use location. Paper-specific findings and externally sourced background must remain distinguishable in their wording and references.
 
-The glossary is the definition authority; node.detail supplies the study context and any necessary interpretation, not a contradictory copy. Term aliases and contextual properties participate in node search. Absent facts remain absent or explicitly qualified; a complete-looking sidebar is not a reason to invent function, localization, classification, or parameters.
+The glossary is the definition authority. Compose node.detail's complete, standalone explanation from that meaning plus the relevant study context, process/properties and interpretation; do not maintain a conflicting definition or leave only a context fragment. Apply [complete node explanations](node-explanations.md): examples, old-chat references and figure warnings cannot replace the actual account. Term aliases and contextual properties participate in node search. Absent facts remain absent or explicitly qualified; a complete-looking sidebar is not a reason to invent function, localization, classification, or parameters.
 
 ## Sparse links without invented semantics
 

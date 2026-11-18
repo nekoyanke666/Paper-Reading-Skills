@@ -32,6 +32,8 @@ Include both integrated and non-integrated examples whenever presenting the full
 
 Clarify that identical concepts can reuse the same global node in different trees, with visible cross-tree navigation, even when content integration is declined. That reuse does not itself add nodes or edges to an old tree. A lookup catalog may contain zero edges; a connected explanation uses only relationships whose meanings and evidence are justified. Do not promise arbitrary links simply because two terms occur together.
 
+Explain that the map is organized from the appropriate domain expert's view of the knowledge and research logic, not the order of questions in the chat. Node names stay concise; clicking them opens a substantive, self-contained explanation of the object/concept, relevant workings and study role, rather than an earlier-example reference or a warning about a figure.
+
 ## Keep the boundary clear
 
 Only these six are public entry skills. The thirteen internal interfaces are supporting resources called as needed, not extra commands the reader must learn. To answer a deeper capability question, read the relevant linked entry and its focused references; do not claim unimplemented features. If the user now explicitly requests an action, route to that entry rather than silently executing a help example.

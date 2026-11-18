@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 6,
   "internalInterfaces": 13,
-  "referencesChecked": 188,
+  "referencesChecked": 205,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Not rerun in v1.5.1; renderer and map assets unchanged. Earlier scoped audits retained in browser-qa.md",
+  "browserVisualQA": "Not rerun in v1.5.2; renderer and map assets unchanged. Earlier scoped audits retained in browser-qa.md",
   "unitTests": {
     "passed": 67,
     "failed": 0
@@ -20,8 +20,8 @@
   "javascriptRuntime": "Nine suites passed: eight core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Written contract reviewed against 12 cases, including no history, rich history, mismatched old wording, explicit local recall and groundwork versus complete explanation. No independent generation comparison executed.",
-  "translationReview": "English meaning reviewed for a source-derived expert core, history-independent coverage/depth, removable recorded supplements after the relevant topic, and explicit recall. Core consistency does not mean identical prose.",
-  "version": "1.5.1",
+  "translationReview": "English meaning reviewed for expert conceptual organization, full local node explanations, distinction between useful scientific scope and irrelevant figure warnings, and stable identities. Existing self-contained detail requirements retained.",
+  "version": "1.5.2",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -46,7 +46,7 @@
   "currentTargetedTests": {
     "formalSkillValidation": 19,
     "packageAndReferences": "passed",
-    "installation": "Six public entries match installed source with rewritten shared-resource paths; all entry references resolve; installed shared instructions match source",
+    "installation": "Six entries match source; 58 entry references and 112 installed shared Markdown references resolve; shared resources match source",
     "scope": "Instruction-only patch; no new text-matching tests. Unit/runtime counts refer to retained v1.5.0 results."
   },
   "mapOpening": {
@@ -71,5 +71,18 @@
     "historyRemovalReview": "core remains complete after all personalized supplements are removed",
     "consistency": "same source/version, role, scope and settings retain substantially the same core coverage and depth; no verbatim guarantee",
     "liveComparativeGeneration": "not performed"
+  },
+  "expertMapAndNodeContent": {
+    "treeBasis": "domain expert profile, actual knowledge objects and source-supported relationship meanings; not conversation order",
+    "nodeBody": "complete local explanation of referent, relevant workings/properties/reasoning and study role",
+    "excludedSubstitutes": [
+      "earlier-example pointers",
+      "answer fragments",
+      "figure-policing warnings"
+    ],
+    "evidenceLimits": "specific source-grounded conditions and inference boundaries retained with reasons",
+    "existingPrivateMaps": "not rewritten by this skill update",
+    "review": "Written consistency review against eight cases in docs/map-content-cases.md",
+    "liveMapGenerationAndBrowserAudit": "not performed"
   }
 }

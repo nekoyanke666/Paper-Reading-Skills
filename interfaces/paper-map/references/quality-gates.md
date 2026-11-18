@@ -14,6 +14,10 @@ A patch records reason, importance, roleVersion, settingsVersion, and concise pu
 
 Correct source extraction does not guarantee correct interpretation. Compare the entire source-to-map crosswalk with actual paper content: important methods/contributions/results/limits need visible main anchors and intelligible branches. More edges alone does not prove richer understanding; one-to-many branches must preserve each relation's meaning. Review required vocabulary and useful topic catalogs even when the main graph is unchanged. Check hypotheses were not upgraded, refutation did not disappear, homonyms were not merged, synonymous relationships were normalized, and a complete evidence chain remains navigable after splitting. Confirm selected-language output without changing canonical semantics.
 
+Review the tree as a domain expert's model of the subject, not a diagram of the conversation: its purpose, selected objects, conceptual distinctions and relationship meanings must follow actual knowledge and evidence. A valid chain of question nodes or generic prerequisite links does not by itself meet that standard. Record the expert-profile version, view purpose and concise grouping/relation rationale with the source-to-map review.
+
+Apply [complete node explanations](node-explanations.md) to the nodes in the submitted scope. Open a node conceptually from search without prior chat, neighboring nodes or a figure discussion: its sidebar must teach the referent, relevant operation/properties/reasoning and study role. Remove old-chat pointers, invented examples and figure-policing comments during the review; the substantive account must remain. Necessary scientific scope and uncertainty remain alongside the explanation. This semantic gate cannot be replaced by nonempty detail fields, minimum word counts or tests matching forbidden phrases.
+
 ## Machine blockers
 
 - Duplicate/missing IDs, unknown or unlocatable sources/types, invalid positions, duplicate semantic identities/edges.

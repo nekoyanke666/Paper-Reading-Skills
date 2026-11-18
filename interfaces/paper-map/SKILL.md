@@ -5,7 +5,7 @@ description: Internal interface. Prepare a stable map entry by default during pa
 
 # Paper Map
 
-Input: canonical session, significant conceptual/evidential changes, and map scope. Output: an understandable interactive graph and matching saved memory, with fixed appearance and explicit verification scope. Helpers support reproducibility; source interpretation remains the saved expert's responsibility.
+Input: canonical session, significant conceptual/evidential changes, and map scope. Output: an expert-structured knowledge/relationship graph with independently understandable node explanations and matching saved memory, fixed appearance and explicit verification scope. Helpers support reproducibility; source interpretation and conceptual organization remain the saved expert's responsibility.
 
 ## 1. Restore the entry and evaluate changes
 
@@ -29,7 +29,7 @@ Persist the entry's stable workspace-relative path under progress.map.entryPath.
 
 ## 2. Establish content and the tree's question
 
-Determine concepts/claims, sources, conditions, and evidence state from original material and session before drawing. A map is a view of full memory, not a replacement for understanding.
+Determine concepts/claims, sources, conditions, and evidence state from original material and the verified model before drawing. Organize as the paper-appropriate domain expert: establish what knowledge this tree represents, which substantive objects and distinctions matter, and how their actual relationships explain the subject. Use the [expert content model](references/content-model.md) before selecting branches. Conversation order, old examples and figure-warning notes do not define the tree's structure. A map is a view of full understanding, not a transcript or a replacement for it.
 
 The main tree answers the core paper question, uses that question as its reading start, and takes the paper title. Name secondary narrative trees by focused questions and reuse substantive shared nodes when genuine overlap exists. An explicitly independent narrative without such an anchor uses the documented standalone reason; do not fabricate overlap. Name topic catalogs by their lookup subject; they can contain independent glossary-bound terms. Full guidance needs an integrated whole-paper model; a local answer's graph claims only local scope. Distinguish hypotheses, fictional examples, user notes, and supported findings.
 
@@ -46,6 +46,8 @@ The fixed surface contains the title, global node search, an always-present tree
 Use the confirmed interaction language for content and the locale text dictionary. Canonical predicate IDs and English registry labels remain stable; each predicate has one saved localized display label. Missing non-English UI or relationship translations must be supplied before rendering, not silently mixed with English. A locale change may reroute labels while preserving node identity and positions. Interface redesign requires an explicit request, a new version, and visual validation.
 
 ## 4. Check identity before adding or changing nodes
+
+For every new or revised node, read [complete node explanations](references/node-explanations.md). Its sidebar must explain the actual referent, relevant process/properties or reasoning, and role in the study for a non-specialist entering directly from search. Do not substitute an old example, extracted answer fragment, unresolved "as mentioned earlier" pointer, or a warning about what something in a figure is not. Source locators and scientifically relevant scope accompany the substantive account. Repair inadequate same-referent details when encountered; unchanged graph topology does not make that repair a no-change review.
 
 Read [node lifecycle](references/node-lifecycle.md) for additions, edits, merges, removals, or restoration. Search nodes/aliases, glossary, claims, and sources first. Reuse the ID for the same referent. Equal names do not prove identity, and a new name does not create a new object.
 

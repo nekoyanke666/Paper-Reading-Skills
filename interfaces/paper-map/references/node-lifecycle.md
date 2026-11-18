@@ -16,6 +16,8 @@ New nodes need understandable content, source nature, and an appropriate view. N
 
 Update the same referent's definition, sources, limits, status, or name in place, retaining ID and adding the old name to aliases. Materially different objects/conditions require another node. Supporting a hypothesis changes its state, not its identity. A classification change needs an explicit unchanged-referent explanation.
 
+Apply [complete node explanations](node-explanations.md) when repairing fragmentary, example-only, context-dependent or warning-only content. Write the substantive knowledge account without changing its referent or shuffling its positions; a fuller description alone does not require a new node or edge. Preserve source-backed qualifications after explaining the subject itself.
+
 Corrections propagate to claims, edges, sources, explanations, and translations relying on the old statement. Retain refuted claims with clear corrections/status/limits; move them to a limitations or alternative-explanation view when appropriate rather than letting them continue to support the conclusion as facts.
 
 Preserve positions unless explicit layout repair is needed for overlap. Language changes preserve identity and aliases; do not duplicate the graph by language.

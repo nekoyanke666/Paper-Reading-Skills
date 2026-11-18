@@ -19,6 +19,8 @@ Read [paper-map](../../interfaces/paper-map/SKILL.md) and its [new-tree workflow
 
 Determine whether the request is a lookup catalog, a connected explanation, or needs separate focused views. Use the user's scope and available evidence to choose a concise topic title. Only ask about ambiguity that would materially change the result.
 
+Construct the topic as the paper-appropriate domain expert using paper-map's content model: select the substantive knowledge objects and their actual relationships before arranging them. The request identifies a subject, not a mandatory question-shaped node or a transcript to diagram. Keep concise node names and independently complete sidebar explanations under the shared node-explanation contract.
+
 For a list of terms, use [topic catalogs](../../interfaces/paper-map/references/topic-catalogs.md): nodes may have no edges, and their sidebar definitions explain original/English names, meanings and relevant properties. For a deeper explanation, build an evidence-grounded reading path rather than manufacturing a hierarchy. Reuse genuinely identical global concepts and definitions; equal words alone do not establish identity.
 
 Read [paper-teach](../../interfaces/paper-teach/SKILL.md) and [paper-evidence](../../interfaces/paper-evidence/SKILL.md) for understandable terminology, provenance and uncertainty. Call [paper-sources](../../interfaces/paper-sources/SKILL.md) only for missing material needed by this topic. Identify external background separately from this paper's findings. Follow paper-map's fixed appearance, relationships, detail views, lifecycle and validation contracts.

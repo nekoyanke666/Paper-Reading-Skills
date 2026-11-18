@@ -12,6 +12,8 @@ Include terms required to read the current paper: mechanisms, entities/classes, 
 
 Search the shared glossary and node aliases first. Reuse the ID for the same referent; distinguish homonyms, broader/narrower objects, and study-dependent meanings. Save the name/aliases, definition, original terminology, studyRole, sources, and any useful verified properties under the glossary term. A node references it with termIds rather than maintaining a competing dictionary entry. Corrections update the shared definition and dependent explanations.
 
+Write definitions as direct, independently understandable accounts of the actual concept. When retained in a tree, follow [complete node explanations](../../paper-map/references/node-explanations.md): do not save a clipped lecture sentence, an instruction to recall an earlier example, or a warning about a figure as the term's explanation. The expert-organized map and its sidebars remain understandable without the conversation that prompted them.
+
 Choose contextual properties from the object and study, not a rigid form. Examples include:
 
 - A mechanism: what changes, relevant participants/conditions, and why it matters here.
