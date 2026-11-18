@@ -15,6 +15,7 @@ function cacheWorkspace(){
 }
 function scheduleWorkspaceCache(){clearTimeout(cacheTimer);cacheTimer=setTimeout(cacheWorkspace,160);}
 function useModel(model){
+ resetFocusView();
  const next=History.unpack(model);validate(next);state=next;customPositions={};savedPositions={};edgeMode=savedEdgeMode=model.preferences.edgeMode;
  if(typeof detailMode!=='undefined')detailMode=model.preferences.detailMode;
  activeTree=model.preferences.activeTree;detailCacheKey='';canonicalRevision=next.revision;localDraftRevision=0;selected=null;query='';$('search').value='';manualZoom=false;routeCacheKey='';newIds.clear();changedIds.clear();$('app').classList.remove('open');
@@ -51,7 +52,7 @@ function initializeWorkspace(){
 function historyVersion(delta){
  if(historyBusy)return false;if(workspaceDirty()){notice(ui('historySaveFirst'));return false;}
  const next=historyBook.cursor+delta;if(next<0||next>historyBook.commits.length)return false;
- const candidate=History.navigate(historyBook,next),model=History.materialize(candidate);History.validateModel(model);useModel(model);historyBook=candidate;layoutOpen=true;render();requestAnimationFrame(centerView);cacheWorkspace();return true;
+ const candidate=History.navigate(historyBook,next),model=History.materialize(candidate);History.validateModel(model);useModel(model);historyBook=candidate;layoutOpen=true;render();cameraAfterLayout(centerView);cacheWorkspace();return true;
 }
 function legacySnapshot(input){
  const s=History.copy(input);if(s.schemaVersion!==2||!s.graph||!Array.isArray(s.graph.nodes)||!Array.isArray(s.graph.trees))throw Error('Unsupported legacy map snapshot');
@@ -68,7 +69,7 @@ function importHistoryText(text,handle=null){
  const raw=JSON.parse(text),book=raw.format===History.FORMAT?History.parse(text):History.create(History.pack(legacySnapshot(raw)));
  const model=History.materialize(book);validate(History.unpack(model));
  useModel(model);historyBook=book;historyImported=true;managedNewRecord=true;historyExportStatus='imported';sourceUnavailable=true;
- layoutOpen=true;render();requestAnimationFrame(centerView);cacheWorkspace();notice(ui('historyImported'));return true;
+ layoutOpen=true;render();cameraAfterLayout(centerView);cacheWorkspace();notice(ui('historyImported'));return true;
 }
 function selectHistoryFile(){if(historyBusy)return;if(workspaceDirty()){notice(ui('historySaveFirst'));return;}$('history-file').click();}
 function downloadHistory(text){const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=archiveFilename();document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}

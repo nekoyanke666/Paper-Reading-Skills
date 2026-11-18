@@ -1,6 +1,19 @@
 /* View-only camera: screen = world * zoom + camera. No scientific coordinates change. */
-let camera={x:0,y:0},cameraResizePending=false;
+let camera={x:0,y:0},cameraResizePending=false,focusReturn=null,cameraAction=0;
 const CAMERA_MIN=.08,CAMERA_MAX=3;
+function rememberFocusView(){
+ if(!focusReturn)focusReturn={paperId:state.paper.id,activeTree,detailMode,camera:{...camera},zoom,manualZoom};
+}
+function resetFocusView(){focusReturn=null;cameraAction++;}
+function restoreFocusView(){
+ const saved=focusReturn;resetFocusView();
+ if(!saved||saved.paperId!==state.paper.id||!state.graph.trees.some(t=>t.id===saved.activeTree))return false;
+ activeTree=saved.activeTree;detailMode=saved.detailMode;detailCacheKey='';routeCacheKey='';
+ camera={...saved.camera};zoom=saved.zoom;manualZoom=saved.manualZoom;return true;
+}
+function cameraAfterLayout(action){
+ const current=++cameraAction;requestAnimationFrame(()=>{if(current===cameraAction)action();});
+}
 function screenToWorld(x,y){return {x:(x-camera.x)/zoom,y:(y-camera.y)/zoom};}
 function renderCamera(){
  const dpr=typeof devicePixelRatio==='number'&&devicePixelRatio>0?devicePixelRatio:1,snap=n=>Math.round(n*dpr)/dpr;
@@ -22,17 +35,19 @@ function renderCamera(){
 }
 function zoomAt(next,x=$('map').clientWidth/2,y=$('map').clientHeight/2){
  if(nodeDrag||pan)return;
+ cameraAction++;
  const anchor=screenToWorld(x,y);zoom=Math.max(CAMERA_MIN,Math.min(CAMERA_MAX,next));
  camera={x:x-anchor.x*zoom,y:y-anchor.y*zoom};manualZoom=true;renderCamera();
 }
-function centerGraph(){if(nodeDrag||pan)return;manualZoom=false;centerView();}
+function centerGraph(){if(nodeDrag||pan)return;cameraAction++;manualZoom=false;centerView();}
 function resizeCamera(){
  if(nodeDrag||pan){cameraResizePending=true;return;}
- cameraResizePending=false;manualZoom=false;centerView();
- if(selected?.kind==='node')centerNode(selected.id);
+ cameraResizePending=false;
+ if(selected?.kind==='node')centerNode(selected.id);else renderCamera();
 }
 function beginPan(e){
  if(nodeDrag||pan||e.button!==0||e.target.closest('button,input,select,textarea,[data-edge],.layout-panel'))return;
+ cameraAction++;
  pan={pointerId:e.pointerId,x:e.clientX,y:e.clientY,start:{...camera},moved:false};
  $('map').setPointerCapture?.(e.pointerId);$('map').classList.add('dragging');
 }

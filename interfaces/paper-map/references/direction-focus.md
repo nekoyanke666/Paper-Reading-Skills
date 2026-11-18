@@ -13,6 +13,8 @@ Use only actual relationships in the current tree/detail view. Classify each inc
 
 These colors encode direction relative to the current selection only. They do not replace predicates, source evidence, conditions, uncertainty, or causal/proof qualifications. Selecting a different node can reverse incoming/outgoing colors without reversing the underlying edge. Closing selection restores the registered semantic palette.
 
+Selection also follows [temporary inspection and return](interaction.md): capture the browsing camera before centering the first inspected node, retain it through related inspections, and restore its position and scale when selection closes. Do not recenter the whole tree on close or let sidebar resize override that restoration. Focus colors and the return point are transient presentation state, not saved graph edits.
+
 ## Canvas treatment
 
 Dim unrelated edges and nodes while keeping them available for inspection. Draw incident edges after background edges; add a light under-stroke at crossings, a stronger selected stroke, readable canonical labels and enlarged endpoint markers. Preserve a T endpoint for inhibition and no arrow for an undirected relation. Keep dashed hypothesis/unresolved/user-note styling; dashes never encode incoming versus outgoing. A self-edge remains a separate visible cubic loop even in straight-line mode.

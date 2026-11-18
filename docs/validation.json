@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 6,
   "internalInterfaces": 13,
-  "referencesChecked": 205,
+  "referencesChecked": 208,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Not rerun in v1.5.2; renderer and map assets unchanged. Earlier scoped audits retained in browser-qa.md",
+  "browserVisualQA": "Not completed in v1.5.3: headless browser attempts did not complete; Computer Use rejected Chrome operation because Google Chrome was not approved. No desktop/mobile rendering or native gesture pass claimed. See browser-qa.md",
   "unitTests": {
     "passed": 67,
     "failed": 0
@@ -17,11 +17,11 @@
     "passed": 19,
     "failed": 0
   },
-  "javascriptRuntime": "Nine suites passed: eight core/minimal-DOM suites plus real local HTTP/filesystem integration",
+  "javascriptRuntime": "Ten suites passed: nine core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Written contract reviewed against 12 cases, including no history, rich history, mismatched old wording, explicit local recall and groundwork versus complete explanation. No independent generation comparison executed.",
-  "translationReview": "English meaning reviewed for expert conceptual organization, full local node explanations, distinction between useful scientific scope and irrelevant figure warnings, and stable identities. Existing self-contained detail requirements retained.",
-  "version": "1.5.2",
+  "translationReview": "English instructions reviewed for temporary focus return, zoom restoration on exit, resize behavior, explicit navigation boundaries and existing-viewer upgrade; prior expert-map/detail rules retained.",
+  "version": "1.5.3",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -30,7 +30,7 @@
     "fortySaveBytes": 37661,
     "repeatedSnapshotBytes": 1935405
   },
-  "responsiveCamera": "User-only zoom. Selection, search, tree/detail switches, viewport/sidebar resize, Center, history and import preserve scale; translation-only centering. Native SVG edges and actual-size HTML text/glyphs.",
+  "responsiveCamera": "Entering focus preserves scale; leaving temporary inspection restores captured camera position, scale and original tree/detail context. Chained inspections retain the first origin; unselected resize and stale animation frames cannot overwrite it. Actual-size HTML text and native SVG retained.",
   "directionFocus": "Blue incoming, green outgoing, purple self, slate undirected; reciprocal paths, T endpoints, dashed uncertainty and grouped source-to-target text retained",
   "managedStorage": {
     "protocol": "paper-map-local-v1",
@@ -42,12 +42,14 @@
     "realFilesystemAndHttp": "passed",
     "runtimeLifecycle": "agent host uses retained serve session; portable user launcher included"
   },
-  "lastFullRuntimeVersion": "1.5.0",
+  "lastFullRuntimeVersion": "1.5.3",
   "currentTargetedTests": {
+    "unitTests": 67,
+    "javascriptRuntimeSuites": 10,
     "formalSkillValidation": 19,
     "packageAndReferences": "passed",
-    "installation": "Six entries match source; 58 entry references and 112 installed shared Markdown references resolve; shared resources match source",
-    "scope": "Instruction-only patch; no new text-matching tests. Unit/runtime counts refer to retained v1.5.0 results."
+    "installation": "Six entry skills and shared resources match source; installed Markdown references resolve; installed lock is paper-map-ui-1.6.1",
+    "scope": "Actual runtime-path regression reproduced before fix. Focus-return, queued-frame and simulated sidebar resize coverage is minimal-DOM, not real-browser gestures."
   },
   "mapOpening": {
     "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
@@ -84,5 +86,27 @@
     "existingPrivateMaps": "not rewritten by this skill update",
     "review": "Written consistency review against eight cases in docs/map-content-cases.md",
     "liveMapGenerationAndBrowserAudit": "not performed"
+  },
+  "focusReturn": {
+    "reproducedBeforeFix": true,
+    "capture": "first browsing camera, zoom and context before inspection",
+    "exitPaths": [
+      "close",
+      "Escape",
+      "blank-canvas click"
+    ],
+    "coverage": [
+      "chained node/edge inspection",
+      "focused zoom then exit",
+      "search and shared cross-tree return",
+      "simulated sidebar width transitions",
+      "obsolete animation callbacks",
+      "history/import resets",
+      "saved records and positions preserved during viewer refresh"
+    ],
+    "storage": "runtime-only; no archive or research-memory camera field added",
+    "viewer": "paper-map-ui-1.6.1",
+    "cameraContractVersion": 3,
+    "browserQA": "blocked, not passed"
   }
 }

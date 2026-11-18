@@ -1,5 +1,16 @@
 # Browser QA
 
+## Version 1.5.3 temporary node inspection
+
+Date: 2026-11-18. The maintained viewer is paper-map-ui-1.6.1, camera contract 3. This patch changes camera return behavior without changing the graph/archive schema, visual palette, layout or controls.
+
+- Reproduced the defect through the actual select/close runtime path: a browsing camera at (-821.25, 436.5), 170% zoom, remained at the focused node after close; a later resize moved it to the whole-tree center.
+- The new camera_focus.cjs regression uses the rendered fictional detail/terminology fixtures and actual runtime functions. It checks exact position/scale/context restoration after ordinary close, chained node/edge inspection, focused zoom, search, cross-tree shared inspection, repeated close and simulated sidebar width changes. Deferred animation-frame checks prevent stale node/import centering from overriding a restored view. These are minimal-DOM/runtime checks, not real CSS layout or browser gestures.
+- The ten JavaScript suites include the existing real loopback HTTP/filesystem Save tests. The Python renderer regression confirms a viewer refresh retains the frozen v1 archive, its current pointer, node definitions and positions. An ephemeral local fictional preview was generated for inspection; no private paper was rebuilt.
+- Real browser verification did not complete: isolated headless Chrome startup timed out and Edge's CDP Page.enable timed out. A native Chrome preview attempt was rejected by automatic review because Computer Use was not approved to use Google Chrome. No desktop/mobile screenshot, CSS-transition, visual contrast or native gesture result is marked passed for this release. The unfinished headless helper was removed rather than shipped as a verified test.
+
+Earlier browser audits below remain historical records and do not establish the new focus-return behavior visually.
+
 ## Version 1.4.1 opening workflow
 
 Date: 2026-11-17. This release updates skill delivery/navigation instructions; it changes no renderer, service, archive format or map data.

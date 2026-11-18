@@ -5,10 +5,10 @@
     "registrySha256": "18da657c644cb913d5b51d45839aca81618dbb06756f4fe24e8153b0c19a9457",
     "registryVersion": "2.0.0",
     "shapesSha256": "37fb1079bcd57012e4ae4205639b16d1b1d9594bbe2b048497fa5082f521278c",
-    "snapshotSha256": "8fb525264b1836158939986493817e3c248f8c7153583659f1cb5ef522209f34",
+    "snapshotSha256": "02293927e2b44a0765f65df9e240efa50a103ea63e5cc70904895c258c4396c9",
     "storageServiceSha256": "adeaa0791b933ea81ab3aa1b26d5e30134c1d5077c0a65fd0d2e3927cc5d665d",
-    "templateSha256": "bc2d875ac6cb4aba4cbd0eebb7633131ecabfa2c3652befc1e0c6ed3e5006315",
-    "templateVersion": "paper-map-ui-1.6.0"
+    "templateSha256": "9113474d3cf0793dfe8da4dca78a1e3747eed27119a17507d2ee99d1fdb8d210",
+    "templateVersion": "paper-map-ui-1.6.1"
   },
   "glossary": [],
   "graph": {

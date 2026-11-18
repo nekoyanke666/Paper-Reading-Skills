@@ -112,8 +112,16 @@ class MapTests(unittest.TestCase):
             self.assertTrue((out/'history').is_dir())
             for name in ('open-map.cmd','.paper-map/map-server.cjs','.paper-map/history-core.js','.paper-map/detail-core.js'):
                 self.assertTrue((out/name).is_file())
-            saved=out/'history'/'retained.paper-map-history.json';saved.write_text('existing user record',encoding='utf-8')
-            R.render(STATE,out);self.assertEqual(saved.read_text(encoding='utf-8'),'existing user record')
+            saved=out/'history'/'retained.paper-map-history.json';archive=(ROOT/'tests/fixtures/history-v1-golden.json').read_bytes();saved.write_bytes(archive)
+            pointer=out/'history/current.json';pointer.write_text(json.dumps({'format':'paper-map-local-v1','version':1,'active':saved.name}),encoding='utf-8');pointer_bytes=pointer.read_bytes()
+            (out/'index.html').write_text('Old generated viewer runtime',encoding='utf-8')
+            manifest=R.render(STATE,out)
+            self.assertEqual(saved.read_bytes(),archive);self.assertEqual(pointer.read_bytes(),pointer_bytes)
+            self.assertEqual(manifest['templateVersion'],json.loads((SKILL/'assets/template-lock.json').read_text())['version'])
+            refreshed=json.loads((out/'paper-state.json').read_text(encoding='utf-8'))
+            self.assertEqual(refreshed['graph']['nodes'],STATE['graph']['nodes'])
+            for old in STATE['graph']['trees']:
+                self.assertEqual(next(t for t in refreshed['graph']['trees'] if t['id']==old['id'])['positions'],old['positions'])
     def test_17_tampered_template_rejected(self):
         import shutil
         with tempfile.TemporaryDirectory(dir=None) as d:
