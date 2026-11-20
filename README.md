@@ -21,6 +21,8 @@ These are the only public entries. Thirteen [internal interfaces](interfaces/) a
 
 ## Setup behavior
 
+Enabled translations preserve source content and reading order, with stable page/paragraph/sentence alignment and source-like page, column and figure placement where readable. The target-language main document includes authentic scientific graphics with localized visual text and the authors' own translated captions kept with each image; it adds no figure teaching. Originals remain available for parallel lookup, and a separate bilingual view may be chosen without another optional setup question. Text/image completion and actual layout verification are tracked separately. See the [page alignment contract](interfaces/paper-translate/references/page-alignment.md) and [figure translation contract](interfaces/paper-translate/references/figure-units.md).
+
 For a new primary paper, the agent asks the language for the translated document and subsequent interaction, and whether a full-paper translation is wanted. The full-translation default is Yes; a language is never inferred from the English instructions, source language, machine locale, or silence. Existing explicit instructions and confirmed session preferences are reused. If full translation is declined, other reading functions remain available in the chosen language, including requested local passage translations.
 
 Independent inventory, downloads, extraction checks, indexing, and internal reading can proceed while setup answers are pending. Confirmed settings are saved before language-dependent output. Later entries restore the same settings, role, terminology, evidence, and progress. See the [startup contract](interfaces/paper-memory/references/settings-contract.md).

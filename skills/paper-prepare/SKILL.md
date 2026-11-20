@@ -43,7 +43,7 @@ As soon as the entry is usable and required checks succeed, provide its clickabl
 
 ### 5. Produce the requested translation
 
-Check the saved full-translation preference. If enabled, read [paper-translate](../../interfaces/paper-translate/SKILL.md) and produce an aligned source-to-target document using shared terminology and stable source/paragraph identifiers. Batch long documents while preserving cumulative completion and missing ranges. Keep teaching commentary separate from translation.
+Check the saved full-translation preference. If enabled, read [paper-translate](../../interfaces/paper-translate/SKILL.md) and produce a faithful counterpart in source reading order, aligned by page, logical paragraph and sentence. Use the original page/column/figure/caption composition as the layout template while preserving complete content and legibility. Include authentic scientific graphics with faithfully localized in-figure text, and keep each translated author caption with its figure; do not add new figure interpretation or teaching. Default to a target-language main document with originals retained for parallel lookup, without another optional bilingual question. Batch long documents at coherent source boundaries, saving the exact next locator, page mapping, cumulative text/image completion and specific gaps. Preserve original assets and valid translation when repairing layout or adding missing images.
 
 If disabled, record full translation as skipped by preference rather than completed. Retain originals and indexes for later explanations and targeted translation requests. A later request to enable full translation updates the setting and resumes the appropriate scope without repeating source collection.
 

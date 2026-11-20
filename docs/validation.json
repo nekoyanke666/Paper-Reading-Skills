@@ -2,13 +2,13 @@
   "passed": true,
   "publicEntries": 7,
   "internalInterfaces": 13,
-  "referencesChecked": 240,
+  "referencesChecked": 243,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "No viewer changes in v1.7.0; prior actual-browser typography checks remain unperformed. See browser-qa.md.",
+  "browserVisualQA": "No viewer changes in v1.7.1; no actual translated-figure/document render performed in this skill-maintenance task.",
   "unitTests": {
     "passed": 70,
     "failed": 0
@@ -20,8 +20,8 @@
   "javascriptRuntime": "Eleven suites passed: ten parser/core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
   "detailNarrativeReview": "Written review includes motivated small-topic headings, current-task/stakes/source leads, manageable delivery, source-based required/optional labels, calibrated inference and concise-mode scope. No independent live-paper teaching evaluation executed.",
-  "translationReview": "English instructions reviewed for readable full detail versus concise main-thread scope, source/necessity labels, concrete motivation and independent progress. Per-occurrence inline English and source-backed narrative limits retained.",
-  "version": "1.7.0",
+  "translationReview": "Written contract reviewed for faithful source content/order, page/paragraph/sentence alignment, source-like readable layout, authentic figures with localized labels and authors-only caption translation, exact continuation and independent completion; no actual paper/image translation or document render executed.",
+  "version": "1.7.1",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -44,11 +44,10 @@
   },
   "lastFullRuntimeVersion": "1.6.0",
   "currentTargetedTests": {
-    "unitTests": 70,
     "formalSkillValidation": 20,
     "packageAndReferences": "passed",
-    "installation": "Seven public entries and shared resources match source; all installed Markdown references resolve; simple/detail progress boundaries tested",
-    "scope": "New entry discovery/upgrade safety and independent simple progress tested; narrative behavior reviewed as written cases. Renderer/JavaScript unchanged; eleven runtime suite results retained from v1.6.0."
+    "installation": "passed: seven entry bodies/references and all 91 shared interface files match the source package",
+    "scope": "Instruction-only translation patch; unit results retained from v1.7.0 and renderer/runtime results from v1.6.0. No wording-matching behavioral tests or real-image/document validation claimed."
   },
   "mapOpening": {
     "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
@@ -172,5 +171,28 @@
     "simpleDefault": "three to five brief connected stages of the main research story; essential methods/evidence/limits",
     "progress": "progress.simple independent of detail/figures/translation; no full-detail manuscript prerequisite",
     "liveTeachingEvaluation": "not performed"
+  },
+  "imageAwareTranslation": {
+    "scope": "All figures in the requested document/range; separately supplied supporting material follows the actual requested scope",
+    "figureUnit": [
+      "authentic unchanged scientific original retained",
+      "same data-bearing graphic with faithful localized text, or inspected inapplicability",
+      "authors' original caption translated fully and kept with the matching image"
+    ],
+    "captionMeaning": "Original author figure caption/figure legend; no new assistant guide, summary or interpretation",
+    "bilingual": "Target-language main document, originals retained for parallel lookup; separate aligned comparison view when useful without another optional question; every-mention verified English terminology retained",
+    "protection": "Original data, positions, scales, units, color meanings and scientific identifiers preserved; no recreated chart substituted",
+    "progress": "progress.translation.figureUnits with stable source/figure IDs and target/settings version; independent of progress.figures/detail/simple",
+    "missingComponents": "Partial overall completion even if prose/captions are complete",
+    "realPaperImageAndDocumentQA": "not performed"
+  },
+  "sourceLayoutAlignment": {
+    "units": "Stable source/version IDs plus physical and printed page locations, page region/column, logical paragraph and sentence ranges",
+    "continuation": "Complete source paragraph/sentence boundaries and precise next untranslated locator; PDF hard wraps are not translation boundaries",
+    "content": "Source content, qualifications, quantities, equations, citations, figure/caption identity and reading order preserved without teaching additions or condensation",
+    "layout": "Source page size, margins, columns, heading hierarchy and graphic/caption placement are the preferred template",
+    "priority": "Complete faithful content and legibility before exact pagination; preserve source-page mapping and record unavoidable layout deviations",
+    "checks": "Content coverage, source alignment and rendered layout are separate completion checks",
+    "actualDocumentRender": "not performed"
   }
 }
