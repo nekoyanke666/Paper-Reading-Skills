@@ -149,6 +149,16 @@ class SettingsTests(unittest.TestCase):
         s=copy.deepcopy(EXAMPLE);s['readingModel']['status']='verified'
         with self.assertRaises(S.SessionError):S.validate(s,ROOT)
 
+    def test_simple_run_preserves_detail_and_return_point(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'session.json';s=S.checkpoint(p,copy.deepcopy(EXAMPLE),-1,'example')
+            s['progress']['detail']={'currentRunId':'detail-existing','nextTopic':'methods'};detail=copy.deepcopy(s['progress']['detail'])
+            s['progress'].update(activeEntry='paper-simple-explain',simple={'currentRunId':'simple-1','runs':[{'id':'simple-1','status':'delivered-main-thread','sourceCrosswalk':[{'topic':'decision rule','necessity':'required','reason':'explains the change in false calls'}]}]},returnTo={'entry':'paper-detail-explain','topic':'methods','next':'continue calculation'})
+            saved=S.checkpoint(p,s,0,'save concise story separately')
+            self.assertEqual(saved['progress']['detail'],detail)
+            self.assertEqual(saved['progress']['returnTo']['entry'],'paper-detail-explain')
+            self.assertEqual(saved['progress']['simple']['currentRunId'],'simple-1')
+
     def test_map_request_preserves_reading_return_point_and_pending_proposal(self):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'session.json';s=S.checkpoint(p,copy.deepcopy(EXAMPLE),-1,'example')
@@ -161,18 +171,18 @@ class SettingsTests(unittest.TestCase):
             self.assertEqual(restored['progress']['map']['treeRequests'],[request])
 
 class InstallationTests(unittest.TestCase):
-    def test_only_six_entries_discovered_and_shared_links_resolve(self):
+    def test_only_seven_entries_discovered_and_shared_links_resolve(self):
         with tempfile.TemporaryDirectory() as d:
             home=Path(d)/'codex';I.install(home)
             self.assertEqual({p.parent.name for p in (home/'skills').glob('*/SKILL.md')},set(I.ENTRIES))
-            self.assertEqual(len(I.ENTRIES),6)
+            self.assertEqual(len(I.ENTRIES),7)
             self.assertEqual(len(list((home/'paper-reading-skills/interfaces').rglob('SKILL.md'))),13)
             for p in home.rglob('*.md'):
                 for ref in re.findall(r'\]\(([^)]+)\)',p.read_text(encoding='utf-8')):
                     if '://' not in ref and not ref.startswith('#'):self.assertTrue((p.parent/ref).resolve().exists(),(p,ref))
             # A second install is an owned upgrade, not an unrelated overwrite.
             I.install(home)
-            self.assertEqual(len(list((home/'skills').rglob('SKILL.md'))),6)
+            self.assertEqual(len(list((home/'skills').rglob('SKILL.md'))),7)
 
     def test_new_entry_does_not_overwrite_an_unowned_destination(self):
         with tempfile.TemporaryDirectory() as d:
@@ -182,10 +192,26 @@ class InstallationTests(unittest.TestCase):
             self.assertEqual(original.read_text(encoding='utf-8'),'keep this skill')
             self.assertFalse((home/'paper-reading-skills').exists())
 
-    def test_upgrade_from_four_entries_adds_two_without_touching_other_skills(self):
+    def test_upgrade_from_six_entries_adds_simple_and_preserves_unrelated_skills(self):
+        with tempfile.TemporaryDirectory() as d:
+            home=Path(d);I.install(home);I.remove_owned_target(home/'skills/paper-simple-explain',home)
+            unrelated=home/'skills/reader-notes';unrelated.mkdir();(unrelated/'note.txt').write_text('keep',encoding='utf-8')
+            I.install(home)
+            self.assertTrue((home/'skills/paper-simple-explain/SKILL.md').is_file())
+            self.assertEqual((unrelated/'note.txt').read_text(encoding='utf-8'),'keep')
+
+    def test_unowned_simple_entry_blocks_install_without_changing_it(self):
+        with tempfile.TemporaryDirectory() as d:
+            home=Path(d);foreign=home/'skills/paper-simple-explain';foreign.mkdir(parents=True)
+            (foreign/'SKILL.md').write_text('existing user skill',encoding='utf-8')
+            with self.assertRaises(ValueError):I.install(home)
+            self.assertEqual((foreign/'SKILL.md').read_text(encoding='utf-8'),'existing user skill')
+            self.assertFalse((home/'paper-reading-skills').exists())
+
+    def test_upgrade_from_four_entries_adds_three_without_touching_other_skills(self):
         with tempfile.TemporaryDirectory() as d:
             home=Path(d);I.install(home)
-            for name in ('paper-add-map','paper-skill-help'):
+            for name in ('paper-add-map','paper-skill-help','paper-simple-explain'):
                 I.remove_owned_target(home/'skills'/name,home)
             unrelated=home/'skills/my-skill';unrelated.mkdir();(unrelated/'SKILL.md').write_text('keep',encoding='utf-8')
             I.install(home)

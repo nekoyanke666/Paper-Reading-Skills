@@ -86,7 +86,7 @@ def validate(state: dict, session_dir: Path) -> None:
             raise SessionError('the whole-paper model needs traceable claims')
     progress = state.get('progress', {})
     if progress.get('activeEntry') not in (None, 'paper-prepare', 'paper-figure-explain',
-                                           'paper-detail-explain', 'paper-ask', 'paper-add-map', 'paper-skill-help'):
+                                           'paper-detail-explain', 'paper-simple-explain', 'paper-ask', 'paper-add-map', 'paper-skill-help'):
         raise SessionError('invalid active entry')
 
 
@@ -104,7 +104,7 @@ def new_session(paper_id: str, title: str) -> dict:
                          'requiredCoverageIds': [], 'researchQuestions': [], 'outline': [],
                          'synthesis': '', 'uncertainties': []},
         'progress': {'activeEntry': 'paper-prepare', 'translation': {}, 'figures': {},
-                     'detail': {}, 'returnTo': None, 'lastQuestion': None},
+                     'detail': {}, 'simple': {}, 'returnTo': None, 'lastQuestion': None},
         'graph': None,
     }
 

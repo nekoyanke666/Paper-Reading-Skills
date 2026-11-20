@@ -1,7 +1,7 @@
 {
   "name": "paper-reading-skills",
-  "version": "1.6.0",
-  "description": "Six paper workflows for source-grounded reading, persistent memory, configurable translation, topic-tree creation and usage help, with a shared interactive concept map.",
+  "version": "1.7.0",
+  "description": "Seven paper workflows with persistent memory, configurable language, concise and detailed motivated narratives, figure reading, questions, topic trees and usage help.",
   "author": {
     "name": "nekoyanke666"
   },

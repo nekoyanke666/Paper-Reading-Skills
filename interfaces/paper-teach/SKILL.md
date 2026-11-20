@@ -31,6 +31,8 @@ When a new topic depends on a concept, state the concept and its relevant meanin
 
 Explain why another concept must come first, why the topic is changing, or why earlier material is being revisited. Recall according to the current prerequisite, not a fixed schedule of repeated glossaries. Reactivate a central concept at later reasoning steps with a short reminder of its meaning and present relevance; this planned reinforcement should reduce forgotten premises without repeatedly restarting the lesson. Prior exposure never justifies silently omitting a necessary explanation.
 
+For detail/simple paper narratives, use [topic flow and motivation](../paper-narrative/references/topic-flow.md). Give new small topics informative headings and orient the reader to the current question, its concrete stakes and the relevant source text/figure before explaining technical content. Explain why the unresolved issue requires this step; "important background" alone is insufficient. Short direct answers keep their direct-answer-first contract rather than inheriting a long teaching preface.
+
 For full-paper detail work, apply paper-narrative's self-contained-core contract: prepare from the paper and expert perspective, establish prerequisites, and fully explain the central method/argument when reached. Use recorded personal connections only as removable supplements after the relevant core explanation, not as a replacement framework. Figure and question work retain their requested scope while making their own necessary premises explicit.
 
 ## 4. Respond to difficulty

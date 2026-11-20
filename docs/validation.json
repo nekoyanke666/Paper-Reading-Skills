@@ -1,27 +1,27 @@
 {
   "passed": true,
-  "publicEntries": 6,
+  "publicEntries": 7,
   "internalInterfaces": 13,
-  "referencesChecked": 215,
+  "referencesChecked": 240,
   "englishInstructionAndDefaultAssetScan": "passed",
   "lockedAssets": "passed",
   "javascriptSyntax": "passed",
   "semanticTranslationReview": "see docs/translation-review.md",
   "realPaperTeaching": "not tested",
-  "browserVisualQA": "Not performed in v1.6.0; actual desktop/mobile typography and overflow unverified. Prior browser automation restrictions retained in browser-qa.md.",
+  "browserVisualQA": "No viewer changes in v1.7.0; prior actual-browser typography checks remain unperformed. See browser-qa.md.",
   "unitTests": {
-    "passed": 67,
+    "passed": 70,
     "failed": 0
   },
   "formalSkillValidation": {
-    "passed": 19,
+    "passed": 20,
     "failed": 0
   },
   "javascriptRuntime": "Eleven suites passed: ten parser/core/minimal-DOM suites plus real local HTTP/filesystem integration",
   "conceptCoverage": "Source-to-map and three independent detail-view curation contracts; no completeness claim or rebuild of an existing private paper",
-  "detailNarrativeReview": "Written contract reviewed against 12 cases, including no history, rich history, mismatched old wording, explicit local recall and groundwork versus complete explanation. No independent generation comparison executed.",
-  "translationReview": "Rich-text instructions reviewed for raw source preservation, math/code distinction, English terminology and independent explanation rules. No real-paper teaching or visual audit claimed.",
-  "version": "1.6.0",
+  "detailNarrativeReview": "Written review includes motivated small-topic headings, current-task/stakes/source leads, manageable delivery, source-based required/optional labels, calibrated inference and concise-mode scope. No independent live-paper teaching evaluation executed.",
+  "translationReview": "English instructions reviewed for readable full detail versus concise main-thread scope, source/necessity labels, concrete motivation and independent progress. Per-occurrence inline English and source-backed narrative limits retained.",
+  "version": "1.7.0",
   "portableArchive": {
     "format": "paper-map-history",
     "formatVersion": 1,
@@ -44,12 +44,11 @@
   },
   "lastFullRuntimeVersion": "1.6.0",
   "currentTargetedTests": {
-    "unitTests": 67,
-    "javascriptRuntimeSuites": 11,
-    "formalSkillValidation": 19,
+    "unitTests": 70,
+    "formalSkillValidation": 20,
     "packageAndReferences": "passed",
-    "installation": "Six entries, shared instructions, pinned libraries and WOFF2 fonts match source; installed Markdown references resolve; viewer paper-map-ui-1.7.0",
-    "scope": "Real parser/math libraries, compiled sidebar integration and v1 history round trips; minimal-DOM, not actual browser layout."
+    "installation": "Seven public entries and shared resources match source; all installed Markdown references resolve; simple/detail progress boundaries tested",
+    "scope": "New entry discovery/upgrade safety and independent simple progress tested; narrative behavior reviewed as written cases. Renderer/JavaScript unchanged; eleven runtime suite results retained from v1.6.0."
   },
   "mapOpening": {
     "serviceHealth": "Historical v1.4.1 check; no new viewer opened for this skill-only release",
@@ -65,7 +64,7 @@
     "managedReconciliation": "written agent workflow, not an automatic merge engine",
     "popupAndRealPaperIntegration": "not executed end-to-end"
   },
-  "installedEntryReferencesChecked": 58,
+  "installedEntryReferencesChecked": 76,
   "selfContainedDetail": {
     "priorTeachingRequired": false,
     "coreBasis": "current sources and verified study model under a paper-appropriate expert perspective",
@@ -113,7 +112,8 @@
     "entries": [
       "paper-detail-explain",
       "paper-figure-explain",
-      "paper-ask"
+      "paper-ask",
+      "paper-simple-explain"
     ],
     "rule": "Verified English name adjacent to every occurrence of an important translated concept or technical term",
     "repetition": "Required even within the same sentence/paragraph and across later answers; not first-use-only",
@@ -123,7 +123,7 @@
     "liveOutputAudit": "not performed"
   },
   "responseEfficiency": {
-    "noticeCoverage": "six public entries and thirteen internal interfaces",
+    "noticeCoverage": "seven public entries and thirteen internal interfaces",
     "rules": [
       "scope context/source retrieval to the actual request",
       "reuse matching source-grounded work and accessible instructions",
@@ -158,5 +158,19 @@
     "persistence": "original Markdown/TeX strings; frozen v1 envelope/model unchanged; rendering does not rewrite old commits",
     "boundaries": "raw HTML escaped; active URL schemes and remote Markdown images blocked; untrusted math commands disabled; unsupported math retained as source",
     "visualQA": "not performed"
+  },
+  "explanationPresentation": {
+    "detail": "small-topic headings and short paragraphs; manageable chapters preserve full manuscript scope",
+    "topicLead": [
+      "current problem/task",
+      "specific reason and consequence",
+      "actual paper text/figure anchor"
+    ],
+    "supportingSourceTopics": "parenthetical source kind and required/optional reading label with dependency rationale",
+    "causality": "strong research rationale does not promote association/hypothesis to demonstrated causation",
+    "simpleEntry": "paper-simple-explain",
+    "simpleDefault": "three to five brief connected stages of the main research story; essential methods/evidence/limits",
+    "progress": "progress.simple independent of detail/figures/translation; no full-detail manuscript prerequisite",
+    "liveTeachingEvaluation": "not performed"
   }
 }

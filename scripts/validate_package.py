@@ -3,12 +3,12 @@ from pathlib import Path
 import ast,hashlib,importlib.util,json,re,subprocess,sys,tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
-PUBLIC={'paper-prepare','paper-figure-explain','paper-detail-explain','paper-ask','paper-add-map','paper-skill-help'}
+PUBLIC={'paper-prepare','paper-figure-explain','paper-detail-explain','paper-simple-explain','paper-ask','paper-add-map','paper-skill-help'}
 
 
 def validate(root=ROOT):
     root=Path(root).resolve();skills=list((root/'skills').glob('*/SKILL.md'));internal=list((root/'interfaces').glob('*/SKILL.md'))
-    if {p.parent.name for p in skills}!=PUBLIC or len(internal)!=13:raise ValueError('expected six public entries and thirteen internal interfaces')
+    if {p.parent.name for p in skills}!=PUBLIC or len(internal)!=13:raise ValueError('expected seven public entries and thirteen internal interfaces')
     all_skills=skills+internal;targets={p.resolve():0 for p in internal};references=0
     for p in all_skills:
         text=p.read_text(encoding='utf-8');parts=text.split('---',2)

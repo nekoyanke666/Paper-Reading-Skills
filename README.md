@@ -1,20 +1,21 @@
 # Paper Reading Skills
 
-Six public skills for understanding research papers across disciplines. English instructions define the workflow; each paper session asks for its output language and whether to produce a full translation (**Yes by default**). Explanations, questions, and map content then use the saved language.
+Seven public skills for understanding research papers across disciplines. English instructions define the workflow; each paper session asks for its output language and whether to produce a full translation (**Yes by default**). Explanations, questions, and map content then use the saved language.
 
-In detail, figure and question work, every occurrence of an important translated concept or technical term carries its verified English name immediately beside it, including repeated mentions and bold terms. Earlier appearances or a separate glossary never make later English names optional. The surrounding explanation remains in the saved interaction language.
+In detailed/concise explanation, figure and question work, every occurrence of an important translated concept or technical term carries its verified English name immediately beside it, including repeated mentions and bold terms. Earlier appearances or a separate glossary never make later English names optional. The surrounding explanation remains in the saved interaction language.
 
 ## Public entries
 
-All six public entries and thirteen internal interfaces explicitly prioritize the reader's time. Narrow questions use scoped context and evidence retrieval; valid prior work is reused; full preparation, manuscript rebuilding and map rendering run only when the requested task needs them. Required completeness, source checks, per-mention English terminology and saved-history protection remain in force.
+All seven public entries and thirteen internal interfaces explicitly prioritize the reader's time. Narrow questions use scoped context and evidence retrieval; valid prior work is reused; full preparation, manuscript rebuilding and map rendering run only when the requested task needs them. Required completeness, source checks, per-mention English terminology and saved-history protection remain in force.
 
 - [paper-prepare](skills/paper-prepare/SKILL.md): identify the primary paper, collect/check sources, select an expert perspective, build a whole-paper model, and produce the aligned translation when enabled.
 - [paper-figure-explain](skills/paper-figure-explain/SKILL.md): give a short overview, display actual figures, explain main figures/panels in order, and include essential supporting evidence.
-- [paper-detail-explain](skills/paper-detail-explain/SKILL.md): build a complete reader guide and teach the entire paper as a self-contained expert narrative, including background, methods and calculations, without assuming earlier teaching. Recorded personal connections are optional supplements after the relevant core explanation. Segmented delivery follows substantial chapters of that whole.
+- [paper-detail-explain](skills/paper-detail-explain/SKILL.md): build a complete reader guide and teach the entire paper as a self-contained expert narrative, including background, methods and calculations, without assuming earlier teaching. Recorded personal connections are optional supplements after the relevant core explanation. Readable small-topic headings explain the current task, concrete reason/stakes and source text/figure before each account. Supporting-source topics carry required/optional labels; segmented delivery uses manageable chapters.
+- [paper-simple-explain](skills/paper-simple-explain/SKILL.md): give a shorter standalone main research story with motivated small-topic headings, essential methods/evidence and limits; track its progress separately from full detail.
 - [paper-ask](skills/paper-ask/SKILL.md): answer questions directly with necessary context and evidence, preserving the interrupted reading position.
 
 - [paper-add-map](skills/paper-add-map/SKILL.md): create a new topic tree in the same map, including unconnected term catalogs; inspect related trees and propose integration when useful, or directly apply explicitly requested integration.
-- [paper-skill-help](skills/paper-skill-help/SKILL.md): list the six public skills with usage examples, including trees with and without integration, without changing a paper or map.
+- [paper-skill-help](skills/paper-skill-help/SKILL.md): list the seven public skills with usage examples, including trees with and without integration, without changing a paper or map.
 
 These are the only public entries. Thirteen [internal interfaces](interfaces/) are path-loaded resources, not additional user workflows. The plugin manifest exposes only skills/. The structure uses focused processes and conditional references inspired by Matt Pocock's writing-for-agents approach.
 
@@ -34,11 +35,11 @@ cd Paper-Reading-Skills
 python scripts/install.py
 ```
 
-The installer places six entries under `$CODEX_HOME/skills` (default `~/.codex/skills`) and shared resources under `$CODEX_HOME/paper-reading-skills`. It rewrites only installed entry links to that shared location. Internal interfaces stay outside discovery. Existing unrelated destinations are not overwritten. Keep skills/ and interfaces/ together when using the repository as a plugin instead.
+The installer places seven entries under `$CODEX_HOME/skills` (default `~/.codex/skills`) and shared resources under `$CODEX_HOME/paper-reading-skills`. It rewrites only installed entry links to that shared location. Internal interfaces stay outside discovery. Existing unrelated destinations are not overwritten. Keep skills/ and interfaces/ together when using the repository as a plugin instead.
 
 Installed skills should be available on the next turn. If the host has not refreshed its inventory, start a new chat or restart the app.
 
-Use `$paper-prepare` with a primary paper, then `$paper-figure-explain`, `$paper-detail-explain`, or `$paper-ask` as needed. Use `$paper-add-map` for a requested new topic tree in the existing map and `$paper-skill-help` for usage examples. Help works without a paper or setup questions.
+Use `$paper-prepare` with a primary paper, then `$paper-simple-explain` for the main story, or `$paper-figure-explain`, `$paper-detail-explain` and `$paper-ask` as needed. Use `$paper-add-map` for a requested new topic tree in the existing map and `$paper-skill-help` for usage examples. Help works without a paper or setup questions.
 
 ## Research and map behavior
 
@@ -52,7 +53,7 @@ Full detail explanation starts from research context for a new whole-paper reque
 
 The [map interface](interfaces/paper-map/SKILL.md) uses a locked minimal template, stable identities, a canonical relationship registry, explicit lifecycle, and deterministic snapshots. Canonical English IDs/labels remain stable while selected-language display dictionaries are saved separately. Non-English maps require complete UI/relationship localization before rendering. Language changes preserve identities and version affected outputs.
 
-paper-prepare prepares a stable map entry by default and supplies its first usable link promptly, including during batched preparation. Incomplete evidence can produce an honest provisional root without invented relationships. The five paper-content entries evaluate meaningful map updates; paper-skill-help is read-only. An explicit paper-add-map request creates its requested topic tree even when the main research chain is unchanged. Updates retain the same entry, with a brief change notice. A new conversation sharing the paper receives the existing link once. See the [entry/link contract](interfaces/paper-map/references/delivery.md).
+paper-prepare prepares a stable map entry by default and supplies its first usable link promptly, including during batched preparation. Incomplete evidence can produce an honest provisional root without invented relationships. The six paper-content entries evaluate meaningful map updates; paper-skill-help is read-only. An explicit paper-add-map request creates its requested topic tree even when the main research chain is unchanged. Updates retain the same entry, with a brief change notice. A new conversation sharing the paper receives the existing link once. See the [entry/link contract](interfaces/paper-map/references/delivery.md).
 
 The main map now audits whole-paper conceptual coverage rather than treating connectivity or a small node count as completion. One-to-many and many-to-one branches retain explicit meanings and evidence. Secondary topic catalogs collect terminology with no required root or connecting lines; figure/detail/ask explain terms immediately and retain definitions, study roles, verified properties, and sources for later lookup. Categories follow the paper's domain, and shared terms reuse IDs across catalogs and argument views. See [concept coverage](interfaces/paper-map/references/concept-coverage.md) and [topic catalogs](interfaces/paper-map/references/topic-catalogs.md).
 

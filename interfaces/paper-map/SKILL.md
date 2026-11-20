@@ -13,11 +13,12 @@ Input: canonical session, significant conceptual/evidential changes, and map sco
 
 For an existing-map open/reopen request, follow [open the entry](references/open-entry.md): resolve its saved workspace-relative location, check/restart its local service, and present the verified URL through the host's browser panel when supported. This navigation-only case preserves scientific data and reading progress; no manual launcher is required from the reader when the agent can execute locally.
 
-Restore [paper-memory](../paper-memory/SKILL.md) and [paper-expert](../paper-expert/SKILL.md), including confirmed language settings, paper, integrated model, glossary, claims, graph, and revision. Five paper-content entries use this interface; paper-skill-help describes capabilities without invoking map changes:
+Restore [paper-memory](../paper-memory/SKILL.md) and [paper-expert](../paper-expert/SKILL.md), including confirmed language settings, paper, integrated model, glossary, claims, graph, and revision. Six paper-content entries use this interface; paper-skill-help describes capabilities without invoking map changes:
 
 - paper-prepare: always prepare or restore the stable map entry, then assess important content, versions, and corrections.
 - paper-figure-explain: important concepts, interventions, results, or evidence relationships introduced by a figure.
 - paper-detail-explain: changes in arguments, dependencies, proofs/mechanisms, conditions, or limitations within a complete topic.
+- paper-simple-explain: important concepts, main-chain relationships or evidence clarified in the concise story, without forcing an exhaustive graph rebuild.
 - paper-ask: important new understanding, relationships, evidence, or corrections arising from an answer.
 - paper-add-map: an explicitly requested new topic tree in the existing entry, with a separate integration decision; follow [requested trees](references/tree-requests.md).
 

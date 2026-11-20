@@ -1,6 +1,6 @@
 ---
 name: paper-skill-help
-description: Explain the six public paper skills, their order, purposes and example requests. Include creating terminology or explanation trees in the same map, with explicit integration, no integration, or a proposed integration awaiting the user's choice. Works without a paper and does not execute the examples.
+description: Explain the seven public paper skills, their order, purposes and example requests. Include creating terminology or explanation trees in the same map, with explicit integration, no integration, or a proposed integration awaiting the user's choice. Works without a paper and does not execute the examples.
 ---
 
 # Paper Skill Help
@@ -13,18 +13,19 @@ Use the saved interaction language if the active session is already available; o
 
 ## Present the available skills
 
-List these six public skills with a short purpose and a usable example for each, translating the example prose into the reader's language while keeping skill names literal:
+List these seven public skills with a short purpose and a usable example for each, translating the example prose into the reader's language while keeping skill names literal:
 
-1. [paper-prepare](../paper-prepare/SKILL.md): begin with a primary paper; confirm the output/interaction language and whether a full translation is wanted, default Yes; collect and check sources, establish an expert perspective and whole-paper memory, and prepare the stable map entry. Example: `$paper-prepare Prepare this paper, collect its supplements, and ask me for the output language and full-translation preference.`
-2. [paper-figure-explain](../paper-figure-explain/SKILL.md): introduce the paper briefly, then display and explain main figures and panels in order with necessary background, methods, evidence and limits. Example: `$paper-figure-explain Explain the main figures in order, introducing the terms I need before each figure.`
-3. [paper-detail-explain](../paper-detail-explain/SKILL.md): teach the entire paper as a self-contained expert narrative from background, discovery of the problem and motivation through methods, calculations, results and limitations. It assumes no prior teaching; relevant recorded personal connections are optional supplements after the core topic. A new full explanation starts from its opening; saved progress resumes only when continuation is requested. Example: `$paper-detail-explain Explain the entire study as a connected story for someone outside the field who has not read our previous conversations, including its methods and calculations.`
-4. [paper-ask](../paper-ask/SKILL.md): answer a specific question directly, then recall necessary concepts and explain supporting evidence, correct mistaken premises, and retain the interrupted reading position. Example: `$paper-ask Why does this control support the authors' conclusion, and what does it still fail to rule out?`
-5. [paper-add-map](../paper-add-map/SKILL.md): add a new topic tree to the same paper map, optionally integrating selected content into related existing trees. It can be an unconnected glossary or a connected explanation. Example: `$paper-add-map Add a glossary tree for the library types used in this paper; keep it separate from the other trees.`
-6. `paper-skill-help`: show this list, explain workflow differences and give examples without modifying the paper or map. Example: `$paper-skill-help Show the available skills and examples of adding a tree with and without integration.`
+1. [paper-prepare](../paper-prepare/SKILL.md): begin with a primary paper, confirm language/full-translation preference, check sources, establish the expert perspective and memory, and prepare the stable map entry. Example: `$paper-prepare Prepare this paper and collect the sources needed to understand it.`
+2. [paper-simple-explain](../paper-simple-explain/SKILL.md): give a short, standalone story of the main research problem, reason for the approach, key evidence and limits. Use motivated small-topic headings without the full-detail manuscript or exhaustive derivations. Example: `$paper-simple-explain Explain the paper's main story briefly, making clear why each step is needed and which evidence supports it.`
+3. [paper-figure-explain](../paper-figure-explain/SKILL.md): introduce the paper and explain main figures/panels in order with necessary background, methods, evidence and limits. Example: `$paper-figure-explain Explain the main figures in order, introducing the terms I need before each figure.`
+4. [paper-detail-explain](../paper-detail-explain/SKILL.md): teach the entire paper independently, including methods and calculations, with readable small-topic headings and a clear task/reason/source lead before technical content. Mark mainly supporting-source topics required/optional. New full requests start at the opening; saved progress resumes only for continuation. Example: `$paper-detail-explain Explain the whole paper in manageable chapters with small headings, strong reasons for each topic, and clear links to the paper's text and figures.`
+5. [paper-ask](../paper-ask/SKILL.md): answer a specific question directly with necessary recall and evidence, retaining the interrupted reading position. Example: `$paper-ask Why does this control support the authors' conclusion, and what does it still fail to rule out?`
+6. [paper-add-map](../paper-add-map/SKILL.md): add a topic tree to the same map, with independent or selectively integrated content. Example: `$paper-add-map Add a glossary tree for the library types used in this paper; keep it separate from the other trees.`
+7. `paper-skill-help`: show these seven entries and relevant examples without modifying paper/map state. Example: `$paper-skill-help Show the available skills and examples of adding a tree with and without integration.`
 
-Describe the usual order as prepare, figure overview, then complete explanation; questions can interrupt any stage, and new topic trees can be requested whenever useful. This is guidance, not a mandatory sequence. A narrow question does not require completing every preceding stage.
+Describe a useful order as prepare, an optional simple main-story explanation, then figures or full detail as needed; questions can interrupt any stage, and new topic trees can be requested whenever useful. Explain that simple and detail are alternative depths with independent progress; simple does not automatically run or complete detail. This is guidance, not a mandatory sequence. A narrow question does not require completing every preceding stage.
 
-Mention that detail, figure and ask explanations pair every occurrence of an important translated concept or technical term with its verified English name, including repeated and bold mentions. This supports direct lookup in the source and does not change the saved interaction language.
+Mention that detail, simple, figure and ask explanations pair every occurrence of an important translated concept or technical term with its verified English name, including repeated and bold mentions. This supports direct lookup in the source and does not change the saved interaction language.
 
 ## Always explain the tree choices
 
@@ -42,4 +43,4 @@ When explaining map text capabilities, mention that sidebars support Markdown an
 
 ## Keep the boundary clear
 
-Only these six are public entry skills. The thirteen internal interfaces are supporting resources called as needed, not extra commands the reader must learn. To answer a deeper capability question, read the relevant linked entry and its focused references; do not claim unimplemented features. If the user now explicitly requests an action, route to that entry rather than silently executing a help example.
+Only these seven are public entry skills. The thirteen internal interfaces are supporting resources called as needed, not extra commands the reader must learn. To answer a deeper capability question, read the relevant linked entry and its focused references; do not claim unimplemented features. If the user now explicitly requests an action, route to that entry rather than silently executing a help example.

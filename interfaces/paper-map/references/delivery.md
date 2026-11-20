@@ -12,7 +12,7 @@ If another entry is invoked directly without a saved map, create this same minim
 
 ## Evaluate on every invocation
 
-The five paper-content entries assess the work's effect on important concepts, evidence, relationships, support, scope, corrections, or significant unknowns. Longer guidance also reviews after each complete topic. Record the invoking entry, basedOnRevision, changed, and a concise reason in progress.map.review. A review is mandatory; a mutation is conditional.
+The six paper-content entries assess the work's effect on important concepts, evidence, relationships, support, scope, corrections, or significant unknowns. Longer guidance also reviews after each complete topic. Record the invoking entry, basedOnRevision, changed, and a concise reason in progress.map.review. A review is mandatory; a mutation is conditional.
 
 If nothing important changed, preserve graph identities, positions, map revision, and rendered files. Review bookkeeping can use a normal memory checkpoint without forcing a graph rewrite. A missing/broken entry can be restored from saved graph state independently of a semantic change.
 

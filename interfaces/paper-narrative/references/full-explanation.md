@@ -2,6 +2,8 @@
 
 Read for paper-detail-explain's full-explanation mode, including new runs, rewrites, and continuation. The outcome is an accessible, continuous account of the entire paper, backed by a complete manuscript and recoverable delivery progress. Other narrative modes remain scoped to their callers.
 
+Use [topic flow, motivation and pace](topic-flow.md) throughout. Both the saved manuscript and chat need readable small-topic headings, concrete reasons/stakes before new technical content, actual paper anchors and parenthetical required/optional labels for topics mainly from supporting sources. An older unstructured manuscript is not reusable unchanged merely because its scientific facts are current.
+
 ## A self-contained core, with optional personal connections
 
 Write for a reader outside the field who has not read any earlier explanation. Establish an appropriate expert perspective from the paper and keep that perspective explicit. Use current sources, verified background and the research model to decide what must be taught; the chat's previous wording, question order and apparent familiarity do not define the core narrative.
@@ -52,7 +54,7 @@ Within the current narrative, brief recall can reinforce a concept already expla
 
 When changing direction, give the reason in the argument: "To decide whether this apparent gain comes from the model rather than the evaluation setup, we now need to examine the comparison." This is a transition into substantive explanation, not a promise to explain an essential premise in another installment.
 
-Headings may organize long text, and lists may clarify parallel comparisons or calculation steps. The body should still read as a connected explanation; do not make a succession of short numbered answers the default narrative structure. A toy example must return to the actual study, and an analogy must not become its replacement.
+Use informative small-topic headings and short paragraphs to organize the explanation; lists may clarify parallel comparisons or calculation steps. Before each small topic's technical account, identify the unresolved question, why the topic is needed and the relevant source section/figure. Explain the concrete consequence of the gap rather than merely asserting importance. The body still reads as a connected story, with the result explaining the next question. A toy example must return to the actual study, and an analogy must not become its replacement.
 
 ## Make technical content usable on return to the source
 
@@ -68,7 +70,7 @@ Cover concrete methods sufficiently to understand design, analysis, results, and
 
 Restored memory informs the new explanation without automatically choosing its start. A new whole-paper request or a rewrite opens from the research context, even if figure teaching or an old detail run is complete. Continue an existing run only when continuation is requested or unambiguous in the conversation. A specified chapter/topic overrides a generic starting point. Ask only if unresolved ambiguity materially changes the scope.
 
-Retain the saved presentation preference. For segmented delivery, choose substantial chapters after drafting the whole argument. A chapter should resolve a meaningful stage of understanding with its needed prerequisites, reasoning, and evidence; a sentence, a figure panel, or an isolated definition does not automatically merit a separate installment. Chapters may each contain several concepts, methods, or figures. No fixed topic count or mandatory per-subheading pause applies.
+Retain the saved single/segmented preference. Draft the complete argument, then deliver manageable chapters with visible small-topic headings. Usually one installment covers a coherent research step through about two to four small topics, with a few short paragraphs per topic; split longer methods or derivations into meaningful named steps. Preserve necessary depth in the manuscript rather than compressing away premises to meet this pacing guide. A sentence or definition does not automatically require its own installment, and a heading never forces a pause. Single delivery still uses readable headings and paragraphs across the requested whole.
 
 At a continuation, state the live problem and explain the essential prerequisite sufficiently to follow the current chapter without finding an earlier message. A brief recap is enough only when it actually restores the entities and reasoning; otherwise explain the premise again. Continue the same research argument rather than importing unrelated material from other runs. End at a natural boundary with a concise synthesis and the question that logically follows. Do not replace the explanation with an administrative statement that a segment was completed. Save the boundary for recovery without presenting the cursor as the reader's understanding.
 
@@ -81,6 +83,7 @@ Before marking manuscript-ready or full explanation delivered, check their respe
 - Does every substantive section and major result/argument have an explained location, including Methods/proofs and important supporting evidence? Are gaps explicit?
 - Can the reader trace the important measurements, mathematical operations, algorithmic steps, or analytic choices to their inputs, assumptions, outputs, and interpretations?
 - Does every recall state its actual referent, needed meaning/result and present relevance, rather than relying on "as mentioned earlier"? Does groundwork lead to a full explanation of the central mechanism/method instead of replacing it?
+- Does every small topic have a useful heading and a lead explaining the concrete reason/stakes, current task and actual paper anchor before technical content? Are supporting-source topics labeled required/optional for a defensible reason, with the main argument intact if optional topics are skipped?
 - Are the abstract's claims supported and qualified by the explained evidence, with a final synthesis of significance, tradeoffs, scope, limitations, and unknowns?
 - Do manuscript-ready, chapters-delivered, and reader-understanding records match what was actually written, shown, or reported?
 

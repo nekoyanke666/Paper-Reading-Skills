@@ -1,8 +1,10 @@
 # English Translation and Workflow Review
 
-All six entry instructions, thirteen internal interfaces, focused reference documents, default UI text, relationship definitions/aliases, example content, and supporting messages are in English. The instructions govern behavior; English is not a fixed language for future paper sessions.
+All seven entry instructions, thirteen internal interfaces, focused reference documents, default UI text, relationship definitions/aliases, example content, and supporting messages are in English. The instructions govern behavior; English is not a fixed language for future paper sessions.
 
 ## Review basis
+
+Version 1.7.0 gives detail explanations visible small-topic headings, concrete problem/stakes/source orientation before technical content, manageable chat chapters and parenthetical required/optional labels for topics mainly from supporting sources. Supplementary location is distinct from optional personal-history supplements. New paper-simple-explain gives a shorter self-contained main research story with the same motivated flow, terminology/evidence rules and independent progress, without requiring the exhaustive full-detail manuscript. Strong narrative rationale never upgrades scientific association into causation. These are written-workflow reviews, not an independently executed real-paper teaching evaluation.
 
 Version 1.6.0 adds local sidebar Markdown and mathematical-expression rendering while keeping graph labels literal and archive v1 unchanged. The original Markdown/TeX stays in model strings; only display markup is produced. Inline/display delimiters and explicit math fences are separated from ordinary code; unsupported math retains readable source. Pinned libraries, licenses, styles and fonts are embedded for offline rendering. Existing independent-explanation, per-mention English, time-priority and saved-history rules remain intact. Runtime checks do not claim a desktop/mobile font or overflow audit.
 
@@ -29,7 +31,7 @@ The English release was compared with the preceding Chinese draft and the accept
 - Whole-paper memory before segmentation, stored explanations, shared terms/claims, independent progress, and interruption recovery: paper-memory.
 - Discipline-specific role selection, announcement, persistence, confirmation, and justified updates: paper-expert.
 - Fixed minimal map surface, stable identities, canonical relationship semantics, cycles, arbitrary extension, shared nodes, global search, lifecycle, stable layout, and explicit quality gates: paper-map and its focused references.
-- Six public workflows with selective internal calls: the original four reading entries plus requested topic-tree creation and read-only usage help; skills/ and the plugin/installer boundaries.
+- Seven public workflows with selective internal calls: the original four reading entries, concise main-story explanation, requested topic-tree creation and read-only usage help; skills/ and the plugin/installer boundaries.
 
 ## Deliberate changes requested for this release
 

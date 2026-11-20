@@ -11,13 +11,13 @@ Answer the current question while preserving the whole-paper context and ongoing
 
 For a request only to open or reopen an existing map, restore the active paper/location through [paper-memory](../../interfaces/paper-memory/SKILL.md), then use [paper-map](../../interfaces/paper-map/SKILL.md) and its [opening contract](../../interfaces/paper-map/references/open-entry.md). Check/recover the local service and open its web URL in the host browser panel when available. Preserve the reading position, save a no-change map review, and finish without restarting setup or research teaching. For a mixed opening/content request, open the map and continue with the process below.
 
-For an explicit request to add a new topic tree, route to [paper-add-map](../paper-add-map/SKILL.md); preserve any accompanying question and return point. For package usage or a list of skills, use [paper-skill-help](../paper-skill-help/SKILL.md). A local concept question alone does not imply a request for a new tree.
+For an explicit request to add a new topic tree, route to [paper-add-map](../paper-add-map/SKILL.md); preserve any accompanying question and return point. For an explicitly requested brief story of the whole paper, use [paper-simple-explain](../paper-simple-explain/SKILL.md); a short local answer remains here. For package usage or a list of skills, use [paper-skill-help](../paper-skill-help/SKILL.md). A local concept question alone does not imply a request for a new tree.
 
 ## Process
 
 ### 1. Restore the question's context
 
-Read [paper-memory](../../interfaces/paper-memory/SKILL.md) to restore paper identity/version, settings, integrated model, relevant terms, claims, and sources. If a question interrupts figure or detailed explanation, save the original entry, topic/figure/paragraph, and next step in returnTo, separately from the question record.
+Read [paper-memory](../../interfaces/paper-memory/SKILL.md) to restore paper identity/version, settings, integrated model, relevant terms, claims, and sources. If a question interrupts figure, detailed or concise explanation, save the original entry, topic/figure/paragraph, and next step in returnTo, separately from the question record.
 
 Use paper-memory's scoped restoration: a narrow question retrieves its relevant evidence and context, rather than rereading the whole paper or restarting the learning workflow. Reuse accessible instructions, valid source checks and existing settings. A terminology/relationship update is evaluated briefly; actual map mutation and rendering remain conditional on meaningful change, not a prerequisite for every answer.
 
@@ -43,4 +43,4 @@ Restore the paper's stable entry. If none exists because this is a direct first 
 
 Confirm the direct question, required prerequisites, and traceable evidence have been addressed, or explain remaining obstacles, their effects, and needed material. Save the result while keeping translation, figure, and detailed-explanation completion truthful.
 
-Resume from returnTo when the user asks to continue. If the user explicitly switches stages, call [paper-prepare](../paper-prepare/SKILL.md), [paper-figure-explain](../paper-figure-explain/SKILL.md), or [paper-detail-explain](../paper-detail-explain/SKILL.md). If memory cannot be read, state that limitation rather than pretending to remember the interruption.
+Resume from returnTo when the user asks to continue. If the user explicitly switches stages, call [paper-prepare](../paper-prepare/SKILL.md), [paper-figure-explain](../paper-figure-explain/SKILL.md), [paper-detail-explain](../paper-detail-explain/SKILL.md), or [paper-simple-explain](../paper-simple-explain/SKILL.md). If memory cannot be read, state that limitation rather than pretending to remember the interruption.

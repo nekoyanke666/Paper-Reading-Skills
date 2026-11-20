@@ -1,6 +1,6 @@
 ---
 name: paper-narrative
-description: Internal interface. Build an overview, full-paper explanation, post-figure integration, or scoped review by linking research questions and evidence while tracking coverage against actual source sections.
+description: Internal interface. Build an overview, concise main-thread explanation, full-paper explanation, post-figure integration or scoped review, with visible topic motivation, source anchors and coverage matched to the selected mode.
 ---
 
 # Paper Narrative
@@ -12,6 +12,7 @@ Input: verified whole-paper model or explicitly limited local scope, original te
 ## 1. Choose the narrative mode
 
 - **Overview:** existing knowledge, gap, question, research object, principal findings, and significance; do not front-load all methods.
+- **Concise explanation:** a short, standalone main research story for paper-simple-explain. Read the [concise contract](references/concise-explanation.md) and [topic-flow contract](references/topic-flow.md). Select the essential reasoning, methods/evidence and limits without requiring a full-detail manuscript or marking that stage complete.
 - **Full explanation:** a self-contained expert account of the entire paper for a reader with no earlier teaching context, backed by a complete manuscript. Read the [full-explanation contract](references/full-explanation.md) for a history-independent core, optional recorded connections, breadth, technical depth, runs, segmentation and completion. Its scope comes from the paper, not details left over from earlier figure reading or questions.
 - **Post-figure integration:** return to relevant prose, methods, and discussion to add material the figures do not convey sufficiently and check their joint conclusions.
 - **Scoped review:** only already-covered or requested material, retaining terminology, evidence, and limitations while distinguishing unread content. Understanding checks and requested quizzes use paper-answer.
@@ -27,6 +28,8 @@ Save each topic's source, section/paragraph, and conceptual dependencies. Establ
 ## 3. Develop the research logic
 
 Proceed through the relationship between questions and evidence. Source order may change to aid understanding, but explain why the next topic is needed and retain source locations.
+
+For full or concise explanation, apply [topic flow, motivation and pace](references/topic-flow.md): visible small-topic headings; an opening that identifies the current task, concrete stakes/reason and actual paper anchor; and a clear result-to-next-question transition. Mark topics mainly from supporting sources with parenthetical source and required/optional labels. Distinguish research rationale from evidence of scientific causation.
 
 Develop ideas in dependency order without omitting crucial premises or limits. Connect the live problem, necessary concepts, design/argument, actual result, interpretation, sources, and alternatives in continuous explanatory prose. These are ingredients of the argument, not mandatory headings or a separate response per ingredient. In full explanation, choose substantial chapters of the whole manuscript and explicitly restate what a later inference needs. Previously explained figures or answers do not supply an explanation missing here. Earlier personal connections are optional supplements after the relevant core account; they do not decide its scope or replace its argument.
 
